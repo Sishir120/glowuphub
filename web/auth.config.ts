@@ -1,11 +1,7 @@
 import type { NextAuthConfig } from "next-auth"
-import Google from "next-auth/providers/google"
 
 export const authConfig = {
-    providers: [
-        Google,
-        // we add Credentials provider in auth.ts as it uses prisma
-    ],
+    providers: [], // Providers are added in auth.ts to avoid edge runtime issues
     pages: {
         signIn: '/login',
     },

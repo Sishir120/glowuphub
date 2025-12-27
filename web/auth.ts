@@ -3,12 +3,13 @@ import { PrismaAdapter } from "@auth/prisma-adapter"
 import prisma from "@/lib/prisma"
 import { authConfig } from "./auth.config"
 import Credentials from "next-auth/providers/credentials"
+import Google from "next-auth/providers/google"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
     adapter: PrismaAdapter(prisma) as any,
     ...authConfig,
     providers: [
-        ...authConfig.providers,
+        Google,
         Credentials({
             credentials: {
                 email: { label: "Email", type: "email" },
