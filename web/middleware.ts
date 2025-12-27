@@ -5,6 +5,18 @@ import { authConfig } from "./auth.config";
 export default NextAuth(authConfig).auth;
 
 export const config = {
-    // https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
-    matcher: ['/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
+    // Only run middleware on these specific routes to avoid crashing the whole site
+    matcher: [
+        '/dashboard/:path*',
+        '/admin/:path*',
+        '/expert/:path*',
+        '/track/:path*',
+        '/routines/:path*',
+        '/calendar/:path*',
+        '/movement/:path*',
+        '/plan/:path*',
+        '/chat/:path*',
+        '/profile/:path*',
+        '/settings/:path*',
+    ],
 };
