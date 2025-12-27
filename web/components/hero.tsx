@@ -28,11 +28,74 @@ export function Hero() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col items-center lg:items-start gap-6 md:gap-8 max-w-2xl text-center lg:text-left"
                 >
-                    {/* Immersive Mobile Background Visual (Brand Halo) */}
-                    <div className="lg:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square opacity-15 z-0 pointer-events-none">
-                        <div className="absolute inset-0 rounded-full bg-primary/20 blur-[80px] animate-pulse" />
-                        <div className="absolute inset-10 rounded-full border border-primary/10 animate-[spin_20s_linear_infinite]" />
-                        <div className="absolute inset-20 rounded-full border border-primary/5 animate-[spin_30s_linear_infinite_reverse]" />
+                    {/* Mobile Orbital Visual - Premium Animation */}
+                    <div className="lg:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] z-0">
+                        {/* Concentric orbital rings */}
+                        <div className="absolute inset-0 rounded-full border border-white/5" />
+                        <div className="absolute inset-8 rounded-full border border-white/5" />
+
+                        {/* Soft rotating aura */}
+                        <div className="absolute inset-0 rounded-full opacity-20 animate-[spin_30s_linear_infinite]">
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/0 via-primary/30 to-transparent blur-2xl" />
+                        </div>
+
+                        {/* Glass Vessel */}
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full bg-card/40 border border-primary/10 backdrop-blur-md flex items-center justify-center shadow-2xl shadow-primary/20"
+                        >
+                            {/* Decorative inner ring */}
+                            <div className="absolute inset-3 rounded-full border border-primary/10" />
+
+                            {/* Inner Core */}
+                            <div className="relative w-[110px] h-[110px] rounded-full bg-background/60 flex items-center justify-center shadow-inner border border-border">
+                                {/* Logo with gentle pulse */}
+                                <div className="relative w-[60px] h-[60px] rounded-full flex items-center justify-center">
+                                    <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-breathe" />
+                                    <Logo size={32} />
+                                </div>
+                            </div>
+
+                            {/* Orbiting particles */}
+                            <div className="absolute inset-0 animate-[spin_15s_linear_infinite]">
+                                <div className="absolute top-0 left-1/2 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_rgba(0,251,255,0.8)] -translate-x-1/2 -translate-y-1/2" />
+                            </div>
+                            <div className="absolute inset-0 animate-[spin_20s_linear_infinite_reverse]">
+                                <div className="absolute bottom-0 right-1/4 w-1 h-1 bg-sage rounded-full shadow-[0_0_8px_rgba(134,239,172,0.6)]" />
+                            </div>
+                        </motion.div>
+
+                        {/* Floating Stat Card - Mobile Optimized */}
+                        <motion.div
+                            animate={{ y: [0, -8, 0] }}
+                            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                            className="absolute -top-2 right-0 p-2.5 bg-card/90 backdrop-blur-lg rounded-xl border border-border flex items-center gap-2 shadow-lg"
+                        >
+                            <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <Heart className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="pr-1">
+                                <p className="text-[9px] text-foreground-muted leading-none mb-0.5">Daily</p>
+                                <p className="text-xs font-bold text-foreground leading-none">15 min</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Glow Score Card - Mobile */}
+                        <motion.div
+                            animate={{ y: [0, 6, 0] }}
+                            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }}
+                            className="absolute -bottom-2 left-0 p-2.5 bg-card/90 backdrop-blur-lg rounded-xl border border-border flex items-center gap-2 shadow-lg"
+                        >
+                            <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <Sparkles className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="pr-1">
+                                <p className="text-[9px] text-foreground-muted leading-none mb-0.5">Glow</p>
+                                <p className="text-xs font-bold text-foreground leading-none">Building ✨</p>
+                            </div>
+                        </motion.div>
                     </div>
 
                     {/* Expert Credentials Badge */}

@@ -255,6 +255,26 @@ body {
   animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Breathe Animation - Gentle Pulse */
+@keyframes breathe {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+
 /* Scrollbar - Subtle and Warm */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
