@@ -1,49 +1,10 @@
-
 import type { NextAuthConfig } from "next-auth"
-import Credentials from "next-auth/providers/credentials"
 import Google from "next-auth/providers/google"
-import prisma from "@/lib/prisma"
 
 export const authConfig = {
     providers: [
         Google,
-        Credentials({
-            credentials: {
-                email: { label: "Email", type: "email" },
-                password: { label: "Password", type: "password" }
-            },
-            async authorize(credentials) {
-                if (!credentials?.email || !credentials?.password) {
-                    return null;
-                }
-
-                const user = await prisma.user.findUnique({
-                    where: { email: credentials.email as string }
-                });
-
-                if (!user || !user.password) {
-                    return null;
-                }
-
-                // Import bcrypt dynamically to avoid edge runtime issues
-                const bcrypt = await import('bcryptjs');
-                const passwordsMatch = await bcrypt.compare(
-                    credentials.password as string,
-                    user.password
-                );
-
-                if (!passwordsMatch) {
-                    return null;
-                }
-
-                return {
-                    id: user.id,
-                    email: user.email,
-                    name: user.name,
-                    role: user.role, // Pass role
-                };
-            },
-        }),
+        // we add Credentials provider in auth.ts as it uses prisma
     ],
     pages: {
         signIn: '/login',
@@ -92,5 +53,5 @@ export const authConfig = {
         }
     },
     session: { strategy: "jwt" },
-    secret: process.env.AUTH_SECRET, // Fails fast if not set in production
+    secret: process.env.AUTH_SECRET,
 } satisfies NextAuthConfig
