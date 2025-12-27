@@ -185,6 +185,7 @@ export function Pricing() {
                             </div>
 
                             <Button
+                                asChild
                                 className={cn(
                                     "w-full mb-4 font-bold rounded-full h-12 text-base",
                                     plan.popular
@@ -192,7 +193,9 @@ export function Pricing() {
                                         : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                                 )}
                             >
-                                {plan.cta}
+                                <a href="/chat">
+                                    {plan.cta}
+                                </a>
                             </Button>
 
                             <p className="text-center text-xs text-foreground-muted mb-8">

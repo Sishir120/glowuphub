@@ -1,5 +1,5 @@
-import Stripe from 'stripe';
-
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-    typescript: true,
-});
+/**
+ * Stripe gateway disabled. 
+ * Placeholders kept to prevent build errors in components.
+ */
+export const stripe = null as any;
