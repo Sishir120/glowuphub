@@ -11,12 +11,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GlowUp Hub – Daily Self-Care App for Face Yoga & Breathwork",
-  description: "Build lasting radiance with GlowUp Hub. The daily self-care app for face yoga, breathwork, and journaling routines. Start your 15-minute practice today.",
-  keywords: ["daily self-care app", "face yoga app", "breathwork routine", "glow up challenge", "wellness journal", "skincare routine tracker"],
+  title: "GlowUp Hub – Sustainable Weight Loss & Healthy Habits App | Expert-Led Nutrition",
+  description: "Achieve sustainable weight loss with GlowUp Hub. Expert nutritionist-led program for metabolic health, healthy eating habits, and lasting lifestyle change. No starvation, no shame—just science. Join 10,000+ success stories.",
+  keywords: [
+    "sustainable weight loss",
+    "healthy weight loss app",
+    "metabolic health",
+    "healthy eating habits",
+    "nutrition tracking app",
+    "weight loss coach",
+    "healthy lifestyle app",
+    "habit change app",
+    "nutritionist app",
+    "weight loss journey",
+    "healthy habits tracker",
+    "diet and nutrition app",
+    "wellness transformation",
+    "fat loss program",
+    "metabolism booster"
+  ],
   openGraph: {
-    title: "GlowUp Hub – Nurture Your Natural Glow",
-    description: "Your daily sanctuary for face yoga, breathwork, and guided journaling. Join 10,000+ members building confidence from the inside out.",
+    title: "GlowUp Hub – Sustainable Weight Loss & Metabolic Health",
+    description: "Expert-led weight loss program with personalized nutrition, habit tracking, and metabolic health coaching. Join 10,000+ members achieving lasting results without starvation or shame.",
     url: "https://glowuphub.com",
     siteName: "GlowUp Hub",
     images: [
@@ -24,7 +40,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "GlowUp Hub App Interface showing daily rings and wellness cards",
+        alt: "GlowUp Hub - Sustainable Weight Loss App with Expert Nutritionist Support",
       },
     ],
     locale: "en_US",
@@ -32,8 +48,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GlowUp Hub – Daily Self-Care App",
-    description: "Face yoga, breathwork, and journaling in one beautiful daily routine.",
+    title: "GlowUp Hub – Sustainable Weight Loss Program",
+    description: "Expert nutritionist-led weight loss. Track nutrition, build healthy habits, achieve metabolic health. 10,000+ success stories.",
     images: ["/twitter-image.jpg"],
   },
 };
