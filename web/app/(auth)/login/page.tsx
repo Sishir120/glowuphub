@@ -9,6 +9,10 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
+import { SocialAuth } from "@/components/auth/social-auth";
+import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
+
 export default function LoginPage() {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
@@ -34,7 +38,7 @@ export default function LoginPage() {
                 setError("Invalid email or password");
             } else {
                 router.push("/dashboard");
-                router.refresh(); // Refresh router to update server components
+                router.refresh();
             }
         } catch (err) {
             setError("Something went wrong. Please try again.");
@@ -48,28 +52,26 @@ export default function LoginPage() {
             heading="Welcome back"
             subheading="Enter your email to sign in to your account"
         >
-            <form onSubmit={onSubmit} className="grid gap-6">
-                <div className="grid gap-4">
+            <div className="grid gap-6">
+                <form onSubmit={onSubmit} className="grid gap-4">
                     <div className="grid gap-2">
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="email" className="text-zinc-400 font-medium">Email</Label>
                         <Input
                             id="email"
                             name="email"
                             placeholder="name@example.com"
                             type="email"
-                            autoCapitalize="none"
-                            autoComplete="email"
-                            autoCorrect="off"
+                            className="h-12 bg-white/[0.03] border-white/10 rounded-xl focus:ring-primary/20 focus:border-primary/40 transition-all font-medium"
                             disabled={isLoading}
                             required
                         />
                     </div>
                     <div className="grid gap-2">
                         <div className="flex items-center justify-between">
-                            <Label htmlFor="password">Password</Label>
+                            <Label htmlFor="password" className="text-zinc-400 font-medium">Password</Label>
                             <Link
                                 href="#"
-                                className="text-xs text-muted-foreground underline-offset-4 hover:underline"
+                                className="text-xs text-primary hover:underline font-medium"
                             >
                                 Forgot password?
                             </Link>
@@ -78,43 +80,53 @@ export default function LoginPage() {
                             id="password"
                             name="password"
                             type="password"
+                            className="h-12 bg-white/[0.03] border-white/10 rounded-xl focus:ring-primary/20 focus:border-primary/40 transition-all"
                             disabled={isLoading}
                             required
                         />
                     </div>
                     {error && (
-                        <div className="text-sm text-red-500 font-medium">{error}</div>
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-sm text-red-400 font-medium bg-red-400/10 p-3 rounded-lg border border-red-400/20"
+                        >
+                            {error}
+                        </motion.div>
                     )}
-                    <Button disabled={isLoading}>
-                        {isLoading ? "Signing In..." : "Sign In with Email"}
+                    <Button className="h-12 rounded-full font-bold shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-[0.98] bg-primary text-primary-foreground hover:bg-primary/90" disabled={isLoading}>
+                        {isLoading ? (
+                            <div className="flex items-center gap-2">
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                                <span>Signing In...</span>
+                            </div>
+                        ) : "Sign In with Email"}
                     </Button>
-                </div>
+                </form>
 
-                <div className="relative">
+                <div className="relative py-2">
                     <div className="absolute inset-0 flex items-center">
-                        <span className="w-full border-t" />
+                        <span className="w-full border-t border-white/5" />
                     </div>
                     <div className="relative flex justify-center text-xs uppercase">
-                        <span className="bg-background px-2 text-muted-foreground">
+                        <span className="bg-[#050505] px-2 text-muted-foreground/60 font-bold tracking-widest">
                             Or continue with
                         </span>
                     </div>
                 </div>
 
-                <Button variant="outline" type="button" onClick={() => signIn("google")}>
-                    Google
-                </Button>
+                <SocialAuth />
 
-                <p className="px-8 text-center text-sm text-muted-foreground">
+                <p className="text-center text-sm text-muted-foreground">
                     Don't have an account?{" "}
                     <Link
                         href="/register"
-                        className="underline underline-offset-4 hover:text-primary"
+                        className="text-primary font-bold hover:underline underline-offset-4"
                     >
-                        Sign Up
+                        Sign Up Free
                     </Link>
                 </p>
-            </form>
+            </div>
         </AuthLayout>
     );
 }

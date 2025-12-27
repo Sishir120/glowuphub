@@ -9,6 +9,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
+import { SocialAuth } from "@/components/auth/social-auth";
+import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
+
 export default function RegisterPage() {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +40,6 @@ export default function RegisterPage() {
                 throw new Error(data.message || "Something went wrong.");
             }
 
-            // Automatically sign in after registration
             const result = await signIn("credentials", {
                 email,
                 password,
@@ -44,7 +47,6 @@ export default function RegisterPage() {
             });
 
             if (result?.error) {
-                // Should not happen if registration worked, but fallback
                 router.push("/login");
             } else {
                 router.push("/dashboard");
@@ -61,66 +63,85 @@ export default function RegisterPage() {
             heading="Start your journey"
             subheading="Create an account to track your daily glow-up"
         >
-            <form onSubmit={onSubmit} className="grid gap-6">
-                <div className="grid gap-4">
-                    {/* Name */}
+            <div className="grid gap-6">
+                <form onSubmit={onSubmit} className="grid gap-4">
                     <div className="grid gap-2">
-                        <Label htmlFor="name">Full Name</Label>
+                        <Label htmlFor="name" className="text-zinc-400 font-medium">Full Name</Label>
                         <Input
                             id="name"
                             name="name"
                             placeholder="Jane Doe"
                             type="text"
-                            autoCapitalize="words"
-                            autoCorrect="off"
+                            className="h-12 bg-white/[0.03] border-white/10 rounded-xl focus:ring-primary/20 focus:border-primary/40 transition-all font-medium"
                             disabled={isLoading}
                             required
                         />
                     </div>
-                    {/* Email */}
                     <div className="grid gap-2">
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="email" className="text-zinc-400 font-medium">Email</Label>
                         <Input
                             id="email"
                             name="email"
                             placeholder="name@example.com"
                             type="email"
-                            autoCapitalize="none"
-                            autoComplete="email"
-                            autoCorrect="off"
+                            className="h-12 bg-white/[0.03] border-white/10 rounded-xl focus:ring-primary/20 focus:border-primary/40 transition-all font-medium"
                             disabled={isLoading}
                             required
                         />
                     </div>
-                    {/* Password */}
                     <div className="grid gap-2">
-                        <Label htmlFor="password">Password</Label>
+                        <Label htmlFor="password" className="text-zinc-400 font-medium">Password</Label>
                         <Input
                             id="password"
                             name="password"
                             type="password"
+                            className="h-12 bg-white/[0.03] border-white/10 rounded-xl focus:ring-primary/20 focus:border-primary/40 transition-all"
                             disabled={isLoading}
                             required
                         />
                     </div>
                     {error && (
-                        <div className="text-sm text-red-500 font-medium">{error}</div>
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-sm text-red-400 font-medium bg-red-400/10 p-3 rounded-lg border border-red-400/20"
+                        >
+                            {error}
+                        </motion.div>
                     )}
-                    <Button disabled={isLoading}>
-                        {isLoading ? "Creating Account..." : "Create Account"}
+                    <Button className="h-12 rounded-full font-bold shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-[0.98] bg-primary text-primary-foreground hover:bg-primary/90" disabled={isLoading}>
+                        {isLoading ? (
+                            <div className="flex items-center gap-2">
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                                <span>Creating Account...</span>
+                            </div>
+                        ) : "Create Account"}
                     </Button>
+                </form>
+
+                <div className="relative py-2">
+                    <div className="absolute inset-0 flex items-center">
+                        <span className="w-full border-t border-white/5" />
+                    </div>
+                    <div className="relative flex justify-center text-xs uppercase">
+                        <span className="bg-[#050505] px-2 text-muted-foreground/60 font-bold tracking-widest">
+                            Or continue with
+                        </span>
+                    </div>
                 </div>
 
-                <p className="px-8 text-center text-sm text-muted-foreground">
+                <SocialAuth />
+
+                <p className="text-center text-sm text-muted-foreground">
                     Already have an account?{" "}
                     <Link
                         href="/login"
-                        className="underline underline-offset-4 hover:text-primary"
+                        className="text-primary font-bold hover:underline underline-offset-4"
                     >
                         Sign In
                     </Link>
                 </p>
-            </form>
+            </div>
         </AuthLayout>
     );
 }
