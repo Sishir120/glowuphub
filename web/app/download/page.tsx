@@ -63,9 +63,11 @@ export default function DownloadPage() {
                                     </p>
                                 </div>
 
-                                <Button className="w-full h-12 rounded-xl mb-6 gap-2 text-lg" onClick={() => alert("The APK link will be available after the first production build!")}>
-                                    <Download size={20} />
-                                    Download APK (v1.0)
+                                <Button className="w-full h-12 rounded-xl mb-6 gap-2 text-lg" asChild>
+                                    <a href="/android/app-release.apk" download="GlowUpHub-v1.0.apk">
+                                        <Download size={20} />
+                                        Download APK (v1.0)
+                                    </a>
                                 </Button>
                                 <div className="text-xs text-foreground-muted space-y-2 bg-background-muted p-4 rounded-xl">
                                     <p className="font-semibold">Installation Steps:</p>
