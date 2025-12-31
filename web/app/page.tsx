@@ -25,6 +25,10 @@ export default function Home() {
       </FadeIn>
 
       <FadeIn>
+        <Testimonials />
+      </FadeIn>
+
+      <FadeIn>
         <About />
       </FadeIn>
 
@@ -33,7 +37,7 @@ export default function Home() {
       </FadeIn>
 
       <FadeIn>
-        <Testimonials />
+        <AppShowcase />
       </FadeIn>
 
       <FadeIn>
@@ -42,10 +46,6 @@ export default function Home() {
 
       <FadeIn>
         <BlogSection />
-      </FadeIn>
-
-      <FadeIn>
-        <AppShowcase />
       </FadeIn>
 
       <Footer />

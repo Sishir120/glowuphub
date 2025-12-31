@@ -40,7 +40,7 @@ export function generatePersonalizedRoutines(user: any): Routine[] {
 
     // 3. Nutrition Routines (Morning/Evening)
     // Targeting ~20% of calories and ~30% of protein at breakfast for muscle protein synthesis signals
-    let morningCalorieTarget = Math.round(calorieTarget * 0.2);
+    const morningCalorieTarget = Math.round(calorieTarget * 0.2);
     let morningProteinTarget = Math.round(macros.protein * 0.3);
 
     // Biological Safety: Ensure protein calories don't exceed meal calories

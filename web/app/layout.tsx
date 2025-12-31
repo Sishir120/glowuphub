@@ -11,24 +11,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GlowUp Hub – Sustainable Weight Loss & Healthy Habits App | Expert-Led Nutrition",
-  description: "Achieve sustainable weight loss with GlowUp Hub. Expert nutritionist-led program for metabolic health, healthy eating habits, and lasting lifestyle change. No starvation, no shame—just science. Join 10,000+ success stories.",
+  title: "GlowUp Hub | Lose Weight Permanently with Science-Based Nutrition",
+  description: "Stop the yo-yo dieting. Join 10,000+ women resetting their metabolism with Clinical Nutritionist Sabita Subedi. Custom meal plans, hormonal balance, and sustainable results.",
   keywords: [
-    "sustainable weight loss",
-    "healthy weight loss app",
-    "metabolic health",
-    "healthy eating habits",
-    "nutrition tracking app",
-    "weight loss coach",
-    "healthy lifestyle app",
-    "habit change app",
-    "nutritionist app",
-    "weight loss journey",
+    "metabolic weight loss",
+    "clinical nutritionist nepal",
+    "hormonal balance diet",
+    "sustainable weight loss app",
+    "sabita subedi nutritionist",
+    "no starvation diet",
     "healthy habits tracker",
-    "diet and nutrition app",
-    "wellness transformation",
-    "fat loss program",
-    "metabolism booster"
+    "weight loss for women",
+    "postpartum weight loss",
+    "pcos weight loss"
   ],
   openGraph: {
     title: "GlowUp Hub – Sustainable Weight Loss & Metabolic Health",
@@ -51,6 +46,15 @@ export const metadata: Metadata = {
     title: "GlowUp Hub – Sustainable Weight Loss Program",
     description: "Expert nutritionist-led weight loss. Track nutrition, build healthy habits, achieve metabolic health. 10,000+ success stories.",
     images: ["/twitter-image.jpg"],
+  },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "GlowUp Hub",
+  },
+  formatDetection: {
+    telephone: false,
   },
 };
 

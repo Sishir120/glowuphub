@@ -33,21 +33,32 @@ export const authConfig = {
             }
             return true;
         },
+        async signIn({ user, account, profile }) {
+            console.log("SignIn Callback:", { provider: account?.provider, email: user?.email });
+            if (account?.provider === "google") {
+                return true;
+            }
+            return true;
+        },
         async session({ session, token }) {
+            console.log("Session Callback:", { sub: token?.sub, role: token?.role });
             if (session.user && token?.sub) {
                 session.user.id = token.sub;
-                session.user.role = token.role as string; // Pass role to session
+                session.user.role = token.role as string;
             }
             return session;
         },
-        async jwt({ token, user }) {
+        async jwt({ token, user, account }) {
             if (user) {
+                console.log("JWT Callback (Initial):", { id: user.id, role: user.role });
                 token.sub = user.id;
-                token.role = user.role; // Store role in token
+                token.role = user.role;
             }
             return token;
         }
     },
     session: { strategy: "jwt" },
+    trustHost: true,
+    debug: true,
     secret: process.env.AUTH_SECRET,
 } satisfies NextAuthConfig

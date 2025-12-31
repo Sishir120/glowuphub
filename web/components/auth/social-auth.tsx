@@ -1,6 +1,7 @@
 "use client";
 
 import { signIn } from "next-auth/react";
+import { loginWithGoogle } from "@/actions/auth";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -13,11 +14,10 @@ export function SocialAuth() {
         if (isLoading) return;
         setIsLoading(true);
         try {
-            await signIn("google", { callbackUrl: "/dashboard" });
+            await loginWithGoogle();
         } catch (error) {
             console.error("Google sign in error:", error);
-        } finally {
-            // Loading state will persist until redirect
+            setIsLoading(false);
         }
     };
 

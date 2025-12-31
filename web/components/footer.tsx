@@ -59,7 +59,7 @@ export function Footer() {
                     {/* Newsletter */}
                     <div>
                         <h4 className="text-foreground font-semibold mb-6">Stay Inspired</h4>
-                        <p className="text-foreground-muted text-sm mb-4">1 gentle self-care idea, once a week. No spam, ever.</p>
+                        <p className="text-foreground-muted text-sm mb-4">1 science-backed weight loss tip, once a week. No spam, ever.</p>
                         <div className="flex gap-2">
                             <Input
                                 placeholder="Your email"

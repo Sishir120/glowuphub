@@ -81,10 +81,10 @@ const plans = [
 ];
 
 const masteryPacks = [
-    { name: "Face Balance Mastery", description: "Facial yoga, mewing, lymphatic flow" },
-    { name: "Body Confidence Reset", description: "Occupying space without apology, gentle posture" },
-    { name: "Skin Care Systems", description: "Rice water, rose water, consistency" },
-    { name: "Mind & Self-Image", description: "Unlearning diet culture, nervous system calm" },
+    { name: "Metabolic Reset", description: "Reset your fat-burning hormones and stabilize insulin levels" },
+    { name: "Plateau Breaker", description: "Science-backed techniques to move past weight loss stalls" },
+    { name: "Cravings Control", description: "Neuroscience-based hacks to stop emotional and late-night eating" },
+    { name: "Sustainable Habits", description: "Building a lifestyle that keeps the weight off forever without effort" },
 ];
 
 export function Pricing() {

@@ -8,7 +8,7 @@ import Image from "next/image";
 const credentials = [
     { icon: <Users className="w-5 h-5" />, label: "10,000+ Women Guided", stat: "10K+" },
     { icon: <Star className="w-5 h-5" />, label: "4.9/5 Client Rating", stat: "4.9★" },
-    { icon: <Heart className="w-5 h-5" />, label: "Weight-Neutral Approach", stat: "Science-Based" },
+    { icon: <Heart className="w-5 h-5" />, label: "Sustainable Weight Loss", stat: "Science-Based" },
 ];
 
 const achievements = [
@@ -56,25 +56,25 @@ export function MeetTheExpert() {
                             <motion.div
                                 animate={{ y: [0, -8, 0] }}
                                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                                className="absolute -right-6 top-16 p-4 bg-card/95 backdrop-blur-lg rounded-2xl border border-primary/20 shadow-xl"
+                                className="absolute -right-4 top-4 md:-right-10 md:top-16 p-3 md:p-4 bg-card/95 backdrop-blur-lg rounded-2xl border border-primary/20 shadow-xl z-20 scale-90 md:scale-100"
                             >
                                 <div className="flex items-center gap-2 mb-1">
                                     <MessageCircle size={16} className="text-primary" />
-                                    <p className="text-xs font-black uppercase tracking-wider text-foreground-muted">Expert Chat</p>
+                                    <p className="text-[10px] md:text-xs font-black uppercase tracking-wider text-foreground-muted">Expert Chat</p>
                                 </div>
-                                <p className="text-sm font-bold text-primary">24-48h Response</p>
+                                <p className="text-xs md:text-sm font-bold text-primary">24-48h Response</p>
                             </motion.div>
 
                             <motion.div
                                 animate={{ y: [0, 8, 0] }}
                                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                                className="absolute -left-6 bottom-20 p-4 bg-card/95 backdrop-blur-lg rounded-2xl border border-sage/20 shadow-xl"
+                                className="absolute -left-4 bottom-4 md:-left-10 md:bottom-20 p-3 md:p-4 bg-card/95 backdrop-blur-lg rounded-2xl border border-sage/20 shadow-xl z-20 scale-90 md:scale-100"
                             >
                                 <div className="flex items-center gap-2 mb-1">
                                     <TrendingUp size={16} className="text-sage" />
-                                    <p className="text-xs font-black uppercase tracking-wider text-foreground-muted">Success Rate</p>
+                                    <p className="text-[10px] md:text-xs font-black uppercase tracking-wider text-foreground-muted">Success Rate</p>
                                 </div>
-                                <p className="text-sm font-bold text-sage">92% Client Results</p>
+                                <p className="text-xs md:text-sm font-bold text-sage">92% Client Results</p>
                             </motion.div>
                         </div>
                     </motion.div>
@@ -93,22 +93,25 @@ export function MeetTheExpert() {
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                            Nutritionist <span className="text-primary">Sabita Subedi</span>
+                            Hi, I'm <span className="text-primary">Sabita Subedi.</span>
                         </h2>
 
                         <p className="text-foreground-muted text-lg leading-relaxed mb-6">
-                            Sabita has spent <span className="text-foreground font-semibold">4 years</span> helping women repair their relationship with food,
-                            energy, and their bodies — <span className="text-foreground font-semibold">without shame, without weigh-ins</span>, and without extreme diets.
+                            I don't believe in diets. I believe in biology. After helping <span className="text-foreground font-semibold">10,000+ women</span> heal their metabolism, I proved that willpower isn't the problem—your plan is.
                         </p>
 
                         <p className="text-foreground-muted text-lg leading-relaxed mb-8">
-                            Her approach observes your current nutrition intakes, evaluates them, and suggests better habits
-                            specifically tailored to your gender, height, age, and weight.
+                            Let's fix your metabolic engine together. No starvation. No shame. Just a science-backed roadmap to the body you deserve.
                         </p>
 
                         {/* Achievements List */}
                         <div className="mb-8 space-y-3">
-                            {achievements.map((achievement, index) => (
+                            {[
+                                "Certified Clinical Nutritionist",
+                                "Specialist in Hormonal Balance & PCOS",
+                                "Zero-Deprivation Method",
+                                "Data-Driven Results (Not Guesswork)"
+                            ].map((achievement, index) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, x: -10 }}

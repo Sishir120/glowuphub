@@ -122,7 +122,7 @@ export const FEATURE_DISPLAY_NAMES: Record<FeatureKey, string> = {
  */
 export const FEATURE_DESCRIPTIONS: Record<FeatureKey, string> = {
     [FEATURE_KEYS.UNLIMITED_PRACTICES]: 'Access our full library of 100+ guided practices',
-    [FEATURE_KEYS.MASTERY_PACKS]: 'Deep-dive programs for Face Balance, Body Confidence & more',
+    [FEATURE_KEYS.MASTERY_PACKS]: 'Deep-dive programs for Metabolic Reset, Plateau Breaking & more',
     [FEATURE_KEYS.FULL_GLOW_HISTORY]: 'See your complete progress over time with detailed analytics',
     [FEATURE_KEYS.PHOTO_PROGRESS]: 'Track your visible transformation with before/after photos',
     [FEATURE_KEYS.GLOW_ANALYTICS]: 'Weekly insights on your consistency and Glow Score trends',

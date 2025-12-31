@@ -1,26 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Circle, Activity, Heart, Sparkles, ShieldCheck, Leaf } from "lucide-react";
+import { Circle, Activity, Heart, Sparkles, ShieldCheck, Leaf, Utensils, BrainCircuit } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const features = [
     {
-        title: "Step 1: Metabolic Nutrition",
-        description: "Eat to fuel your body, not to fight it. Custom meal plans that balance your hormones and reset your metabolism.",
-        icon: <Leaf className="w-6 h-6 text-primary" />,
+        title: "Step 1: Eat More, Weigh Less",
+        description: "Your metabolism isn't broken, it's confusing. We design custom meal plans that trigger metabolic burn without cutting the foods you love.",
+        icon: <Utensils className="w-6 h-6 text-primary" />,
         className: "md:col-span-1",
     },
     {
-        title: "Step 2: Activity for Life",
-        description: "Movement that acts as medicine. Build lean muscle and burn fat with routines you can actually stick to.",
+        title: "Step 2: Movement That Heals",
+        description: "Forget punishment cardio. 15-minute hormonal-balancing routines designed to lower cortisol and build lean tone.",
         icon: <Activity className="w-6 h-6 text-sage" />,
         className: "md:col-span-1",
     },
     {
-        title: "Step 3: Mindset Shift",
-        description: "Rewire your brain's relationship with food. Stop the self-sabotage and build unshakeable self-trust.",
-        icon: <Sparkles className="w-6 h-6 text-lavender" />,
+        title: "Step 3: Rewire Your Habits",
+        description: "Stop the self-sabotage. We help you build unshakeable self-trust and end emotional eating for good.",
+        icon: <BrainCircuit className="w-6 h-6 text-lavender" />,
         className: "md:col-span-1",
     },
 ];
@@ -44,10 +44,10 @@ export function Features() {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-tight leading-tight">
-                            3 Steps to <span className="text-primary italic">Lasting Weight Loss</span>
+                            The <span className="text-primary italic">3-Step Metabolic Reset</span>
                         </h2>
                         <p className="text-lg md:text-xl text-foreground-muted max-w-2xl mx-auto">
-                            A science-backed system for metabolic health, sustainable habits, and body confidence. No starvation. No gimmicks.
+                            A science-backed system for lasting results. Most diets fail because they fight your biology. We work with it.
                         </p>
                     </motion.div>
                 </div>

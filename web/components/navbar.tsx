@@ -14,6 +14,7 @@ export function Navbar() {
         { name: "Features", href: "/#features" },
         { name: "Journeys", href: "/#testimonials" },
         { name: "Pricing", href: "/#pricing" },
+        { name: "Install App", href: "/download" },
     ];
 
     return (
@@ -102,11 +103,11 @@ export function Navbar() {
                             <div className="pt-4">
                                 <p className="text-xs text-foreground-muted font-medium mb-3 uppercase tracking-wider">Get the Mobile App</p>
                                 <div className="flex flex-col gap-3">
-                                    <Link href="#" className="flex items-center gap-2 text-foreground font-medium bg-secondary/50 p-3 rounded-lg border border-border">
+                                    <Link href="/download" className="flex items-center gap-2 text-foreground font-medium bg-secondary/50 p-3 rounded-lg border border-border">
                                         <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" className="h-6 w-auto" alt="App Store" />
                                         <span className="text-sm">Download on iOS</span>
                                     </Link>
-                                    <Link href="#" className="flex items-center gap-2 text-foreground font-medium bg-secondary/50 p-3 rounded-lg border border-border">
+                                    <Link href="/download" className="flex items-center gap-2 text-foreground font-medium bg-secondary/50 p-3 rounded-lg border border-border">
                                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" className="h-6 w-auto" alt="Play Store" />
                                         <span className="text-sm">Get on Android</span>
                                     </Link>

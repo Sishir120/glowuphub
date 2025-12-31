@@ -37,7 +37,7 @@ export default function NervousSystemCalmPage() {
                         </span>
 
                         <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6 leading-tight">
-                            The Science of Nervous System Calm
+                            The Science of Nervous System Burn
                         </h1>
 
                         <div className="flex items-center gap-6 text-foreground-muted text-sm mb-10">
@@ -54,20 +54,20 @@ export default function NervousSystemCalmPage() {
                         {/* Article Body */}
                         <article className="prose prose-invert prose-lg max-w-none">
                             <p className="lead text-xl text-foreground/90 leading-relaxed">
-                                Why breath regulation before your skincare routine makes everything more effective.
-                                Your nervous system is the hidden key to radiance.
+                                Why breath regulation before your metabolic rituals makes everything more effective.
+                                Your nervous system is the hidden key to fat oxidation.
                             </p>
 
                             <h2>The Hidden Connection</h2>
                             <p>
-                                Have you ever noticed how stress shows up on your face? Dark circles, breakouts,
-                                dull skin — these aren't just surface issues. They're signals from your nervous
+                                Have you ever noticed how stress impacts your metabolism? Water retention,
+                                fat storage, fatigue — these aren't just surface issues. They're signals from your nervous
                                 system telling you something's out of balance.
                             </p>
                             <p>
                                 When we're in a state of chronic stress, our bodies prioritize survival over
-                                repair. Blood flow decreases to the skin, collagen production slows, and
-                                inflammation increases. No amount of serums can fully counteract this.
+                                fat oxidation. Cortisol spikes, metabolic rate slows, and
+                                insulin sensitivity decreases. No amount of calorie counting can fully counteract this.
                             </p>
 
                             <h2>Why Breath Comes First</h2>
@@ -77,10 +77,10 @@ export default function NervousSystemCalmPage() {
                                 mode. This simple act:
                             </p>
                             <ul>
-                                <li>Increases blood flow to your skin by up to 40%</li>
-                                <li>Reduces cortisol levels that break down collagen</li>
-                                <li>Opens your lymphatic pathways for better drainage</li>
-                                <li>Helps your skin actually <em>absorb</em> what you're applying</li>
+                                <li>Optimizes insulin sensitivity for fat loss</li>
+                                <li>Reduces cortisol levels that trigger abdominal fat storage</li>
+                                <li>Opens your metabolic pathways for better fat oxidation</li>
+                                <li>Helps your body actually <em>utilize</em> the fuel you provide</li>
                             </ul>
 
                             <h2>The 4-7-8 Technique</h2>
@@ -96,25 +96,25 @@ export default function NervousSystemCalmPage() {
 
                             <h2>Building the Habit</h2>
                             <p>
-                                The beauty of combining breath work with skincare is that you're anchoring
-                                a new habit to an existing one. You already wash your face every morning.
+                                The beauty of combining breath work with metabolic rituals is that you're anchoring
+                                a new habit to an existing one. You already start your day with a routine.
                                 Now you're just adding 60 seconds of intention beforehand.
                             </p>
                             <p>
                                 Over time, this compounds. After 21 days, your nervous system begins to
-                                anticipate relaxation during your routine. Your skin starts to change not
-                                just from products, but from a fundamentally calmer state of being.
+                                anticipate relaxation during your routine. Your metabolism starts to change not
+                                just from nutrition, but from a fundamentally calmer state of being.
                             </p>
 
                             <blockquote className="border-l-4 border-primary pl-6 italic text-foreground/80">
-                                "True radiance isn't about perfection. It's about presence. When you're calm,
-                                you glow differently."
+                                "True vitality isn't about perfection. It's about presence. When you're calm,
+                                your body burns differently."
                             </blockquote>
 
                             <h2>Your Practice</h2>
                             <p>
-                                This week, commit to the 4-7-8 breath before every skincare session.
-                                Notice how your face feels different — softer, more receptive, more alive.
+                                This week, commit to the 4-7-8 breath before every metabolic session.
+                                Notice how your body feels different — lighter, more responsive, more alive.
                                 That's your nervous system doing what it was designed to do: heal you from
                                 the inside out.
                             </p>

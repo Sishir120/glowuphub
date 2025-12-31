@@ -12,7 +12,7 @@ const posts = [
         slug: "nervous-system-calm",
         category: "Wellness",
         title: "The Science of Nervous System Calm",
-        excerpt: "Why breath regulation before your skincare routine makes everything more effective. Learn the biological connection between stress and skin health.",
+        excerpt: "Why breath regulation before your metabolic rituals makes everything more effective. Learn the biological connection between stress and fat oxidation.",
         readTime: "5 min read",
         image: "/assets/blog/cortisol.png",
         date: "Dec 12, 2024"
@@ -30,7 +30,7 @@ const posts = [
         slug: "eating-for-radiance",
         category: "Nourishment",
         title: "Eating for Radiance, Not Restriction",
-        excerpt: "Gentle nutrition that supports your glow from the inside out. Discover key nutrients for vitality and skin resilience.",
+        excerpt: "Gentle nutrition that supports your burn from the inside out. Discover key nutrients for metabolic health and weight loss resilience.",
         readTime: "7 min read",
         image: "/assets/blog/nutrition.png",
         date: "Dec 22, 2024"

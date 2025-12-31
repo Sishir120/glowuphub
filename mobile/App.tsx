@@ -1,38 +1,20 @@
-import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet, Text, View } from 'react-native';
 
-import TabNavigator from './src/navigation/TabNavigator';
-import AuthNavigator from './src/navigation/AuthNavigator';
-import { AuthProvider, useAuth } from './src/context/AuthContext';
-import { ActivityIndicator, View } from 'react-native';
-import "./global.css";
-
-function AppContent() {
-  const { user, isLoading } = useAuth();
-
-  if (isLoading) {
-    return (
-      <View style={{ flex: 1, backgroundColor: '#09090b', justifyContent: 'center', alignItems: 'center' }}>
-        <ActivityIndicator color="#E8B4B8" size="large" />
-      </View>
-    );
-  }
-
+export default function App() {
   return (
-    <NavigationContainer>
-      <StatusBar style="light" />
-      {user ? <TabNavigator /> : <AuthNavigator />}
-    </NavigationContainer>
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
-function App() {
-  return (
-    <AuthProvider>
-      <AppContent />
-    </AuthProvider>
-  );
-}
-
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

@@ -133,7 +133,7 @@ export default function HomeScreen() {
                     <View className="bg-card rounded-[2.5rem] p-7 border border-border shadow-sm">
                         <Text className="text-2xl font-black text-foreground mb-2">Gentle Movement</Text>
                         <Text className="text-muted-foreground leading-relaxed mb-6 text-sm">
-                            Your body is adapting well. A quick <Text className="text-foreground font-bold">Yoga flow</Text> or a <Text className="text-foreground font-bold">walk</Text> will clear your mind.
+                            Your body is adapting well. A quick <Text className="text-foreground font-bold">Mobility stretch</Text> or a <Text className="text-foreground font-bold">walk</Text> will clear your mind.
                         </Text>
 
                         <TouchableOpacity

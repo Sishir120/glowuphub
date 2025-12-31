@@ -16,63 +16,63 @@ export const MOCK_USER = {
 export const MOCK_ROUTINES = [
     {
         id: 'r1',
-        name: 'Morning Glow',
+        name: 'Morning Metabolic Reset',
         category: 'Morning',
         habits: [
             {
                 id: 'h1',
-                name: 'Hydration Practice',
+                name: 'Morning Hydration',
                 duration: 2,
-                scientificRationale: "Evidence suggests that morning hydration triggers cellular activation and improves cognitive alertness post-sleep.",
+                scientificRationale: "Evidence suggests that morning hydration triggers cellular activation and improves metabolic rate post-sleep.",
                 citations: ["https://pubmed.ncbi.nlm.nih.gov/24715487/"]
             },
             {
                 id: 'h2',
-                name: 'Face Balance Practice',
-                duration: 8,
-                scientificRationale: "Facial muscle stimulation (Face Yoga) increases blood circulation and promotes lymphatic drainage, reducing morning puffiness.",
-                citations: ["https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5885810/"]
+                name: 'Intermittent Fasting Check',
+                duration: 1,
+                scientificRationale: "Tracking your fasting window helps optimize insulin sensitivity and promotes fat oxidation.",
+                citations: ["https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411330/"]
             },
             {
                 id: 'h3',
-                name: 'Gentle Breath Work',
-                duration: 3,
-                scientificRationale: "Controlled breathing activates the parasympathetic nervous system, lowering cortisol levels and reducing anxiety.",
+                name: 'Core Activation',
+                duration: 5,
+                scientificRationale: "Gentle core engagement improves posture and metabolic thermogenesis for the day ahead.",
                 citations: ["https://www.nature.com/articles/s41598-019-54530-w"]
             },
             {
                 id: 'h4',
-                name: 'SPF Self-Care',
+                name: 'NEAT Goal Setting',
                 duration: 2,
-                scientificRationale: "Broad-spectrum SPF is clinically proven to prevent photoaging and reduce the risk of UV-induced DNA damage.",
+                scientificRationale: "Setting non-exercise activity goals significantly increases daily caloric expenditure.",
                 citations: ["https://www.jaad.org/article/S0190-9622(13)00412-2/fulltext"]
             },
         ]
     },
     {
         id: 'r2',
-        name: 'Evening Unwind',
+        name: 'Evening Fat-Burn Unwind',
         category: 'Evening',
         habits: [
             {
                 id: 'h5',
-                name: 'Double Cleanse Practice',
-                duration: 5,
-                scientificRationale: "Two-step cleansing ensures the removal of lipid-based impurities and environmental pollutants that cause oxidative stress.",
-                citations: ["https://www.skintherapyletter.com/dermatology/skin-cleansing-guidelines/"]
+                name: 'Protein-First Meal Prep',
+                duration: 10,
+                scientificRationale: "Prioritizing protein reduces late-night cravings and supports muscle preservation during weight loss.",
+                citations: ["https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411330/"]
             },
             {
                 id: 'h6',
-                name: 'Lymphatic Face Massage',
-                duration: 10,
-                scientificRationale: "Targeted massage techniques aid in the removal of metabolic waste from tissues, enhancing skin clarity and tone.",
+                name: 'Cortisol Management',
+                duration: 5,
+                scientificRationale: "Lowering evening cortisol through mindful practices prevents stress-induced abdominal fat storage.",
                 citations: ["https://pubmed.ncbi.nlm.nih.gov/23746213/"]
             },
             {
                 id: 'h7',
-                name: 'Gratitude Reflection',
+                name: 'Tomorrow\'s Goal',
                 duration: 5,
-                scientificRationale: "Regular gratitude practices are linked to improved sleep quality and physiological markers of resilience.",
+                scientificRationale: "Visualizing health goals improves adherence to nutritional protocols and consistency.",
                 citations: ["https://pubmed.ncbi.nlm.nih.gov/12585811/"]
             },
         ]
@@ -95,4 +95,4 @@ export const RECOVERY_MESSAGES = [
     "Missing a day doesn't break your journey. It's just a pause in the rhythm.",
 ];
 
-export const MOCK_UP_NEXT = ['Face Balance', 'Hydration Cue', 'Evening Reflection'];
+export const MOCK_UP_NEXT = ['Metabolic Reset', 'Hydration Cue', 'Evening Reflection'];

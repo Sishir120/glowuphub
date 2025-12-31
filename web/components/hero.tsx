@@ -5,6 +5,7 @@ import { Logo } from "@/components/ui/logo";
 import { motion } from "framer-motion";
 import { Play, Sparkles, Heart, ChevronDown } from "lucide-react";
 import { StoreBadges } from "@/components/ui/store-badges";
+import Link from "next/link";
 
 export function Hero() {
     return (
@@ -132,33 +133,37 @@ export function Hero() {
 
                         <h1 className="text-3xl font-black tracking-tight leading-[1.1] text-foreground mb-3">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
-                                Sustainable
+                                Lose Weight
                             </span>{" "}
-                            <span className="text-foreground">Weight Loss.</span>
+                            <span className="text-foreground">For Given.</span>
                             <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-primary">
-                                Healthy Habits.
+                                Science, Not Starvation.
                             </span>
                         </h1>
 
                         <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-                            Build <span className="text-primary font-semibold">lasting metabolic health</span> with expert nutritionist Sabita Subedi. <span className="font-semibold text-foreground">No starvation. No shame. Just science.</span>
+                            Stop fighting your biology. Join <span className="text-primary font-semibold">10,000+ women</span> resetting their metabolism with Clinical Nutritionist Sabita Subedi.
                         </p>
 
                         <div className="flex flex-col gap-2.5 mb-4">
-                            <Button
-                                size="lg"
-                                className="w-full rounded-full h-12 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(34,211,238,0.4)]"
-                            >
-                                Start Losing Weight (Free)
-                            </Button>
-                            <Button
-                                size="lg"
-                                variant="ghost"
-                                className="w-full rounded-full h-12 gap-2 text-foreground hover:bg-white/5 font-medium border border-transparent hover:border-white/10"
-                            >
-                                <Play className="w-4 h-4 fill-current" /> View Success Stories
-                            </Button>
+                            <Link href="/register" className="w-full">
+                                <Button
+                                    size="lg"
+                                    className="w-full rounded-full h-12 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+                                >
+                                    Start Your Free Plan
+                                </Button>
+                            </Link>
+                            <Link href="/download" className="w-full">
+                                <Button
+                                    size="lg"
+                                    variant="ghost"
+                                    className="w-full rounded-full h-12 gap-2 text-foreground hover:bg-white/5 font-medium border border-transparent hover:border-white/10"
+                                >
+                                    <Play className="w-4 h-4 fill-current" /> View Success Stories
+                                </Button>
+                            </Link>
                         </div>
 
                         <div className="flex items-center gap-3 text-xs text-foreground-muted">
@@ -199,39 +204,43 @@ export function Hero() {
 
                         <h1 className="text-3xl sm:text-6xl md:text-7xl font-black tracking-tighter leading-[1.1] text-foreground mb-6 z-10">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
-                                Sustainable
+                                Lose Weight
                             </span>{" "}
-                            <span className="text-foreground">Weight Loss.</span>
+                            <span className="text-foreground">For Good.</span>
                             <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-primary">
-                                Healthy Habits.
+                                Science, Not Starvation.
                             </span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-foreground-muted leading-relaxed max-w-lg px-2 md:px-0 mb-8 z-10">
-                            Build <span className="text-primary font-semibold">lasting metabolic health</span> with expert nutritionist Sabita Subedi. <br className="hidden md:block" />
-                            <span className="font-semibold text-foreground">No starvation. No shame. Just science.</span>
+                            Stop fighting your biology. Join <span className="text-primary font-semibold">10,000+ women</span> resetting their metabolism with Clinical Nutritionist Sabita Subedi. <br className="hidden md:block" />
+                            <span className="font-semibold text-foreground">No shame. No gimmicks. Just results.</span>
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full sm:w-auto z-10">
-                            <Button
-                                size="lg"
-                                className="w-full sm:w-auto rounded-full h-14 px-8 text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)]"
-                            >
-                                Start Losing Weight (Free)
-                            </Button>
-                            <Button
-                                size="lg"
-                                variant="ghost"
-                                className="w-full sm:w-auto rounded-full h-14 px-8 gap-2 text-foreground hover:bg-white/5 font-medium border border-transparent hover:border-white/10"
-                            >
-                                <Play className="w-5 h-5 fill-current" /> View Success Stories
-                            </Button>
+                            <Link href="/register">
+                                <Button
+                                    size="lg"
+                                    className="w-full sm:w-auto rounded-full h-14 px-8 text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+                                >
+                                    Start Your Free Plan
+                                </Button>
+                            </Link>
+                            <Link href="/download">
+                                <Button
+                                    size="lg"
+                                    variant="ghost"
+                                    className="w-full sm:w-auto rounded-full h-14 px-8 gap-2 text-foreground hover:bg-white/5 font-medium border border-transparent hover:border-white/10"
+                                >
+                                    <Play className="w-5 h-5 fill-current" /> View Success Stories
+                                </Button>
+                            </Link>
                         </div>
 
                         <div className="mt-6 z-10 w-full sm:w-auto flex flex-col items-center sm:items-start animate-fade-in-up">
-                            <p className="text-xs text-foreground-muted font-bold tracking-widest uppercase mb-3">
-                                Available on iOS & Android
+                            <p className="text-xs text-foreground-muted font-bold tracking-widest uppercase mb-3 text-center sm:text-left">
+                                No credit card required • Cancel anytime
                             </p>
                             <StoreBadges className="justify-center sm:justify-start scale-110 sm:scale-100 origin-left" />
                         </div>
@@ -242,7 +251,7 @@ export function Hero() {
                                     <div key={i} className={`w-8 h-8 rounded-full border-2 border-background bg-zinc-800 bg-[url('https://i.pravatar.cc/100?img=${20 + i}')] bg-cover`} />
                                 ))}
                             </div>
-                            <p>Join <span className="text-foreground font-bold">10,000+ members</span> finding safety in their skin</p>
+                            <p>Join <span className="text-foreground font-bold">10,000+ members</span> finding confidence in their metabolism</p>
                         </div>
                     </motion.div>
 

@@ -2,7 +2,7 @@
 
 interface ActivityRingsProps {
     move: number; // Percentage 0-100
-    glow: number; // Percentage 0-100 (Self-care)
+    glow: number; // Percentage 0-100 (Metabolic)
     mind: number; // Percentage 0-100 (Mindfulness)
     size?: number;
 }

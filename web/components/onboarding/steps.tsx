@@ -71,7 +71,7 @@ export function StepIntention({ data, update }: any) {
         "Less Anxiety",
         "Better Sleep",
         "Self-Trust",
-        "Skin Radiance"
+        "Metabolic Reset"
     ];
 
     return (
@@ -85,8 +85,8 @@ export function StepIntention({ data, update }: any) {
                         key={intention}
                         onClick={() => update('goal', intention)}
                         className={`p-4 rounded-2xl border text-left transition-all ${data.goal === intention
-                                ? 'bg-primary text-black border-primary'
-                                : 'bg-white/5 border-white/10 hover:bg-white/10'
+                            ? 'bg-primary text-black border-primary'
+                            : 'bg-white/5 border-white/10 hover:bg-white/10'
                             }`}
                     >
                         <span className="font-bold">{intention}</span>

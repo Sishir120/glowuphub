@@ -1,45 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Play, ExternalLink } from "lucide-react";
+import { ArrowRight, Play, ExternalLink, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const TESTIMONIALS_DATA = [
     {
         url: "https://www.tiktok.com/@sabu7916/photo/7464574005240990984?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=1200&fit=crop",
+        image: "/assets/placeholders/user1.jpg",
         caption: "20kg weight loss transformation",
         name: "Priya S.",
-        type: "photo"
+        type: "photo",
+        verified: true
     },
     {
         url: "https://www.tiktok.com/@sabu7916/video/7546135833099635975?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?w=800&h=1200&fit=crop",
+        image: "/assets/placeholders/user2.jpg",
         caption: "Morning routine transformations",
         name: "Sarah K.",
-        type: "video"
+        type: "video",
+        verified: true
     },
     {
         url: "https://www.tiktok.com/@sabu7916/video/7533972597055212807?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=1200&fit=crop",
+        image: "/assets/placeholders/user3.jpg",
         caption: "Sustainable nutrition journey",
         name: "Anjali M.",
-        type: "video"
+        type: "video",
+        verified: true
     },
     {
         url: "https://www.tiktok.com/@sabu7916/photo/7532817321866398983?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=1200&fit=crop",
+        image: "/assets/placeholders/user4.jpg",
         caption: "15kg transformation story",
         name: "Meera R.",
-        type: "photo"
+        type: "photo",
+        verified: true
     },
     {
         url: "https://www.tiktok.com/@sabu7916/video/7520222837257374994?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=1200&fit=crop",
+        image: "/assets/placeholders/user5.jpg",
         caption: "Healthy habits for life",
         name: "Davina L.",
-        type: "video"
+        type: "video",
+        verified: true
     }
 ];
 
@@ -111,8 +116,9 @@ export function Testimonials() {
                                     <p className="text-white text-lg md:text-sm font-semibold mb-1 line-clamp-2">
                                         {item.caption}
                                     </p>
-                                    <p className="text-white/80 text-sm md:text-xs font-medium mb-2">
+                                    <p className="text-white/80 text-sm md:text-xs font-medium mb-2 flex items-center gap-1">
                                         — {item.name}
+                                        {item.verified && <BadgeCheck className="w-3 h-3 text-primary fill-primary/20" />}
                                     </p>
                                     <div className="flex items-center gap-1 text-primary group-hover:gap-2 transition-all">
                                         <span className="text-xs font-bold">View on TikTok</span>

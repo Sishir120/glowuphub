@@ -9,7 +9,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     adapter: PrismaAdapter(prisma) as any,
     ...authConfig,
     providers: [
-        Google,
+        Google({
+            clientId: process.env.AUTH_GOOGLE_ID || process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.AUTH_GOOGLE_SECRET || process.env.GOOGLE_CLIENT_SECRET,
+            allowDangerousEmailAccountLinking: true,
+        }),
         Credentials({
             credentials: {
                 email: { label: "Email", type: "email" },
@@ -48,4 +52,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             },
         }),
     ],
+    events: {
+        async signIn(message) { console.log("Event: signIn", message) },
+        async createUser(message) { console.log("Event: createUser", message) },
+        async linkAccount(message) { console.log("Event: linkAccount", message) },
+        async session(message) { console.log("Event: session", message) },
+    },
 })

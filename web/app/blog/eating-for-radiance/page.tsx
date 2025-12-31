@@ -36,7 +36,7 @@ export default function EatingForRadiancePage() {
                         </span>
 
                         <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6 leading-tight">
-                            Eating for Radiance, Not Restriction
+                            Eating for Metabolic Burn, Not Restriction
                         </h1>
 
                         <div className="flex items-center gap-6 text-foreground-muted text-sm mb-10">
@@ -53,8 +53,8 @@ export default function EatingForRadiancePage() {
                         {/* Article Body */}
                         <article className="prose prose-invert prose-lg max-w-none">
                             <p className="lead text-xl text-foreground/90 leading-relaxed">
-                                Gentle nutrition that supports your glow from the inside out.
-                                Because restriction never made anyone radiant.
+                                Gentle nutrition that supports your burn from the inside out.
+                                Because restriction never built a metabolism.
                             </p>
 
                             <h2>The Problem with "Clean Eating"</h2>
@@ -64,21 +64,21 @@ export default function EatingForRadiancePage() {
                                 dressed up as wellness.
                             </p>
                             <p>
-                                Real radiance doesn't come from punishment. It comes from nourishment. And
+                                Real vitality doesn't come from punishment. It comes from nourishment. And
                                 that's a completely different relationship with food.
                             </p>
 
                             <h2>Skin-Loving Foods</h2>
                             <p>
                                 Instead of focusing on what to avoid, let's talk about what to embrace.
-                                These foods genuinely support your skin from within:
+                                These foods genuinely support your metabolism from within:
                             </p>
                             <ul>
-                                <li><strong>Omega-3 fatty acids</strong> — Found in salmon, walnuts, and chia seeds. They reduce inflammation and keep your skin supple.</li>
-                                <li><strong>Vitamin C</strong> — Citrus fruits, bell peppers, and berries. Essential for collagen production.</li>
-                                <li><strong>Zinc</strong> — Pumpkin seeds, chickpeas, and lentils. Helps with skin repair and reduces acne.</li>
-                                <li><strong>Vitamin E</strong> — Almonds, sunflower seeds, and avocados. Protects against oxidative damage.</li>
-                                <li><strong>Water-rich foods</strong> — Cucumber, watermelon, and celery. Hydration from the inside.</li>
+                                <li><strong>Omega-3 fatty acids</strong> — Found in salmon, walnuts, and chia seeds. They reduce inflammation and support fat oxidation.</li>
+                                <li><strong>Vitamin C</strong> — Citrus fruits, bell peppers, and berries. Essential for adrenal health and fat burn.</li>
+                                <li><strong>Zinc</strong> — Pumpkin seeds, chickpeas, and lentils. Helps with thyroid function and metabolic rate.</li>
+                                <li><strong>Vitamin E</strong> — Almonds, sunflower seeds, and avocados. Protects against oxidative metabolic damage.</li>
+                                <li><strong>Trace Electrolytes</strong> — Cucumber, watermelon, and celery. Cellular hydration from the inside.</li>
                             </ul>
 
                             <h2>The 80/20 Principle</h2>
@@ -88,15 +88,15 @@ export default function EatingForRadiancePage() {
                                 It's feeding your soul, and that matters too.
                             </p>
                             <p>
-                                Stress from food guilt is actually worse for your skin than the "bad" food itself.
-                                Cortisol from chronic stress breaks down collagen faster than sugar ever could.
+                                Stress from food guilt is actually worse for your weight loss than the "bad" food itself.
+                                Cortisol from chronic stress prevents fat oxidation faster than sugar ever could.
                             </p>
 
                             <h2>Hydration Is Queen</h2>
                             <p>
-                                Before worrying about supplements or superfoods, ask yourself: am I drinking
-                                enough water? Dehydration shows up immediately in your skin — dullness,
-                                more visible fine lines, and a tired complexion.
+                                before worrying about supplements or superfoods, ask yourself: am I drinking
+                                enough water? Dehydration shows up immediately in your energy and metabolic speed — sluggishness,
+                                bloating, and a slowed digestion.
                             </p>
                             <p>
                                 Aim for about 8 glasses a day, more if you're active. Add lemon, cucumber,
@@ -104,31 +104,31 @@ export default function EatingForRadiancePage() {
                             </p>
 
                             <blockquote className="border-l-4 border-primary pl-6 italic text-foreground/80">
-                                "The most radiant women I know aren't the ones with the strictest diets —
+                                "The most metabolically healthy people I know aren't the ones with the strictest diets —
                                 they're the ones who genuinely enjoy their food."
                             </blockquote>
 
-                            <h2>Gut Health Is Skin Health</h2>
+                            <h2>Gut Health Is Metabolic Health</h2>
                             <p>
-                                There's a direct connection between your gut and your skin, called the
-                                gut-skin axis. An imbalanced gut microbiome often shows up as:
+                                There's a direct connection between your gut and your metabolism, called the
+                                gut-metabolism axis. An imbalanced gut microbiome often shows up as:
                             </p>
                             <ul>
-                                <li>Acne and breakouts</li>
-                                <li>Rosacea flares</li>
-                                <li>Eczema patches</li>
-                                <li>General inflammation</li>
+                                <li>Bloating and fatigue</li>
+                                <li>Insulin resistance spikes</li>
+                                <li>Stubborn fat retention</li>
+                                <li>General metabolic inflammation</li>
                             </ul>
                             <p>
                                 Supporting your gut with fermented foods (yogurt, kimchi, sauerkraut) and
-                                fiber-rich vegetables can transform your skin over time.
+                                fiber-rich vegetables can transform your metabolic health over time.
                             </p>
 
                             <h2>Your Practice</h2>
                             <p>
-                                This week, try adding one skin-loving food to each day. Don't take anything
+                                This week, try adding one metabolic-boosting food to each day. Don't take anything
                                 away — just add. Notice how it feels to approach food as medicine for your
-                                glow rather than a source of rules.
+                                burn rather than a source of rules.
                             </p>
                         </article>
 

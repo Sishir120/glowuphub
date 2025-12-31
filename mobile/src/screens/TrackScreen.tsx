@@ -13,41 +13,41 @@ const PROTOCOLS: Record<string, MobileProtocolStep[]> = {
         {
             title: "Gear & Prep",
             description: "Shoes laced? Water ready? Let's check your posture.",
-            image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/walking_protocol_main_1766485275665.png",
+            image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800",
             tip: "Head up, shoulders relaxed, and swing your arms naturally."
         },
         {
             title: "Paced Walk",
             description: "Maintain a steady, brisk pace. Keep your breathing steady.",
-            image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/walking_protocol_main_1766485275665.png",
+            image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800",
             duration: 1800,
             tip: "Land on your heel and roll through to your toes."
         },
         {
             title: "Cool Down",
             description: "Slow your pace gradually. Let your heart rate settle.",
-            image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/cooldown_protocol_common_1766485407095.png",
+            image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800",
             duration: 300
         }
     ],
-    'yoga': [
+    'mobility': [
         {
             title: "Centering",
             description: "Find your quiet space. Roll out your mat and focus on your breath.",
-            image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/yoga_protocol_main_1766485293224.png",
+            image: "https://images.unsplash.com/photo-1544367563-12123d8965cd?w=800",
             duration: 180,
             tip: "Inhale deeply through your nose, exhale slowly through your mouth."
         },
         {
-            title: "Main Practice",
-            description: "Move mindfully. Hold each pose for 5 deep breaths.",
-            image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/yoga_protocol_main_1766485293224.png",
+            title: "Main Flow",
+            description: "Move mindfully. Hold each stretch for 5 deep breaths.",
+            image: "https://images.unsplash.com/photo-1544367563-12123d8965cd?w=800",
             duration: 900
         },
         {
-            title: "Savasana",
-            description: "Rest deeply. Let your body absorb the practice.",
-            image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/cooldown_protocol_common_1766485407095.png",
+            title: "Rest",
+            description: "Rest deeply. Let your body absorb the movement.",
+            image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800",
             duration: 300
         }
     ],
@@ -55,13 +55,13 @@ const PROTOCOLS: Record<string, MobileProtocolStep[]> = {
         {
             title: "Warmup",
             description: "Get the blood flowing with jumping jacks and high knees.",
-            image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/home_workout_main_1766485319868.png",
+            image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800",
             duration: 300
         },
         {
             title: "Power Circuit",
             description: "Keep your core tight and maintain constant focus.",
-            image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/home_workout_main_1766485319868.png",
+            image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800",
             duration: 1200,
             tip: "Focus on form over speed."
         }
@@ -70,7 +70,7 @@ const PROTOCOLS: Record<string, MobileProtocolStep[]> = {
         {
             title: "Interval Ride",
             description: "Find your rhythm. Push on the intervals, rest on the recovery.",
-            image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/cycling_protocol_main_1766485336715.png",
+            image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800",
             duration: 1800
         }
     ]
@@ -132,7 +132,7 @@ export default function TrackScreen() {
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} className="flex-row gap-4 mb-8">
                     {[
                         { id: 'walking', label: 'Walk', color: '#10b981' },
-                        { id: 'yoga', label: 'Yoga', color: '#8b5cf6' },
+                        { id: 'mobility', label: 'Stretch', color: '#8b5cf6' },
                         { id: 'home-workout', label: 'Workout', color: '#f59e0b' },
                         { id: 'cycling', label: 'Cycle', color: '#3b82f6' }
                     ].map((activity) => (

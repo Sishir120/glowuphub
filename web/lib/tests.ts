@@ -126,7 +126,7 @@ const mockRoutines = [
         category: 'Morning',
         habits: [
             { id: 'h1', name: 'Hydration Practice', duration: 2 },
-            { id: 'h2', name: 'Face Balance Practice', duration: 8 },
+            { id: 'h2', name: 'Metabolic Breathing', duration: 8 },
         ]
     }
 ];

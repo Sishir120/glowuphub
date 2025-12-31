@@ -13,7 +13,7 @@ const posts = [
         slug: "nervous-system-calm",
         category: "Wellness",
         title: "The Science of Nervous System Calm",
-        excerpt: "Why breath regulation before your skincare routine makes everything more effective.",
+        excerpt: "Why breath regulation before your metabolic rituals makes everything more effective.",
         readTime: "5 min read",
         image: "/assets/blog/cortisol.png",
     },
@@ -35,9 +35,9 @@ const posts = [
     },
 ];
 // SEO Plan:
-// - /blog/nervous-system-calm -> Title: Nervous System Regulation for Glowing Skin | GlowUp Hub
+// - /blog/nervous-system-calm -> Title: Nervous System Regulation for Metabolic Burn | GlowUp Hub
 // - /blog/building-consistency -> Title: How to Build a Consistent Self-Care Routine Without Burnout
-// - /blog/eating-for-radiance -> Title: Eating for Skin Radiance: Nutrition for a Natural Glow
+// - /blog/eating-for-radiance -> Title: Eating for Metabolic Burn: Nutrition for Weight Loss
 
 export function BlogSection() {
     return (

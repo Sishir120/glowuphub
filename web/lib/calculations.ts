@@ -119,7 +119,7 @@ export function calculateMacros(calories: number, weightKg: number, goal: Goal):
 
 export function calculateHydration(weightKg: number, activityLevel: ActivityLevel): number {
     if (!weightKg) return 0;
-    let base = weightKg * 35;
+    const base = weightKg * 35;
     const activityBoost: Record<ActivityLevel, number> = {
         SEDENTARY: 0,
         LIGHT: 500,

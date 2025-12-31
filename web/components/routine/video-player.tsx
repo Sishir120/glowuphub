@@ -50,7 +50,7 @@ export function VideoPlayer({ onClose }: VideoPlayerProps) {
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col">
                         <span className="text-white/60 text-sm font-medium tracking-wider uppercase">Morning Practice</span>
-                        <span className="text-white text-2xl font-bold">Face Yoga & Depuff</span>
+                        <span className="text-white text-2xl font-bold">Metabolic Breathing & Burn</span>
                     </div>
                     <button onClick={onClose} className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
                         <X className="w-6 h-6" />

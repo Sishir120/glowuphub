@@ -47,14 +47,14 @@ export const AFFIRMING_REPLACEMENTS: Record<string, string> = {
 export const IDENTITY_PHRASES = [
     "I keep promises to myself.",
     "My consistency is my confidence.",
-    "Small routines, lasting radiance.",
-    "I honor my body with gentle care.",
-    "Every day I choose myself.",
+    "Small routines, lasting results.",
+    "I honor my body with metabolic care.",
+    "Every day I choose my health.",
     "My glow comes from within.",
     "I am worthy of this time.",
-    "Self-care is self-respect.",
-    "I trust my journey.",
-    "Beauty is self-trust made visible.",
+    "Health care is self-respect.",
+    "I trust my metabolic journey.",
+    "Vitality is self-trust made visible.",
 ] as const;
 
 // Compassionate recovery messages for missed days
@@ -84,11 +84,11 @@ export const COMPLETION_MESSAGES = [
 
 // Category descriptions with supportive framing
 export const CATEGORY_DESCRIPTIONS: Record<string, string> = {
-    FaceBalance: "Gentle practices for facial harmony and lymphatic flow",
-    Movement: "Posture-opening and strength that builds presence",
-    SkinPractice: "Consistent care practices for natural radiance",
-    Nourishment: "Hydration and anti-bloat support for inner glow",
-    Mindfulness: "Breath and reflection for nervous system calm",
+    MetabolicReset: "Core practices for hormonal balance and metabolic flow",
+    Movement: "Posture-opening and strength that builds metabolic presence",
+    AdherenceSystem: "Consistent care practices for sustainable fat loss",
+    Nourishment: "Hydration and nutrient density support for metabolic health",
+    Mindfulness: "Breath and reflection for cortisol management and calm",
 };
 
 // Helper function to validate text against banned words
