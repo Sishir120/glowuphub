@@ -1,22 +1,22 @@
 {
-    "cli": {
-        "appVersionSource": "local"
-    },
     "build": {
         "development": {
             "developmentClient": true,
-            "distribution": "internal"
+            "distribution": "internal",
+            "android": {
+                "buildType": "apk"
+            }
         },
         "preview": {
-            "distribution": "internal"
+            "distribution": "internal",
+            "android": {
+                "buildType": "apk"
+            }
         },
         "production": {
             "android": {
                 "buildType": "apk"
             }
         }
-    },
-    "submit": {
-        "production": {}
     }
 }
