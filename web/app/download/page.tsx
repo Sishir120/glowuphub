@@ -88,6 +88,7 @@ export default function DownloadPage() {
                                         </ol>
                                     </div>
                                 </div>
+                            </div>
                         </FadeIn>
 
                         {/* iOS & Android PWA Section */}

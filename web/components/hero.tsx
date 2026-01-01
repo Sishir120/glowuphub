@@ -19,17 +19,25 @@ export function Hero() {
 
             {/* Mobile: Full-Screen Immersive Hero */}
             <div className="lg:hidden absolute inset-0 flex flex-col items-center justify-center px-4">
-                {/* Animated Gradient Waves Background */}
-                <div className="absolute inset-0 overflow-hidden opacity-60">
+                {/* Animated Gradient Fluid Background */}
+                <div className="absolute inset-0 overflow-hidden opacity-40">
+                    <motion.div
+                        animate={{
+                            scale: [1, 1.1, 1],
+                            rotate: [0, 5, 0],
+                        }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)]"
+                    />
                     <svg className="absolute w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
                         <defs>
                             <linearGradient id="wave-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="rgba(16, 185, 129, 0.15)" />
-                                <stop offset="100%" stopColor="rgba(52, 211, 153, 0.08)" />
+                                <stop offset="0%" stopColor="rgba(16, 185, 129, 0.2)" />
+                                <stop offset="100%" stopColor="rgba(52, 211, 153, 0.1)" />
                             </linearGradient>
                             <linearGradient id="wave-gradient-2" x1="0%" y1="100%" x2="100%" y2="0%">
-                                <stop offset="0%" stopColor="rgba(167, 139, 250, 0.12)" />
-                                <stop offset="100%" stopColor="rgba(16, 185, 129, 0.08)" />
+                                <stop offset="0%" stopColor="rgba(167, 139, 250, 0.15)" />
+                                <stop offset="100%" stopColor="rgba(16, 185, 129, 0.1)" />
                             </linearGradient>
                         </defs>
                         <motion.path
@@ -37,55 +45,58 @@ export function Hero() {
                             fill="url(#wave-gradient-1)"
                             animate={{
                                 d: [
-                                    "M0,400 Q360,300 720,400 T1440,400 L1440,800 L0,800 Z",
-                                    "M0,420 Q360,320 720,420 T1440,420 L1440,800 L0,800 Z",
-                                    "M0,400 Q360,300 720,400 T1440,400 L1440,800 L0,800 Z"
+                                    "M0,400 Q360,280 720,400 T1440,400 L1440,800 L0,800 Z",
+                                    "M0,420 Q360,340 720,420 T1440,420 L1440,800 L0,800 Z",
+                                    "M0,400 Q360,280 720,400 T1440,400 L1440,800 L0,800 Z"
                                 ]
                             }}
-                            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                        />
-                        <motion.path
-                            d="M0,450 Q360,380 720,450 T1440,450 L1440,800 L0,800 Z"
-                            fill="url(#wave-gradient-2)"
-                            animate={{
-                                d: [
-                                    "M0,450 Q360,380 720,450 T1440,450 L1440,800 L0,800 Z",
-                                    "M0,470 Q360,400 720,470 T1440,470 L1440,800 L0,800 Z",
-                                    "M0,450 Q360,380 720,450 T1440,450 L1440,800 L0,800 Z"
-                                ]
-                            }}
-                            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
                         />
                     </svg>
                 </div>
 
                 {/* Large Centered Orbital Logo */}
-                <div className="relative w-[320px] h-[320px] z-10 mb-8">
-                    <div className="absolute inset-0 rounded-full border border-white/5" />
-                    <div className="absolute inset-8 rounded-full border border-white/5" />
+                <div className="relative w-[320px] h-[320px] z-10 mb-8 flex items-center justify-center">
+                    {/* Pulsing Outer Rings */}
+                    <motion.div
+                        animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.5, 0.3] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute inset-0 rounded-full border border-primary/20 shadow-[0_0_50px_rgba(16,185,129,0.1)]"
+                    />
+                    <motion.div
+                        animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                        className="absolute inset-[-20px] rounded-full border border-primary/10"
+                    />
 
-                    <div className="absolute inset-0 rounded-full opacity-20 animate-[spin_30s_linear_infinite]">
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/0 via-primary/30 to-transparent blur-2xl" />
+                    <div className="absolute inset-0 rounded-full opacity-30 animate-[spin_40s_linear_infinite]">
+                        <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent,rgba(16,185,129,0.4),transparent)] blur-xl" />
                     </div>
 
                     <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
+                        initial={{ scale: 0.5, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] rounded-full bg-card/40 border border-primary/10 backdrop-blur-md flex items-center justify-center shadow-2xl shadow-primary/20"
+                        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                        className="relative w-[220px] h-[220px] rounded-full bg-card/60 border border-primary/20 backdrop-blur-xl flex items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.2)]"
                     >
-                        <div className="absolute inset-4 rounded-full border border-primary/10" />
-                        <div className="relative w-[140px] h-[140px] rounded-full bg-background/60 flex items-center justify-center shadow-inner border border-border">
-                            <div className="relative w-[80px] h-[80px] rounded-full flex items-center justify-center">
-                                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-breathe" />
-                                <Logo size={44} />
-                            </div>
+                        <div className="absolute inset-3 rounded-full border border-primary/10" />
+                        <div className="relative w-[130px] h-[130px] rounded-full bg-background/80 flex items-center justify-center shadow-inner border border-border">
+                            <motion.div
+                                animate={{ scale: [1, 1.1, 1] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                className="relative w-[70px] h-[70px] rounded-full flex items-center justify-center"
+                            >
+                                <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl animate-pulse" />
+                                <Logo size={42} />
+                            </motion.div>
                         </div>
-                        <div className="absolute inset-0 animate-[spin_15s_linear_infinite]">
-                            <div className="absolute top-0 left-1/2 w-2 h-2 bg-primary rounded-full shadow-[0_0_12px_rgba(0,251,255,0.8)] -translate-x-1/2 -translate-y-1/2" />
+
+                        {/* Orbiting Particles */}
+                        <div className="absolute inset-0 animate-[spin_10s_linear_infinite]">
+                            <div className="absolute top-0 left-1/2 w-3 h-3 bg-primary rounded-full shadow-[0_0_15px_rgba(16,185,129,1)] -translate-x-1/2 -translate-y-1/2" />
                         </div>
-                        <div className="absolute inset-0 animate-[spin_20s_linear_infinite_reverse]">
-                            <div className="absolute bottom-0 right-1/4 w-1.5 h-1.5 bg-sage rounded-full shadow-[0_0_10px_rgba(134,239,172,0.6)]" />
+                        <div className="absolute inset-[-15px] animate-[spin_15s_linear_infinite_reverse]">
+                            <div className="absolute bottom-0 right-1/4 w-2 h-2 bg-sage rounded-full shadow-[0_0_12px_rgba(134,239,172,0.8)]" />
                         </div>
                     </motion.div>
 
@@ -126,24 +137,24 @@ export function Hero() {
                     className="relative z-20 w-full max-w-md"
                 >
                     <div className="p-6 rounded-3xl bg-card/60 backdrop-blur-xl border border-border shadow-2xl">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-medium text-primary mb-4">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary mb-4">
                             <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                            Expert-Led • 10,000+ Success Stories
+                            Expert-Led • 10,480+ Success Stories
                         </div>
 
-                        <h1 className="text-3xl font-black tracking-tight leading-[1.1] text-foreground mb-3">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
+                        <h1 className="text-4xl font-black tracking-tight leading-[1.05] text-foreground mb-4">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 via-blue-400 to-purple-600 drop-shadow-sm">
                                 Lose Weight
                             </span>{" "}
-                            <span className="text-foreground">For Given.</span>
+                            <span className="text-foreground">For Good.</span>
                             <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-primary">
-                                Science, Not Starvation.
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-primary to-emerald-600">
+                                Metabolism, Not Starvation.
                             </span>
                         </h1>
 
-                        <p className="text-sm text-foreground-muted leading-relaxed mb-5">
-                            Stop fighting your biology. Join <span className="text-primary font-semibold">10,000+ women</span> resetting their metabolism with Clinical Nutritionist Sabita Subedi.
+                        <p className="text-base md:text-lg text-foreground-muted leading-relaxed mb-6">
+                            Stop fighting your biology. Join <span className="text-primary font-semibold">10,480+ women</span> resetting their metabolic set-point with Clinical Nutritionist Sabita Subedi.
                         </p>
 
                         <div className="flex flex-col gap-2.5 mb-4">
@@ -172,7 +183,7 @@ export function Hero() {
                                     <div key={i} className={`w-7 h-7 rounded-full border-2 border-card bg-zinc-800 bg-[url('https://i.pravatar.cc/100?img=${20 + i}')] bg-cover`} />
                                 ))}
                             </div>
-                            <p>Join <span className="text-foreground font-bold">10,000+</span> members</p>
+                            <p>Join <span className="text-foreground font-bold">10,480+</span> members</p>
                         </div>
                     </div>
                 </motion.div>
@@ -197,9 +208,9 @@ export function Hero() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="flex flex-col items-center lg:items-start gap-6 md:gap-8 max-w-2xl text-center lg:text-left"
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-xs md:text-sm font-medium text-primary z-10">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-xs md:text-sm font-semibold text-primary z-10">
                             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                            Expert-Led Weight Loss • 10,000+ Success Stories
+                            Expert-Led Weight Loss • 10,480+ Success Stories
                         </div>
 
                         <h1 className="text-3xl sm:text-6xl md:text-7xl font-black tracking-tighter leading-[1.1] text-foreground mb-6 z-10">
@@ -208,14 +219,14 @@ export function Hero() {
                             </span>{" "}
                             <span className="text-foreground">For Good.</span>
                             <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-primary">
-                                Science, Not Starvation.
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-primary to-emerald-500">
+                                Metabolism, Not Starvation.
                             </span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-foreground-muted leading-relaxed max-w-lg px-2 md:px-0 mb-8 z-10">
-                            Stop fighting your biology. Join <span className="text-primary font-semibold">10,000+ women</span> resetting their metabolism with Clinical Nutritionist Sabita Subedi. <br className="hidden md:block" />
-                            <span className="font-semibold text-foreground">No shame. No gimmicks. Just results.</span>
+                            Stop fighting your biology. Join <span className="text-primary font-semibold">10,480+ women</span> globally resetting their metabolic set-point with Sabita Subedi's biology-first method.<br className="hidden md:block" />
+                            <span className="font-semibold text-foreground">No counting, no cardio, just results.</span>
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full sm:w-auto z-10">
@@ -251,7 +262,7 @@ export function Hero() {
                                     <div key={i} className={`w-8 h-8 rounded-full border-2 border-background bg-zinc-800 bg-[url('https://i.pravatar.cc/100?img=${20 + i}')] bg-cover`} />
                                 ))}
                             </div>
-                            <p>Join <span className="text-foreground font-bold">10,000+ members</span> finding confidence in their metabolism</p>
+                            <p>Join <span className="text-foreground font-bold">10,480+ members</span> finding confidence in their metabolism</p>
                         </div>
                     </motion.div>
 

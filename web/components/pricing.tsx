@@ -26,7 +26,7 @@ const plans = [
         popular: false,
         icon: <Leaf className="w-5 h-5 text-sage" />,
         cta: "Start Free",
-        highlight: "No credit card required",
+        highlight: "For curious beginners testing the waters",
     },
     {
         name: "Premium",
@@ -49,7 +49,7 @@ const plans = [
         popular: true,
         icon: <Sparkles className="w-5 h-5 text-primary" />,
         cta: "Start 14-Day Trial",
-        highlight: "Most popular - 14-day guarantee",
+        highlight: "For self-directed achievers ready for full tracking",
         savingsAnnual: "Save $30/year",
     },
     {
@@ -75,8 +75,7 @@ const plans = [
         popular: false,
         icon: <MessageCircle className="w-5 h-5 text-primary" />,
         cta: "Get Expert Support",
-        highlight: "73% less than traditional coaching",
-        savingsAnnual: "Save $98/year",
+        highlight: "Direct expert access (73% less than private coaching)",
     },
 ];
 
@@ -168,6 +167,11 @@ export function Pricing() {
                                 </div>
                                 <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
                             </div>
+                            <div className="mb-2">
+                                <span className="text-[10px] font-bold uppercase tracking-widest text-primary/80">
+                                    {plan.name === "Starter" ? "Best for Beginners" : plan.name === "Premium" ? "Best for Transformation" : "Best for Support"}
+                                </span>
+                            </div>
                             <p className="text-foreground-muted text-sm mb-6">{plan.description}</p>
 
                             <div className="mb-8">
@@ -252,7 +256,7 @@ export function Pricing() {
                     <h3 className="text-2xl font-bold text-foreground mb-3">Mastery Packs Included</h3>
                     <p className="text-foreground-muted max-w-2xl mx-auto">
                         All Mastery Packs are <span className="text-foreground font-semibold">instantly unlocked</span> with Premium.
-                        Free members can earn them one-by-one by completing 30-day "Promise Streaks".
+                        Free members earn them through small, consistent daily promises.
                     </p>
                 </div>
 

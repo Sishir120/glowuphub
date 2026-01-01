@@ -7,19 +7,19 @@ import { cn } from "@/lib/utils";
 const features = [
     {
         title: "Step 1: Eat More, Weigh Less",
-        description: "Your metabolism isn't broken, it's confusing. We design custom meal plans that trigger metabolic burn without cutting the foods you love.",
+        description: "Your metabolism isn't broken, it's confusing. We design 1,800+ calorie plans that trigger metabolic burn without cutting the foods you love.",
         icon: <Utensils className="w-6 h-6 text-primary" />,
         className: "md:col-span-1",
     },
     {
         title: "Step 2: Movement That Heals",
-        description: "Forget punishment cardio. 15-minute hormonal-balancing routines designed to lower cortisol and build lean tone.",
+        description: "Forget punishment cardio. 15-minute hormonal-balancing routines designed to lower cortisol, not just burn calories.",
         icon: <Activity className="w-6 h-6 text-sage" />,
         className: "md:col-span-1",
     },
     {
         title: "Step 3: Rewire Your Habits",
-        description: "Stop the self-sabotage. We help you build unshakeable self-trust and end emotional eating for good.",
+        description: "End the 3 PM sugar crash and late-night binge cycle. We help you build unshakeable self-trust through science-backed daily practices.",
         icon: <BrainCircuit className="w-6 h-6 text-lavender" />,
         className: "md:col-span-1",
     },
@@ -81,7 +81,7 @@ export function Features() {
 
                             <div className="relative z-10">
                                 <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
-                                <p className="text-foreground-muted leading-relaxed">
+                                <p className="text-base md:text-lg text-foreground-muted leading-relaxed">
                                     {feature.description}
                                 </p>
                             </div>

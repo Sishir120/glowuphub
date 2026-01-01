@@ -10,6 +10,8 @@ import { BlogSection } from "@/components/blog-section";
 import { Pricing } from "@/components/pricing";
 import { AppShowcase } from "@/components/app-showcase";
 import { Footer } from "@/components/footer";
+import { ComparisonSection } from "@/components/comparison-section";
+import { TargetingSection } from "@/components/targeting-section";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export default function Home() {
@@ -26,6 +28,14 @@ export default function Home() {
 
       <FadeIn>
         <Testimonials />
+      </FadeIn>
+
+      <FadeIn>
+        <ComparisonSection />
+      </FadeIn>
+
+      <FadeIn>
+        <TargetingSection />
       </FadeIn>
 
       <FadeIn>

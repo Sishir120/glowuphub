@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GlowUp Hub | Lose Weight Permanently with Science-Based Nutrition",
-  description: "Stop the yo-yo dieting. Join 10,000+ women resetting their metabolism with Clinical Nutritionist Sabita Subedi. Custom meal plans, hormonal balance, and sustainable results.",
+  title: "GlowUp Hub | Science-Based Metabolic Reset for Women",
+  description: "Stop fighting your biology. Join 10,480+ women resetting their metabolism with Clinical Nutritionist Sabita Subedi. Science, not starvation.",
   keywords: [
     "metabolic weight loss",
     "clinical nutritionist nepal",

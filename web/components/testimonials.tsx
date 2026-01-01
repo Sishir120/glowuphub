@@ -8,7 +8,7 @@ import Image from "next/image";
 const TESTIMONIALS_DATA = [
     {
         url: "https://www.tiktok.com/@sabu7916/photo/7464574005240990984?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "/assets/placeholders/user1.jpg",
+        image: "/assets/testimonials/user1.png",
         caption: "20kg weight loss transformation",
         name: "Priya S.",
         type: "photo",
@@ -16,7 +16,7 @@ const TESTIMONIALS_DATA = [
     },
     {
         url: "https://www.tiktok.com/@sabu7916/video/7546135833099635975?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "/assets/placeholders/user2.jpg",
+        image: "/assets/testimonials/user2.png",
         caption: "Morning routine transformations",
         name: "Sarah K.",
         type: "video",
@@ -24,7 +24,7 @@ const TESTIMONIALS_DATA = [
     },
     {
         url: "https://www.tiktok.com/@sabu7916/video/7533972597055212807?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "/assets/placeholders/user3.jpg",
+        image: "/assets/testimonials/user3.png",
         caption: "Sustainable nutrition journey",
         name: "Anjali M.",
         type: "video",
@@ -32,7 +32,7 @@ const TESTIMONIALS_DATA = [
     },
     {
         url: "https://www.tiktok.com/@sabu7916/photo/7532817321866398983?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "/assets/placeholders/user4.jpg",
+        image: "/assets/testimonials/user4.png",
         caption: "15kg transformation story",
         name: "Meera R.",
         type: "photo",
@@ -40,7 +40,7 @@ const TESTIMONIALS_DATA = [
     },
     {
         url: "https://www.tiktok.com/@sabu7916/video/7520222837257374994?_r=1&_t=ZS-92VOYJq3NM9",
-        image: "/assets/placeholders/user5.jpg",
+        image: "/assets/testimonials/user5.png",
         caption: "Healthy habits for life",
         name: "Davina L.",
         type: "video",
@@ -63,7 +63,8 @@ export function Testimonials() {
                     </h2>
                     <p className="text-foreground-muted max-w-2xl mx-auto mb-8">
                         Real weight loss journeys from our community. Follow Sabita's latest updates
-                        and see how women are achieving sustainable transformations.
+                        and see how women are achieving sustainable transformations. <br />
+                        <span className="text-[10px] opacity-70 italic font-medium">Actual client transformations. Individual results may vary. Shared with permission.</span>
                     </p>
                 </motion.div>
 
