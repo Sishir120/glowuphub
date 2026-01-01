@@ -213,13 +213,13 @@ export function Hero() {
                             Expert-Led Weight Loss • 10,480+ Success Stories
                         </div>
 
-                        <h1 className="text-3xl sm:text-6xl md:text-7xl font-black tracking-tighter leading-[1.1] text-foreground mb-6 z-10">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
+                        <h1 className="text-4xl sm:text-7xl md:text-8xl font-black tracking-tighter leading-[1.02] text-foreground mb-8 z-10">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 via-blue-400 to-purple-600 drop-shadow-[0_0_15px_rgba(56,189,248,0.2)]">
                                 Lose Weight
                             </span>{" "}
                             <span className="text-foreground">For Good.</span>
                             <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-primary to-emerald-500">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-primary to-emerald-600 drop-shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                                 Metabolism, Not Starvation.
                             </span>
                         </h1>
@@ -266,57 +266,123 @@ export function Hero() {
                         </div>
                     </motion.div>
 
-                    <div className="relative h-[700px] w-full flex items-center justify-center">
-                        <div className="absolute w-[500px] h-[500px] rounded-full border border-white/5" />
-                        <div className="absolute w-[380px] h-[380px] rounded-full border border-white/5" />
-
-                        <div className="absolute w-[600px] h-[600px] rounded-full opacity-20 animate-[spin_30s_linear_infinite]">
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/0 via-primary/30 to-transparent blur-2xl" />
+                    <div className="relative h-[800px] w-full flex items-center justify-center">
+                        {/* Complex Orbital Background */}
+                        <div className="absolute w-[600px] h-[600px] rounded-full border border-white/5 opacity-50" />
+                        <div className="absolute w-[450px] h-[450px] rounded-full border border-white/10 opacity-30" />
+                        <div className="absolute w-[800px] h-[800px] rounded-full opacity-10 animate-[spin_60s_linear_infinite]">
+                            <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent,rgba(16,185,129,0.3),transparent)] blur-3xl" />
                         </div>
 
+                        {/* Middle Orbit with rotating trail */}
+                        <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                            className="absolute w-[550px] h-[550px] rounded-full border border-primary/5"
+                        >
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary/40 rounded-full blur-md shadow-[0_0_20px_rgba(16,185,129,0.6)]" />
+                        </motion.div>
+
+                        {/* Outer Orbit with card */}
+                        <motion.div
+                            animate={{ rotate: -360 }}
+                            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                            className="absolute w-[750px] h-[750px] rounded-full border border-white/5"
+                        >
+                            <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 rotate-[360deg] animate-[spin_40s_linear_infinite_reverse]">
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    className="p-4 bg-card/80 backdrop-blur-xl border border-border rounded-2xl shadow-2xl flex items-center gap-4 min-w-[200px]"
+                                >
+                                    <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                                        <Sparkles className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] text-foreground-muted font-bold tracking-widest uppercase">Metabolic Reset</p>
+                                        <p className="text-lg font-black text-foreground">Phase 1 ✨</p>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+
+                        {/* Inner Orbit with card */}
+                        <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                            className="absolute w-[400px] h-[400px]"
+                        >
+                            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 animate-[spin_30s_linear_infinite_reverse]">
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    className="p-4 bg-card/80 backdrop-blur-xl border border-border rounded-2xl shadow-2xl flex items-center gap-4 min-w-[200px]"
+                                >
+                                    <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                                        <Heart className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] text-foreground-muted font-bold tracking-widest uppercase">Daily Goal</p>
+                                        <p className="text-lg font-black text-foreground">15m Glow ✨</p>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+
+                        {/* Central Logo Core */}
                         <motion.div
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-[340px] h-[340px] rounded-full bg-card/40 border border-primary/10 backdrop-blur-md flex items-center justify-center shadow-2xl shadow-primary/20"
+                            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                            className="relative w-[380px] h-[380px] rounded-full bg-card/40 border border-primary/20 backdrop-blur-xl flex items-center justify-center shadow-[0_0_100px_rgba(16,185,129,0.15)] group"
                         >
-                            <div className="absolute inset-4 rounded-full border border-primary/10" />
-                            <div className="relative w-[180px] h-[180px] rounded-full bg-background/60 flex items-center justify-center shadow-inner border border-border">
-                                <div className="relative w-[100px] h-[100px] rounded-full flex items-center justify-center">
-                                    <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-breathe" />
-                                    <Logo size={40} />
+                            <div className="absolute inset-4 rounded-full border border-primary/10 group-hover:border-primary/30 transition-colors" />
+                            <div className="relative w-[200px] h-[200px] rounded-full bg-background/80 flex items-center justify-center shadow-inner border border-border overflow-hidden">
+                                <motion.div
+                                    animate={{
+                                        scale: [1, 1.15, 1],
+                                        opacity: [0.5, 0.8, 0.5]
+                                    }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                    className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"
+                                />
+                                <div className="relative z-10">
+                                    <Logo size={56} />
                                 </div>
                             </div>
-                            <div className="absolute inset-0 animate-[spin_15s_linear_infinite]">
-                                <div className="absolute top-0 left-1/2 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_rgba(0,251,255,0.8)] -translate-x-1/2 -translate-y-1/2" />
+
+                            {/* Inner Orbit Particles */}
+                            <div className="absolute inset-0 animate-[spin_12s_linear_infinite]">
+                                <div className="absolute top-0 left-1/2 w-4 h-4 bg-primary rounded-full shadow-[0_0_20px_rgba(16,185,129,1)] -translate-x-1/2 -translate-y-1/2" />
+                            </div>
+                            <div className="absolute inset-[-20px] animate-[spin_18s_linear_infinite_reverse]">
+                                <div className="absolute bottom-0 right-1/4 w-3 h-3 bg-sage rounded-full shadow-[0_0_15px_rgba(134,239,172,0.8)]" />
                             </div>
                         </motion.div>
 
+                        {/* Premium Glow Card - Floating Top Right */}
                         <motion.div
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                            className="absolute top-32 right-12 p-3 bg-card/90 backdrop-blur-lg rounded-2xl border border-border flex items-center gap-3 shadow-xl"
+                            animate={{ y: [0, -15, 0] }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute top-10 right-0 z-20"
                         >
-                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                <Heart className="w-4 h-4" />
-                            </div>
-                            <div className="pr-2">
-                                <p className="text-[10px] text-foreground-muted leading-none mb-1">Daily Practice</p>
-                                <p className="text-sm font-bold text-foreground leading-none">15 min</p>
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            animate={{ y: [0, 8, 0] }}
-                            transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
-                            className="absolute bottom-40 left-8 p-3 bg-card/90 backdrop-blur-lg rounded-2xl border border-border flex items-center gap-3 shadow-xl"
-                        >
-                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                <Sparkles className="w-4 h-4" />
-                            </div>
-                            <div className="pr-2">
-                                <p className="text-[10px] text-foreground-muted leading-none mb-1">Glow Score</p>
-                                <p className="text-sm font-bold text-foreground leading-none">Building ✨</p>
+                            <div className="p-5 bg-card/60 backdrop-blur-2xl border border-primary/20 rounded-3xl shadow-[0_20px_50px_rgba(16,185,129,0.2)] flex flex-col gap-3 min-w-[240px]">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                            <Sparkles className="w-4 h-4 text-primary" />
+                                        </div>
+                                        <span className="text-sm font-bold text-foreground">Hormonal Balance</span>
+                                    </div>
+                                    <span className="text-xs font-bold text-primary">+12%</span>
+                                </div>
+                                <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
+                                    <motion.div
+                                        initial={{ width: 0 }}
+                                        animate={{ width: "85%" }}
+                                        transition={{ duration: 2, delay: 0.5 }}
+                                        className="h-full bg-gradient-to-r from-emerald-500 to-primary"
+                                    />
+                                </div>
+                                <p className="text-[10px] text-foreground-muted font-medium">Optimal range reached ✨</p>
                             </div>
                         </motion.div>
                     </div>
