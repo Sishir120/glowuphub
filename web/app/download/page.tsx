@@ -63,7 +63,7 @@ export default function DownloadPage() {
                                     </div>
 
                                     <Button className="w-full h-12 rounded-xl mb-6 gap-2 text-lg bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-                                        <a href="https://github.com/Sishir120/glowuphub/releases/latest/download/app-release.apk" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://github.com/Sishir120/glowuphub/releases" target="_blank" rel="noopener noreferrer">
                                             <Download size={20} />
                                             Download APK
                                         </a>
