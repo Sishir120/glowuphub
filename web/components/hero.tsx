@@ -31,7 +31,7 @@ export function Hero() {
                         </div>
 
                         {/* Heading */}
-                        <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[0.95] text-foreground">
+                        <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[0.95] text-foreground">
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 via-blue-400 to-white">
                                 Lose Weight
                             </span>{" "}
