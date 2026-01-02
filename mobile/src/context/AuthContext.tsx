@@ -39,9 +39,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     const [request, response, promptAsync] = Google.useAuthRequest({
-        androidClientId: "812140332824-u06060101010101010101.apps.googleusercontent.com", // REPLACE WITH ENV VAR
-        iosClientId: "812140332824-ios-client-id.apps.googleusercontent.com", // REPLACE WITH ENV VAR
-        webClientId: "812140332824-web-client-id.apps.googleusercontent.com", // REPLACE WITH ENV VAR
+        androidClientId: process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
+        iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
+        webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
         redirectUri: makeRedirectUri({
             scheme: 'glowuphub'
         }),
@@ -68,7 +68,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         if (response?.type === 'success') {
             const { authentication } = response;
             // Send id_token or access_token to backend for verification
-            // For now, we'll fetch profile info directly from Google
             if (authentication?.accessToken) {
                 fetchGoogleUserProfile(authentication.accessToken);
             }
@@ -77,23 +76,33 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     const fetchGoogleUserProfile = async (token: string) => {
         try {
-            const response = await fetch("https://www.googleapis.com/userinfo/v2/me", {
-                headers: { Authorization: `Bearer ${token}` },
+            // Exchange Google Token for App Session Token via Backend
+            const response = await fetch(`${API_URL}/auth/mobile/google`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token }),
             });
-            const user = await response.json();
 
-            // Map Google user to our User type
+            if (!response.ok) {
+                console.error("Backend login failed", response.status);
+                // Optional: Show error toast here
+                return;
+            }
+
+            const data = await response.json();
+
+            // Map User type
             const appUser: User = {
-                id: user.id,
-                email: user.email,
-                name: user.name,
-                picture: user.picture,
-                token: token
+                id: data.user.id,
+                email: data.user.email,
+                name: data.user.name,
+                picture: data.user.image || data.user.picture,
+                token: data.token // This is the App JWT
             };
 
-            await signIn(token, appUser);
+            await signIn(data.token, appUser);
         } catch (error) {
-            console.error("Failed to fetch user data", error);
+            console.error("Failed to authenticate with backend", error);
         }
     };
 
