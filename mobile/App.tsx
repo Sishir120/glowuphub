@@ -1,12 +1,12 @@
-import { View, Text, StyleSheet } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { View, Text, StyleSheet, StatusBar } from 'react-native';
+// import { StatusBar } from 'expo-status-bar'; // Removed
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>GlowUp Hub</Text>
       <Text style={styles.subtitle}>Mobile App v1.0</Text>
-      <StatusBar style="auto" />
+      <StatusBar barStyle="dark-content" backgroundColor="#FFFBF9" />
     </View>
   );
 }
