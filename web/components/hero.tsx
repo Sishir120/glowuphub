@@ -31,7 +31,7 @@ export function Hero() {
                         </div>
 
                         {/* Heading */}
-                        <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.95] text-foreground">
+                        <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[0.95] text-foreground">
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 via-blue-400 to-white">
                                 Lose Weight
                             </span>{" "}
@@ -40,7 +40,7 @@ export function Hero() {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-primary to-emerald-600">
                                 Metabolism, Not Starvation.
                             </span>
-                        </h1>
+                        </h2>
 
                         {/* Subtext */}
                         <p className="text-lg md:text-xl text-foreground-muted leading-relaxed max-w-lg mb-4">
