@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import { MOCK_USER } from '../data/mockData';
 
 export default function LoginScreen() {
-    const { signIn } = useAuth();
+    const { signIn, promptGoogleSignIn } = useAuth();
     const navigation = useNavigation<any>();
     const [email, setEmail] = useState('demo@glowup.com'); // Default for easy testing
     const [password, setPassword] = useState('');
@@ -118,6 +118,21 @@ export default function LoginScreen() {
                             )}
                         </TouchableOpacity>
 
+                        <View className="flex-row items-center my-6">
+                            <View className="flex-1 h-px bg-white/10" />
+                            <Text className="text-zinc-500 mx-4 text-xs font-bold uppercase tracking-widest">Or continue with</Text>
+                            <View className="flex-1 h-px bg-white/10" />
+                        </View>
+
+                        <TouchableOpacity
+                            className="flex-row items-center justify-center bg-white rounded-xl py-4 mb-4 gap-3"
+                            onPress={() => promptGoogleSignIn && promptGoogleSignIn()}
+                            disabled={isLoading}
+                        >
+                            {/* Simple Google G Logo */}
+                            <Text className="font-bold text-black text-base">Sign in with Google</Text>
+                        </TouchableOpacity>
+
                         <TouchableOpacity
                             onPress={() => navigation.navigate('Register')}
                             className="mt-4 items-center"
@@ -129,6 +144,6 @@ export default function LoginScreen() {
                     </View>
                 </View>
             </KeyboardAvoidingView>
-        </SafeAreaView>
+        </SafeAreaView >
     );
 }
