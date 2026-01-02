@@ -1,12 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as Google from 'expo-auth-session/providers/google';
-import * as WebBrowser from 'expo-web-browser';
-import { makeRedirectUri } from 'expo-auth-session';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { API_URL } from '../config';
-
-// Complete auth session if app was opened via deep link
-WebBrowser.maybeCompleteAuthSession();
 
 type User = {
     id: string;
@@ -38,16 +33,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    const [request, response, promptAsync] = Google.useAuthRequest({
-        androidClientId: process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
-        iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
-        webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
-        redirectUri: makeRedirectUri({
-            scheme: 'glowuphub'
-        }),
-    });
-
     useEffect(() => {
+        // Configure Google Signin
+        // Ensure you have valid webClientId from Google Console
+        GoogleSignin.configure({
+            webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
+            offlineAccess: true, // required for getting idToken
+        });
+
         const bootstrapAsync = async () => {
             try {
                 const userJson = await AsyncStorage.getItem('user');
@@ -64,40 +57,54 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         bootstrapAsync();
     }, []);
 
-    useEffect(() => {
-        if (response?.type === 'success') {
-            const { authentication } = response;
-            // Send id_token or access_token to backend for verification
-            if (authentication?.accessToken) {
-                fetchGoogleUserProfile(authentication.accessToken);
+    const promptGoogleSignIn = async () => {
+        try {
+            await GoogleSignin.hasPlayServices();
+            const userInfo = await GoogleSignin.signIn();
+
+            // Get the ID token to verify on backend
+            const token = userInfo.data?.idToken;
+
+            if (token) {
+                await authenticateWithBackend(token);
+            } else {
+                console.error("No ID token present in Google Sign In response");
+            }
+
+        } catch (error: any) {
+            if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+                console.log("User cancelled the login flow");
+            } else if (error.code === statusCodes.IN_PROGRESS) {
+                console.log("Sign in is in progress");
+            } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+                console.log("Play services not available or outdated");
+            } else {
+                console.error("Some other error happened", error);
             }
         }
-    }, [response]);
+    };
 
-    const fetchGoogleUserProfile = async (token: string) => {
+    const authenticateWithBackend = async (googleIdToken: string) => {
         try {
-            // Exchange Google Token for App Session Token via Backend
             const response = await fetch(`${API_URL}/auth/mobile/google`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token }),
+                body: JSON.stringify({ token: googleIdToken }),
             });
 
             if (!response.ok) {
                 console.error("Backend login failed", response.status);
-                // Optional: Show error toast here
                 return;
             }
 
             const data = await response.json();
 
-            // Map User type
             const appUser: User = {
                 id: data.user.id,
                 email: data.user.email,
                 name: data.user.name,
                 picture: data.user.image || data.user.picture,
-                token: data.token // This is the App JWT
+                token: data.token
             };
 
             await signIn(data.token, appUser);
@@ -117,6 +124,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     const signOut = async () => {
         try {
+            await GoogleSignin.signOut();
             await AsyncStorage.removeItem('user');
             setUser(null);
         } catch (error) {
@@ -131,9 +139,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 isLoading,
                 signIn,
                 signOut,
-                promptGoogleSignIn: async () => {
-                    await promptAsync();
-                }
+                promptGoogleSignIn
             }}
         >
             {children}
