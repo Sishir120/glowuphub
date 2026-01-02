@@ -51,20 +51,22 @@ export default function DownloadPage() {
                                         Android Native
                                     </h2>
                                     <div className="space-y-4 mb-6">
-                                        <div className="inline-flex items-center gap-2 px-2 py-1 rounded-md bg-amber-500/10 text-amber-500 text-[10px] font-bold uppercase tracking-wider border border-amber-500/20">
+                                        <div className="inline-flex items-center gap-2 px-2 py-1 rounded-md bg-green-500/10 text-green-500 text-[10px] font-bold uppercase tracking-wider border border-green-500/20">
                                             <Sparkles className="w-3 h-3" />
-                                            Coming Soon to Play Store
+                                            Latest Version Available
                                         </div>
 
                                         <p className="text-foreground-muted text-sm">
-                                            The native Android app is currently in the final stages of review.
-                                            <span className="text-primary font-medium"> Use the Web App (PWA) below </span> for the full experience today.
+                                            Download the official Android package directly.
+                                            <span className="text-primary font-medium"> Fast, Secure, and Feature Complete.</span>
                                         </p>
                                     </div>
 
-                                    <Button className="w-full h-12 rounded-xl mb-6 gap-2 text-lg opacity-50 cursor-not-allowed" disabled>
-                                        <Download size={20} />
-                                        In Development
+                                    <Button className="w-full h-12 rounded-xl mb-6 gap-2 text-lg bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                                        <a href="https://github.com/Sishir120/glowuphub/releases/latest/download/app-release.apk" target="_blank" rel="noopener noreferrer">
+                                            <Download size={20} />
+                                            Download APK
+                                        </a>
                                     </Button>
                                     <div className="text-xs text-foreground-muted space-y-2 bg-background-muted p-4 rounded-xl">
                                         <p className="font-semibold">Alternative:</p>

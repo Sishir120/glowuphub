@@ -5,6 +5,6 @@ Sentry.init({
     tracesSampleRate: 1.0,
     debug: false,
 
-    // You can set this to false if you want to test in development
+    // Adjust this value in production, or use tracesSampler for greater control
     enabled: process.env.NODE_ENV === 'production',
 });

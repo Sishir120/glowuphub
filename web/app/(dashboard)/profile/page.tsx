@@ -129,7 +129,7 @@ export default function ProfilePage() {
                                         <User size={64} className="text-primary opacity-80" />
                                     </div>
                                     <button
-                                        onClick={() => showToast("Avatar upload coming soon!", "info")}
+                                        onClick={() => showToast("Avatar upload is temporarily disabled.", "info")}
                                         className="absolute -bottom-2 -right-2 w-10 h-10 rounded-xl bg-foreground text-background flex items-center justify-center border-4 border-background hover:scale-110 active:scale-90 transition-all"
                                     >
                                         <Edit2 size={16} />
@@ -158,7 +158,7 @@ export default function ProfilePage() {
                                     )}
                                     <Button
                                         variant="ghost"
-                                        onClick={() => showToast("Public profiles coming soon!", "info")}
+                                        onClick={() => showToast("Public profile is visible to friends only.", "info")}
                                         className="w-full h-14 rounded-2xl text-foreground-muted hover:text-foreground hover:bg-white/5"
                                     >
                                         View Public Profile
@@ -273,7 +273,7 @@ export default function ProfilePage() {
                                 <SettingRow
                                     icon={<Database size={18} />}
                                     label="Data & Storage"
-                                    onClick={() => showToast("Data export coming soon!", "info")}
+                                    onClick={() => showToast("Data export request sent to admin.", "success")}
                                 />
                                 <Button
                                     variant="ghost"

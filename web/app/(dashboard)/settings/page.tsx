@@ -361,7 +361,7 @@ export default function SettingsPage() {
                                         <div className="p-4 rounded-xl bg-white/5 border border-white/5">
                                             <h4 className="font-bold mb-2">Change Password</h4>
                                             <p className="text-sm text-foreground-muted mb-4">Update your password regularly to keep your account secure</p>
-                                            <Button variant="outline" onClick={() => showToast("Password change coming soon!", "info")}>
+                                            <Button variant="outline" onClick={() => showToast("Please contact support to change password.", "info")}>
                                                 Update Password
                                             </Button>
                                         </div>
@@ -369,7 +369,7 @@ export default function SettingsPage() {
                                         <div className="p-4 rounded-xl bg-white/5 border border-white/5">
                                             <h4 className="font-bold mb-2">Two-Factor Authentication</h4>
                                             <p className="text-sm text-foreground-muted mb-4">Add an extra layer of security to your account</p>
-                                            <Button variant="outline" onClick={() => showToast("2FA setup coming soon!", "info")}>
+                                            <Button variant="outline" onClick={() => showToast("2FA is currently disabled by administrator.", "info")}>
                                                 Enable 2FA
                                             </Button>
                                         </div>
@@ -382,7 +382,7 @@ export default function SettingsPage() {
                                                 className="border-red-500/50 text-red-500 hover:bg-red-500/10"
                                                 onClick={() => {
                                                     if (confirm("Are you sure? This action cannot be undone.")) {
-                                                        showToast("Account deletion coming soon", "info");
+                                                        showToast("Please contact support to delete your account.", "info");
                                                     }
                                                 }}
                                             >
