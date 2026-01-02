@@ -18,5 +18,13 @@
             "type": "image/png",
             "purpose": "any maskable"
         }
+    ],
+    "orientation": "portrait",
+    "scope": "/",
+    "lang": "en-US",
+    "categories": [
+        "health",
+        "fitness",
+        "lifestyle"
     ]
 }

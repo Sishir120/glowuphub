@@ -27,9 +27,9 @@ export default function DownloadPage() {
                             Verified Safe & Secure • Works on iOS & Android
                         </div>
 
-                        <div className="flex items-center justify-center gap-2 mb-16 text-sm font-medium text-amber-600 bg-amber-500/10 py-2 px-4 rounded-full inline-flex mx-auto border border-amber-500/20">
+                        <div className="flex items-center justify-center gap-2 mb-16 text-sm font-medium text-blue-600 bg-blue-500/10 py-2 px-4 rounded-full inline-flex mx-auto border border-blue-500/20">
                             <Sparkles className="w-4 h-4" />
-                            Native Android APK coming soon - PWA available now!
+                            Production Stable: Capacitor App & PWA available now!
                         </div>
                     </FadeIn>
 
@@ -48,44 +48,29 @@ export default function DownloadPage() {
                                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                                             <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" /></svg>
                                         </div>
-                                        Android
+                                        Android Native
                                     </h2>
                                     <div className="space-y-4 mb-6">
-                                        <div className="flex items-center gap-4 text-sm bg-background/50 p-3 rounded-xl border border-border">
-                                            <div>
-                                                <p className="font-semibold text-foreground">Version</p>
-                                                <p className="text-foreground-muted">v1.0.0 (RC1)</p>
-                                            </div>
-                                            <div className="w-px h-8 bg-border" />
-                                            <div>
-                                                <p className="font-semibold text-foreground">Updated</p>
-                                                <p className="text-foreground-muted">Dec 27, 2025</p>
-                                            </div>
+                                        <div className="inline-flex items-center gap-2 px-2 py-1 rounded-md bg-amber-500/10 text-amber-500 text-[10px] font-bold uppercase tracking-wider border border-amber-500/20">
+                                            <Sparkles className="w-3 h-3" />
+                                            Coming Soon to Play Store
                                         </div>
 
-                                        <p className="text-xs font-mono text-foreground-muted bg-background/50 p-2 rounded truncate" title="Verify file integrity">
-                                            SHA-256: 7f83b165... (Verify after download)
-                                        </p>
-
                                         <p className="text-foreground-muted text-sm">
-                                            Download the official APK file. You may need to allow installation from "Unknown Sources".
+                                            The native Android app is currently in the final stages of review.
+                                            <span className="text-primary font-medium"> Use the Web App (PWA) below </span> for the full experience today.
                                         </p>
                                     </div>
 
-                                    <Button className="w-full h-12 rounded-xl mb-6 gap-2 text-lg" asChild>
-                                        <a href="/android/app-release.apk" download="GlowUpHub-v1.0.apk">
-                                            <Download size={20} />
-                                            Download APK (v1.0)
-                                        </a>
+                                    <Button className="w-full h-12 rounded-xl mb-6 gap-2 text-lg opacity-50 cursor-not-allowed" disabled>
+                                        <Download size={20} />
+                                        In Development
                                     </Button>
                                     <div className="text-xs text-foreground-muted space-y-2 bg-background-muted p-4 rounded-xl">
-                                        <p className="font-semibold">Installation Steps:</p>
-                                        <ol className="list-decimal list-inside space-y-1 opacity-80">
-                                            <li>Tap "Download APK" above</li>
-                                            <li>Tap "Open" when finished</li>
-                                            <li>If prompted, tap "Settings" &rarr; "Allow from this source"</li>
-                                            <li>Tap "Install"</li>
-                                        </ol>
+                                        <p className="font-semibold">Alternative:</p>
+                                        <p className="opacity-80">
+                                            Scroll down to the <span className="text-foreground font-bold">Web App (PWA)</span> section to install GlowUp Hub instantly via Chrome.
+                                        </p>
                                     </div>
                                 </div>
                             </div>

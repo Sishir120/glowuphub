@@ -59,6 +59,6 @@ export const authConfig = {
     },
     session: { strategy: "jwt" },
     trustHost: true,
-    debug: true,
-    secret: process.env.AUTH_SECRET,
+    debug: process.env.NODE_ENV === "development",
+    secret: process.env.AUTH_SECRET || "development-secret-key-replace-in-prod",
 } satisfies NextAuthConfig

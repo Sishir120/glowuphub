@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GlowUp Hub</string>
+    <string name="title_activity_main">GlowUp Hub</string>
+    <string name="package_name">com.glowuphub.app</string>
+    <string name="custom_url_scheme">com.glowuphub.app</string>
+</resources>
