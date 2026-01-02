@@ -1,0 +1,51 @@
+﻿Running 17 checks on your project...
+15/17 checks passed. 2 checks failed. Possible issues detected:
+Use the --verbose flag to see more details about passed checks.
+
+Γ£û Check dependencies for packages that should not be installed directly
+The package "@expo/config-plugins" should not be installed directly in your project. You should instead use "expo/config-plugins" which is a sub-export of the expo package.
+If you installed "@expo/config-plugins" to fulfill a peer dependency for a config plugin, the plugin's maintainer should switch to the "expo/config-plugins" import, and you can ignore this warning.
+Advice:
+Remove these packages from your package.json.
+
+Γ£û Check that packages match versions required by installed Expo SDK
+C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\utils\errors.js:123
+    throw error;
+    ^
+
+Error: Cannot find module '@urql/core'
+Require stack:
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\api\graphql\client.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\api\graphql\queries\AppQuery.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\utils\codesigning.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\api\user\user.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\utils\telemetry\index.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\bin\cli
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\expo\bin\cli
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at _core (C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\api\graphql\client.js:17:18)
+    at Object.<anonymous> (C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\api\graphql\client.js:76:27) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\sishi\\OneDrive\\Documents\\python\\glowuphub\\mobile\\node_modules\\@expo\\cli\\build\\src\\api\\graphql\\client.js',
+    'C:\\Users\\sishi\\OneDrive\\Documents\\python\\glowuphub\\mobile\\node_modules\\@expo\\cli\\build\\src\\api\\graphql\\queries\\AppQuery.js',
+    'C:\\Users\\sishi\\OneDrive\\Documents\\python\\glowuphub\\mobile\\node_modules\\@expo\\cli\\build\\src\\utils\\codesigning.js',
+    'C:\\Users\\sishi\\OneDrive\\Documents\\python\\glowuphub\\mobile\\node_modules\\@expo\\cli\\build\\src\\api\\user\\user.js',
+    'C:\\Users\\sishi\\OneDrive\\Documents\\python\\glowuphub\\mobile\\node_modules\\@expo\\cli\\build\\src\\utils\\telemetry\\index.js',
+    'C:\\Users\\sishi\\OneDrive\\Documents\\python\\glowuphub\\mobile\\node_modules\\@expo\\cli\\build\\bin\\cli',
+    'C:\\Users\\sishi\\OneDrive\\Documents\\python\\glowuphub\\mobile\\node_modules\\expo\\bin\\cli'
+  ]
+}
+
+Node.js v22.16.0
+Advice:
+Use 'npx expo install --check' to review and upgrade your dependencies.
+To ignore specific packages, add them to "expo.install.exclude" in package.json. Learn more: https://expo.fyi/dependency-validation
+
