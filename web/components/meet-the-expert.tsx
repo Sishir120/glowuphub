@@ -48,7 +48,6 @@ export function MeetTheExpert() {
                                     alt="Nutritionist Sabita Subedi"
                                     fill
                                     className="object-cover"
-                                    priority
                                 />
                             </div>
 

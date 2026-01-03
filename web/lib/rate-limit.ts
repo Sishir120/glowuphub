@@ -17,7 +17,8 @@ export function checkRateLimit(
     windowMs: number = 60000 // 1 minute default
 ): boolean {
     // Get IP from headers (x-forwarded-for is standard for Vercel/proxies)
-    const ip = req.headers.get('x-forwarded-for') || 'unknown-ip';
+    const forwardedFor = req.headers.get('x-forwarded-for');
+    const ip = forwardedFor ? forwardedFor.split(',')[0].trim() : 'unknown-ip';
     const now = Date.now();
 
     const record = rateLimitMap.get(ip);

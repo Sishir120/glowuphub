@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ScrollView, SafeAreaView, Dimensions } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ScrollView, SafeAreaView, Dimensions, Alert } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react-native';
 import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
+import { API_URL } from '../config';
 
 const { width } = Dimensions.get('window');
 
@@ -62,7 +63,7 @@ export default function OnboardingScreen() {
             // or we just modify api.ts to accept token override.
             // Creating a custom axios call here for safety:
 
-            const response = await fetch('http://10.0.2.2:3000/api/user/profile', {
+            const response = await fetch(`${API_URL}/user/profile`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -79,15 +80,17 @@ export default function OnboardingScreen() {
             });
 
             if (!response.ok) {
-                // Fallback for demo if API fails
-                console.log("Onboarding API failed, proceeding anyway for demo");
+                console.error("Onboarding API failed:", response.status);
+                // We don't block the user, but we should log it or warn if critical
+                // For now, we proceed to signIn but maybe alert the user
+                // Alert.alert("Note", "Profile update had an issue, but we're logging you in.");
             }
 
             // 2. Complete Auth
             await signIn(token, { ...user, ...formData });
         } catch (error) {
-            console.error(error);
-            // Fallback
+            console.error("Onboarding Error:", error);
+            Alert.alert("Connection Error", "Could not save profile details. Proceeding to dashboard.");
             await signIn(token, { ...user, ...formData });
         } finally {
             setIsLoading(false);

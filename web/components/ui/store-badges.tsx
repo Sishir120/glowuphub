@@ -28,6 +28,9 @@ export function StoreBadges({ className }: { className?: string }) {
                     src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                     alt="Download on the App Store"
                     className="h-10 w-auto"
+                    width="120"
+                    height="40"
+                    loading="lazy"
                 />
             </Link>
             <Link href="/download" className="transition-opacity hover:opacity-80">
@@ -35,6 +38,9 @@ export function StoreBadges({ className }: { className?: string }) {
                     src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                     alt="Get it on Google Play"
                     className="h-10 w-auto"
+                    width="135"
+                    height="40"
+                    loading="lazy"
                 />
             </Link>
         </div>

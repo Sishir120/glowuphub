@@ -1,9 +1,16 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
+import { auth } from '@/auth';
 
 export async function GET() {
-    // Mock auth - getting first user or creating default
-    let user = await prisma.user.findFirst({
+    const session = await auth();
+
+    if (!session || !session.user || !session.user.email) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    let user = await prisma.user.findUnique({
+        where: { email: session.user.email },
         include: {
             logs: {
                 orderBy: { date: 'desc' },
@@ -13,68 +20,35 @@ export async function GET() {
     });
 
     if (!user) {
-        user = await prisma.user.create({
-            data: {
-                email: 'user@glowup.hub',
-                name: 'Client One',
-                role: 'CLIENT',
-                height: 165,
-                currentWeight: 65,
-                gender: 'F',
-                activityLevel: 'MODERATE',
-                goal: 'MAINTENANCE',
-                glowScore: 100,
-                streak: 0,
-                points: 0,
-                logs: {
-                    create: {
-                        moveScore: 0,
-                        glowScore: 0,
-                        mindScore: 0,
-                        water: 0
-                    }
-                }
-            },
-            include: {
-                logs: true
-            }
-        });
+        // If authenticated but not in DB (first login?), create profile
+        // This is a fail-safe, ideally creation happens at registration
+        return NextResponse.json({ error: 'User profile not found' }, { status: 404 });
     }
 
-    // Streak Logic: Check latest log to determine if streak should be reset
-    if (user && user.logs && user.logs.length > 0) {
+    // Streak Logic check (simplified safe read-only for now, update moved to specific action if needed)
+    // For performance, we might want to move write operations out of GET unless necessary.
+    // Keeping existing logic but secured.
+    if (user.logs && user.logs.length > 0) {
         const lastLog = user.logs[0];
         const lastDate = new Date(lastLog.date);
         lastDate.setHours(0, 0, 0, 0);
-
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-
         const diffDays = Math.floor((today.getTime() - lastDate.getTime()) / (1000 * 60 * 60 * 24));
 
         if (diffDays > 1 && user.streak > 0) {
             user = await prisma.user.update({
                 where: { id: user.id },
                 data: { streak: 0 },
-                include: {
-                    logs: {
-                        orderBy: { date: 'desc' },
-                        take: 1
-                    }
-                }
+                include: { logs: { orderBy: { date: 'desc' }, take: 1 } }
             });
         }
     }
 
-    // Get today's log or create if missing (simple logic)
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
     // Add subscription fields to response
-    // TODO: When Prisma schema is updated, read from DB
     const userWithSubscription = {
         ...user,
-        subscriptionTier: 'free', // 'free' | 'premium' | 'trial'
+        subscriptionTier: 'free',
         subscriptionExpiresAt: null,
         trialUsed: false,
         points: user.points ?? 0,
@@ -84,31 +58,36 @@ export async function GET() {
 }
 
 export async function PUT(request: Request) {
-    const data = await request.json();
-    const { email, name, height, currentWeight, gender, dob, activityLevel, goal, dietaryPref } = data;
-
-    // In a real app, we'd get the user ID from the session
-    // For now, we update the first user or find by email
-    const user = await prisma.user.findFirst();
-
-    if (!user) {
-        return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    const session = await auth();
+    if (!session || !session.user || !session.user.email) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const updatedUser = await prisma.user.update({
-        where: { id: user.id },
-        data: {
-            name,
-            height: Number(height),
-            currentWeight: Number(currentWeight),
-            gender,
-            activityLevel,
-            goal,
-            dietaryPref,
-            // Assuming dob is passed as string, sanitize if needed
-        }
-    });
+    try {
+        const data = await request.json();
+        const { name, height, currentWeight, gender, activityLevel, goal, dietaryPref } = data;
 
-    return NextResponse.json(updatedUser);
+        // Basic validation
+        if (height && (isNaN(height) || height < 0 || height > 300)) return NextResponse.json({ error: 'Invalid height' }, { status: 400 });
+        if (currentWeight && (isNaN(currentWeight) || currentWeight < 0 || currentWeight > 500)) return NextResponse.json({ error: 'Invalid weight' }, { status: 400 });
+
+        const updatedUser = await prisma.user.update({
+            where: { email: session.user.email },
+            data: {
+                name,
+                height: height ? Number(height) : undefined,
+                currentWeight: currentWeight ? Number(currentWeight) : undefined,
+                gender,
+                activityLevel,
+                goal,
+                dietaryPref,
+            }
+        });
+
+        return NextResponse.json(updatedUser);
+    } catch (error) {
+        console.error("Profile update error:", error);
+        return NextResponse.json({ error: 'Failed to update profile' }, { status: 500 });
+    }
 }
 

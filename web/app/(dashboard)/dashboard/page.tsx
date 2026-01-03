@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { StreakTracker } from "@/components/dashboard/streak-tracker";
 import { FortuneCookie } from "@/components/rewards/fortune-cookie";
 import { InteractiveLogModal } from "@/components/dashboard/interactive-log-modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
     Scale,
     Target,
@@ -23,13 +23,71 @@ import {
     Brain,
     Wind,
     Sun,
-    Moon
+    Moon,
+    Loader2
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { BioStat } from "@/components/dashboard/bio-stat";
+import { RitualCard } from "@/components/dashboard/ritual-card";
 
 export default function DashboardPage() {
     const [isLogOpen, setIsLogOpen] = useState(false);
+    const [userData, setUserData] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const res = await fetch("/api/user");
+                if (res.ok) {
+                    const data = await res.json();
+                    setUserData(data);
+                } else {
+                    console.error("Failed to fetch user data");
+                    setError(true);
+                }
+            } catch (err) {
+                console.error("Error fetching user data:", err);
+                setError(true);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center min-h-[50vh]">
+                <Loader2 className="w-8 h-8 text-emerald-500 animate-spin" />
+            </div>
+        );
+    }
+
+    if (error || !userData) {
+        return (
+            <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-4">
+                <p className="text-foreground-muted">Unable to load dashboard data.</p>
+                <Button onClick={() => window.location.reload()}>Retry</Button>
+            </div>
+        );
+    }
+
+    // Derived Data
+    const firstName = userData.name?.split(' ')[0] || "User";
+    const currentWeight = userData.currentWeight || 0;
+    const latestLog = userData.logs && userData.logs.length > 0 ? userData.logs[0] : null;
+
+    // Fallbacks if no log exists yet
+    const moveScore = latestLog?.moveScore || 0;
+    const glowScore = latestLog?.glowScore || 0;
+    const mindScore = latestLog?.mindScore || 0;
+
+    // Mock calculations for demo
+    const targetWeight = 70; // Hardcoded goal for now since DB might not have it
+    const weightProgress = Math.max(0, Math.min(100, ((90 - currentWeight) / (90 - targetWeight)) * 100)); // Assuming start 90
 
     return (
         <div className="space-y-16 pb-32">
@@ -38,7 +96,7 @@ export default function DashboardPage() {
                 onClose={() => setIsLogOpen(false)}
                 onComplete={(data) => {
                     console.log("Activity logged:", data);
-                    // This is where real sync logic would go
+                    // Optimistic update or refetch could happen here
                 }}
             />
             {/* Clinical Greeting */}
@@ -50,7 +108,7 @@ export default function DashboardPage() {
                             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500">Live Health Tracker</span>
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tighter leading-none">
-                            Welcome, <span className="text-emerald-500">Sishir</span>.
+                            Welcome, <span className="text-emerald-500">{firstName}</span>.
                         </h1>
                         <p className="text-lg text-foreground-muted max-w-xl leading-relaxed">
                             You're making <span className="text-foreground font-bold">Great Progress</span> this week.
@@ -78,7 +136,7 @@ export default function DashboardPage() {
                 {/* Left: Bio-Data Visualization (8 cols) */}
                 <div className="xl:col-span-8 space-y-10">
                     <FadeIn>
-                        <StreakTracker count={5} activeDayIndex={4} days={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />
+                        <StreakTracker count={userData.streak || 0} activeDayIndex={new Date().getDay() === 0 ? 6 : new Date().getDay() - 1} days={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />
                     </FadeIn>
                     <ClinicalAdvice />
                     {/* Primary Metabolic Engine */}
@@ -89,10 +147,10 @@ export default function DashboardPage() {
                             <div className="flex flex-col lg:flex-row items-center gap-12 relative z-10">
                                 <div className="relative group/bio">
                                     <div className="absolute inset-0 bg-emerald-500/10 blur-[80px] rounded-full opacity-30 group-hover/bio:opacity-60 transition-opacity duration-1000" />
-                                    <ActivityRings size={280} move={82} glow={75} mind={60} />
+                                    <ActivityRings size={280} move={moveScore} glow={glowScore} mind={mindScore} />
                                     <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                                         <Scale size={20} className="text-emerald-500 mb-1 opacity-50" />
-                                        <span className="text-4xl font-black tracking-tighter">78.4</span>
+                                        <span className="text-4xl font-black tracking-tighter">{currentWeight}</span>
                                         <span className="text-[10px] uppercase font-black text-foreground-muted tracking-[0.3em] mt-0.5">KG</span>
                                     </div>
                                 </div>
@@ -101,7 +159,7 @@ export default function DashboardPage() {
                                     <div className="space-y-4">
                                         <h3 className="text-3xl font-bold tracking-tight">Daily Energy</h3>
                                         <p className="text-sm text-foreground-muted leading-relaxed">
-                                            Your efficiency is at <span className="text-emerald-500 font-bold">85%</span>.
+                                            Your efficiency is at <span className="text-emerald-500 font-bold">{(moveScore + glowScore) / 2}%</span>.
                                             You're successfully burning fat. Goal reach in <span className="text-foreground font-bold italic">14 days</span>!
                                         </p>
                                     </div>
@@ -109,20 +167,20 @@ export default function DashboardPage() {
                                     <div className="grid grid-cols-2 gap-6">
                                         <BioStat
                                             label="Calorie Gap"
-                                            value="-520"
+                                            value="-320" // Mocked, would need calc
                                             unit="kcal"
                                             icon={<Flame size={18} className="text-coral" />}
-                                            trend="Great Job"
-                                            progress={85}
+                                            trend="Deficit"
+                                            progress={75}
                                             color="coral"
                                         />
                                         <BioStat
                                             label="Destination"
-                                            value="72.0"
+                                            value={`${targetWeight.toFixed(1)}`}
                                             unit="kg"
                                             icon={<Target size={18} className="text-emerald-500" />}
                                             trend="On track"
-                                            progress={45}
+                                            progress={weightProgress}
                                             color="emerald"
                                         />
                                     </div>
@@ -150,7 +208,7 @@ export default function DashboardPage() {
                             title="Body & Sleep"
                             desc="Stay hydrated and get enough rest for natural recovery."
                             icon={<Wind className="text-emerald-500" />}
-                            stats={[{ label: "Water", value: "85%" }, { label: "Sleep", value: "7.2h" }]}
+                            stats={[{ label: "Water", value: latestLog?.water ? `${latestLog.water / 1000}L` : "0L" }, { label: "Sleep", value: "7.2h" }]}
                         />
                         <RitualCard
                             title="Mind & Mood"
@@ -198,57 +256,6 @@ export default function DashboardPage() {
                         </div>
                     </FadeIn>
                 </aside>
-            </div>
-        </div>
-    );
-}
-
-function BioStat({ label, value, unit, icon, trend, progress, color }: any) {
-    const colors: any = {
-        emerald: "bg-emerald-500",
-        coral: "bg-coral",
-        lavender: "bg-lavender"
-    };
-
-    return (
-        <div className="glass-premium bg-white/2 rounded-2xl p-5 border border-white/5 hover:border-white/10 transition-all group/stat">
-            <div className="flex items-center justify-between mb-3">
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover/stat:rotate-6 transition-transform">
-                    {icon}
-                </div>
-                <span className="text-[8px] font-black uppercase tracking-widest text-emerald-500/60">{trend}</span>
-            </div>
-            <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-black tabular-nums tracking-tighter">{value}</span>
-                <span className="text-[9px] font-bold text-foreground-muted uppercase tracking-widest">{unit}</span>
-            </div>
-            <p className="text-[8px] font-black uppercase tracking-widest text-foreground-muted mt-0.5 opacity-50">{label}</p>
-            <div className="mt-3 h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${progress}%` }}
-                    className={cn("h-full", colors[color])}
-                />
-            </div>
-        </div>
-    );
-}
-
-function RitualCard({ title, desc, icon, stats }: any) {
-    return (
-        <div className="glass-premium rounded-[2.5rem] p-8 border border-white/5 hover:border-emerald-500/20 transition-all group">
-            <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/5 group-hover:border-emerald-500/30 transition-all">
-                {icon}
-            </div>
-            <h4 className="text-lg font-bold mb-3">{title}</h4>
-            <p className="text-xs text-foreground-muted leading-relaxed mb-6">{desc}</p>
-            <div className="pt-6 border-t border-white/5 flex gap-6">
-                {stats.map((s: any) => (
-                    <div key={s.label}>
-                        <p className="text-[9px] font-black uppercase tracking-widest text-foreground-muted opacity-40 mb-1">{s.label}</p>
-                        <p className="text-sm font-bold tracking-tight">{s.value}</p>
-                    </div>
-                ))}
             </div>
         </div>
     );

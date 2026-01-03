@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "GlowUp Hub",
+    "slug": "glowuphub",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.glowuphub.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.glowuphub.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [],
+    "scheme": "glowuphub",
+    "extra": {
+      "apiUrl": "https://glowuphub-six.vercel.app/api",
+      "eas": {
+        "projectId": "df3ef4e2-86d9-41e5-b0df-e3aad77b20df"
+      }
+    },
+    "owner": "kishorbh12"
+  }
+}

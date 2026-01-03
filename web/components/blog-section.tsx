@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 function Card({ children, className }: { children: React.ReactNode; className?: string }) {
     return <div className={`bg-card border border-border rounded-3xl overflow-hidden ${className}`}>{children}</div>
@@ -77,10 +78,12 @@ export function BlogSection() {
                                 <Card className="group hover:border-primary/30 transition-all cursor-pointer h-full">
                                     {/* Image Container */}
                                     <div className="h-48 md:h-64 w-full relative overflow-hidden bg-primary-soft">
-                                        <img
+                                        <Image
                                             src={post.image}
                                             alt={post.title}
-                                            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                                            sizes="(max-width: 768px) 100vw, 33vw"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
                                     </div>
