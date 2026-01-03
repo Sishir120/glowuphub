@@ -146,6 +146,24 @@ export function Hero() {
                     </div>
 
                     {/* Mobile Only: Simple visuals can be added if needed, but keeping it focused as per images */}
+                    {/* Mobile Only: Background Orbital Visual */}
+                    <div className="absolute inset-x-0 -top-20 h-[500px] lg:hidden pointer-events-none -z-10 flex items-center justify-center opacity-30 overflow-hidden">
+                        <div className="relative w-full h-full flex items-center justify-center">
+                            {/* Concentric Circles (Mobile) */}
+                            <div className="absolute w-[280px] h-[280px] rounded-full border border-primary/10" />
+                            <div className="absolute w-[420px] h-[420px] rounded-full border border-primary/10" />
+                            <div className="absolute w-[560px] h-[560px] rounded-full border border-primary/5" />
+
+                            {/* Floating Dot (Mobile) */}
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                                className="absolute w-[420px] h-[420px]"
+                            >
+                                <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)] -translate-x-1/2" />
+                            </motion.div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
