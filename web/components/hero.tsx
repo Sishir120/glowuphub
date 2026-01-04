@@ -31,46 +31,44 @@ export function Hero() {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Side: Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="flex flex-col gap-5 md:gap-6 max-w-2xl order-2 lg:order-1 pt-8 lg:pt-0"
+                        className="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 md:gap-8 max-w-2xl order-2 lg:order-1 pt-4 lg:pt-0"
                     >
                         {/* Status Badge - Improved mobile size and glow */}
                         <motion.div
                             animate={{ y: [0, -2, 0] }}
                             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 md:bg-primary/5 border border-primary/20 md:border-primary/10 text-xs md:text-xs font-medium text-primary w-fit shadow-[0_0_20px_rgba(16,185,129,0.15)] md:shadow-none"
+                            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-[10px] md:text-xs font-bold text-primary w-fit shadow-[0_0_20px_rgba(16,185,129,0.15)] uppercase tracking-wider"
                         >
-                            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                            Expert-Led Weight Loss • 10,000+ Success Stories
+                            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(16,185,129,1)]" />
+                            Science-Backed Metabolic Reset
                         </motion.div>
 
                         {/* Heading - Enhanced mobile size and text shadows */}
-                        <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-tight md:leading-[0.95] text-foreground">
+                        <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1] md:leading-[0.95] text-foreground max-w-md lg:max-w-none">
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 via-blue-400 to-white drop-shadow-[0_2px_10px_rgba(6,182,212,0.3)] md:drop-shadow-none">
                                 Lose Weight
                             </span>{" "}
                             <span className="text-white drop-shadow-[0_2px_8px_rgba(255,255,255,0.2)] md:drop-shadow-none">For Good.</span>
-                            <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-primary to-emerald-600 drop-shadow-[0_2px_10px_rgba(16,185,129,0.3)] md:drop-shadow-none">
+                            <br className="hidden md:block" />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-primary to-emerald-600 drop-shadow-[0_2px_10px_rgba(16,185,129,0.3)] md:drop-shadow-none block mt-1 md:mt-0">
                                 Metabolism, Not Starvation.
                             </span>
                         </h1>
 
                         {/* Subtext - Enhanced contrast on mobile */}
-                        <p className="text-base md:text-xl text-foreground-muted leading-relaxed max-w-full md:max-w-lg mb-2 md:mb-4">
-                            Stop fighting your biology. Join <span className="text-primary font-bold drop-shadow-[0_1px_4px_rgba(16,185,129,0.3)] md:drop-shadow-none md:font-semibold">10,480+ women</span> globally resetting their metabolic set-point with Clinical Nutritionist Sabita Subedi.
-                            <br />
-                            <span className="font-bold md:font-semibold text-foreground">No counting, no cardio, just results.</span>
+                        <p className="text-base md:text-xl text-foreground-muted leading-relaxed max-w-sm md:max-w-lg mb-2 md:mb-4">
+                            Stop fighting your biology. Join <span className="text-primary font-bold">10,480+ women</span> resetting their metabolic set-point with <span className="text-foreground">Clinical Nutritionist Sabita Subedi</span>.
                         </p>
 
                         {/* CTAs - Enhanced glow on mobile */}
-                        <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 mt-2 md:mt-4">
-                            <Link href="/register">
+                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-6 mt-4 md:mt-8 w-full">
+                            <Link href="/register" className="w-full sm:w-auto">
                                 <Button
                                     size="lg"
-                                    className="rounded-full h-12 md:h-14 px-8 md:px-10 text-base md:text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_40px_rgba(16,185,129,0.5)] md:shadow-[0_0_30px_rgba(16,185,129,0.4)] active:scale-95 transition-transform w-full sm:w-auto"
+                                    className="rounded-full h-14 px-10 text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_30px_rgba(16,185,129,0.4)] active:scale-95 transition-all w-full"
                                 >
                                     Start Losing Weight (Free)
                                 </Button>
@@ -79,9 +77,9 @@ export function Hero() {
                                 size="lg"
                                 variant="ghost"
                                 onClick={() => setShowWalkthrough(true)}
-                                className="gap-2 md:gap-3 text-sm md:text-base text-foreground font-semibold hover:bg-transparent group active:scale-95 transition-transform"
+                                className="gap-3 text-base text-foreground font-semibold hover:bg-transparent group active:scale-95 transition-transform w-full sm:w-auto justify-center"
                             >
-                                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-white/5 transition-colors shadow-[0_0_15px_rgba(16,185,129,0.2)] md:shadow-none">
+                                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-white/5 transition-colors shadow-[0_0_15px_rgba(16,185,129,0.1)]">
                                     <Play className="w-4 h-4 fill-current" />
                                 </div>
                                 View Walkthrough
@@ -89,24 +87,23 @@ export function Hero() {
                         </div>
 
                         {/* Store Badges Section - Enhanced mobile size */}
-                        <div className="mt-6 md:mt-8 flex flex-col gap-3 md:gap-4">
-                            <p className="text-xs md:text-[10px] font-bold text-foreground-muted tracking-[0.2em] uppercase">
+                        <div className="mt-8 md:mt-10 flex flex-col items-center lg:items-start gap-4">
+                            <p className="text-[10px] font-bold text-foreground-muted tracking-[0.2em] uppercase">
                                 Available on iOS & Android
                             </p>
-                            <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-4">
                                 <Link href="/download" className="hover:opacity-80 transition-all active:scale-95">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" className="h-10 md:h-9 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)] md:drop-shadow-none" alt="App Store" width="120" height="40" />
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" className="h-9 w-auto" alt="App Store" width="120" height="40" />
                                 </Link>
                                 <Link href="/download" className="hover:opacity-80 transition-all active:scale-95">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" className="h-10 md:h-9 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)] md:drop-shadow-none" alt="Play Store" width="135" height="40" />
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" className="h-9 w-auto" alt="Play Store" width="135" height="40" />
                                 </Link>
                             </div>
                         </div>
                     </motion.div>
 
-                    {/* Right Side: Orbital Visual - Enhanced mobile scale and effects */}
-                    <div className="relative h-[400px] md:h-[300px] lg:h-[600px] flex items-center justify-center order-1 lg:order-2">
-                        <div className="transform scale-[0.85] md:scale-[0.6] lg:scale-100 origin-center flex items-center justify-center relative w-[650px] h-[650px]">
+                    <div className="relative h-[320px] md:h-[300px] lg:h-[600px] flex items-center justify-center order-1 lg:order-2 mt-4 lg:mt-0">
+                        <div className="transform scale-[0.65] md:scale-[0.6] lg:scale-100 origin-center flex items-center justify-center relative w-[650px] h-[650px]">
                             {/* Concentric Circles (Radar) - Enhanced mobile glow */}
                             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                                 <div className="w-[150px] h-[150px] rounded-full border border-white/10 md:border-white/5 shadow-[0_0_20px_rgba(16,185,129,0.1)] md:shadow-none" />
