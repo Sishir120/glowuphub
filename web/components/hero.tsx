@@ -2,11 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
-import { motion } from "framer-motion";
-import { Play, Sparkles, Heart, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Play, Sparkles, Heart, ChevronDown, X } from "lucide-react";
+import { useState } from "react";
+import { VideoPlayer } from "./routine/video-player";
 import Link from "next/link";
 
 export function Hero() {
+    const [showWalkthrough, setShowWalkthrough] = useState(false);
+
     return (
         <section className="relative w-full min-h-screen pt-20 flex items-center overflow-hidden bg-background">
             {/* Enhanced Mobile Background with Multiple Gradient Layers */}
@@ -30,7 +34,7 @@ export function Hero() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="flex flex-col gap-6 max-w-2xl order-2 lg:order-1 pt-8 lg:pt-0"
+                        className="flex flex-col gap-5 md:gap-6 max-w-2xl order-2 lg:order-1 pt-8 lg:pt-0"
                     >
                         {/* Status Badge - Improved mobile size and glow */}
                         <motion.div
@@ -43,7 +47,7 @@ export function Hero() {
                         </motion.div>
 
                         {/* Heading - Enhanced mobile size and text shadows */}
-                        <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-[0.95] text-foreground">
+                        <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-tight md:leading-[0.95] text-foreground">
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 via-blue-400 to-white drop-shadow-[0_2px_10px_rgba(6,182,212,0.3)] md:drop-shadow-none">
                                 Lose Weight
                             </span>{" "}
@@ -55,38 +59,37 @@ export function Hero() {
                         </h1>
 
                         {/* Subtext - Enhanced contrast on mobile */}
-                        <p className="text-lg md:text-xl text-foreground-muted leading-relaxed max-w-lg mb-4">
+                        <p className="text-base md:text-xl text-foreground-muted leading-relaxed max-w-full md:max-w-lg mb-2 md:mb-4">
                             Stop fighting your biology. Join <span className="text-primary font-bold drop-shadow-[0_1px_4px_rgba(16,185,129,0.3)] md:drop-shadow-none md:font-semibold">10,480+ women</span> globally resetting their metabolic set-point with Clinical Nutritionist Sabita Subedi.
                             <br />
                             <span className="font-bold md:font-semibold text-foreground">No counting, no cardio, just results.</span>
                         </p>
 
                         {/* CTAs - Enhanced glow on mobile */}
-                        <div className="flex flex-col sm:flex-row items-center gap-6 mt-4">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 mt-2 md:mt-4">
                             <Link href="/register">
                                 <Button
                                     size="lg"
-                                    className="rounded-full h-14 px-10 text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_40px_rgba(16,185,129,0.5)] md:shadow-[0_0_30px_rgba(16,185,129,0.4)] active:scale-95 transition-transform"
+                                    className="rounded-full h-12 md:h-14 px-8 md:px-10 text-base md:text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_40px_rgba(16,185,129,0.5)] md:shadow-[0_0_30px_rgba(16,185,129,0.4)] active:scale-95 transition-transform w-full sm:w-auto"
                                 >
                                     Start Losing Weight (Free)
                                 </Button>
                             </Link>
-                            <Link href="/download">
-                                <Button
-                                    size="lg"
-                                    variant="ghost"
-                                    className="gap-3 text-foreground font-semibold hover:bg-transparent group active:scale-95 transition-transform"
-                                >
-                                    <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-white/5 transition-colors shadow-[0_0_15px_rgba(16,185,129,0.2)] md:shadow-none">
-                                        <Play className="w-4 h-4 fill-current" />
-                                    </div>
-                                    View Walkthrough
-                                </Button>
-                            </Link>
+                            <Button
+                                size="lg"
+                                variant="ghost"
+                                onClick={() => setShowWalkthrough(true)}
+                                className="gap-2 md:gap-3 text-sm md:text-base text-foreground font-semibold hover:bg-transparent group active:scale-95 transition-transform"
+                            >
+                                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:bg-white/5 transition-colors shadow-[0_0_15px_rgba(16,185,129,0.2)] md:shadow-none">
+                                    <Play className="w-4 h-4 fill-current" />
+                                </div>
+                                View Walkthrough
+                            </Button>
                         </div>
 
                         {/* Store Badges Section - Enhanced mobile size */}
-                        <div className="mt-8 flex flex-col gap-4">
+                        <div className="mt-6 md:mt-8 flex flex-col gap-3 md:gap-4">
                             <p className="text-xs md:text-[10px] font-bold text-foreground-muted tracking-[0.2em] uppercase">
                                 Available on iOS & Android
                             </p>
@@ -164,6 +167,18 @@ export function Hero() {
                     </div>
                 </div>
             </div>
+            <AnimatePresence>
+                {showWalkthrough && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100]"
+                    >
+                        <VideoPlayer onClose={() => setShowWalkthrough(false)} />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }

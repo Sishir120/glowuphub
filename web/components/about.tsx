@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function About() {
     return (
-        <section className="py-32 bg-background-muted relative overflow-hidden">
+        <section id="philosophy" className="py-32 bg-background-muted relative overflow-hidden">
             {/* Soft background pattern */}
             <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, var(--primary) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 

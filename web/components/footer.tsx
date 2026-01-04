@@ -25,10 +25,10 @@ export function Footer() {
                             Gentle daily practices that build lasting confidence. Your journey to self-trust and natural radiance starts here.
                         </p>
                         <div className="flex gap-3">
-                            <a href="#" className="w-10 h-10 rounded-full bg-primary-soft flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                            <a href="https://instagram.com/glowuphub" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
                                 <Instagram className="w-4 h-4" />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-primary-soft flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                            <a href="https://tiktok.com/@sabu7916" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
                                 <Heart className="w-4 h-4" />
                             </a>
                         </div>
@@ -47,12 +47,10 @@ export function Footer() {
                     <div>
                         <h4 className="text-foreground font-semibold mb-6">Company</h4>
                         <ul className="space-y-4 text-sm text-foreground-muted">
-                            <ul className="space-y-4 text-sm text-foreground-muted">
-                                <li><Link href="/#philosophy" className="hover:text-primary transition-colors">Our Philosophy</Link></li>
-                                <li><Link href="/#testimonials" className="hover:text-primary transition-colors">Community</Link></li>
-                                <li><Link href="/blog" className="hover:text-primary transition-colors">Journal</Link></li>
-                                <li><Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link></li>
-                            </ul>
+                            <li><Link href="/#philosophy" className="hover:text-primary transition-colors">Our Philosophy</Link></li>
+                            <li><Link href="/#testimonials" className="hover:text-primary transition-colors">Community</Link></li>
+                            <li><Link href="/blog" className="hover:text-primary transition-colors">Journal</Link></li>
+                            <li><Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
                         </ul>
                     </div>
 
