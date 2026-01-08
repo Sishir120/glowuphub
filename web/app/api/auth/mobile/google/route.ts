@@ -43,15 +43,37 @@ export async function POST(req: NextRequest) {
                     name: name || '',
                     image: picture,
                     password: '', // Social login users don't have passwords
-                    // accounts: { // Optional: Link account if using NextAuth Adapter explicitly
-                    //     create: {
-                    //         provider: 'google',
-                    //         providerAccountId: googleId,
-                    //         type: 'oauth',
-                    //     }
-                    // }
+                    emailVerified: new Date(), // Consider email verified via Google
+                    accounts: {
+                        create: {
+                            provider: 'google',
+                            providerAccountId: googleId,
+                            type: 'oauth',
+                        }
+                    }
                 },
             });
+        } else {
+            // Ensure account is linked if it doesn't exist
+            const account = await prisma.account.findUnique({
+                where: {
+                    provider_providerAccountId: {
+                        provider: 'google',
+                        providerAccountId: googleId,
+                    }
+                }
+            });
+
+            if (!account) {
+                await prisma.account.create({
+                    data: {
+                        userId: user.id,
+                        provider: 'google',
+                        providerAccountId: googleId,
+                        type: 'oauth',
+                    }
+                });
+            }
         }
 
         // Generate Session Token (JWT)

@@ -57,6 +57,14 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
+  themeColor: "#10b981",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    viewportFit: "cover",
+  },
 };
 
 export default function RootLayout({
