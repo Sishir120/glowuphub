@@ -1,9 +1,11 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import prisma from '@/lib/prisma';
 import { auth } from '@/auth';
 
-export async function GET() {
-    const session = await auth();
+import { getMobileSession } from '@/lib/mobile-auth';
+
+export async function GET(request: NextRequest) {
+    const session = await auth() || await getMobileSession(request);
 
     if (!session || !session.user || !session.user.email) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -57,8 +59,8 @@ export async function GET() {
     return NextResponse.json(userWithSubscription);
 }
 
-export async function PUT(request: Request) {
-    const session = await auth();
+export async function PUT(request: NextRequest) {
+    const session = await auth() || await getMobileSession(request);
     if (!session || !session.user || !session.user.email) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }

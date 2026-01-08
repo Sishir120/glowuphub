@@ -6,14 +6,12 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
+    "newArchEnabled": false,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.glowuphub.app"
@@ -23,19 +21,20 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.glowuphub.app"
+      "package": "com.glowuphub.app",
+      "edgeToEdgeEnabled": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [],
     "scheme": "glowuphub",
+    "owner": "kishorbh12",
     "extra": {
       "apiUrl": "https://glowuphub-six.vercel.app/api",
       "eas": {
         "projectId": "df3ef4e2-86d9-41e5-b0df-e3aad77b20df"
       }
     },
-    "owner": "kishorbh12"
+    "plugins": []
   }
 }

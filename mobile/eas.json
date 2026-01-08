@@ -11,6 +11,13 @@
             "distribution": "internal",
             "android": {
                 "buildType": "apk"
+            },
+            "env": {
+                "EXPO_PUBLIC_API_URL": "https://glowuphub-six.vercel.app/api",
+                "NPM_CONFIG_LEGACY_PEER_DEPS": "true",
+                "EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID": "672464736746-123456789.apps.googleusercontent.com",
+                "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "672464736746-123456789.apps.googleusercontent.com",
+                "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "672464736746-123456789.apps.googleusercontent.com"
             }
         },
         "production": {
@@ -18,5 +25,8 @@
                 "buildType": "apk"
             }
         }
+    },
+    "cli": {
+        "appVersionSource": "local"
     }
 }

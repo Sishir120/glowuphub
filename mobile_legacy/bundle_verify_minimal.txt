@@ -1,0 +1,50 @@
+env: load .env
+env: export EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID EXPO_PUBLIC_API_URL
+Starting Metro Bundler
+Android Bundling failed 31022ms index.ts (543 modules)
+Error: Cannot find module '@react-native/js-polyfills'
+Require stack:
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\metro-config\build\ExpoMetroConfig.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\expo\metro-config.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\metro.config.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\import-fresh\index.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\cosmiconfig\dist\loaders.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\cosmiconfig\dist\createExplorer.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\cosmiconfig\dist\index.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\metro-config\src\loadConfig.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\metro-config\src\index.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\start\server\metro\instantiateMetro.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\start\server\metro\MetroBundlerDevServer.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\export\exportApp.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\export\exportAsync.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\export\index.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\bin\cli
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\expo\bin\cli
+Error: Cannot find module '@react-native/js-polyfills'
+Require stack:
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\metro-config\build\ExpoMetroConfig.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\expo\metro-config.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\metro.config.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\import-fresh\index.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\cosmiconfig\dist\loaders.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\cosmiconfig\dist\createExplorer.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\cosmiconfig\dist\index.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\metro-config\src\loadConfig.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\metro-config\src\index.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\start\server\metro\instantiateMetro.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\start\server\metro\MetroBundlerDevServer.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\export\exportApp.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\export\exportAsync.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\src\export\index.js
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\build\bin\cli
+- C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\expo\bin\cli
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.originalGetPolyfills [as getPolyfills] (C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\metro-config\src\ExpoMetroConfig.ts:334:16)
+    at Object.getPolyfills (C:\Users\sishi\OneDrive\Documents\python\glowuphub\mobile\node_modules\@expo\cli\src\start\server\metro\withMetroMultiPlatform.ts:90:23)

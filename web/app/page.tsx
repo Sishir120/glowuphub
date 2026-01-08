@@ -12,6 +12,7 @@ import { AppShowcase } from "@/components/app-showcase";
 import { Footer } from "@/components/footer";
 import { ComparisonSection } from "@/components/comparison-section";
 import { TargetingSection } from "@/components/targeting-section";
+import { DownloadCTA } from "@/components/download-cta";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export default function Home() {
@@ -56,6 +57,10 @@ export default function Home() {
 
       <FadeIn>
         <BlogSection />
+      </FadeIn>
+
+      <FadeIn>
+        <DownloadCTA />
       </FadeIn>
 
       <Footer />

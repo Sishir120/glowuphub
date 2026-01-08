@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { MobileBottomNav } from "@/components/mobile-bottom-nav";
+import { PwaRegister } from "@/components/pwa-register";
 
 
 const inter = Inter({
@@ -71,6 +72,7 @@ export default function RootLayout({
         <Providers>
           {children}
           <MobileBottomNav />
+          <PwaRegister />
         </Providers>
       </body>
     </html>
