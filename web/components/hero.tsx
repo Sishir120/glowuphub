@@ -13,120 +13,131 @@ export function Hero() {
     const [showWalkthrough, setShowWalkthrough] = useState(false);
 
     return (
-        <section className="relative w-full min-h-screen pt-20 flex flex-col items-center justify-center overflow-hidden bg-[#0a0f0d]">
+        <section className="relative w-full min-h-screen pt-20 flex flex-col items-center justify-center overflow-hidden bg-[#020608]">
 
-            {/* --- BACKGROUND ELEMENTS --- */}
+            {/* --- SHARED BACKGROUND ELEMENTS --- */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* Desktop Background (Previous Design Mesh) */}
-                <div className="hidden lg:block absolute inset-0">
-                    <div className="absolute top-0 right-0 w-[800px] h-full bg-[radial-gradient(circle_at_70%_50%,rgba(16,185,129,0.05),transparent_70%)]" />
-                    <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] opacity-40" />
-                </div>
-
-                {/* Mobile Background (New Design Capsules) */}
-                <div className="lg:hidden absolute inset-0">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(16,185,129,0.15)_0%,transparent_70%)]" />
-                    <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-full max-w-lg aspect-square opacity-20">
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[400px] border border-emerald-500/30 rounded-full" />
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[580px] border border-emerald-500/20 rounded-full" />
-                    </div>
-                </div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(16,185,129,0.1)_0%,transparent_70%)]" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
 
                 {/* ==========================================
-                    DESKTOP VIEW (Restored Jan 6 Design)
+                    DESKTOP VIEW (Restored Design from Image)
                    ========================================== */}
-                <div className="hidden lg:grid grid-cols-2 gap-12 items-center">
-                    {/* Left Content */}
+                <div className="hidden lg:grid grid-cols-2 gap-16 items-center min-h-[80vh]">
+                    {/* Left Content (Moto & Text) */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="flex flex-col items-start gap-8"
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-xs font-medium text-primary">
-                            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/5 border border-emerald-500/10 text-xs font-bold text-emerald-400 uppercase tracking-widest">
+                            <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
                             Expert-Led Weight Loss • 10,000+ Success Stories
                         </div>
 
-                        <h1 className="text-6xl md:text-7xl font-black tracking-tight leading-[0.95] text-white">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 via-blue-400 to-white">
-                                Lose Weight
-                            </span>{" "}
-                            For Good.
+                        <h1 className="text-7xl font-black tracking-tight leading-[1.05] text-white">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-b from-cyan-300 via-blue-400 to-white">
+                                Lose Weight For Good.
+                            </span>
                             <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-primary to-emerald-600">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">
                                 Metabolism, Not Starvation.
                             </span>
                         </h1>
 
                         <p className="text-xl text-zinc-400 leading-relaxed max-w-lg">
-                            Stop fighting your biology. Join <span className="text-primary font-semibold">10,480+ women</span> globally resetting their metabolic set-point with Clinical Nutritionist <span className="text-white font-medium">Sabita Subedi.</span>
+                            Stop fighting your biology. Join <span className="text-emerald-400 font-bold">10,480+ women</span> globally resetting their metabolic set-point with Clinical Nutritionist <span className="text-white font-medium">Sabita Subedi.</span>
                             <br />
-                            <span className="font-semibold text-white">No counting, no cardio, just results.</span>
+                            <span className="font-bold text-white mt-4 block">No counting, no cardio, just results.</span>
                         </p>
 
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-6 pt-4">
                             <Link href="/register">
-                                <Button size="lg" className="rounded-full h-14 px-10 text-lg font-bold bg-primary text-black hover:bg-emerald-400 shadow-[0_0_30px_rgba(16,185,129,0.4)]">
+                                <Button size="lg" className="rounded-full h-16 px-10 text-xl font-bold bg-emerald-500 text-black hover:bg-emerald-400 shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all">
                                     Start Losing Weight (Free)
                                 </Button>
                             </Link>
 
-                            <button onClick={() => setShowWalkthrough(true)} className="flex items-center gap-3 text-base text-zinc-300 font-semibold group hover:text-white transition-colors">
-                                <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:bg-zinc-800 transition-colors">
-                                    <Play className="w-4 h-4 fill-white text-white" />
+                            <button onClick={() => setShowWalkthrough(true)} className="flex items-center gap-4 text-lg text-zinc-300 font-semibold group hover:text-white transition-colors">
+                                <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:bg-zinc-800 transition-colors">
+                                    <Play className="w-5 h-5 fill-white text-white" />
                                 </div>
                                 View Walkthrough
                             </button>
                         </div>
 
-                        <div className="mt-4">
+                        <div className="mt-8">
                             <p className="text-[10px] font-bold text-zinc-500 tracking-[0.2em] uppercase mb-4">Available on iOS & Android</p>
                             <StoreBadges className="justify-start scale-110 origin-left" />
                         </div>
                     </motion.div>
 
-                    {/* Right Content (Orbital Visual) */}
-                    <div className="relative h-[600px] flex items-center justify-center">
-                        {/* Radar Rings */}
-                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                            <div className="w-[150px] h-[150px] rounded-full border border-white/10" />
-                            <div className="w-[300px] h-[300px] rounded-full border border-white/10" />
-                            <div className="w-[450px] h-[450px] rounded-full border border-white/10" />
-                            <div className="w-[650px] h-[650px] rounded-full border border-white/5" />
+                    {/* Right Content (Logo Design) */}
+                    <div className="relative h-[650px] flex items-center justify-end">
+                        {/* THE CAPSULE DESIGN (From Reference Image) */}
+                        <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-4 opacity-40">
+                            {/* Smallest Capsule */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 0.4, scale: 1 }}
+                                transition={{ duration: 1, delay: 0.4 }}
+                                className="w-[140px] h-[300px] border border-emerald-500/20 rounded-full"
+                            />
+                            {/* Medium Capsule */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 0.4, scale: 1 }}
+                                transition={{ duration: 1, delay: 0.2 }}
+                                className="w-[180px] h-[450px] border border-emerald-500/30 rounded-full"
+                            />
+                            {/* Largest Capsule (Holds Logo) */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1 }}
+                                className="relative w-[240px] h-[600px] border border-emerald-500/40 rounded-full bg-emerald-500/[0.02] flex flex-col items-center justify-center"
+                            >
+                                {/* THE LOGO DESIGN (Circle from Image) */}
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    className="absolute top-1/3 right-[-40px] w-28 h-28 bg-black border border-emerald-500/40 rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(16,185,129,0.2)] z-20 cursor-pointer"
+                                >
+                                    <Logo size={56} />
+                                </motion.div>
+
+                                {/* Floating Cards in proximity */}
+                                <motion.div
+                                    animate={{ y: [0, -10, 0] }}
+                                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                                    className="absolute bottom-20 left-[-80px] p-4 bg-zinc-900/90 backdrop-blur-2xl border border-white/10 rounded-2xl flex items-center gap-4 shadow-2xl min-w-[200px] z-30"
+                                >
+                                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                                        <Sparkles className="w-6 h-6" />
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Glow Score</p>
+                                        <p className="text-sm font-bold text-white tracking-tight leading-none">Building ✨</p>
+                                    </div>
+                                </motion.div>
+                            </motion.div>
                         </div>
-
-                        {/* Central Logo */}
-                        <motion.div
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 1 }}
-                            className="relative z-10 w-28 h-28 bg-[#050505] border border-primary/20 rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(16,185,129,0.15)]"
-                        >
-                            <Logo size={48} />
-                        </motion.div>
-
-                        {/* Floating Cards */}
-                        <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }} className="absolute top-24 right-8 p-3 bg-zinc-900/80 backdrop-blur-xl border border-white/10 rounded-2xl flex items-center gap-3 shadow-2xl min-w-[170px]">
-                            <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary"><Heart className="w-4 h-4 fill-current" /></div>
-                            <div><p className="text-[10px] text-zinc-500 leading-none mb-1">Daily Practice</p><p className="text-sm font-bold text-white leading-none">15 min</p></div>
-                        </motion.div>
-                        <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }} className="absolute bottom-32 left-8 p-3 bg-zinc-900/80 backdrop-blur-xl border border-white/10 rounded-2xl flex items-center gap-3 shadow-2xl min-w-[170px]">
-                            <div className="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center text-primary"><Sparkles className="w-4 h-4" /></div>
-                            <div><p className="text-[10px] text-zinc-500 leading-none mb-1">Glow Score</p><p className="text-sm font-bold text-white leading-none">Building ✨</p></div>
-                        </motion.div>
                     </div>
                 </div>
 
                 {/* ==========================================
-                    MOBILE VIEW (Preserved Content)
+                    MOBILE VIEW (Preserved exactly as shown)
                    ========================================== */}
                 <div className="lg:hidden flex flex-col items-center text-center">
-                    {/* Hero Top Illustration */}
+                    {/* Hero Top Illustration (Capsule elements but vertical) */}
                     <div className="relative w-full max-w-sm h-[320px] flex items-center justify-center">
+                        <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+                            <div className="w-[120px] h-[260px] border border-emerald-500/30 rounded-full rotate-[-15deg]" />
+                            <div className="w-[160px] h-[300px] border border-emerald-500/20 rounded-full absolute" />
+                        </div>
+
                         <motion.div
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
