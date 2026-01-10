@@ -12,6 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 import { MobileStreakTracker } from '../components/MobileStreakTracker';
 import { MobileFortuneCookie } from '../components/MobileFortuneCookie';
 import { InteractiveLogSheet } from '../components/InteractiveLogSheet';
+import { BioDigitalTwin } from '../components/BioDigitalTwin';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -68,79 +69,59 @@ export default function HomeScreen() {
     if (loading) {
         return (
             <View className="flex-1 bg-background justify-center items-center">
-                <ActivityIndicator color="#E8B4B8" size="large" />
+                <ActivityIndicator color="#10b981" size="large" />
             </View>
         );
     }
 
     return (
         <SafeAreaView className="flex-1 bg-background">
-            <ScrollView className="flex-1 px-6 pt-4" contentContainerStyle={{ paddingBottom: 100 }}>
+            <ScrollView className="flex-1 px-6 pt-4" contentContainerStyle={{ paddingBottom: 110 }}>
 
-                {/* Greeting Section */}
-                <View className="flex-row justify-between items-start mb-8">
-                    <View>
-                        <View className="flex-row items-center gap-2 mb-1">
-                            <Sparkles size={12} color="#E8B4B8" />
-                            <Text className="text-muted-foreground text-[10px] font-black uppercase tracking-[0.2em]">
-                                {greeting}
+                {/* Metabolic Header */}
+                <Animated.View entering={FadeInDown.delay(200)} className="mb-12">
+                    <View className="flex-row justify-between items-end mb-8">
+                        <View>
+                            <View className="flex-row items-center gap-2 mb-1">
+                                <Sparkles size={12} color="#10b981" />
+                                <Text className="text-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                                    {greeting}
+                                </Text>
+                            </View>
+                            <Text className="text-foreground text-5xl font-black tracking-tight">
+                                {user?.name?.split(' ')[0] || 'Member'}.
                             </Text>
                         </View>
-                        <Text className="text-foreground text-4xl font-black tracking-tight">
-                            {user?.name?.split(' ')[0] || 'Member'}.
-                        </Text>
-                        <Text className="text-muted-foreground text-sm mt-1">
-                            You're doing <Text className="text-foreground font-bold">great</Text> today.
-                        </Text>
-                    </View>
-
-                    {/* Glow Score Ring */}
-                    <View className="relative items-center justify-center">
-                        <Svg width={RING_SIZE} height={RING_SIZE} style={{ transform: [{ rotate: '-90deg' }] }}>
-                            <Circle
-                                cx={RING_SIZE / 2}
-                                cy={RING_SIZE / 2}
-                                r={RADIUS}
-                                stroke="#F5F5F2"
-                                strokeWidth={STROKE_WIDTH}
-                            />
-                            <AnimatedCircle
-                                cx={RING_SIZE / 2}
-                                cy={RING_SIZE / 2}
-                                r={RADIUS}
-                                stroke="#E8B4B8"
-                                strokeWidth={STROKE_WIDTH}
-                                strokeLinecap="round"
-                                strokeDasharray={`${CIRCUMFERENCE} ${CIRCUMFERENCE}`}
-                                animatedProps={animatedProps}
-                            />
-                        </Svg>
-                        <View className="absolute items-center justify-center">
+                        <View className="items-end">
                             <Text className="text-foreground font-black text-2xl tracking-tighter">
                                 {Math.round((user?.glowScore || 85))}%
                             </Text>
+                            <Text className="text-primary text-[8px] font-black uppercase tracking-[0.2em]">Current Glow</Text>
                         </View>
                     </View>
-                </View>
 
-                {/* Motivational Components */}
-                <MobileStreakTracker count={5} />
-                <MobileFortuneCookie />
+                    <BioDigitalTwin
+                        hydration={85}
+                        energy={user?.glowScore || 85}
+                        focus={92}
+                        stress={20}
+                    />
+                </Animated.View>
 
                 {/* Today's Focus */}
-                <Animated.View entering={FadeInDown.delay(400)} className="mb-8">
-                    <Text className="text-foreground text-xl font-bold mb-4 tracking-tight">Today's Focus</Text>
-                    <View className="bg-card rounded-[2.5rem] p-7 border border-border shadow-sm">
-                        <Text className="text-2xl font-black text-foreground mb-2">Gentle Movement</Text>
-                        <Text className="text-muted-foreground leading-relaxed mb-6 text-sm">
-                            Your body is adapting well. A quick <Text className="text-foreground font-bold">Mobility stretch</Text> or a <Text className="text-foreground font-bold">walk</Text> will clear your mind.
+                <Animated.View entering={FadeInDown.delay(400)} className="mb-10">
+                    <Text className="text-foreground text-xl font-black mb-5 tracking-tight uppercase">Today's Focus</Text>
+                    <View className="bg-secondary rounded-[2.5rem] p-8 border border-border shadow-sm">
+                        <Text className="text-3xl font-black text-foreground mb-3">Gentle Movement</Text>
+                        <Text className="text-foreground-muted leading-relaxed mb-8 text-sm">
+                            Your body is adapting well. A quick <Text className="text-primary font-bold">Mobility stretch</Text> or a <Text className="text-foreground font-bold">walk</Text> will clear your mind.
                         </Text>
 
                         <TouchableOpacity
-                            className="bg-primary h-14 rounded-2xl items-center justify-center shadow-lg"
+                            className="bg-primary h-16 rounded-2xl items-center justify-center shadow-lg"
                             onPress={() => setIsLogVisible(true)}
                         >
-                            <Text className="text-[#3D3D3D] font-black uppercase tracking-widest">Start Daily Habits</Text>
+                            <Text className="text-secondary font-black uppercase tracking-widest text-sm">Start Daily Habits</Text>
                         </TouchableOpacity>
                     </View>
                 </Animated.View>
@@ -155,24 +136,24 @@ export default function HomeScreen() {
                 />
 
                 {/* Quick Support */}
-                <Text className="text-foreground text-xl font-bold mb-4 tracking-tight">Quick Support</Text>
+                <Text className="text-foreground text-xl font-black mb-5 tracking-tight uppercase">Quick Support</Text>
                 <View className="flex-row gap-4">
                     <TouchableOpacity
-                        className="flex-1 bg-card p-6 rounded-[2rem] items-center justify-center gap-3 border border-border"
+                        className="flex-1 bg-secondary p-7 rounded-[2.5rem] items-center justify-center gap-4 border border-border"
                         onPress={() => navigation.navigate('Routines')}
                     >
-                        <View className="w-12 h-12 bg-primary/10 rounded-2xl items-center justify-center">
-                            <Play size={24} color="#E8B4B8" fill="#E8B4B8" />
+                        <View className="w-16 h-16 bg-primary/10 rounded-2xl items-center justify-center">
+                            <Play size={28} color="#10b981" fill="#10b981" />
                         </View>
                         <Text className="font-black text-[10px] text-foreground uppercase tracking-widest">Training</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        className="flex-1 bg-card p-6 rounded-[2rem] items-center justify-center gap-3 border border-border"
+                        className="flex-1 bg-secondary p-7 rounded-[2.5rem] items-center justify-center gap-4 border border-border"
                         onPress={() => navigation.navigate('Chat')}
                     >
-                        <View className="w-12 h-12 bg-secondary/20 rounded-2xl items-center justify-center">
-                            <MessageCircle size={24} color="#A8C5A8" />
+                        <View className="w-16 h-16 bg-lavender/10 rounded-2xl items-center justify-center">
+                            <MessageCircle size={28} color="#a78bfa" />
                         </View>
                         <Text className="font-black text-[10px] text-foreground uppercase tracking-widest">Care Team</Text>
                     </TouchableOpacity>

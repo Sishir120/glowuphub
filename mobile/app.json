@@ -35,6 +35,8 @@
         "projectId": "df3ef4e2-86d9-41e5-b0df-e3aad77b20df"
       }
     },
-    "plugins": []
+    "plugins": [
+      "@react-native-google-signin/google-signin"
+    ]
   }
 }

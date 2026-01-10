@@ -7,6 +7,8 @@ import { API_URL } from '../config';
 import api from '../services/api';
 import { MobileActivityProtocol, MobileProtocolStep } from '../components/MobileActivityProtocol';
 import Animated, { FadeInDown } from 'react-native-reanimated';
+import { MobileBmiCalculator } from '../components/MobileBmiCalculator';
+import { MobileBmiCalculator } from '../components/MobileBmiCalculator';
 
 const PROTOCOLS: Record<string, MobileProtocolStep[]> = {
     'walking': [
@@ -118,62 +120,62 @@ export default function TrackScreen() {
                 onComplete={handleProtocolComplete}
             />
 
-            <ScrollView className="flex-1 px-6 pt-4" contentContainerStyle={{ paddingBottom: 100 }}>
-                <View className="mb-8">
+            <ScrollView className="flex-1 px-6 pt-4" contentContainerStyle={{ paddingBottom: 120 }}>
+                <View className="mb-10">
                     <View className="flex-row items-center gap-2 mb-1">
-                        <Sparkles size={12} color="#E8B4B8" />
-                        <Text className="text-muted-foreground text-[10px] font-black uppercase tracking-[0.2em]">Maintenance</Text>
+                        <Sparkles size={12} color="#10b981" />
+                        <Text className="text-primary text-[10px] font-black uppercase tracking-[0.2em]">Maintenance</Text>
                     </View>
-                    <Text className="text-foreground text-3xl font-black">Daily Habits.</Text>
+                    <Text className="text-foreground text-5xl font-black">Daily Habits.</Text>
                 </View>
 
                 {/* Live Activity Section */}
-                <Text className="text-foreground text-xl font-bold mb-4 tracking-tight">Support My Movement</Text>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} className="flex-row gap-4 mb-8">
+                <Text className="text-foreground text-xl font-black mb-5 tracking-tight uppercase">Support My Movement</Text>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} className="flex-row gap-4 mb-10">
                     {[
                         { id: 'walking', label: 'Walk', color: '#10b981' },
-                        { id: 'mobility', label: 'Stretch', color: '#8b5cf6' },
-                        { id: 'home-workout', label: 'Workout', color: '#f59e0b' },
-                        { id: 'cycling', label: 'Cycle', color: '#3b82f6' }
+                        { id: 'mobility', label: 'Stretch', color: '#34d399' },
+                        { id: 'home-workout', label: 'Workout', color: '#fde68a' },
+                        { id: 'cycling', label: 'Cycle', color: '#a78bfa' }
                     ].map((activity) => (
                         <TouchableOpacity
                             key={activity.id}
                             onPress={() => setActiveProtocol(activity.id)}
-                            className="bg-card w-32 h-40 rounded-3xl items-center justify-center border border-border mr-3"
+                            className="bg-secondary w-36 h-48 rounded-[2.5rem] items-center justify-center border border-border mr-4"
                         >
-                            <View className="w-14 h-14 rounded-2xl items-center justify-center mb-4" style={{ backgroundColor: `${activity.color}15` }}>
-                                <Play size={24} color={activity.color} fill={activity.color} />
+                            <View className="w-16 h-16 rounded-2xl items-center justify-center mb-5" style={{ backgroundColor: `${activity.color}15` }}>
+                                <Play size={28} color={activity.color} fill={activity.color} />
                             </View>
-                            <Text className="text-foreground font-bold">{activity.label}</Text>
-                            <Text className="text-muted-foreground text-[9px] font-black uppercase tracking-widest mt-1">Live Protocol</Text>
+                            <Text className="text-foreground font-black text-base">{activity.label}</Text>
+                            <Text className="text-primary text-[9px] font-black uppercase tracking-[0.2em] mt-1">Live Protocol</Text>
                         </TouchableOpacity>
                     ))}
                 </ScrollView>
 
                 {/* Fast Logs */}
-                <Text className="text-foreground text-xl font-bold mb-4 tracking-tight">Quick Logs</Text>
+                <Text className="text-foreground text-xl font-black mb-5 tracking-tight uppercase">Quick Logs</Text>
 
                 {/* Water Tracker */}
-                <Animated.View entering={FadeInDown.delay(100)} className="bg-card p-6 rounded-[2.5rem] border border-border mb-6">
-                    <View className="flex-row justify-between items-center mb-4">
-                        <View className="flex-row items-center gap-3">
-                            <View className="bg-blue-500/10 p-3 rounded-2xl">
-                                <Droplets size={24} color="#3b82f6" />
+                <Animated.View entering={FadeInDown.delay(100)} className="bg-secondary p-8 rounded-[2.5rem] border border-border mb-8 shadow-sm">
+                    <View className="flex-row justify-between items-center mb-6">
+                        <View className="flex-row items-center gap-4">
+                            <View className="bg-primary/10 p-4 rounded-2xl">
+                                <Droplets size={28} color="#10b981" />
                             </View>
-                            <Text className="text-lg font-bold text-foreground">Hydration</Text>
+                            <Text className="text-xl font-black text-foreground">Hydration</Text>
                         </View>
-                        <Text className="text-2xl font-black text-blue-500">{waterCount * 250}ml</Text>
+                        <Text className="text-3xl font-black text-primary">{waterCount * 250}ml</Text>
                     </View>
 
-                    <View className="flex-row justify-between items-center bg-secondary rounded-2xl p-2 h-16">
+                    <View className="flex-row justify-between items-center bg-background rounded-[1.5rem] p-3 h-20 border border-border">
                         <TouchableOpacity
                             onPress={() => setWaterCount(Math.max(0, waterCount - 1))}
-                            className="w-12 h-12 items-center justify-center bg-background rounded-xl "
+                            className="w-14 h-14 items-center justify-center bg-secondary rounded-xl border border-border"
                         >
                             <Text className="text-2xl font-black text-foreground">-</Text>
                         </TouchableOpacity>
 
-                        <Text className="font-black text-foreground text-sm uppercase tracking-widest">{waterCount} Glasses</Text>
+                        <Text className="font-black text-foreground text-xs uppercase tracking-[0.2em]">{waterCount} Units</Text>
 
                         <TouchableOpacity
                             onPress={() => {
@@ -181,77 +183,82 @@ export default function TrackScreen() {
                                 setWaterCount(newCount);
                                 logData({ water: 1 });
                             }}
-                            className="w-12 h-12 items-center justify-center bg-primary rounded-xl shadow-lg"
+                            className="w-14 h-14 items-center justify-center bg-primary rounded-xl shadow-lg"
                         >
-                            <Plus size={24} color="#3D3D3D" />
+                            <Plus size={28} color="#050505" />
                         </TouchableOpacity>
                     </View>
                 </Animated.View>
 
                 {/* Weight Log */}
-                <Animated.View entering={FadeInDown.delay(200)} className="bg-card p-6 rounded-[2.5rem] border border-border mb-6">
-                    <View className="flex-row items-center gap-3 mb-4">
-                        <View className="bg-emerald-500/10 p-3 rounded-2xl">
-                            <Scale size={24} color="#10b981" />
+                <Animated.View entering={FadeInDown.delay(200)} className="bg-secondary p-8 rounded-[2.5rem] border border-border mb-8 shadow-sm">
+                    <View className="flex-row items-center gap-4 mb-6">
+                        <View className="bg-sage/10 p-4 rounded-2xl">
+                            <Scale size={28} color="#34d399" />
                         </View>
-                        <Text className="text-lg font-bold text-foreground">My Weight</Text>
+                        <Text className="text-xl font-black text-foreground">Mass Log</Text>
                     </View>
 
                     <View className="flex-row gap-4">
-                        <View className="bg-secondary flex-1 h-14 rounded-2xl justify-center px-6">
+                        <View className="bg-background flex-1 h-16 rounded-[1.5rem] justify-center px-6 border border-border">
                             <TextInput
                                 placeholder="0.0 kg"
-                                placeholderTextColor="#9A9A9A"
+                                placeholderTextColor="#717d8a"
                                 keyboardType="numeric"
-                                className="text-lg font-bold text-foreground"
+                                className="text-xl font-black text-foreground"
                                 value={weight}
                                 onChangeText={setWeight}
                             />
                         </View>
                         <TouchableOpacity
-                            className="bg-primary w-14 h-14 rounded-2xl items-center justify-center shadow-lg"
+                            className="bg-primary w-16 h-16 rounded-[1.5rem] items-center justify-center shadow-lg"
                             onPress={() => logData({ weight: parseFloat(weight) })}
                             disabled={loading || !weight}
                         >
-                            {loading ? <ActivityIcon size={24} color="#3D3D3D" className="animate-spin" /> : <Check size={24} color="#3D3D3D" />}
+                            {loading ? <ActivityIcon size={28} color="#050505" className="animate-spin" /> : <Check size={28} color="#050505" />}
                         </TouchableOpacity>
                     </View>
-                    <Text className="text-muted-foreground text-[10px] italic mt-4 px-2">Logging regularly helps track your long-term progress.</Text>
+                    <Text className="text-foreground-muted text-[10px] font-bold uppercase tracking-widest mt-5 px-2">Clinical Precision Log</Text>
                 </Animated.View>
 
                 {/* Nutrition Log */}
-                <Animated.View entering={FadeInDown.delay(300)} className="bg-card p-6 rounded-[2.5rem] border border-border mb-6">
-                    <View className="flex-row items-center gap-3 mb-4">
-                        <View className="bg-orange-500/10 p-3 rounded-2xl">
-                            <Utensils size={24} color="#f97316" />
+                <Animated.View entering={FadeInDown.delay(300)} className="bg-secondary p-8 rounded-[2.5rem] border border-border mb-10 shadow-sm">
+                    <View className="flex-row items-center gap-4 mb-6">
+                        <View className="bg-sand/10 p-4 rounded-2xl">
+                            <Utensils size={28} color="#fde68a" />
                         </View>
-                        <Text className="text-lg font-bold text-foreground">Quick Calories</Text>
+                        <Text className="text-xl font-black text-foreground">Metabolic Load</Text>
                     </View>
 
                     <View className="flex-row gap-4">
-                        <View className="bg-secondary flex-1 h-14 rounded-2xl justify-center px-6">
+                        <View className="bg-background flex-1 h-16 rounded-[1.5rem] justify-center px-6 border border-border">
                             <TextInput
                                 placeholder="e.g. 500 kcal"
-                                placeholderTextColor="#9A9A9A"
+                                placeholderTextColor="#717d8a"
                                 keyboardType="numeric"
-                                className="text-lg font-bold text-foreground"
+                                className="text-xl font-black text-foreground"
                                 value={calories}
                                 onChangeText={setCalories}
                             />
                         </View>
                         <TouchableOpacity
-                            className="bg-primary w-14 h-14 rounded-2xl items-center justify-center shadow-lg"
+                            className="bg-primary w-16 h-16 rounded-[1.5rem] items-center justify-center shadow-lg"
                             onPress={() => {
                                 logData({ calories: parseInt(calories) });
                                 setCalories('');
                             }}
                             disabled={loading || !calories}
                         >
-                            {loading ? <ActivityIcon size={24} color="#3D3D3D" className="animate-spin" /> : <Plus size={24} color="#3D3D3D" />}
+                            {loading ? <ActivityIcon size={28} color="#050505" className="animate-spin" /> : <Plus size={28} color="#050505" />}
                         </TouchableOpacity>
                     </View>
                 </Animated.View>
 
+                {/* Body Composition */}
+                <Animated.View entering={FadeInDown.delay(400)}>
+                    <Text className="text-foreground text-xl font-black mb-5 tracking-tight uppercase px-2">Bio-Composition</Text>
+                    <MobileBmiCalculator initialHeight={175} initialWeight={70} />
+                </Animated.View>
             </ScrollView>
         </SafeAreaView>
     );

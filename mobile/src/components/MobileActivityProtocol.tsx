@@ -86,12 +86,12 @@ export function MobileActivityProtocol({ visible, onClose, title, steps, onCompl
                     {/* Header */}
                     <View className="flex-row justify-between items-center px-6 py-4">
                         <View className="flex-row items-center gap-2">
-                            <Sparkles size={16} color="#E8B4B8" />
+                            <Sparkles size={16} color="#10b981" />
                             <Text className="text-white font-black text-[10px] uppercase tracking-widest">{title} Protocol</Text>
                         </View>
                         <TouchableOpacity
                             onPress={onClose}
-                            className="bg-black/20 p-2 rounded-full border border-white/10"
+                            className="bg-black/40 p-2 rounded-full border border-white/10"
                         >
                             <X size={20} color="white" />
                         </TouchableOpacity>
@@ -105,59 +105,59 @@ export function MobileActivityProtocol({ visible, onClose, title, steps, onCompl
                             exiting={SlideOutLeft}
                             className="space-y-6"
                         >
-                            <View className="space-y-2">
-                                <Text className="text-white text-4xl font-black tracking-tight">{step.title}</Text>
+                            <View>
+                                <Text className="text-white text-4xl font-black tracking-tight mb-2">{step.title}</Text>
                                 <Text className="text-white/80 text-lg leading-relaxed">{step.description}</Text>
                             </View>
 
                             {step.tip && (
-                                <View className="bg-white/10 p-4 rounded-2xl border border-white/10">
-                                    <Text className="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Expert Tip</Text>
-                                    <Text className="text-white/90 italic text-sm">"{step.tip}"</Text>
+                                <View className="bg-primary/10 p-5 rounded-[2rem] border border-primary/20">
+                                    <Text className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2">Expert Bio-Tip</Text>
+                                    <Text className="text-white/90 italic text-sm leading-relaxed">"{step.tip}"</Text>
                                 </View>
                             )}
 
                             {/* Timer */}
                             {step.duration && (
-                                <View className="flex-row items-center gap-4 bg-black/40 p-5 rounded-3xl border border-white/5 self-start">
+                                <View className="flex-row items-center gap-4 bg-black/60 p-6 rounded-[2.5rem] border border-white/10 self-start">
                                     <View>
-                                        <Text className="text-white/40 text-[9px] font-black uppercase tracking-widest">Time Remaining</Text>
-                                        <Text className="text-white text-3xl font-black">{formatTime(timeLeft)}</Text>
+                                        <Text className="text-white/40 text-[9px] font-black uppercase tracking-widest mb-1">Time Remaining</Text>
+                                        <Text className="text-white text-4xl font-black">{formatTime(timeLeft)}</Text>
                                     </View>
                                     <TouchableOpacity
                                         onPress={() => setIsPaused(!isPaused)}
-                                        className="bg-white/10 w-12 h-12 rounded-2xl items-center justify-center border border-white/10"
+                                        className="bg-primary w-14 h-14 rounded-2xl items-center justify-center shadow-lg"
                                     >
-                                        {isPaused ? <Play size={24} color="white" fill="white" /> : <Pause size={24} color="white" fill="white" />}
+                                        {isPaused ? <Play size={28} color="#050505" fill="#050505" /> : <Pause size={28} color="#050505" fill="#050505" />}
                                     </TouchableOpacity>
                                 </View>
                             )}
 
                             {/* Navigation */}
-                            <View className="flex-row gap-3 pt-6">
+                            <View className="flex-row gap-4 pt-8">
                                 {currentStep > 0 && (
                                     <TouchableOpacity
                                         onPress={handleBack}
-                                        className="h-16 px-6 bg-white/5 rounded-2xl items-center justify-center border border-white/10"
+                                        className="h-20 px-8 bg-white/5 rounded-[1.5rem] items-center justify-center border border-white/10"
                                     >
-                                        <ChevronLeft size={24} color="white" />
+                                        <ChevronLeft size={28} color="white" />
                                     </TouchableOpacity>
                                 )}
                                 <TouchableOpacity
                                     onPress={handleNext}
-                                    className="flex-1 h-16 bg-primary rounded-2xl items-center justify-center shadow-lg flex-row"
+                                    className="flex-1 h-20 bg-primary rounded-[1.5rem] items-center justify-center shadow-2xl flex-row"
                                 >
-                                    <Text className="text-[#3D3D3D] font-black uppercase tracking-widest mr-2">
-                                        {currentStep === steps.length - 1 ? "Complete Protocol" : "Next Step"}
+                                    <Text className="text-[#050505] font-black uppercase tracking-[0.2em] text-sm">
+                                        {currentStep === steps.length - 1 ? "Protocol Complete" : "Next Protocol Step"}
                                     </Text>
-                                    <ChevronRight size={20} color="#3D3D3D" />
+                                    <ChevronRight size={20} color="#050505" className="ml-2" />
                                 </TouchableOpacity>
                             </View>
                         </Animated.View>
                     </View>
 
                     {/* Step Progress Bar */}
-                    <View className="absolute bottom-0 left-0 right-0 h-1 bg-white/5">
+                    <View className="absolute bottom-0 left-0 right-0 h-2 bg-white/5">
                         <Animated.View
                             className="h-full bg-primary"
                             style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}

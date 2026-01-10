@@ -20,23 +20,24 @@ export default function TabNavigator() {
         <Tab.Navigator
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: '#E8B4B8', // Primary color
-                tabBarInactiveTintColor: '#9A9A9A', // Muted foreground
+                tabBarActiveTintColor: '#10b981', // Neon Emerald
+                tabBarInactiveTintColor: '#6b7280', // Muted foreground
                 tabBarShowLabel: true,
                 tabBarLabelStyle: {
                     fontSize: 10,
-                    fontWeight: '600',
-                    marginBottom: Platform.OS === 'ios' ? 0 : 4,
+                    fontWeight: '700',
+                    letterSpacing: 0.5,
+                    marginBottom: Platform.OS === 'ios' ? 0 : 6,
                 },
                 tabBarStyle: {
                     position: 'absolute',
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    height: Platform.OS === 'ios' ? 85 : 65,
-                    backgroundColor: '#FFFFFF',
+                    height: Platform.OS === 'ios' ? 90 : 70,
+                    backgroundColor: '#050505',
                     borderTopWidth: 1,
-                    borderTopColor: '#F0E8E5',
+                    borderTopColor: 'rgba(255, 255, 255, 0.08)',
                     elevation: 0,
                 },
             }}

@@ -5,45 +5,45 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                // Warm, Calm Theme - matching web
-                background: "#FFFBF9",
-                "background-muted": "#FFF8F5",
-                foreground: "#3D3D3D",
-                "foreground-muted": "#7A7A7A",
+                // Neon Biological Core - "Emerald & Onyx"
+                background: "#050505",
+                "background-muted": "#08090a",
+                foreground: "#f2f4f7",
+                "foreground-muted": "#717d8a",
 
-                primary: "#E8B4B8",
-                "primary-soft": "#FDF2F4",
-                "primary-foreground": "#3D3D3D",
+                primary: "#10b981",
+                "primary-soft": "rgba(16, 185, 129, 0.1)",
+                "primary-foreground": "#ffffff",
 
-                secondary: "#F5F5F2",
-                "secondary-foreground": "#3D3D3D",
+                secondary: "#0f1115",
+                "secondary-foreground": "#f2f4f7",
 
-                // Accent palette
-                sage: "#A8C5A8",
-                lavender: "#C9B8D9",
-                coral: "#F5C6AA",
-                blush: "#F8E1E4",
+                // Accent palette (Neon)
+                sage: "#34d399",
+                lavender: "#a78bfa",
+                coral: "#f43f5e",
+                sand: "#fde68a",
 
-                muted: "#FAF7F5",
-                "muted-foreground": "#9A9A9A",
+                muted: "#0f1115",
+                "muted-foreground": "#6b7280",
 
-                accent: "#FFF8F5",
-                "accent-foreground": "#E8B4B8",
+                accent: "#0f1115",
+                "accent-foreground": "#10b981",
 
-                card: "#FFFFFF",
-                "card-foreground": "#3D3D3D",
+                card: "#08090a",
+                "card-foreground": "#f2f4f7",
 
-                border: "#F0E8E5",
-                input: "#F5F0ED",
+                border: "rgba(255, 255, 255, 0.08)",
+                input: "rgba(255, 255, 255, 0.04)",
 
-                // Glow Ring Colors
-                "ring-glow": "#E8B4B8",
-                "ring-move": "#A8C5A8",
-                "ring-mind": "#C9B8D9",
+                // Glow Core Colors
+                "ring-glow": "#10b981",
+                "ring-move": "#34d399",
+                "ring-mind": "#a78bfa",
 
                 // Glass effects
-                glass: "rgba(255, 255, 255, 0.7)",
-                "glass-border": "rgba(232, 180, 184, 0.1)",
+                glass: "rgba(15, 17, 21, 0.7)",
+                "glass-border": "rgba(16, 185, 129, 0.1)",
             },
         },
     },

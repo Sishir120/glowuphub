@@ -1,9 +1,9 @@
 const apiUrl = process.env.EXPO_PUBLIC_API_URL;
 
 if (!apiUrl) {
-    throw new Error(
-        "CRITICAL: EXPO_PUBLIC_API_URL is missing. The app cannot start without a valid API endpoint."
+    console.warn(
+        "WARNING: EXPO_PUBLIC_API_URL is missing. API calls will fail."
     );
 }
 
-export const API_URL = apiUrl;
+export const API_URL = apiUrl || "";

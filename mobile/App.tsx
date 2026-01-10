@@ -1,31 +1,17 @@
-import { View, Text, StyleSheet, StatusBar } from 'react-native';
-// import { StatusBar } from 'expo-status-bar'; // Removed
+import React from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { AuthProvider } from './src/context/AuthContext';
+import RootNavigator from './src/navigation/RootNavigator';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
+  console.log("App.tsx Root Rendered");
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>GlowUp Hub</Text>
-      <Text style={styles.subtitle}>Mobile App v1.0</Text>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFFBF9" />
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <AuthProvider>
+        <RootNavigator />
+        <StatusBar style="light" />
+      </AuthProvider>
+    </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFBF9',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#E8B4B8',
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#7A7A7A',
-  },
-});
