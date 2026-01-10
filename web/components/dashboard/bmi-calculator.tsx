@@ -18,47 +18,62 @@ interface BmiCalculatorProps {
 export function BmiCalculator({ onWeightChange, onSave, isLoading, initialHeight = 165, initialWeight = 60 }: BmiCalculatorProps) {
     const [units, setUnits] = useState<UnitSystem>('metric');
 
-    // Metric state
-    const [heightCm, setHeightCm] = useState<number>(initialHeight ?? 165);
-    const [weightKg, setWeightKg] = useState<number>(initialWeight ?? 60);
+    // State for local smooth sliders (Metric)
+    const [localHeight, setLocalHeight] = useState<number>(initialHeight ?? 165);
+    const [localWeight, setLocalWeight] = useState<number>(initialWeight ?? 60);
 
-    // Imperial state
-    const [heightFt, setHeightFt] = useState<number>(Math.floor((initialHeight ?? 165) / 30.48));
-    const [heightIn, setHeightIn] = useState<number>(Math.round(((initialHeight ?? 165) % 30.48) / 2.54));
-    const [weightLbs, setWeightLbs] = useState<number>(Math.round((initialWeight ?? 60) * 2.20462));
+    // Imperial local states to prevent rounding jitter
+    const [localFt, setLocalFt] = useState<number>(Math.floor((initialHeight ?? 165) / 30.48));
+    const [localIn, setLocalIn] = useState<number>(Math.round(((initialHeight ?? 165) % 30.48) / 2.54));
+    const [localLbs, setLocalLbs] = useState<number>(Math.round((initialWeight ?? 60) * 2.20462));
 
     const [bmi, setBmi] = useState<number>(22);
     const [category, setCategory] = useState<string>('Healthy Weight');
 
-    // Calculate BMI whenever inputs change
+    // Sync local states when unit system changes to keep them aligned
     useEffect(() => {
-        let calculatedBmi = 0;
-        let currentWeightKg = weightKg;
-
         if (units === 'metric') {
-            const heightM = heightCm / 100;
-            if (heightM > 0) {
-                calculatedBmi = weightKg / (heightM * heightM);
-            }
-            currentWeightKg = weightKg;
+            const h = (localFt * 30.48) + (localIn * 2.54);
+            const w = localLbs * 0.453592;
+            setLocalHeight(Math.round(h));
+            setLocalWeight(Math.round(w * 10) / 10);
         } else {
-            const totalInches = (heightFt * 12) + heightIn;
-            // Convert lbs to kg for parent update (1 lb = 0.453592 kg)
-            currentWeightKg = weightLbs * 0.453592;
+            const totalInches = localHeight / 2.54;
+            setLocalFt(Math.floor(totalInches / 12));
+            setLocalIn(Math.round(totalInches % 12));
+            setLocalLbs(Math.round(localWeight * 2.20462));
+        }
+    }, [units]);
 
-            if (totalInches > 0) {
-                // BMI Formula: 703 x weight (lbs) / [height (in)]^2
-                calculatedBmi = 703 * weightLbs / (totalInches * totalInches);
+    // Debounced update for parent and heavy calculations
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            let calculatedBmi = 0;
+            let currentWeightKg = localWeight;
+
+            if (units === 'metric') {
+                const heightM = localHeight / 100;
+                if (heightM > 0) {
+                    calculatedBmi = localWeight / (heightM * heightM);
+                }
+                currentWeightKg = localWeight;
+            } else {
+                const totalInches = (localFt * 12) + localIn;
+                currentWeightKg = localLbs * 0.453592;
+                if (totalInches > 0) {
+                    calculatedBmi = 703 * localLbs / (totalInches * totalInches);
+                }
             }
-        }
 
-        setBmi(parseFloat(calculatedBmi.toFixed(1)));
+            setBmi(parseFloat(calculatedBmi.toFixed(1)));
 
-        // Notify parent of accurate weight update
-        if (onWeightChange) {
-            onWeightChange(currentWeightKg);
-        }
-    }, [units, heightCm, weightKg, heightFt, heightIn, weightLbs, onWeightChange]);
+            if (onWeightChange) {
+                onWeightChange(currentWeightKg);
+            }
+        }, 16);
+
+        return () => clearTimeout(timer);
+    }, [units, localHeight, localWeight, localFt, localIn, localLbs, onWeightChange]);
 
     // Update Category
     useEffect(() => {
@@ -135,13 +150,13 @@ export function BmiCalculator({ onWeightChange, onSave, isLoading, initialHeight
                                         type="range"
                                         min="100"
                                         max="220"
-                                        value={heightCm}
-                                        onChange={(e) => setHeightCm(Number(e.target.value))}
+                                        value={localHeight}
+                                        onChange={(e) => setLocalHeight(Number(e.target.value))}
                                         className="flex-1 accent-primary h-1.5 bg-white/5 rounded-full appearance-none cursor-pointer"
-                                        aria-valuetext={`${heightCm} centimeters`}
+                                        aria-valuetext={`${localHeight} centimeters`}
                                     />
                                     <div className="w-24 bg-black/40 px-4 py-2.5 rounded-xl text-center font-mono font-black border border-white/10 shadow-inner text-white">
-                                        {heightCm} <span className="text-[9px] text-foreground-muted">CM</span>
+                                        {localHeight} <span className="text-[9px] text-foreground-muted">CM</span>
                                     </div>
                                 </div>
                             ) : (
@@ -151,8 +166,8 @@ export function BmiCalculator({ onWeightChange, onSave, isLoading, initialHeight
                                         <input
                                             id="height-ft"
                                             type="number"
-                                            value={heightFt}
-                                            onChange={(e) => setHeightFt(Number(e.target.value))}
+                                            value={localFt}
+                                            onChange={(e) => setLocalFt(Number(e.target.value))}
                                             className="w-full bg-black/40 px-4 py-3 rounded-xl font-mono font-black border border-white/10 text-white focus:border-primary/50 outline-none"
                                         />
                                     </div>
@@ -161,8 +176,8 @@ export function BmiCalculator({ onWeightChange, onSave, isLoading, initialHeight
                                         <input
                                             id="height-in"
                                             type="number"
-                                            value={heightIn}
-                                            onChange={(e) => setHeightIn(Number(e.target.value))}
+                                            value={localIn}
+                                            onChange={(e) => setLocalIn(Number(e.target.value))}
                                             className="w-full bg-black/40 px-4 py-3 rounded-xl font-mono font-black border border-white/10 text-white focus:border-primary/50 outline-none"
                                         />
                                     </div>
@@ -182,13 +197,13 @@ export function BmiCalculator({ onWeightChange, onSave, isLoading, initialHeight
                                         type="range"
                                         min="30"
                                         max="150"
-                                        value={weightKg}
-                                        onChange={(e) => setWeightKg(Number(e.target.value))}
+                                        value={localWeight}
+                                        onChange={(e) => setLocalWeight(Number(e.target.value))}
                                         className="flex-1 accent-primary h-1.5 bg-white/5 rounded-full appearance-none cursor-pointer"
-                                        aria-valuetext={`${weightKg} kilograms`}
+                                        aria-valuetext={`${localWeight} kilograms`}
                                     />
                                     <div className="w-24 bg-black/40 px-4 py-2.5 rounded-xl text-center font-mono font-black border border-white/10 shadow-inner text-white">
-                                        {weightKg} <span className="text-[9px] text-foreground-muted">KG</span>
+                                        {localWeight} <span className="text-[9px] text-foreground-muted">KG</span>
                                     </div>
                                 </div>
                             ) : (
@@ -198,13 +213,13 @@ export function BmiCalculator({ onWeightChange, onSave, isLoading, initialHeight
                                         type="range"
                                         min="66"
                                         max="400"
-                                        value={weightLbs}
-                                        onChange={(e) => setWeightLbs(Number(e.target.value))}
+                                        value={localLbs}
+                                        onChange={(e) => setLocalLbs(Number(e.target.value))}
                                         className="flex-1 accent-primary h-1.5 bg-white/5 rounded-full appearance-none cursor-pointer"
-                                        aria-valuetext={`${weightLbs} pounds`}
+                                        aria-valuetext={`${localLbs} pounds`}
                                     />
                                     <div className="w-24 bg-black/40 px-4 py-2.5 rounded-xl text-center font-mono font-black border border-white/10 shadow-inner text-white">
-                                        {weightLbs} <span className="text-[9px] text-foreground-muted">LBS</span>
+                                        {localLbs} <span className="text-[9px] text-foreground-muted">LBS</span>
                                     </div>
                                 </div>
                             )}

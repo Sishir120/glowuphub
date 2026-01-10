@@ -80,42 +80,45 @@ export default function TrackPage() {
             {/* Analysis Grid */}
             <div className="grid xl:grid-cols-12 gap-6">
                 {/* Visual Bio-Digital Twin & Biometrics (4 cols) */}
-                <div className="xl:col-span-4 space-y-6">
+                <aside className="xl:col-span-4 space-y-6" aria-label="Biometric Visualization">
                     <FadeIn direction="right">
                         <BioDigitalTwin hydration={85} energy={72} focus={94} stress={15} />
                     </FadeIn>
 
                     <FadeIn direction="right" delay={0.2}>
-                        <div className="p-4 rounded-xl bg-gradient-to-br from-emerald-500/10 to-transparent border border-emerald-500/20 relative overflow-hidden group">
+                        <article className="p-6 rounded-3xl bg-gradient-to-br from-emerald-500/10 to-transparent border border-emerald-500/20 relative overflow-hidden group shadow-xl">
                             <div className="absolute -right-16 -bottom-16 w-32 h-32 bg-emerald-500/10 rounded-full blur-[60px] group-hover:bg-emerald-500/20 transition-all duration-1000" />
 
-                            <div className="relative z-10 space-y-4">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-7 h-7 rounded-lg bg-emerald-500/20 flex items-center justify-center font-black text-[8px] text-emerald-500">
+                            <div className="relative z-10 space-y-5">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/20 flex items-center justify-center font-black text-[10px] text-emerald-500 shadow-inner">
                                         AI
                                     </div>
                                     <div>
-                                        <h4 className="text-xs font-bold tracking-tight">Expert Health Tip</h4>
-                                        <p className="text-[7px] text-foreground-muted font-black uppercase tracking-widest opacity-40">Personal Advice</p>
+                                        <h4 className="text-sm font-black tracking-tight uppercase">Strategic Health Tip</h4>
+                                        <p className="text-[8px] text-foreground-muted font-black uppercase tracking-[0.2em] opacity-40">Predictive Intelligence</p>
                                     </div>
                                 </div>
 
-                                <p className="text-xs text-foreground/70 leading-relaxed italic border-l border-emerald-500/30 pl-4">
-                                    "Try drinking more water today to help your body feel its best."
+                                <p className="text-sm text-foreground/80 leading-relaxed italic border-l-2 border-primary/30 pl-5">
+                                    "Hyper-hydration detected as optimal for current metabolic velocity. Prioritize H2O intake."
                                 </p>
 
-                                <div className="flex flex-col gap-2 pt-1">
-                                    <div className="px-3 py-1.5 rounded-lg bg-emerald-500 text-white font-bold text-[8px] uppercase tracking-widest cursor-pointer hover:bg-emerald-600 transition-colors shadow-sm text-center">
-                                        I Drank Extra Water
-                                    </div>
+                                <div className="flex flex-col gap-2 pt-2">
+                                    <Button
+                                        variant="outline"
+                                        className="w-full h-11 rounded-xl border-emerald-500/20 bg-emerald-500/5 text-emerald-500 font-black text-[10px] uppercase tracking-[0.2em] hover:bg-emerald-500 hover:text-white transition-all shadow-sm"
+                                    >
+                                        Acknowledge Protocol
+                                    </Button>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     </FadeIn>
-                </div>
+                </aside>
 
                 {/* Primary Tracking Hub (8 cols) */}
-                <div className="xl:col-span-8 space-y-6">
+                <main className="xl:col-span-8 space-y-6">
                     {/* Body Composition Calibration */}
                     <FadeIn direction="up">
                         <BmiCalculator />
@@ -123,50 +126,51 @@ export default function TrackPage() {
 
                     {/* Weight Trajectory */}
                     <FadeIn delay={0.1}>
-                        <div className="glass-premium rounded-2xl p-6 border border-white/5 relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 p-6 opacity-5 pointer-events-none">
-                                <LineChart size={60} className="text-primary" />
+                        <section className="glass-premium rounded-3xl p-8 border border-white/5 relative overflow-hidden group shadow-2xl" aria-labelledby="weight-chart-heading">
+                            <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
+                                <LineChart size={80} className="text-primary" />
                             </div>
 
-                            <div className="relative z-10 space-y-5">
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
-                                    <div className="space-y-0.5">
-                                        <h3 className="text-lg font-bold tracking-tight">Weight Progress</h3>
-                                        <p className="text-[8px] text-foreground-muted font-black uppercase tracking-widest text-emerald-500">Your Journey to Healthy Weight</p>
+                            <div className="relative z-10 space-y-6">
+                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                                    <div className="space-y-1">
+                                        <h3 id="weight-chart-heading" className="text-xl font-black tracking-tight text-white uppercase">Weight Trajectory</h3>
+                                        <p className="text-[10px] text-foreground-muted font-black uppercase tracking-[0.3em] text-primary">Biometric History Scan</p>
                                     </div>
                                     <div className="flex gap-3">
-                                        <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 flex items-center gap-2">
-                                            <TrendingDown size={12} className="text-emerald-500" />
-                                            <span className="text-xs font-bold">-0.8kg <span className="text-[9px] text-foreground-muted uppercase ml-1">last 7d</span></span>
+                                        <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3 shadow-inner">
+                                            <TrendingDown size={14} className="text-primary" />
+                                            <span className="text-sm font-black text-white">-0.8kg <span className="text-[9px] text-foreground-muted uppercase ml-1 opacity-50 font-bold">last 7d</span></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="h-[220px]">
+                                <div className="h-[280px]">
                                     <WeightChart />
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </FadeIn>
+
                     {/* Insights & Planning */}
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-2 gap-6">
                         <InsightCard
-                            title="Goal Timeline"
-                            desc="When you'll reach your target."
-                            icon={<Zap className="text-amber-500" size={14} />}
+                            title="Goal Convergence"
+                            desc="Predicted temporal alignment for target achievement."
+                            icon={<Zap className="text-amber-400" size={16} />}
                             mainValue="Mar 12"
                             subValue="12 Weeks Left"
                             color="amber"
                         />
                         <InsightCard
-                            title="Habit Streak"
-                            desc="How well you're sticking to habits."
-                            icon={<Activity className="text-emerald-500" size={14} />}
+                            title="Homeostasis Score"
+                            desc="Cumulative stickiness to core metabolic habits."
+                            icon={<Activity className="text-primary" size={16} />}
                             mainValue="94%"
-                            subValue="Elite Status"
+                            subValue="Elite Tier"
                             color="emerald"
                         />
                     </div>
-                </div>
+                </main>
             </div>
         </div>
     );

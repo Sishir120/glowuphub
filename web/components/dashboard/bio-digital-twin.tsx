@@ -22,73 +22,105 @@ export function BioDigitalTwin({ hydration = 80, energy = 65, focus = 90, stress
                     </div>
                 </div>
 
-                <div className="relative w-40 h-56 mb-6 flex items-center justify-center">
+                <div className="relative w-48 h-64 mb-6 flex items-center justify-center">
                     {/* Glow Effects */}
-                    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-full w-full bg-emerald-500/5 blur-[80px] rounded-full animate-breathe" />
+                    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-full w-full bg-emerald-500/10 blur-[100px] rounded-full animate-breathe" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05),transparent_70%)] pointer-events-none" />
 
                     {/* SVG Human Figure */}
-                    <svg viewBox="0 0 100 200" className="w-full h-full drop-shadow-[0_0_20px_rgba(16,185,129,0.2)]">
-                        {/* Shadow Figure */}
+                    <svg viewBox="0 0 100 200" className="w-full h-full drop-shadow-[0_0_25px_rgba(16,185,129,0.3)] filter animate-bio-glow">
+                        <defs>
+                            <radialGradient id="hydration-grad">
+                                <stop offset="0%" stopColor="#10b981" />
+                                <stop offset="100%" stopColor="transparent" />
+                            </radialGradient>
+
+                            <pattern id="twin-mesh" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                                <circle cx="1" cy="1" r="0.5" fill="rgba(255,255,255,0.07)" />
+                            </pattern>
+
+                            <mask id="human-mask">
+                                <path
+                                    d="M50 10 C55 10 58 15 58 20 C58 25 55 30 50 30 C45 30 42 25 42 20 C42 15 45 10 50 10 M42 32 L58 32 L65 50 L62 90 L55 90 L55 130 L60 180 L50 180 L40 180 L45 130 L45 90 L38 90 L35 50 Z"
+                                    fill="white"
+                                />
+                            </mask>
+                        </defs>
+
+                        {/* Phantom Body Shadow */}
                         <path
                             d="M50 10 C55 10 58 15 58 20 C58 25 55 30 50 30 C45 30 42 25 42 20 C42 15 45 10 50 10 M42 32 L58 32 L65 50 L62 90 L55 90 L55 130 L60 180 L50 180 L40 180 L45 130 L45 90 L38 90 L35 50 Z"
-                            fill="rgba(255,255,255,0.03)"
-                            stroke="rgba(255,255,255,0.05)"
+                            fill="rgba(255,255,255,0.02)"
+                            stroke="rgba(16,185,129,0.15)"
                             strokeWidth="0.5"
                         />
+
+                        {/* Tech-Mesh Overlay */}
+                        <rect x="0" y="0" width="100" height="200" fill="url(#twin-mesh)" mask="url(#human-mask)" opacity="0.4" />
 
                         {/* Dynamic Core Glow (Hydration) */}
                         <motion.circle
                             cx="50" cy="70"
                             initial={{ r: 5 }}
-                            animate={{ r: 15 + (hydration / 10), opacity: [0.2, 0.4, 0.2] }}
-                            transition={{ duration: 3, repeat: Infinity }}
+                            animate={{ r: 15 + (hydration / 10), opacity: [0.3, 0.6, 0.3] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                             fill="url(#hydration-grad)"
-                            className="filter blur-[8px]"
+                            className="filter blur-[12px]"
                         />
 
                         {/* Energy Pathways (Thorax/Limbs) */}
                         <motion.path
                             d="M50 40 L50 80 M45 50 L35 60 M55 50 L65 60"
                             stroke="currentColor"
-                            strokeWidth="1"
+                            strokeWidth="1.5"
                             strokeLinecap="round"
-                            className="text-amber-500/40"
+                            className="text-emerald-500/60"
                             initial={{ pathLength: 0 }}
                             animate={{ pathLength: energy / 100 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
                         />
 
                         {/* Focus Pulse (Head) */}
                         <motion.circle
-                            cx="50" cy="20" r="4"
+                            cx="50" cy="20" r="5"
                             fill="currentColor"
-                            className="text-primary"
-                            initial={{ scale: 0.8, opacity: 0.2 }}
-                            animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.6, 0.2] }}
+                            className="text-emerald-500"
+                            initial={{ scale: 0.8, opacity: 0.3 }}
+                            animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
                             transition={{ duration: 2, repeat: Infinity }}
                         />
-
-                        <defs>
-                            <radialGradient id="hydration-grad">
-                                <stop offset="0%" stopColor="#10b981" />
-                                <stop offset="100%" stopColor="transparent" />
-                            </radialGradient>
-                        </defs>
                     </svg>
 
                     {/* Adaptive Data Labels */}
-                    <div className="absolute top-10 -left-12 flex flex-col items-end gap-1">
-                        <span className="text-[9px] font-black uppercase tracking-widest text-emerald-500">Oxygenation</span>
-                        <div className="w-12 h-0.5 bg-emerald-500/20 rounded-full overflow-hidden">
-                            <div className="h-full bg-emerald-500 w-[92%]" />
+                    <motion.div
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="absolute top-12 -left-16 flex flex-col items-end gap-1"
+                    >
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]">Oxygen</span>
+                        <div className="w-16 h-1 bg-emerald-500/10 rounded-full overflow-hidden border border-emerald-500/20">
+                            <motion.div
+                                initial={{ width: 0 }}
+                                animate={{ width: "94%" }}
+                                className="h-full bg-emerald-500"
+                            />
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="absolute bottom-20 -right-12 flex flex-col items-start gap-1">
-                        <span className="text-[9px] font-black uppercase tracking-widest text-lavender">Mobility</span>
-                        <div className="w-12 h-0.5 bg-lavender/20 rounded-full overflow-hidden">
-                            <div className="h-full bg-lavender w-[75%]" />
+                    <motion.div
+                        initial={{ opacity: 0, x: 10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="absolute bottom-24 -right-16 flex flex-col items-start gap-1"
+                    >
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-lavender shadow-[0_0_10px_rgba(167,139,250,0.3)]">Mobility</span>
+                        <div className="w-16 h-1 bg-lavender/10 rounded-full overflow-hidden border border-lavender/20">
+                            <motion.div
+                                initial={{ width: 0 }}
+                                animate={{ width: "82%" }}
+                                className="h-full bg-lavender"
+                            />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Integration Dashboard */}
