@@ -8,7 +8,6 @@ import api from '../services/api';
 import { MobileActivityProtocol, MobileProtocolStep } from '../components/MobileActivityProtocol';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { MobileBmiCalculator } from '../components/MobileBmiCalculator';
-import { MobileBmiCalculator } from '../components/MobileBmiCalculator';
 
 const PROTOCOLS: Record<string, MobileProtocolStep[]> = {
     'walking': [
