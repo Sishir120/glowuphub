@@ -10,10 +10,8 @@ export function MobileBottomNav() {
     const pathname = usePathname();
 
     const tabs = [
-        { href: "/dashboard", icon: Home, label: "Home" },
-        { href: "/routines", icon: Compass, label: "Explore" },
-        { href: "/track", icon: PlusCircle, label: "Track", isPrimary: true },
-        { href: "/calendar", icon: Calendar, label: "Plan" },
+        { href: "/dashboard", icon: Home, label: "App" },
+        { href: "/chat", icon: Compass, label: "Help" },
         { href: "/profile", icon: User, label: "Profile" },
     ];
 
@@ -36,23 +34,6 @@ export function MobileBottomNav() {
             <nav className="relative flex items-center justify-around h-16 px-2">
                 {tabs.map((tab) => {
                     const isActive = pathname === tab.href;
-
-                    if (tab.isPrimary) {
-                        return (
-                            <Link
-                                key={tab.href}
-                                href={tab.href}
-                                className="relative -top-5"
-                            >
-                                <motion.div
-                                    whileTap={{ scale: 0.9 }}
-                                    className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/25 border-4 border-black"
-                                >
-                                    <tab.icon size={24} className="text-white" />
-                                </motion.div>
-                            </Link>
-                        );
-                    }
 
                     return (
                         <Link

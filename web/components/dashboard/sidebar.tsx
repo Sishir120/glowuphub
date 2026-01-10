@@ -20,20 +20,12 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 const navigation = {
-    "Your Progress": [
-        { name: "Daily Dashboard", href: "/dashboard", icon: LayoutDashboard },
-        { name: "Workout Plans", href: "/routines", icon: Dumbbell },
-        { name: "Activity Archive", href: "/calendar", icon: Calendar },
-        { name: "Activity Log", href: "/movement", icon: Activity },
-        { name: "My Biometrics", href: "/track", icon: Scale },
-    ],
-    "Support": [
-        { name: "My Plan", href: "/plan", icon: History },
-        { name: "Ask an Expert", href: "/chat", icon: MessageSquare },
-        { name: "Care Team", href: "/expert", icon: ShieldCheck },
+    "Mobile App": [
+        { name: "Get the App", href: "/dashboard", icon: LayoutDashboard },
     ],
     "Account": [
         { name: "My Profile", href: "/profile", icon: User },
+        { name: "My Support", href: "/chat", icon: MessageSquare },
     ]
 };
 
