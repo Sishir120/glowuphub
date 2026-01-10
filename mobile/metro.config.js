@@ -1,9 +1,8 @@
 const { getDefaultConfig } = require("expo/metro-config");
+const { withNativeWind } = require("nativewind/metro-config");
 
 const config = getDefaultConfig(__dirname);
 
-// Nativewind temporarily disabled to debug startup crash
-// const { withNativeWind } = require("nativewind/metro-config");
-// module.exports = withNativeWind(config, { input: "./global.css" });
-
-module.exports = config;
+// NOTE: withNativeWind can cause ESM protocol errors on Windows local dev.
+// For production builds/updates, run from a Linux environment or WSL.
+module.exports = withNativeWind(config, { input: "./global.css" });

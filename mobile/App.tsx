@@ -5,7 +5,6 @@ import RootNavigator from './src/navigation/RootNavigator';
 import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
-  console.log("App.tsx Root Rendered");
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <AuthProvider>

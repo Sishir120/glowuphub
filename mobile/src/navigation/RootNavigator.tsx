@@ -7,7 +7,6 @@ import TabNavigator from './TabNavigator';
 
 export default function RootNavigator() {
     const { user, isLoading } = useAuth();
-    console.log("RootNavigator Render:", { isLoading, hasUser: !!user });
 
     if (isLoading) {
         return (

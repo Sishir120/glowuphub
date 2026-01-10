@@ -1,5 +1,5 @@
 import { registerRootComponent } from 'expo';
-// import './global.css'; // Temporarily disabled for debugging
+import './global.css';
 
 import App from './App';
 
