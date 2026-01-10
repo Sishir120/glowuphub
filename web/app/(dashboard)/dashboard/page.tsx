@@ -31,11 +31,14 @@ import { cn } from "@/lib/utils";
 import { BioStat } from "@/components/dashboard/bio-stat";
 import { RitualCard } from "@/components/dashboard/ritual-card";
 
+import { MobileHandoff } from "@/components/dashboard/mobile-handoff";
+
 export default function DashboardPage() {
     const [isLogOpen, setIsLogOpen] = useState(false);
     const [userData, setUserData] = useState<any>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const [showWebView, setShowWebView] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -69,7 +72,7 @@ export default function DashboardPage() {
     if (error || !userData) {
         return (
             <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-4">
-                <p className="text-foreground-muted">Unable to load dashboard data.</p>
+                <p className="text-foreground-muted">Unable to load primary dashboard data.</p>
                 <Button onClick={() => window.location.reload()}>Retry</Button>
             </div>
         );
@@ -86,8 +89,8 @@ export default function DashboardPage() {
     const mindScore = latestLog?.mindScore || 0;
 
     // Mock calculations for demo
-    const targetWeight = 70; // Hardcoded goal for now since DB might not have it
-    const weightProgress = Math.max(0, Math.min(100, ((90 - currentWeight) / (90 - targetWeight)) * 100)); // Assuming start 90
+    const targetWeight = 70;
+    const weightProgress = Math.max(0, Math.min(100, ((90 - currentWeight) / (90 - targetWeight)) * 100));
 
     return (
         <div className="space-y-16 pb-32">
@@ -96,167 +99,149 @@ export default function DashboardPage() {
                 onClose={() => setIsLogOpen(false)}
                 onComplete={(data) => {
                     console.log("Activity logged:", data);
-                    // Optimistic update or refetch could happen here
                 }}
             />
-            {/* Clinical Greeting */}
-            <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 px-4">
+
+            {/* Mobile-First Header */}
+            <header className="flex flex-col gap-8 px-4">
                 <FadeIn direction="down">
                     <div className="space-y-4">
                         <div className="flex items-center gap-3">
                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500">Live Health Tracker</span>
+                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500">Mobile Onboarding Portal</span>
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tighter leading-none">
                             Welcome, <span className="text-emerald-500">{firstName}</span>.
                         </h1>
-                        <p className="text-lg text-foreground-muted max-w-xl leading-relaxed">
-                            You're making <span className="text-foreground font-bold">Great Progress</span> this week.
-                            Let's focus on staying active and healthy today.
+                        <p className="text-lg text-foreground-muted max-w-xl leading-relaxed font-medium">
+                            Your biological tracking experience is <span className="text-foreground font-bold">Best on Mobile.</span> Scan the code below to sync your profile instantly.
                         </p>
                     </div>
                 </FadeIn>
-
-                <div className="flex items-center gap-4">
-                    <Button variant="outline" className="h-16 px-8 rounded-2xl border-white/5 bg-white/3 hover:bg-white/5 font-bold uppercase tracking-widest text-[10px] group transition-all">
-                        <ShieldCheck className="mr-2 w-4 h-4 text-emerald-500 group-hover:animate-pop" />
-                        My Stats
-                    </Button>
-                    <Button
-                        onClick={() => setIsLogOpen(true)}
-                        className="h-16 px-10 rounded-2xl bg-emerald-500 text-white hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(16,185,129,0.2)] font-bold uppercase tracking-widest text-[10px]"
-                    >
-                        Start Daily Habits
-                    </Button>
-                </div>
             </header>
 
-            {/* The Sanctuary Grid */}
-            <div className="grid xl:grid-cols-12 gap-10">
-                {/* Left: Bio-Data Visualization (8 cols) */}
-                <div className="xl:col-span-8 space-y-10">
-                    <FadeIn>
-                        <StreakTracker count={userData.streak || 0} activeDayIndex={new Date().getDay() === 0 ? 6 : new Date().getDay() - 1} days={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />
-                    </FadeIn>
-                    <ClinicalAdvice />
-                    {/* Primary Metabolic Engine */}
-                    <FadeIn>
-                        <div className="glass-premium rounded-[2.5rem] p-10 border border-white/5 relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-lavender/5 opacity-50" />
+            {/* The Handoff Experience */}
+            <FadeIn delay={0.1}>
+                <MobileHandoff />
+            </FadeIn>
 
-                            <div className="flex flex-col lg:flex-row items-center gap-12 relative z-10">
-                                <div className="relative group/bio">
-                                    <div className="absolute inset-0 bg-emerald-500/10 blur-[80px] rounded-full opacity-30 group-hover/bio:opacity-60 transition-opacity duration-1000" />
-                                    <ActivityRings size={280} move={moveScore} glow={glowScore} mind={mindScore} />
-                                    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                                        <Scale size={20} className="text-emerald-500 mb-1 opacity-50" />
-                                        <span className="text-4xl font-black tracking-tighter">{currentWeight}</span>
-                                        <span className="text-[10px] uppercase font-black text-foreground-muted tracking-[0.3em] mt-0.5">KG</span>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 space-y-10">
-                                    <div className="space-y-4">
-                                        <h3 className="text-3xl font-bold tracking-tight">Daily Energy</h3>
-                                        <p className="text-sm text-foreground-muted leading-relaxed">
-                                            Your efficiency is at <span className="text-emerald-500 font-bold">{(moveScore + glowScore) / 2}%</span>.
-                                            You're successfully burning fat. Goal reach in <span className="text-foreground font-bold italic">14 days</span>!
-                                        </p>
-                                    </div>
-
-                                    <div className="grid grid-cols-2 gap-6">
-                                        <BioStat
-                                            label="Calorie Gap"
-                                            value="-320" // Mocked, would need calc
-                                            unit="kcal"
-                                            icon={<Flame size={18} className="text-coral" />}
-                                            trend="Deficit"
-                                            progress={75}
-                                            color="coral"
-                                        />
-                                        <BioStat
-                                            label="Destination"
-                                            value={`${targetWeight.toFixed(1)}`}
-                                            unit="kg"
-                                            icon={<Target size={18} className="text-emerald-500" />}
-                                            trend="On track"
-                                            progress={weightProgress}
-                                            color="emerald"
-                                        />
-                                    </div>
-
-                                    <div className="flex gap-4 pt-6">
-                                        <Link href="/track" className="flex-1">
-                                            <Button variant="ghost" className="w-full h-14 rounded-2xl bg-white/3 border border-white/5 hover:bg-white/5 font-black text-[10px] uppercase tracking-[0.2em] transition-all">
-                                                See Detailed Progress
-                                            </Button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </FadeIn>
-
-                    {/* Transformation Map */}
-                    <FadeIn delay={0.2}>
-                        <TransformationMap />
-                    </FadeIn>
-
-                    {/* Ritual Integration */}
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <RitualCard
-                            title="Body & Sleep"
-                            desc="Stay hydrated and get enough rest for natural recovery."
-                            icon={<Wind className="text-emerald-500" />}
-                            stats={[{ label: "Water", value: latestLog?.water ? `${latestLog.water / 1000}L` : "0L" }, { label: "Sleep", value: "7.2h" }]}
-                        />
-                        <RitualCard
-                            title="Mind & Mood"
-                            desc="Simple habits to stay focused, happy, and stress-free."
-                            icon={<Brain className="text-lavender" />}
-                            stats={[{ label: "Mood", value: "Stable" }, { label: "Focus", value: "High" }]}
-                        />
-                    </div>
+            {/* Transition to Web View */}
+            {!showWebView ? (
+                <div className="flex flex-col items-center gap-6 pt-12">
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                    <Button
+                        variant="ghost"
+                        onClick={() => setShowWebView(true)}
+                        className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground-muted hover:text-emerald-500 transition-colors"
+                    >
+                        Or Continue with Web Dashboard
+                    </Button>
                 </div>
+            ) : (
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="space-y-24 pt-20"
+                >
+                    <div className="flex items-center justify-between px-4">
+                        <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500">Web Legacy Dashboard</h3>
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => setShowWebView(false)}
+                            className="text-[8px] h-8 rounded-full border-white/5 bg-white/3 font-black uppercase tracking-widest"
+                        >
+                            Return to Mobile Hub
+                        </Button>
+                    </div>
 
-                {/* Right: Success & Accountability (4 cols) */}
-                <aside className="xl:col-span-4 space-y-10">
-                    <FadeIn direction="left" delay={0.4}>
-                        <div className="glass-premium rounded-[3rem] p-8 border border-white/5 space-y-8">
-                            <h3 className="text-xl font-bold tracking-tight">Our Success Stories</h3>
-                            <SuccessStories />
-                        </div>
-                    </FadeIn>
+                    <div className="grid xl:grid-cols-12 gap-10">
+                        {/* Left: Bio-Data Visualization (8 cols) */}
+                        <div className="xl:col-span-8 space-y-10">
+                            <FadeIn>
+                                <StreakTracker count={userData.streak || 0} activeDayIndex={new Date().getDay() === 0 ? 6 : new Date().getDay() - 1} days={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />
+                            </FadeIn>
+                            <ClinicalAdvice />
+                            {/* Primary Metabolic Engine */}
+                            <FadeIn>
+                                <div className="glass-premium rounded-[2.5rem] p-10 border border-white/5 relative overflow-hidden group">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-lavender/5 opacity-50" />
 
-                    <FadeIn direction="left" delay={0.6}>
-                        <FortuneCookie />
-                    </FadeIn>
+                                    <div className="flex flex-col lg:flex-row items-center gap-12 relative z-10">
+                                        <div className="relative group/bio">
+                                            <div className="absolute inset-0 bg-emerald-500/10 blur-[80px] rounded-full opacity-30 group-hover/bio:opacity-60 transition-opacity duration-1000" />
+                                            <ActivityRings size={280} move={moveScore} glow={glowScore} mind={mindScore} />
+                                            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                                                <Scale size={20} className="text-emerald-500 mb-1 opacity-50" />
+                                                <span className="text-4xl font-black tracking-tighter">{currentWeight}</span>
+                                                <span className="text-[10px] uppercase font-black text-foreground-muted tracking-[0.3em] mt-0.5">KG</span>
+                                            </div>
+                                        </div>
 
-                    <FadeIn direction="left" delay={0.8}>
-                        <div className="glass-premium rounded-[3rem] p-8 border border-white/5 space-y-8 overflow-hidden relative group">
-                            <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                            <h3 className="text-xl font-bold tracking-tight">Daily Rituals</h3>
-                            <LifestyleRituals />
-                        </div>
-                    </FadeIn>
+                                        <div className="flex-1 space-y-10">
+                                            <div className="space-y-4">
+                                                <h3 className="text-3xl font-bold tracking-tight">Daily Energy</h3>
+                                                <p className="text-sm text-foreground-muted leading-relaxed">
+                                                    Your efficiency is at <span className="text-emerald-500 font-bold">{(moveScore + glowScore) / 2}%</span>.
+                                                    Goal reach in <span className="text-foreground font-bold italic">14 days</span>!
+                                                </p>
+                                            </div>
 
-                    {/* Quick Insight Card */}
-                    <FadeIn direction="left" delay={0.8}>
-                        <div className="p-8 rounded-[2.5rem] bg-gradient-to-br from-emerald-500/10 to-transparent border border-emerald-500/20">
-                            <Sparkles size={24} className="text-emerald-500 mb-4" />
-                            <p className="text-sm italic text-foreground-muted leading-relaxed mb-6">
-                                "The body is the only sanctuary we truly own. Respect the protocol, and the protocol will respect your goals."
-                            </p>
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-xl bg-emerald-500/20 flex items-center justify-center font-black text-[10px] text-emerald-500">
-                                    AI
+                                            <div className="grid grid-cols-2 gap-6">
+                                                <BioStat
+                                                    label="Calorie Gap"
+                                                    value="-320"
+                                                    unit="kcal"
+                                                    icon={<Flame size={18} className="text-coral" />}
+                                                    trend="Deficit"
+                                                    progress={75}
+                                                    color="coral"
+                                                />
+                                                <BioStat
+                                                    label="Destination"
+                                                    value={`${targetWeight.toFixed(1)}`}
+                                                    unit="kg"
+                                                    icon={<Target size={18} className="text-emerald-500" />}
+                                                    trend="On track"
+                                                    progress={weightProgress}
+                                                    color="emerald"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <span className="text-[10px] font-black uppercase tracking-widest">Your Health Guide AI</span>
-                            </div>
+                            </FadeIn>
+
+                            {/* Transformation Map */}
+                            <FadeIn delay={0.2}>
+                                <TransformationMap />
+                            </FadeIn>
                         </div>
-                    </FadeIn>
-                </aside>
-            </div>
+
+                        {/* Right: Success & Accountability (4 cols) */}
+                        <aside className="xl:col-span-4 space-y-10">
+                            <FadeIn direction="left" delay={0.4}>
+                                <div className="glass-premium rounded-[3rem] p-8 border border-white/5 space-y-8">
+                                    <h3 className="text-xl font-bold tracking-tight">Our Success Stories</h3>
+                                    <SuccessStories />
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn direction="left" delay={0.6}>
+                                <FortuneCookie />
+                            </FadeIn>
+
+                            {/* Ritual Integration (Simplified for web view) */}
+                            <FadeIn direction="left" delay={0.8}>
+                                <div className="glass-premium rounded-[3rem] p-8 border border-white/5 space-y-8 overflow-hidden relative group">
+                                    <h3 className="text-xl font-bold tracking-tight">Lifestyle Rituals</h3>
+                                    <LifestyleRituals />
+                                </div>
+                            </FadeIn>
+                        </aside>
+                    </div>
+                </motion.div>
+            )}
         </div>
     );
 }
