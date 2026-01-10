@@ -24,7 +24,6 @@
       "package": "com.glowuphub.app",
       "versionCode": 1,
       "permissions": [
-        "INTERNET",
         "INTERNET"
       ],
       "edgeToEdgeEnabled": true
