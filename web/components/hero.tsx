@@ -38,7 +38,7 @@ export function Hero() {
                             Expert-Led Weight Loss • 10,000+ Success Stories
                         </div>
 
-                        <h1 className="text-7xl font-black tracking-tight leading-[1.05] text-white">
+                        <h1 className="text-6xl font-black tracking-tight leading-tight text-white">
                             <span className="text-transparent bg-clip-text bg-gradient-to-b from-cyan-300 via-blue-400 to-white">
                                 Lose Weight For Good.
                             </span>
@@ -48,7 +48,7 @@ export function Hero() {
                             </span>
                         </h1>
 
-                        <p className="text-xl text-zinc-400 leading-relaxed max-w-lg">
+                        <p className="text-lg text-zinc-400 leading-relaxed max-w-lg">
                             Stop fighting your biology. Join <span className="text-emerald-400 font-bold">10,480+ women</span> globally resetting their metabolic set-point with Clinical Nutritionist <span className="text-white font-medium">Sabita Subedi.</span>
                             <br />
                             <span className="font-bold text-white mt-4 block">No counting, no cardio, just results.</span>
@@ -56,14 +56,14 @@ export function Hero() {
 
                         <div className="flex items-center gap-6 pt-4">
                             <Link href="/register">
-                                <Button size="lg" className="rounded-full h-16 px-10 text-xl font-bold bg-emerald-500 text-black hover:bg-emerald-400 shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all">
+                                <Button size="lg" className="rounded-full h-14 px-8 text-lg font-bold bg-emerald-500 text-black hover:bg-emerald-400 shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all">
                                     Start Losing Weight (Free)
                                 </Button>
                             </Link>
 
-                            <button onClick={() => setShowWalkthrough(true)} className="flex items-center gap-4 text-lg text-zinc-300 font-semibold group hover:text-white transition-colors">
-                                <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:bg-zinc-800 transition-colors">
-                                    <Play className="w-5 h-5 fill-white text-white" />
+                            <button onClick={() => setShowWalkthrough(true)} className="flex items-center gap-4 text-base text-zinc-300 font-semibold group hover:text-white transition-colors">
+                                <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center group-hover:bg-zinc-800 transition-colors">
+                                    <Play className="w-4 h-4 fill-white text-white" />
                                 </div>
                                 View Walkthrough
                             </button>
@@ -76,10 +76,10 @@ export function Hero() {
                     </motion.div>
 
                     {/* Right Content (Orbital Visual) */}
-                    <div className="relative h-[650px] flex items-center justify-center">
-                        <div className="absolute w-[500px] h-[500px] rounded-full border border-white/5" />
-                        <div className="absolute w-[380px] h-[380px] rounded-full border border-white/5" />
-                        <div className="absolute w-[600px] h-[600px] rounded-full opacity-20 animate-[spin_30s_linear_infinite]">
+                    <div className="relative h-[550px] flex items-center justify-center">
+                        <div className="absolute w-[400px] h-[400px] rounded-full border border-white/5" />
+                        <div className="absolute w-[300px] h-[300px] rounded-full border border-white/5" />
+                        <div className="absolute w-[480px] h-[480px] rounded-full opacity-20 animate-[spin_30s_linear_infinite]">
                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-emerald-500/0 via-emerald-500/30 to-transparent blur-2xl" />
                         </div>
 
@@ -87,12 +87,12 @@ export function Hero() {
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative w-[340px] h-[340px] rounded-full bg-black/40 border border-emerald-500/10 backdrop-blur-md flex items-center justify-center shadow-2xl shadow-emerald-500/20"
+                            className="relative w-[260px] h-[260px] rounded-full bg-black/40 border border-emerald-500/10 backdrop-blur-md flex items-center justify-center shadow-2xl shadow-emerald-500/20"
                         >
                             <div className="absolute inset-4 rounded-full border border-emerald-500/10" />
-                            <div className="relative w-[180px] h-[180px] rounded-full bg-black/60 flex items-center justify-center border border-white/5">
+                            <div className="relative w-[140px] h-[140px] rounded-full bg-black/60 flex items-center justify-center border border-white/5">
                                 <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-xl animate-pulse" />
-                                <Logo size={100} />
+                                <Logo size={80} />
                             </div>
                         </motion.div>
 
@@ -100,7 +100,7 @@ export function Hero() {
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                            className="absolute top-20 right-0 p-3 bg-zinc-900/90 backdrop-blur-lg rounded-2xl border border-white/10 flex items-center gap-3 shadow-xl z-20"
+                            className="absolute top-16 right-8 p-2.5 bg-zinc-900/90 backdrop-blur-lg rounded-2xl border border-white/10 flex items-center gap-3 shadow-xl z-20"
                         >
                             <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
                                 <Heart className="w-4 h-4" />
@@ -113,7 +113,7 @@ export function Hero() {
                         <motion.div
                             animate={{ y: [0, 8, 0] }}
                             transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
-                            className="absolute bottom-20 left-0 p-3 bg-zinc-900/90 backdrop-blur-lg rounded-2xl border border-white/10 flex items-center gap-3 shadow-xl z-20"
+                            className="absolute bottom-16 left-8 p-2.5 bg-zinc-900/90 backdrop-blur-lg rounded-2xl border border-white/10 flex items-center gap-3 shadow-xl z-20"
                         >
                             <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
                                 <Sparkles className="w-4 h-4" />
