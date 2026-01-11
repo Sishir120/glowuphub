@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Smartphone, Download, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
+import { Logo } from "@/components/ui/logo";
 import Link from "next/link";
 
 export function DownloadCTA() {
@@ -127,12 +128,29 @@ export function DownloadCTA() {
                                 </div>
 
                                 {/* Floating Badge */}
+                                {/* Floating Badge with Heartbeat Circles */}
                                 <motion.div
                                     animate={{ y: [0, -15, 0] }}
                                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    className="absolute -right-12 top-1/2 p-5 bg-gradient-to-br from-primary to-emerald-600 rounded-[2rem] shadow-[0_20px_40px_rgba(16,185,129,0.4)] z-20 hidden md:flex items-center justify-center border border-white/20"
+                                    className="absolute -right-12 md:-right-20 top-1/2 flex items-center justify-center z-20 hidden md:flex"
                                 >
-                                    <Sparkles className="w-8 h-8 text-white animate-pulse" />
+                                    {/* Concentric Heartbeat Circles */}
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <div className="w-[180px] h-[180px] rounded-full border border-emerald-500/10 animate-pulse" />
+                                        <div className="absolute w-[260px] h-[260px] rounded-full border border-emerald-500/5 opacity-50" />
+                                        {/* Spinning Gradient Ring */}
+                                        <div className="absolute w-[220px] h-[220px] rounded-full opacity-30 animate-[spin_10s_linear_infinite]">
+                                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-emerald-500/0 via-emerald-500/20 to-transparent blur-xl" />
+                                        </div>
+                                    </div>
+
+                                    {/* Main Logo Container */}
+                                    <div className="relative w-28 h-28 bg-black/80 backdrop-blur-xl rounded-full shadow-[0_0_40px_rgba(16,185,129,0.3)] flex items-center justify-center border border-emerald-500/20">
+                                        <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-xl animate-pulse" />
+                                        <div className="relative z-10">
+                                            <Logo size={56} />
+                                        </div>
+                                    </div>
                                 </motion.div>
                             </div>
                         </div>
