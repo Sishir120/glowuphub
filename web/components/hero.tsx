@@ -23,10 +23,10 @@ export function Hero() {
             <div className="container mx-auto px-6 relative z-10">
 
                 {/* ==========================================
-                    DESKTOP VIEW (Restored Design from Image)
+                    DESKTOP VIEW (Restored Design + Orbital Circles)
                    ========================================== */}
                 <div className="hidden lg:grid grid-cols-2 gap-16 items-center min-h-[80vh]">
-                    {/* Left Content (Moto & Text) */}
+                    {/* Left Content (Motto & Text) */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -75,55 +75,54 @@ export function Hero() {
                         </div>
                     </motion.div>
 
-                    {/* Right Content (Logo Design) */}
-                    <div className="relative h-[650px] flex items-center justify-end">
-                        {/* THE CAPSULE DESIGN (From Reference Image) */}
-                        <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-4 opacity-40">
-                            {/* Smallest Capsule */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 0.4, scale: 1 }}
-                                transition={{ duration: 1, delay: 0.4 }}
-                                className="w-[140px] h-[300px] border border-emerald-500/20 rounded-full"
-                            />
-                            {/* Medium Capsule */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 0.4, scale: 1 }}
-                                transition={{ duration: 1, delay: 0.2 }}
-                                className="w-[180px] h-[450px] border border-emerald-500/30 rounded-full"
-                            />
-                            {/* Largest Capsule (Holds Logo) */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 1 }}
-                                className="relative w-[240px] h-[600px] border border-emerald-500/40 rounded-full bg-emerald-500/[0.02] flex flex-col items-center justify-center"
-                            >
-                                {/* THE LOGO DESIGN (Circle from Image) */}
-                                <motion.div
-                                    whileHover={{ scale: 1.05 }}
-                                    className="absolute top-1/3 right-[-40px] w-28 h-28 bg-black border border-emerald-500/40 rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(16,185,129,0.2)] z-20 cursor-pointer"
-                                >
-                                    <Logo size={56} />
-                                </motion.div>
-
-                                {/* Floating Cards in proximity */}
-                                <motion.div
-                                    animate={{ y: [0, -10, 0] }}
-                                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                                    className="absolute bottom-20 left-[-80px] p-4 bg-zinc-900/90 backdrop-blur-2xl border border-white/10 rounded-2xl flex items-center gap-4 shadow-2xl min-w-[200px] z-30"
-                                >
-                                    <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
-                                        <Sparkles className="w-6 h-6" />
-                                    </div>
-                                    <div className="text-left">
-                                        <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Glow Score</p>
-                                        <p className="text-sm font-bold text-white tracking-tight leading-none">Building ✨</p>
-                                    </div>
-                                </motion.div>
-                            </motion.div>
+                    {/* Right Content (Orbital Visual) */}
+                    <div className="relative h-[650px] flex items-center justify-center">
+                        <div className="absolute w-[500px] h-[500px] rounded-full border border-white/5" />
+                        <div className="absolute w-[380px] h-[380px] rounded-full border border-white/5" />
+                        <div className="absolute w-[600px] h-[600px] rounded-full opacity-20 animate-[spin_30s_linear_infinite]">
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-emerald-500/0 via-emerald-500/30 to-transparent blur-2xl" />
                         </div>
+
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="relative w-[340px] h-[340px] rounded-full bg-black/40 border border-emerald-500/10 backdrop-blur-md flex items-center justify-center shadow-2xl shadow-emerald-500/20"
+                        >
+                            <div className="absolute inset-4 rounded-full border border-emerald-500/10" />
+                            <div className="relative w-[180px] h-[180px] rounded-full bg-black/60 flex items-center justify-center border border-white/5">
+                                <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-xl animate-pulse" />
+                                <Logo size={100} />
+                            </div>
+                        </motion.div>
+
+                        {/* Floating Cards */}
+                        <motion.div
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                            className="absolute top-20 right-0 p-3 bg-zinc-900/90 backdrop-blur-lg rounded-2xl border border-white/10 flex items-center gap-3 shadow-xl z-20"
+                        >
+                            <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                                <Heart className="w-4 h-4" />
+                            </div>
+                            <div>
+                                <p className="text-[10px] text-zinc-500 leading-none mb-1">Daily Practice</p>
+                                <p className="text-sm font-bold text-white leading-none">15 min</p>
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            animate={{ y: [0, 8, 0] }}
+                            transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
+                            className="absolute bottom-20 left-0 p-3 bg-zinc-900/90 backdrop-blur-lg rounded-2xl border border-white/10 flex items-center gap-3 shadow-xl z-20"
+                        >
+                            <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                                <Sparkles className="w-4 h-4" />
+                            </div>
+                            <div>
+                                <p className="text-[10px] text-zinc-500 leading-none mb-1">Glow Score</p>
+                                <p className="text-sm font-bold text-white leading-none">Building ✨</p>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
 
@@ -208,4 +207,3 @@ export function Hero() {
         </section>
     );
 }
-
