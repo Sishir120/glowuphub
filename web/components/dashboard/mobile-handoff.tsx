@@ -2,10 +2,9 @@
 
 import { motion } from "framer-motion";
 import { QRCodeSVG } from "qrcode.react";
-import { DevicePhoneMobileIcon, ArrowDownTrayIcon, QrCodeIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { StoreBadges } from "@/components/ui/store-badges";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Smartphone, Target } from "lucide-react";
+import { ShieldCheck, Smartphone, Target, QrCode } from "lucide-react";
 
 export function MobileHandoff() {
     // This should ideally lead to the production store link or the Expo project URL
@@ -40,7 +39,7 @@ export function MobileHandoff() {
                 </div>
 
                 <div className="mt-8 flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-emerald-500/60">
-                    <QrCodeIcon className="w-4 h-4" />
+                    <QrCode className="w-4 h-4" />
                     Secure Encrypted Link
                 </div>
             </motion.div>
