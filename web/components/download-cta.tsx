@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Smartphone, Download, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Logo } from "@/components/ui/logo";
+import { StoreBadges } from "@/components/ui/store-badges";
 import Link from "next/link";
 
 export function DownloadCTA() {
@@ -35,7 +36,7 @@ export function DownloadCTA() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                                <Link href="/download">
+                                <Link href="https://expo.dev/@kishorbh12/glowuphub" target="_blank" rel="noopener noreferrer">
                                     <Button size="lg" className="h-14 px-8 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-primary/20 w-full sm:w-auto">
                                         <Download className="w-5 h-5 mr-2" />
                                         Get the App
@@ -49,9 +50,8 @@ export function DownloadCTA() {
                                 </Link>
                             </div>
 
-                            <div className="flex items-center justify-center lg:justify-start gap-4 opacity-60 grayscale hover:grayscale-0 transition-all">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" className="h-8 w-auto" alt="App Store" />
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" className="h-8 w-auto" alt="Play Store" />
+                            <div className="flex items-center justify-center lg:justify-start pt-4 opacity-100">
+                                <StoreBadges />
                             </div>
                         </div>
 
