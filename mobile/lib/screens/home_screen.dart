@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white.withValues(alpha: 0.9),
+                      color: Colors.white.withOpacity(0.9),
                       height: 1.1,
                     ),
                   ),
@@ -111,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                         gradient: LinearGradient(
                           colors: [
                             Colors.transparent,
-                            Colors.white.withValues(alpha: 0.1),
+                            Colors.white.withOpacity(0.1),
                             Colors.transparent,
                           ],
                         ),

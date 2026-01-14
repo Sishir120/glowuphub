@@ -78,13 +78,13 @@ class _LifestyleRitualsState extends State<LifestyleRituals> {
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: ritual.isCompleted 
-              ? const Color(0xFF10B981).withValues(alpha: 0.05)
+              ? const Color(0xFF10B981).withOpacity(0.05)
               : const Color(0xFF18181B),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: ritual.isCompleted 
-                ? const Color(0xFF10B981).withValues(alpha: 0.2)
-                : Colors.white.withValues(alpha: 0.05),
+                ? const Color(0xFF10B981).withOpacity(0.2)
+                : Colors.white.withOpacity(0.05),
           ),
         ),
         child: Row(
@@ -98,7 +98,7 @@ class _LifestyleRitualsState extends State<LifestyleRituals> {
                   decoration: BoxDecoration(
                     color: ritual.isCompleted 
                         ? const Color(0xFF10B981)
-                        : Colors.white.withValues(alpha: 0.05),
+                        : Colors.white.withOpacity(0.05),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
@@ -116,7 +116,7 @@ class _LifestyleRitualsState extends State<LifestyleRituals> {
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
-                        color: ritual.isCompleted ? const Color(0xFF10B981).withValues(alpha: 0.7) : Colors.white,
+                        color: ritual.isCompleted ? const Color(0xFF10B981).withOpacity(0.7) : Colors.white,
                         decoration: ritual.isCompleted ? TextDecoration.lineThrough : null,
                       ),
                     ),
@@ -134,15 +134,15 @@ class _LifestyleRitualsState extends State<LifestyleRituals> {
               ],
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, py: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               decoration: BoxDecoration(
                 color: ritual.isCompleted 
-                    ? const Color(0xFF10B981).withValues(alpha: 0.1)
-                    : Colors.white.withValues(alpha: 0.05),
+                    ? const Color(0xFF10B981).withOpacity(0.1)
+                    : Colors.white.withOpacity(0.05),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
                   color: ritual.isCompleted 
-                      ? const Color(0xFF10B981).withValues(alpha: 0.1)
+                      ? const Color(0xFF10B981).withOpacity(0.1)
                       : Colors.white10,
                 ),
               ),
@@ -166,9 +166,9 @@ class _LifestyleRitualsState extends State<LifestyleRituals> {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: const Color(0xFF6366F1).withValues(alpha: 0.05),
+        color: const Color(0xFF6366F1).withOpacity(0.05),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: const Color(0xFF6366F1).withValues(alpha: 0.1)),
+        border: Border.all(color: const Color(0xFF6366F1).withOpacity(0.1)),
       ),
       child: Stack(
         children: [
@@ -188,7 +188,7 @@ class _LifestyleRitualsState extends State<LifestyleRituals> {
                 'Consistency in sleep hygiene accounts for up to 30% of metabolic efficiency. Don\'t skip the "No Screen" ritual tonight!',
                 style: TextStyle(
                   fontSize: 10,
-                  color: Colors.white.withValues(alpha: 0.5),
+                  color: Colors.white.withOpacity(0.5),
                   height: 1.5,
                 ),
               ),

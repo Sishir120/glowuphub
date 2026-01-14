@@ -54,7 +54,7 @@ class _MainLayoutState extends State<MainLayout> {
         decoration: BoxDecoration(
           color: Colors.black,
           border: Border(
-            top: BorderSide(color: Colors.white.withValues(alpha: 0.05), width: 1),
+            top: BorderSide(color: Colors.white.withOpacity(0.05), width: 1),
           ),
         ),
         child: BottomNavigationBar(

@@ -153,7 +153,7 @@ class _ProtocolItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-                Text(status, style: TextStyle(color: Colors.white.withValues(alpha: 0.4), fontSize: 12)),
+                Text(status, style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 12)),
               ],
             ),
           ),

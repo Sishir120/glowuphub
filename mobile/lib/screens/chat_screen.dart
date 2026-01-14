@@ -25,7 +25,7 @@ class ChatScreen extends StatelessWidget {
               child: const Center(
                 child: Text(
                   'SS',
-                  style: TextStyle(color: Color(0xFF10B981), fontWeight: FontWeight.black, fontSize: 14),
+                  style: TextStyle(color: Color(0xFF10B981), fontWeight: FontWeight.w900, fontSize: 14),
                 ),
               ),
             ),

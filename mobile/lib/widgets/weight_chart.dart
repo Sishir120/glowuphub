@@ -37,7 +37,7 @@ class WeightChart extends StatelessWidget {
                     child: Text(
                       '${value.toInt()}',
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.3),
+                        color: Colors.white.withOpacity(0.3),
                         fontSize: 10,
                       ),
                     ),
@@ -59,8 +59,8 @@ class WeightChart extends StatelessWidget {
                 show: true,
                 gradient: LinearGradient(
                   colors: [
-                    const Color(0xFF10B981).withValues(alpha: 0.2),
-                    const Color(0xFF10B981).withValues(alpha: 0),
+                    const Color(0xFF10B981).withOpacity(0.2),
+                    const Color(0xFF10B981).withOpacity(0),
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,

@@ -59,7 +59,7 @@ class _InteractiveLogModalState extends State<InteractiveLogModal> {
             'Keep your transformation on track.',
             style: TextStyle(
               fontSize: 14,
-              color: Colors.white.withValues(alpha: 0.5),
+              color: Colors.white.withOpacity(0.5),
             ),
           ),
           const SizedBox(height: 32),
@@ -91,7 +91,7 @@ class _InteractiveLogModalState extends State<InteractiveLogModal> {
                       height: 32,
                       margin: const EdgeInsets.symmetric(horizontal: 2),
                       decoration: BoxDecoration(
-                        color: _sleepHours == val ? const Color(0xFF10B981) : Colors.white.withValues(alpha: 0.05),
+                        color: _sleepHours == val ? const Color(0xFF10B981) : Colors.white.withOpacity(0.05),
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Center(

@@ -67,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       _pages[index].description,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.6),
+                        color: Colors.white.withOpacity(0.6),
                         fontSize: 16,
                         height: 1.6,
                       ),
@@ -92,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       width: _currentPage == index ? 24 : 8,
                       height: 8,
                       decoration: BoxDecoration(
-                        color: _currentPage == index ? const Color(0xFF10B981) : Colors.white.withValues(alpha: 0.2),
+                        color: _currentPage == index ? const Color(0xFF10B981) : Colors.white.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
