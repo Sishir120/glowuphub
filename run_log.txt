@@ -1,0 +1,943 @@
+﻿Web PWA Build	UNKNOWN STEP	∩╗┐2026-01-14T12:20:37.3313304Z Current runner version: '2.330.0'
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3337396Z ##[group]Runner Image Provisioner
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3338222Z Hosted Compute Agent
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3338842Z Version: 20251211.462
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3339409Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3340089Z Build Date: 2025-12-11T16:28:49Z
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3340749Z Worker ID: {51286cdc-a1a8-4bfd-81af-9ee692295c95}
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3341873Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3342399Z ##[group]Operating System
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3342983Z Ubuntu
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3343470Z 24.04.3
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3343880Z LTS
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3344363Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3344855Z ##[group]Runner Image
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3345376Z Image: ubuntu-24.04
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3345819Z Version: 20260105.202.1
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3346869Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260105.202/images/ubuntu/Ubuntu2404-Readme.md
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3348350Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260105.202
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3349389Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3350417Z ##[group]GITHUB_TOKEN Permissions
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3352483Z Contents: read
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3353029Z Metadata: read
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3353509Z Packages: read
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3354099Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3356267Z Secret source: Actions
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3356922Z Prepare workflow directory
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3680190Z Prepare all required actions
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.3724388Z Getting action download info
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.7090499Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:37.8017329Z Download action repository 'subosito/flutter-action@v2' (SHA:fd55f4c5af5b953cc57a2be44cb082c8f6635e8e)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.0339503Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.2535890Z Getting action download info
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.3703734Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.5815138Z Complete job name: Web PWA Build
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6590866Z ##[group]Run actions/checkout@v4
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6592375Z with:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6593066Z   repository: Sishir120/glowuphub
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6594214Z   token: ***
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6594873Z   ssh-strict: true
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6595539Z   ssh-user: git
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6596230Z   persist-credentials: true
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6597005Z   clean: true
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6597692Z   sparse-checkout-cone-mode: true
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6598549Z   fetch-depth: 1
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6599205Z   fetch-tags: false
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6599912Z   show-progress: true
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6600620Z   lfs: false
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6601425Z   submodules: false
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6602161Z   set-safe-directory: true
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.6603189Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7684425Z Syncing repository: Sishir120/glowuphub
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7687062Z ##[group]Getting Git version info
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7688258Z Working directory is '/home/runner/work/glowuphub/glowuphub'
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7689988Z [command]/usr/bin/git version
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7752525Z git version 2.52.0
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7779590Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7795318Z Temporarily overriding HOME='/home/runner/work/_temp/81e5883d-f7d8-47a1-a990-1a2388491108' before making global git config changes
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7808318Z Adding repository directory to the temporary git global config as a safe directory
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7810365Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/glowuphub/glowuphub
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7850170Z Deleting the contents of '/home/runner/work/glowuphub/glowuphub'
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7854043Z ##[group]Initializing the repository
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7857865Z [command]/usr/bin/git init /home/runner/work/glowuphub/glowuphub
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7960244Z hint: Using 'master' as the name for the initial branch. This default branch name
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7962912Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7964966Z hint: to use in all of your new repositories, which will suppress this warning,
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7966791Z hint: call:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7968262Z hint:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7969921Z hint: 	git config --global init.defaultBranch <name>
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7973123Z hint:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7974863Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7977689Z hint: 'development'. The just-created branch can be renamed via this command:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7979952Z hint:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7981330Z hint: 	git branch -m <name>
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7982734Z hint:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7984554Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7987615Z Initialized empty Git repository in /home/runner/work/glowuphub/glowuphub/.git/
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.7991391Z [command]/usr/bin/git remote add origin https://github.com/Sishir120/glowuphub
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8019524Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8021919Z ##[group]Disabling automatic garbage collection
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8023969Z [command]/usr/bin/git config --local gc.auto 0
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8054052Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8056067Z ##[group]Setting up auth
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8062115Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8094017Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8437479Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8470902Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8692512Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8727130Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8964243Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.8998915Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.9000147Z ##[group]Fetching the repository
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:38.9007664Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +65160b1bfd4eebcc049802027133dda42674863a:refs/remotes/origin/main
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.7000479Z From https://github.com/Sishir120/glowuphub
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.7001492Z  * [new ref]         65160b1bfd4eebcc049802027133dda42674863a -> origin/main
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.7033581Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.7034662Z ##[group]Determining the checkout info
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.7035814Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.7041594Z [command]/usr/bin/git sparse-checkout disable
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.7079971Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.7105603Z ##[group]Checking out the ref
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.7117598Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8330446Z Switched to a new branch 'main'
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8332423Z branch 'main' set up to track 'origin/main'.
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8348723Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8388650Z [command]/usr/bin/git log -1 --format=%H
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8412031Z 65160b1bfd4eebcc049802027133dda42674863a
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8782981Z ##[group]Run subosito/flutter-action@v2
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8783492Z with:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8783858Z   flutter-version: 3.22.0
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8784269Z   channel: stable
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8784644Z   architecture: X64
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8785226Z   cache: false
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8785613Z   pub-cache-path: default
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8786010Z   dry-run: false
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8786467Z   git-source: https://github.com/flutter/flutter.git
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8853105Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8973988Z ##[group]Run chmod +x "$GITHUB_ACTION_PATH/setup.sh"
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.8974603Z [36;1mchmod +x "$GITHUB_ACTION_PATH/setup.sh"[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9014205Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9014817Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9160881Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p \
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9161754Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9162224Z [36;1m  -n '3.22.0' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9162636Z [36;1m  -f '' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9162982Z [36;1m  -a 'X64' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9163332Z [36;1m  -k '' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9163664Z [36;1m  -c '' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9163997Z [36;1m  -l '' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9164351Z [36;1m  -d 'default' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9164827Z [36;1m  -g 'https://github.com/flutter/flutter.git' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9165312Z [36;1m  stable[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9199147Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:39.9199715Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.1021365Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh \
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.1021904Z [36;1m$GITHUB_ACTION_PATH/setup.sh \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.1022337Z [36;1m  -n '3.22.0' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.1022712Z [36;1m  -a 'x64' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.1023207Z [36;1m  -c '/opt/hostedtoolcache/flutter/stable-3.22.0-x64' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.1023754Z [36;1m  -d '/home/runner/.pub-cache' \[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.1024192Z [36;1m  stable[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.1059406Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.1059928Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.2762445Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.2764592Z                                  Dload  Upload   Total   Spent    Left  Speed
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:40.2766498Z 
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:41.2540638Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:42.2540144Z  26  716M   26  186M    0     0   191M      0  0:00:03 --:--:--  0:00:03  191M
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:43.1404009Z  68  716M   68  491M    0     0   248M      0  0:00:02  0:00:01  0:00:01  248M
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:20:43.1405140Z 100  716M  100  716M    0     0   250M      0  0:00:02  0:00:02 --:--:--  250M
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.3830446Z ##[group]Run cd mobile
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.3830729Z [36;1mcd mobile[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.3831188Z [36;1mflutter pub get[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.3831556Z [36;1mflutter build web --release --base-href /mobile/[0m
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.3867682Z shell: /usr/bin/bash -e {0}
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.3867942Z env:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.3868222Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.22.0-x64
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.3868601Z   PUB_CACHE: /home/runner/.pub-cache
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.3868869Z ##[endgroup]
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6152718Z 
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6166087Z   ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6167281Z   Γòæ                 Welcome to Flutter! - https://flutter.dev                  Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6168198Z   Γòæ                                                                            Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6169128Z   Γòæ The Flutter tool uses Google Analytics to anonymously report feature usage Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6170303Z   Γòæ statistics and basic crash reports. This data is used to help improve      Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6171586Z   Γòæ Flutter tools over time.                                                   Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6172415Z   Γòæ                                                                            Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6173303Z   Γòæ Flutter tool analytics are not sent on the very first run. To disable      Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6174371Z   Γòæ reporting, type 'flutter config --no-analytics'. To display the current    Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6176444Z   Γòæ setting, type 'flutter config'. If you opt out of analytics, an opt-out    Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6177525Z   Γòæ event will be sent, and then no further information will be sent by the    Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6178488Z   Γòæ Flutter tool.                                                              Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6179272Z   Γòæ                                                                            Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6180207Z   Γòæ By downloading the Flutter SDK, you agree to the Google Terms of Service.  Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6181489Z   Γòæ The Google Privacy Policy describes how data is handled in this service.   Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6182387Z   Γòæ                                                                            Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6183273Z   Γòæ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6184321Z   Γòæ crash reports to Google.                                                   Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6185147Z   Γòæ                                                                            Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6185961Z   Γòæ Read about data we send with crash reports:                                Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6186976Z   Γòæ https://flutter.dev/docs/reference/crash-reporting                         Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6187887Z   Γòæ                                                                            Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6188726Z   Γòæ See Google's privacy policy:                                               Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6189711Z   Γòæ https://policies.google.com/privacy                                        Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6190568Z   Γòæ                                                                            Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6191821Z   Γòæ To disable animations in this tool, use                                    Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6192820Z   Γòæ 'flutter config --no-cli-animations'.                                      Γòæ
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6193925Z   ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:12.6194468Z 
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:17.5487960Z Resolving dependencies...
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:18.9196013Z Downloading packages...
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1899517Z < async 2.11.0 (was 2.13.0) (2.13.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1900160Z < boolean_selector 2.1.1 (was 2.1.2) (2.1.2 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1900712Z < characters 1.3.0 (was 1.4.0) (1.4.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1901791Z < checked_yaml 2.0.3 (was 2.0.4) (2.0.4 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1902323Z < clock 1.1.1 (was 1.1.2) (1.1.2 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1902830Z < collection 1.18.0 (was 1.19.1) (1.19.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1903355Z < fake_async 1.3.1 (was 1.3.3) (1.3.3 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1903824Z < ffi 2.1.3 (was 2.1.5) (2.1.5 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1904261Z   fl_chart 0.70.2 (1.1.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1904737Z   flutter_launcher_icons 0.13.1 (0.14.4 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1905307Z < flutter_lints 4.0.0 (was 6.0.0) (6.0.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1905841Z < flutter_lucide 1.2.0 (was 1.8.2) (1.8.2 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1906430Z < flutter_native_splash 2.4.1 (was 2.4.7) (2.4.7 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1907036Z < flutter_svg 2.1.0 (was 2.2.3) (2.2.3 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1907528Z   go_router 14.8.1 (17.0.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1907979Z < google_fonts 6.3.0 (was 6.3.3) (7.0.2 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1908493Z < google_sign_in 6.2.2 (was 6.3.0) (7.2.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1909062Z < google_sign_in_android 6.1.31 (was 6.2.1) (7.2.7 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1909650Z   google_sign_in_ios 5.9.0 (6.2.4 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1910202Z   google_sign_in_platform_interface 2.5.0 (3.1.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1910759Z   google_sign_in_web 0.12.4+4 (1.1.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1911490Z < http_parser 4.0.2 (was 4.1.2) (4.1.2 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1912020Z < leak_tracker 10.0.4 (was 11.0.2) (11.0.2 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1912987Z < leak_tracker_flutter_testing 3.0.3 (was 3.0.10) (3.0.10 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1913671Z < leak_tracker_testing 3.0.1 (was 3.0.2) (3.0.2 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1914228Z < lints 4.0.0 (was 6.0.0) (6.0.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1914756Z < matcher 0.12.16+1 (was 0.12.17) (0.12.18 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1915432Z < material_color_utilities 0.8.0 (was 0.11.1) (0.13.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1916024Z < meta 1.12.0 (was 1.17.0) (1.17.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1916508Z < path 1.9.0 (was 1.9.1) (1.9.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1917071Z < path_provider_android 2.2.10 (was 2.2.22) (2.2.22 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1917747Z < path_provider_foundation 2.4.1 (was 2.5.1) (2.5.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1918372Z < petitparser 6.0.2 (was 7.0.1) (7.0.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1918928Z < shared_preferences 2.3.3 (was 2.5.4) (2.5.4 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1919603Z < shared_preferences_android 2.3.2 (was 2.4.18) (2.4.18 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1920360Z < shared_preferences_foundation 2.5.4 (was 2.5.6) (2.5.6 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1921292Z > sky_engine 0.0.99 from sdk flutter (was 0.0.0 from sdk flutter)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1921911Z < source_span 1.10.0 (was 1.10.1) (1.10.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1922445Z < stack_trace 1.11.1 (was 1.12.1) (1.12.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1922966Z < stream_channel 2.1.2 (was 2.1.4) (2.1.4 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1923465Z < string_scanner 1.2.0 (was 1.4.1) (1.4.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1923986Z < term_glyph 1.2.1 (was 1.2.2) (1.2.2 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1924473Z < test_api 0.7.0 (was 0.7.7) (0.7.9 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1924949Z < typed_data 1.3.2 (was 1.4.0) (1.4.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1925459Z < universal_io 2.2.2 (was 2.3.1) (2.3.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1926050Z < vector_graphics 1.1.18 (was 1.1.19) (1.1.19 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1926723Z < vector_graphics_compiler 1.1.16 (was 1.1.19) (1.1.19 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1927355Z < vector_math 2.1.4 (was 2.2.0) (2.2.0 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1927967Z < vm_service 14.2.1 (was 15.0.2) (15.0.2 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1928470Z < xml 6.5.0 (was 6.6.1) (6.6.1 available)
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1930555Z Changed 44 dependencies!
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1935082Z 49 packages have newer versions incompatible with dependency constraints.
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:23.1936165Z Try `flutter pub outdated` for more information.
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.2321458Z Couldn't find the placeholder for base href. Please add `<base href="$FLUTTER_BASE_HREF">` to web/index.html
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.2394393Z ##[error]Process completed with exit code 1.
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.2543699Z Post job cleanup.
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.2602802Z Post job cleanup.
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.3583684Z [command]/usr/bin/git version
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.3621627Z git version 2.52.0
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.3666869Z Temporarily overriding HOME='/home/runner/work/_temp/f6ba5e90-43e3-4a1f-9cd0-268203e98cf9' before making global git config changes
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.3668297Z Adding repository directory to the temporary git global config as a safe directory
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.3673668Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/glowuphub/glowuphub
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.3713733Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.3748787Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.3991648Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.4015316Z http.https://github.com/.extraheader
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.4028642Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.4064264Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.4296291Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.4329128Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Web PWA Build	UNKNOWN STEP	2026-01-14T12:21:24.4696255Z Cleaning up orphan processes
+Android Build (APK & AAB)	UNKNOWN STEP	∩╗┐2026-01-14T12:20:37.7068923Z Current runner version: '2.330.0'
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7092512Z ##[group]Runner Image Provisioner
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7093333Z Hosted Compute Agent
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7093896Z Version: 20251211.462
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7094468Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7095275Z Build Date: 2025-12-11T16:28:49Z
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7095885Z Worker ID: {b79dd3a8-0233-4ce5-bc80-9e4a8472d6c7}
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7096562Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7097019Z ##[group]Operating System
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7097497Z Ubuntu
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7097929Z 24.04.3
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7098351Z LTS
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7098816Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7099304Z ##[group]Runner Image
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7099801Z Image: ubuntu-24.04
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7100350Z Version: 20260105.202.1
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7101210Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260105.202/images/ubuntu/Ubuntu2404-Readme.md
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7102687Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260105.202
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7103600Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7104590Z ##[group]GITHUB_TOKEN Permissions
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7106560Z Contents: read
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7107103Z Metadata: read
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7107660Z Packages: read
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7108115Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7110116Z Secret source: Actions
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7110873Z Prepare workflow directory
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7464370Z Prepare all required actions
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:37.7514680Z Getting action download info
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:38.1950108Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:38.2965493Z Download action repository 'subosito/flutter-action@v2' (SHA:fd55f4c5af5b953cc57a2be44cb082c8f6635e8e)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:38.9659153Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.1656205Z Getting action download info
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.3242094Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.4676469Z Complete job name: Android Build (APK & AAB)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5474871Z ##[group]Run actions/checkout@v4
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5476176Z with:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5476867Z   repository: Sishir120/glowuphub
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5477983Z   token: ***
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5478642Z   ssh-strict: true
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5479319Z   ssh-user: git
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5480021Z   persist-credentials: true
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5480790Z   clean: true
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5481502Z   sparse-checkout-cone-mode: true
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5482342Z   fetch-depth: 1
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5483057Z   fetch-tags: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5483777Z   show-progress: true
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5484485Z   lfs: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5485278Z   submodules: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5485988Z   set-safe-directory: true
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.5486991Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6513446Z Syncing repository: Sishir120/glowuphub
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6516117Z ##[group]Getting Git version info
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6517268Z Working directory is '/home/runner/work/glowuphub/glowuphub'
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6519021Z [command]/usr/bin/git version
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6563345Z git version 2.52.0
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6586541Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6608463Z Temporarily overriding HOME='/home/runner/work/_temp/8ef06f40-388e-4349-8ab5-c702a7fc8471' before making global git config changes
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6610700Z Adding repository directory to the temporary git global config as a safe directory
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6612871Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/glowuphub/glowuphub
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6647221Z Deleting the contents of '/home/runner/work/glowuphub/glowuphub'
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6650021Z ##[group]Initializing the repository
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6653780Z [command]/usr/bin/git init /home/runner/work/glowuphub/glowuphub
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6742420Z hint: Using 'master' as the name for the initial branch. This default branch name
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6746386Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6749604Z hint: to use in all of your new repositories, which will suppress this warning,
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6752046Z hint: call:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6753309Z hint:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6755401Z hint: 	git config --global init.defaultBranch <name>
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6757407Z hint:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6759209Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6761825Z hint: 'development'. The just-created branch can be renamed via this command:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6763799Z hint:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6764807Z hint: 	git branch -m <name>
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6766163Z hint:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6767168Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6768853Z Initialized empty Git repository in /home/runner/work/glowuphub/glowuphub/.git/
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6772824Z [command]/usr/bin/git remote add origin https://github.com/Sishir120/glowuphub
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6791168Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6793186Z ##[group]Disabling automatic garbage collection
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6795103Z [command]/usr/bin/git config --local gc.auto 0
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6825982Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6827965Z ##[group]Setting up auth
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6834067Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.6863878Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.7142879Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.7172434Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.7343268Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.7369892Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.7556540Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.7589958Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.7591243Z ##[group]Fetching the repository
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:39.7602370Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +65160b1bfd4eebcc049802027133dda42674863a:refs/remotes/origin/main
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.1518640Z From https://github.com/Sishir120/glowuphub
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.1520463Z  * [new ref]         65160b1bfd4eebcc049802027133dda42674863a -> origin/main
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.1544852Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.1545581Z ##[group]Determining the checkout info
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.1546964Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.1551495Z [command]/usr/bin/git sparse-checkout disable
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.1586861Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.1607540Z ##[group]Checking out the ref
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.1610868Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.2651352Z Switched to a new branch 'main'
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.2652310Z branch 'main' set up to track 'origin/main'.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.2662087Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.2696097Z [command]/usr/bin/git log -1 --format=%H
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.2715579Z 65160b1bfd4eebcc049802027133dda42674863a
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3043432Z ##[group]Run subosito/flutter-action@v2
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3043819Z with:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3044091Z   flutter-version: 3.22.0
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3044387Z   channel: stable
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3044638Z   cache: true
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3045279Z   architecture: X64
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3045567Z   pub-cache-path: default
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3045863Z   dry-run: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3046213Z   git-source: https://github.com/flutter/flutter.git
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3046580Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3151603Z ##[group]Run chmod +x "$GITHUB_ACTION_PATH/setup.sh"
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3152175Z [36;1mchmod +x "$GITHUB_ACTION_PATH/setup.sh"[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3178177Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3178600Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3303860Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p \
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3304345Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3304727Z [36;1m  -n '3.22.0' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3305237Z [36;1m  -f '' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3305501Z [36;1m  -a 'X64' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3305775Z [36;1m  -k '' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3306039Z [36;1m  -c '' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3306296Z [36;1m  -l '' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3306582Z [36;1m  -d 'default' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3306994Z [36;1m  -g 'https://github.com/flutter/flutter.git' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3307370Z [36;1m  stable[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3328474Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.3328900Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.5177699Z ##[group]Run actions/cache@v4
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.5178055Z with:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.5178413Z   path: /opt/hostedtoolcache/flutter/stable-3.22.0-x64
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.5178961Z   key: flutter-linux-stable-3.22.0-x64-5dcb86f68f239346676ceb1ed1ea385bd215fba1
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.5179472Z   enableCrossOsArchive: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.5179820Z   fail-on-cache-miss: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.5180156Z   lookup-only: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.5180454Z   save-always: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.5180741Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:41.8989202Z Cache not found for input keys: flutter-linux-stable-3.22.0-x64-5dcb86f68f239346676ceb1ed1ea385bd215fba1
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.0391903Z ##[group]Run actions/cache@v4
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.0392159Z with:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.0392349Z   path: /home/runner/.pub-cache
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.0393005Z   key: flutter-pub-linux-stable-3.22.0-x64-5dcb86f68f239346676ceb1ed1ea385bd215fba1-7db490e0a47873c6893c369a3a27df2593ccc920db24e3b780e4760cedf2fda1
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.0393671Z   enableCrossOsArchive: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.0393898Z   fail-on-cache-miss: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.0394115Z   lookup-only: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.0394296Z   save-always: false
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.0394478Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4040930Z Cache not found for input keys: flutter-pub-linux-stable-3.22.0-x64-5dcb86f68f239346676ceb1ed1ea385bd215fba1-7db490e0a47873c6893c369a3a27df2593ccc920db24e3b780e4760cedf2fda1
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4113530Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh \
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4113860Z [36;1m$GITHUB_ACTION_PATH/setup.sh \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4114112Z [36;1m  -n '3.22.0' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4114317Z [36;1m  -a 'x64' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4114601Z [36;1m  -c '/opt/hostedtoolcache/flutter/stable-3.22.0-x64' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4114924Z [36;1m  -d '/home/runner/.pub-cache' \[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4115875Z [36;1m  stable[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4134484Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.4134795Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.5903181Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.5903737Z                                  Dload  Upload   Total   Spent    Left  Speed
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.5903954Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:42.9587485Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:43.9618183Z   2  716M    2 14.4M    0     0  39.1M      0  0:00:18 --:--:--  0:00:18 39.0M
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:44.9588155Z  20  716M   20  146M    0     0   106M      0  0:00:06  0:00:01  0:00:05  106M
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:45.9589432Z  46  716M   46  331M    0     0   139M      0  0:00:05  0:00:02  0:00:03  139M
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:46.5099822Z  79  716M   79  569M    0     0   168M      0  0:00:04  0:00:03  0:00:01  168M
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:20:46.5100618Z 100  716M  100  716M    0     0   182M      0  0:00:03  0:00:03 --:--:--  182M
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:16.4015741Z ##[group]Run cd mobile
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:16.4015989Z [36;1mcd mobile[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:16.4016178Z [36;1mflutter pub get[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:16.4037158Z shell: /usr/bin/bash -e {0}
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:16.4037415Z env:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:16.4037668Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.22.0-x64
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:16.4037998Z   PUB_CACHE: /home/runner/.pub-cache
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:16.4038237Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8494772Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8506142Z   ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8507137Z   Γòæ                 Welcome to Flutter! - https://flutter.dev                  Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8508009Z   Γòæ                                                                            Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8508933Z   Γòæ The Flutter tool uses Google Analytics to anonymously report feature usage Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8509959Z   Γòæ statistics and basic crash reports. This data is used to help improve      Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8510736Z   Γòæ Flutter tools over time.                                                   Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8511350Z   Γòæ                                                                            Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8511991Z   Γòæ Flutter tool analytics are not sent on the very first run. To disable      Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8512774Z   Γòæ reporting, type 'flutter config --no-analytics'. To display the current    Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8513622Z   Γòæ setting, type 'flutter config'. If you opt out of analytics, an opt-out    Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8514472Z   Γòæ event will be sent, and then no further information will be sent by the    Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8515424Z   Γòæ Flutter tool.                                                              Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8516109Z   Γòæ                                                                            Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8516856Z   Γòæ By downloading the Flutter SDK, you agree to the Google Terms of Service.  Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8517788Z   Γòæ The Google Privacy Policy describes how data is handled in this service.   Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8518561Z   Γòæ                                                                            Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8519327Z   Γòæ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8520144Z   Γòæ crash reports to Google.                                                   Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8520856Z   Γòæ                                                                            Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8521563Z   Γòæ Read about data we send with crash reports:                                Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8522437Z   Γòæ https://flutter.dev/docs/reference/crash-reporting                         Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8523247Z   Γòæ                                                                            Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8524041Z   Γòæ See Google's privacy policy:                                               Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8524937Z   Γòæ https://policies.google.com/privacy                                        Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8525814Z   Γòæ                                                                            Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8526558Z   Γòæ To disable animations in this tool, use                                    Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8527432Z   Γòæ 'flutter config --no-cli-animations'.                                      Γòæ
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8528299Z   ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:17.8528678Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:21.8608659Z Resolving dependencies...
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:22.7574746Z Downloading packages...
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2505316Z < async 2.11.0 (was 2.13.0) (2.13.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2505937Z < boolean_selector 2.1.1 (was 2.1.2) (2.1.2 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2506761Z < characters 1.3.0 (was 1.4.0) (1.4.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2507233Z < checked_yaml 2.0.3 (was 2.0.4) (2.0.4 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2507690Z < clock 1.1.1 (was 1.1.2) (1.1.2 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2508301Z < collection 1.18.0 (was 1.19.1) (1.19.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2508771Z < fake_async 1.3.1 (was 1.3.3) (1.3.3 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2509228Z < ffi 2.1.3 (was 2.1.5) (2.1.5 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2509636Z   fl_chart 0.70.2 (1.1.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2510086Z   flutter_launcher_icons 0.13.1 (0.14.4 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2510545Z < flutter_lints 4.0.0 (was 6.0.0) (6.0.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2511047Z < flutter_lucide 1.2.0 (was 1.8.2) (1.8.2 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2511565Z < flutter_native_splash 2.4.1 (was 2.4.7) (2.4.7 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2512096Z < flutter_svg 2.1.0 (was 2.2.3) (2.2.3 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2512598Z   go_router 14.8.1 (17.0.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2513037Z < google_fonts 6.3.0 (was 6.3.3) (7.0.2 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2513521Z < google_sign_in 6.2.2 (was 6.3.0) (7.2.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2514058Z < google_sign_in_android 6.1.31 (was 6.2.1) (7.2.7 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2514588Z   google_sign_in_ios 5.9.0 (6.2.4 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2515292Z   google_sign_in_platform_interface 2.5.0 (3.1.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2515821Z   google_sign_in_web 0.12.4+4 (1.1.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2516286Z < http_parser 4.0.2 (was 4.1.2) (4.1.2 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2516719Z < leak_tracker 10.0.4 (was 11.0.2) (11.0.2 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2517293Z < leak_tracker_flutter_testing 3.0.3 (was 3.0.10) (3.0.10 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2517902Z < leak_tracker_testing 3.0.1 (was 3.0.2) (3.0.2 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2518414Z < lints 4.0.0 (was 6.0.0) (6.0.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2518870Z < matcher 0.12.16+1 (was 0.12.17) (0.12.18 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2519563Z < material_color_utilities 0.8.0 (was 0.11.1) (0.13.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2520163Z < meta 1.12.0 (was 1.17.0) (1.17.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2520624Z < path 1.9.0 (was 1.9.1) (1.9.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2521189Z < path_provider_android 2.2.10 (was 2.2.22) (2.2.22 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2521774Z < path_provider_foundation 2.4.1 (was 2.5.1) (2.5.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2522329Z < petitparser 6.0.2 (was 7.0.1) (7.0.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2522837Z < shared_preferences 2.3.3 (was 2.5.4) (2.5.4 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2523346Z < shared_preferences_android 2.3.2 (was 2.4.18) (2.4.18 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2523991Z < shared_preferences_foundation 2.5.4 (was 2.5.6) (2.5.6 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2524645Z > sky_engine 0.0.99 from sdk flutter (was 0.0.0 from sdk flutter)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2525364Z < source_span 1.10.0 (was 1.10.1) (1.10.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2525891Z < stack_trace 1.11.1 (was 1.12.1) (1.12.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2526353Z < stream_channel 2.1.2 (was 2.1.4) (2.1.4 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2526786Z < string_scanner 1.2.0 (was 1.4.1) (1.4.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2527214Z < term_glyph 1.2.1 (was 1.2.2) (1.2.2 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2527634Z < test_api 0.7.0 (was 0.7.7) (0.7.9 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2528035Z < typed_data 1.3.2 (was 1.4.0) (1.4.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2528445Z < universal_io 2.2.2 (was 2.3.1) (2.3.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2528910Z < vector_graphics 1.1.18 (was 1.1.19) (1.1.19 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2529454Z < vector_graphics_compiler 1.1.16 (was 1.1.19) (1.1.19 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2529949Z < vector_math 2.1.4 (was 2.2.0) (2.2.0 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2530377Z < vm_service 14.2.1 (was 15.0.2) (15.0.2 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2530743Z < xml 6.5.0 (was 6.6.1) (6.6.1 available)
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2531104Z Changed 44 dependencies!
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2539679Z 49 packages have newer versions incompatible with dependency constraints.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.2540395Z Try `flutter pub outdated` for more information.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6189864Z ##[group]Run echo "***" | base64 --decode > android/key.properties
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6191719Z [36;1mecho "***" | base64 --decode > android/key.properties[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6214328Z [36;1mecho "***" | base64 --decode > android/app/upload-keystore.jks[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6233498Z shell: /usr/bin/bash -e {0}
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6233719Z env:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6233977Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.22.0-x64
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6234296Z   PUB_CACHE: /home/runner/.pub-cache
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6234520Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6321109Z ##[group]Run flutter build apk --release
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6321417Z [36;1mflutter build apk --release[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6321691Z [36;1mflutter build appbundle --release[0m
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6339267Z shell: /usr/bin/bash -e {0}
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6339502Z env:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6339754Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.22.0-x64
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6340088Z   PUB_CACHE: /home/runner/.pub-cache
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:26.6340328Z ##[endgroup]
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:21:27.1620133Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.3687017Z e: file:///home/runner/work/glowuphub/glowuphub/mobile/android/app/build.gradle.kts:25:43: Unresolved reference: util
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.3688266Z e: file:///home/runner/work/glowuphub/glowuphub/mobile/android/app/build.gradle.kts:27:46: Unresolved reference: io
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.3689448Z e: file:///home/runner/work/glowuphub/glowuphub/mobile/android/app/build.gradle.kts:30:73: Unresolved reference: it
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.3690991Z e: file:///home/runner/work/glowuphub/glowuphub/mobile/android/app/build.gradle.kts:43:31: Function invocation 'versionCode()' expected
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.3692466Z e: file:///home/runner/work/glowuphub/glowuphub/mobile/android/app/build.gradle.kts:44:31: Function invocation 'versionName()' expected
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.3693509Z Running Gradle task 'assembleRelease'...                        
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4567364Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4569440Z FAILURE: Build failed with an exception.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4569865Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4617065Z * Where:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4676975Z Build file '/home/runner/work/glowuphub/glowuphub/mobile/android/app/build.gradle.kts' line: 19
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4677679Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4677807Z * What went wrong:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4678132Z Script compilation errors:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4678417Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4678644Z   Line 19:         jvmTarget = JavaVersion.VERSION_17.toString()
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4679763Z                    ^ 'jvmTarget: String' is deprecated. Please migrate to the compilerOptions DSL. More details are here: https://kotl.in/u1r8ln
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4680573Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4680847Z   Line 25:             val keystoreProperties = java.util.Properties()
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4681454Z                                                      ^ Unresolved reference: util
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4681847Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4682281Z   Line 27:                 keystoreProperties.load(java.io.FileInputStream(keystorePropertiesFile))
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4683116Z                                                         ^ Unresolved reference: io
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4683484Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4683752Z   Line 28:                 keyAlias = keystoreProperties["keyAlias"] as String
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4684357Z                                                                      ^ No cast needed
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4684734Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4685181Z   Line 29:                 keyPassword = keystoreProperties["keyPassword"] as String
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4685894Z                                                                            ^ No cast needed
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4686259Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4686636Z   Line 30:                 storeFile = keystoreProperties["storeFile"]?.let { file(it as String) }
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4687444Z                                                                                    ^ Unresolved reference: it
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4688314Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4688631Z   Line 31:                 storePassword = keystoreProperties["storePassword"] as String
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4689341Z                                                                                ^ No cast needed
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4689726Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4689918Z   Line 43:         versionCode = flutter.versionCode
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4690472Z                                          ^ Function invocation 'versionCode()' expected
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4690886Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4691071Z   Line 44:         versionName = flutter.versionName
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4691866Z                                          ^ Function invocation 'versionName()' expected
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4692292Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4692413Z 9 errors
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4692575Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4692683Z * Try:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4693048Z > Run with --stacktrace option to get the stack trace.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4693570Z > Run with --info or --debug option to get more log output.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4694100Z > Run with --scan to get full insights.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4694553Z > Get more help at https://help.gradle.org.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4694877Z 
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.4695144Z BUILD FAILED in 2m 35s
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.9077185Z Running Gradle task 'assembleRelease'...                          156.7s
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.9114448Z Gradle task assembleRelease failed with exit code 1
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.9166535Z ##[error]Process completed with exit code 1.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.9300319Z Post job cleanup.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:03.9353241Z Post job cleanup.
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0242143Z [command]/usr/bin/git version
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0275432Z git version 2.52.0
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0316086Z Temporarily overriding HOME='/home/runner/work/_temp/81ada432-2adf-4abd-bb77-cd77d08b948e' before making global git config changes
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0317244Z Adding repository directory to the temporary git global config as a safe directory
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0330640Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/glowuphub/glowuphub
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0362617Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0391316Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0575899Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0594638Z http.https://github.com/.extraheader
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0605291Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0630605Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0813159Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.0840803Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.1121497Z Cleaning up orphan processes
+Android Build (APK & AAB)	UNKNOWN STEP	2026-01-14T12:24:04.1344725Z Terminate orphan process: pid (2554) (java)
+iOS Build (IPA)	UNKNOWN STEP	∩╗┐2026-01-14T12:20:38.4631880Z Current runner version: '2.331.0'
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4675860Z ##[group]Runner Image Provisioner
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4676420Z Hosted Compute Agent
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4676770Z Version: 20251211.462
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4677160Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4677700Z Build Date: 2025-12-11T16:28:49Z
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4678120Z Worker ID: {fc2e93f4-482c-4d52-ba89-c452ac6ca6f7}
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4678550Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4678880Z ##[group]Operating System
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4679230Z macOS
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4679500Z 15.7.3
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4679780Z 24G419
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4680050Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4680340Z ##[group]Runner Image
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4680660Z Image: macos-15-arm64
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4680980Z Version: 20260112.0107.1
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4681670Z Included Software: https://github.com/actions/runner-images/blob/macos-15-arm64/20260112.0107/images/macos/macos-15-arm64-Readme.md
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4682760Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15-arm64%2F20260112.0107
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4683370Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4684090Z ##[group]GITHUB_TOKEN Permissions
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4685450Z Contents: read
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4685750Z Metadata: read
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4686050Z Packages: read
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4686350Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4688200Z Secret source: Actions
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.4688600Z Prepare workflow directory
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.5225190Z Prepare all required actions
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.5256630Z Getting action download info
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:38.7777260Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:39.0684490Z Download action repository 'subosito/flutter-action@v2' (SHA:fd55f4c5af5b953cc57a2be44cb082c8f6635e8e)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.2424730Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.4749060Z Getting action download info
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.5830110Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.7563460Z Complete job name: iOS Build (IPA)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8087550Z ##[group]Run actions/checkout@v4
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8088280Z with:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8088550Z   repository: Sishir120/glowuphub
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8089140Z   token: ***
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8089370Z   ssh-strict: true
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8089620Z   ssh-user: git
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8089870Z   persist-credentials: true
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8090170Z   clean: true
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8090440Z   sparse-checkout-cone-mode: true
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8090760Z   fetch-depth: 1
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8091020Z   fetch-tags: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8091290Z   show-progress: true
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8091540Z   lfs: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8091780Z   submodules: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8092040Z   set-safe-directory: true
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:40.8092430Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.1465370Z Syncing repository: Sishir120/glowuphub
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.1467130Z ##[group]Getting Git version info
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.1467620Z Working directory is '/Users/runner/work/glowuphub/glowuphub'
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.1468360Z [command]/opt/homebrew/bin/git version
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2177940Z git version 2.52.0
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2253480Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2272040Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/fa1378ab-466f-4d46-9dbe-eaa3f800208e/.gitconfig'
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2277790Z Temporarily overriding HOME='/Users/runner/work/_temp/fa1378ab-466f-4d46-9dbe-eaa3f800208e' before making global git config changes
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2281310Z Adding repository directory to the temporary git global config as a safe directory
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2283700Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/glowuphub/glowuphub
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2461580Z Deleting the contents of '/Users/runner/work/glowuphub/glowuphub'
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2476600Z ##[group]Initializing the repository
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2487720Z [command]/opt/homebrew/bin/git init /Users/runner/work/glowuphub/glowuphub
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2838740Z hint: Using 'master' as the name for the initial branch. This default branch name
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2860560Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2874880Z hint: to use in all of your new repositories, which will suppress this warning,
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2876350Z hint: call:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2876850Z hint:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2877390Z hint: 	git config --global init.defaultBranch <name>
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2877910Z hint:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2878750Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2879500Z hint: 'development'. The just-created branch can be renamed via this command:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2880090Z hint:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2880450Z hint: 	git branch -m <name>
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2880850Z hint:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2881330Z hint: Disable this message with "git config set advice.defaultBranchName false"
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2882510Z Initialized empty Git repository in /Users/runner/work/glowuphub/glowuphub/.git/
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2884110Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Sishir120/glowuphub
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2945880Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2947710Z ##[group]Disabling automatic garbage collection
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.2949110Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.3035130Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.3035780Z ##[group]Setting up auth
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.3037070Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.3147320Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.4541210Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.4676070Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.5702160Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.5793810Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.6877170Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.6959740Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.6962560Z ##[group]Fetching the repository
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:41.6967710Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +65160b1bfd4eebcc049802027133dda42674863a:refs/remotes/origin/main
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.5200280Z From https://github.com/Sishir120/glowuphub
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.5201600Z  * [new ref]         65160b1bfd4eebcc049802027133dda42674863a -> origin/main
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.5292910Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.5293660Z ##[group]Determining the checkout info
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.5294190Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.5299620Z [command]/opt/homebrew/bin/git sparse-checkout disable
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.5371920Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.5434020Z ##[group]Checking out the ref
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.5435790Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.6858370Z Switched to a new branch 'main'
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.6859320Z branch 'main' set up to track 'origin/main'.
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.6866940Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.6965870Z [command]/opt/homebrew/bin/git log -1 --format=%H
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7030700Z 65160b1bfd4eebcc049802027133dda42674863a
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7372230Z ##[group]Run subosito/flutter-action@v2
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7372580Z with:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7372760Z   flutter-version: 3.22.0
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7372970Z   channel: stable
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7373190Z   cache: true
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7373480Z   architecture: ARM64
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7373720Z   pub-cache-path: default
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7373990Z   dry-run: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7374290Z   git-source: https://github.com/flutter/flutter.git
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7374530Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7461330Z ##[group]Run chmod +x "$GITHUB_ACTION_PATH/setup.sh"
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7461730Z [36;1mchmod +x "$GITHUB_ACTION_PATH/setup.sh"[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7501680Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.7501990Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8014870Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p \
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8015280Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8015580Z [36;1m  -n '3.22.0' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8015810Z [36;1m  -f '' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8016050Z [36;1m  -a 'ARM64' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8016240Z [36;1m  -k '' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8016530Z [36;1m  -c '' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8016720Z [36;1m  -l '' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8016910Z [36;1m  -d 'default' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8017230Z [36;1m  -g 'https://github.com/flutter/flutter.git' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8017500Z [36;1m  stable[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8048310Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:43.8048640Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.0354130Z ##[group]Run actions/cache@v4
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.0354390Z with:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.0354650Z   path: /Users/runner/hostedtoolcache/flutter/stable-3.22.0-arm64
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.0355080Z   key: flutter-macos-stable-3.22.0-arm64-5dcb86f68f239346676ceb1ed1ea385bd215fba1
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.0355470Z   enableCrossOsArchive: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.0355700Z   fail-on-cache-miss: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.0355960Z   lookup-only: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.0356140Z   save-always: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.0356340Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.2333650Z Cache not found for input keys: flutter-macos-stable-3.22.0-arm64-5dcb86f68f239346676ceb1ed1ea385bd215fba1
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.3786030Z ##[group]Run actions/cache@v4
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.3786300Z with:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.3786500Z   path: /Users/runner/.pub-cache
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.3787130Z   key: flutter-pub-macos-stable-3.22.0-arm64-5dcb86f68f239346676ceb1ed1ea385bd215fba1-7db490e0a47873c6893c369a3a27df2593ccc920db24e3b780e4760cedf2fda1
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.3787750Z   enableCrossOsArchive: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.3787990Z   fail-on-cache-miss: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.3788180Z   lookup-only: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.3788360Z   save-always: false
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.3788530Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5418200Z Cache not found for input keys: flutter-pub-macos-stable-3.22.0-arm64-5dcb86f68f239346676ceb1ed1ea385bd215fba1-7db490e0a47873c6893c369a3a27df2593ccc920db24e3b780e4760cedf2fda1
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5465850Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh \
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5466170Z [36;1m$GITHUB_ACTION_PATH/setup.sh \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5466410Z [36;1m  -n '3.22.0' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5466660Z [36;1m  -a 'arm64' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5466980Z [36;1m  -c '/Users/runner/hostedtoolcache/flutter/stable-3.22.0-arm64' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5467330Z [36;1m  -d '/Users/runner/.pub-cache' \[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5467570Z [36;1m  stable[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5498780Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.5499070Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.7823610Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.7826040Z                                  Dload  Upload   Total   Spent    Left  Speed
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:44.7827410Z 
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:45.5482630Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:46.5475200Z   5 1149M    5 63.0M    0     0  82.5M      0  0:00:13 --:--:--  0:00:13 82.4M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:47.5489940Z  12 1149M   12  148M    0     0  84.0M      0  0:00:13  0:00:01  0:00:12 84.0M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:48.5496720Z  19 1149M   19  224M    0     0  81.0M      0  0:00:14  0:00:02  0:00:12 81.0M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:49.5498370Z  26 1149M   26  303M    0     0  80.7M      0  0:00:14  0:00:03  0:00:11 80.7M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:50.5516390Z  32 1149M   32  376M    0     0  78.9M      0  0:00:14  0:00:04  0:00:10 78.9M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:51.5503540Z  36 1149M   36  418M    0     0  72.6M      0  0:00:15  0:00:05  0:00:10 71.1M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:52.5515460Z  42 1149M   42  488M    0     0  72.2M      0  0:00:15  0:00:06  0:00:09 68.0M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:53.5512190Z  49 1149M   49  567M    0     0  73.0M      0  0:00:15  0:00:07  0:00:08 68.5M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:54.5526390Z  56 1149M   56  644M    0     0  73.5M      0  0:00:15  0:00:08  0:00:07 68.1M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:55.5527820Z  62 1149M   62  719M    0     0  73.7M      0  0:00:15  0:00:09  0:00:06 68.7M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:56.5542210Z  68 1149M   68  792M    0     0  73.6M      0  0:00:15  0:00:10  0:00:05 74.7M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:57.5537640Z  75 1149M   75  863M    0     0  73.3M      0  0:00:15  0:00:11  0:00:04 74.9M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:58.5536790Z  81 1149M   81  940M    0     0  73.6M      0  0:00:15  0:00:12  0:00:03 74.5M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:20:59.5542150Z  88 1149M   88 1016M    0     0  73.8M      0  0:00:15  0:00:13  0:00:02 74.3M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:00.3997940Z  95 1149M   95 1098M    0     0  74.4M      0  0:00:15  0:00:14  0:00:01 75.7M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:00.4007360Z 100 1149M  100 1149M    0     0  73.6M      0  0:00:15  0:00:15 --:--:-- 73.6M
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.4323160Z ##[group]Run cd mobile
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.4323580Z [36;1mcd mobile[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.4323790Z [36;1mflutter pub get[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.4488710Z shell: /bin/bash -e {0}
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.4488980Z env:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.4489390Z   FLUTTER_ROOT: /Users/runner/hostedtoolcache/flutter/stable-3.22.0-arm64
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.4490010Z   PUB_CACHE: /Users/runner/.pub-cache
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.4490370Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8325100Z 
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8338160Z   ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8339500Z   Γòæ                 Welcome to Flutter! - https://flutter.dev                  Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8340570Z   Γòæ                                                                            Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8341970Z   Γòæ The Flutter tool uses Google Analytics to anonymously report feature usage Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8342840Z   Γòæ statistics and basic crash reports. This data is used to help improve      Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8343370Z   Γòæ Flutter tools over time.                                                   Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8343790Z   Γòæ                                                                            Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8344340Z   Γòæ Flutter tool analytics are not sent on the very first run. To disable      Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8344950Z   Γòæ reporting, type 'flutter config --no-analytics'. To display the current    Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8345510Z   Γòæ setting, type 'flutter config'. If you opt out of analytics, an opt-out    Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8346000Z   Γòæ event will be sent, and then no further information will be sent by the    Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8346600Z   Γòæ Flutter tool.                                                              Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8346960Z   Γòæ                                                                            Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8347400Z   Γòæ By downloading the Flutter SDK, you agree to the Google Terms of Service.  Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8348140Z   Γòæ The Google Privacy Policy describes how data is handled in this service.   Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8348510Z   Γòæ                                                                            Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8348960Z   Γòæ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8355880Z   Γòæ crash reports to Google.                                                   Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8356390Z   Γòæ                                                                            Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8356820Z   Γòæ Read about data we send with crash reports:                                Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8357300Z   Γòæ https://flutter.dev/docs/reference/crash-reporting                         Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8357830Z   Γòæ                                                                            Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8358220Z   Γòæ See Google's privacy policy:                                               Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8358710Z   Γòæ https://policies.google.com/privacy                                        Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8359150Z   Γòæ                                                                            Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8359510Z   Γòæ To disable animations in this tool, use                                    Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8360000Z   Γòæ 'flutter config --no-cli-animations'.                                      Γòæ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8360450Z   ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:25.8360720Z 
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:30.8387610Z Resolving dependencies...
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:31.7409350Z Downloading packages...
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0172630Z < async 2.11.0 (was 2.13.0) (2.13.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0173080Z < boolean_selector 2.1.1 (was 2.1.2) (2.1.2 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0173520Z < characters 1.3.0 (was 1.4.0) (1.4.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0173820Z < checked_yaml 2.0.3 (was 2.0.4) (2.0.4 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0174190Z < clock 1.1.1 (was 1.1.2) (1.1.2 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0175390Z < collection 1.18.0 (was 1.19.1) (1.19.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0175750Z < fake_async 1.3.1 (was 1.3.3) (1.3.3 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0176100Z < ffi 2.1.3 (was 2.1.5) (2.1.5 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0176510Z   fl_chart 0.70.2 (1.1.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0176960Z   flutter_launcher_icons 0.13.1 (0.14.4 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0177270Z < flutter_lints 4.0.0 (was 6.0.0) (6.0.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0177630Z < flutter_lucide 1.2.0 (was 1.8.2) (1.8.2 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0178010Z < flutter_native_splash 2.4.1 (was 2.4.7) (2.4.7 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0178460Z < flutter_svg 2.1.0 (was 2.2.3) (2.2.3 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0178790Z   go_router 14.8.1 (17.0.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0179130Z < google_fonts 6.3.0 (was 6.3.3) (7.0.2 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0179490Z < google_sign_in 6.2.2 (was 6.3.0) (7.2.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0179800Z < google_sign_in_android 6.1.31 (was 6.2.1) (7.2.7 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0180120Z   google_sign_in_ios 5.9.0 (6.2.4 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0180430Z   google_sign_in_platform_interface 2.5.0 (3.1.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0180820Z   google_sign_in_web 0.12.4+4 (1.1.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0181100Z < http_parser 4.0.2 (was 4.1.2) (4.1.2 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0181410Z < leak_tracker 10.0.4 (was 11.0.2) (11.0.2 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0181790Z < leak_tracker_flutter_testing 3.0.3 (was 3.0.10) (3.0.10 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0182150Z < leak_tracker_testing 3.0.1 (was 3.0.2) (3.0.2 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0182430Z < lints 4.0.0 (was 6.0.0) (6.0.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0182730Z < matcher 0.12.16+1 (was 0.12.17) (0.12.18 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0183100Z < material_color_utilities 0.8.0 (was 0.11.1) (0.13.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0183430Z < meta 1.12.0 (was 1.17.0) (1.17.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0183700Z < path 1.9.0 (was 1.9.1) (1.9.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0184060Z < path_provider_android 2.2.10 (was 2.2.22) (2.2.22 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0184430Z < path_provider_foundation 2.4.1 (was 2.5.1) (2.5.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0184730Z < petitparser 6.0.2 (was 7.0.1) (7.0.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0186100Z < shared_preferences 2.3.3 (was 2.5.4) (2.5.4 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0187090Z < shared_preferences_android 2.3.2 (was 2.4.18) (2.4.18 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0187480Z < shared_preferences_foundation 2.5.4 (was 2.5.6) (2.5.6 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0187850Z > sky_engine 0.0.99 from sdk flutter (was 0.0.0 from sdk flutter)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0188280Z < source_span 1.10.0 (was 1.10.1) (1.10.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0188580Z < stack_trace 1.11.1 (was 1.12.1) (1.12.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0188870Z < stream_channel 2.1.2 (was 2.1.4) (2.1.4 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0189170Z < string_scanner 1.2.0 (was 1.4.1) (1.4.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0189490Z < term_glyph 1.2.1 (was 1.2.2) (1.2.2 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0189770Z < test_api 0.7.0 (was 0.7.7) (0.7.9 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0190050Z < typed_data 1.3.2 (was 1.4.0) (1.4.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0190380Z < universal_io 2.2.2 (was 2.3.1) (2.3.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0190730Z < vector_graphics 1.1.18 (was 1.1.19) (1.1.19 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0191070Z < vector_graphics_compiler 1.1.16 (was 1.1.19) (1.1.19 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0191390Z < vector_math 2.1.4 (was 2.2.0) (2.2.0 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0191750Z < vm_service 14.2.1 (was 15.0.2) (15.0.2 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0192010Z < xml 6.5.0 (was 6.6.1) (6.6.1 available)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0192240Z Changed 44 dependencies!
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0192630Z 49 packages have newer versions incompatible with dependency constraints.
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:36.0192990Z Try `flutter pub outdated` for more information.
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:43.1183480Z ##[group]Run flutter build ios --release --no-codesign
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:43.1185560Z [36;1mflutter build ios --release --no-codesign[0m
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:43.1326600Z shell: /bin/bash -e {0}
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:43.1326870Z env:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:43.1327200Z   FLUTTER_ROOT: /Users/runner/hostedtoolcache/flutter/stable-3.22.0-arm64
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:43.1327640Z   PUB_CACHE: /Users/runner/.pub-cache
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:43.1327890Z ##[endgroup]
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:45.3386670Z Warning: Building for device with codesigning disabled. You will have to manually codesign before deploying to device.
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:21:48.2561420Z Building com.glowuphub.mobile for device (ios-release)...
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:03.1912280Z Running pod install...                                             12.3s
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:56.8926390Z Running Xcode build...                                          
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:56.8966040Z Xcode build done.                                           53.6s
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5170690Z Failed to build iOS app
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5228580Z ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5229290Z Building a deployable iOS app requires a selected Development Team with a 
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5229850Z Provisioning Profile. Please ensure that a Development Team is selected by:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5230460Z   1- Open the Flutter project's Xcode target with
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5230790Z        open ios/Runner.xcworkspace
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5231330Z   2- Select the 'Runner' project in the navigator then the 'Runner' target
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5231860Z      in the project settings
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5232210Z   3- Make sure a 'Development Team' is selected under Signing & Capabilities > Team. 
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5232700Z      You may need to:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5233500Z          - Log in with your Apple ID in Xcode first
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5233880Z          - Ensure you have a valid unique Bundle ID
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5234230Z          - Register your device with your Apple Developer Account
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5234680Z          - Let Xcode automatically provision a profile for your app
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5235040Z   4- Build or run your project again
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5235300Z 
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5235370Z For more information, please visit:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5236000Z   https://flutter.dev/docs/get-started/install/macos#deploy-to-ios-devices
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5236410Z 
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5236590Z Or run on an iOS simulator without code signing
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5246530Z ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5281990Z Encountered error while building for device.
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5396280Z ##[error]Process completed with exit code 1.
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5640220Z Post job cleanup.
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.5711290Z Post job cleanup.
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.9002170Z [command]/opt/homebrew/bin/git version
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.9254340Z git version 2.52.0
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.9297160Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/e1485609-854e-494f-9d27-491c3045078c/.gitconfig'
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.9313480Z Temporarily overriding HOME='/Users/runner/work/_temp/e1485609-854e-494f-9d27-491c3045078c' before making global git config changes
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.9314300Z Adding repository directory to the temporary git global config as a safe directory
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.9317400Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/glowuphub/glowuphub
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.9417210Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:58.9482910Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:59.0453710Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:59.0512780Z http.https://github.com/.extraheader
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:59.0529080Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:59.0603980Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:59.1701660Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:59.1781050Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:22:59.3101470Z Cleaning up orphan processes
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:23:00.0763460Z Terminate orphan process: pid (2135) (ibtoold)
+iOS Build (IPA)	UNKNOWN STEP	2026-01-14T12:23:00.1212270Z Terminate orphan process: pid (2128) (ibtoold)
