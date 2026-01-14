@@ -1,0 +1,423 @@
+﻿Web PWA Build	Build Web	∩╗┐2026-01-14T14:17:32.6912528Z ##[group]Run cd mobile
+Web PWA Build	Build Web	2026-01-14T14:17:32.6912807Z [36;1mcd mobile[0m
+Web PWA Build	Build Web	2026-01-14T14:17:32.6913009Z [36;1mflutter pub get[0m
+Web PWA Build	Build Web	2026-01-14T14:17:32.6913288Z [36;1mflutter build web --release --base-href /mobile/[0m
+Web PWA Build	Build Web	2026-01-14T14:17:32.6947019Z shell: /usr/bin/bash -e {0}
+Web PWA Build	Build Web	2026-01-14T14:17:32.6947251Z env:
+Web PWA Build	Build Web	2026-01-14T14:17:32.6947510Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.22.0-x64
+Web PWA Build	Build Web	2026-01-14T14:17:32.6947849Z   PUB_CACHE: /home/runner/.pub-cache
+Web PWA Build	Build Web	2026-01-14T14:17:32.6948091Z ##[endgroup]
+Web PWA Build	Build Web	2026-01-14T14:17:33.2607916Z 
+Web PWA Build	Build Web	2026-01-14T14:17:33.2619663Z   ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Web PWA Build	Build Web	2026-01-14T14:17:33.2620321Z   Γòæ                 Welcome to Flutter! - https://flutter.dev                  Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2620849Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2621406Z   Γòæ The Flutter tool uses Google Analytics to anonymously report feature usage Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2622066Z   Γòæ statistics and basic crash reports. This data is used to help improve      Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2622979Z   Γòæ Flutter tools over time.                                                   Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2623490Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2624311Z   Γòæ Flutter tool analytics are not sent on the very first run. To disable      Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2624994Z   Γòæ reporting, type 'flutter config --no-analytics'. To display the current    Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2625604Z   Γòæ setting, type 'flutter config'. If you opt out of analytics, an opt-out    Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2626213Z   Γòæ event will be sent, and then no further information will be sent by the    Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2626748Z   Γòæ Flutter tool.                                                              Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2627184Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2627699Z   Γòæ By downloading the Flutter SDK, you agree to the Google Terms of Service.  Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2628319Z   Γòæ The Google Privacy Policy describes how data is handled in this service.   Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2628827Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2629358Z   Γòæ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2629919Z   Γòæ crash reports to Google.                                                   Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2630384Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2630865Z   Γòæ Read about data we send with crash reports:                                Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2631457Z   Γòæ https://flutter.dev/docs/reference/crash-reporting                         Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2631984Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2632716Z   Γòæ See Google's privacy policy:                                               Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2633334Z   Γòæ https://policies.google.com/privacy                                        Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2633845Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2634351Z   Γòæ To disable animations in this tool, use                                    Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2634895Z   Γòæ 'flutter config --no-cli-animations'.                                      Γòæ
+Web PWA Build	Build Web	2026-01-14T14:17:33.2635397Z   ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+Web PWA Build	Build Web	2026-01-14T14:17:33.2635637Z 
+Web PWA Build	Build Web	2026-01-14T14:17:39.3034499Z Resolving dependencies...
+Web PWA Build	Build Web	2026-01-14T14:17:40.3680433Z Downloading packages...
+Web PWA Build	Build Web	2026-01-14T14:17:44.9523723Z < async 2.11.0 (was 2.13.0) (2.13.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9524324Z < boolean_selector 2.1.1 (was 2.1.2) (2.1.2 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9524833Z < characters 1.3.0 (was 1.4.0) (1.4.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9525219Z < checked_yaml 2.0.3 (was 2.0.4) (2.0.4 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9526065Z < clock 1.1.1 (was 1.1.2) (1.1.2 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9526393Z < collection 1.18.0 (was 1.19.1) (1.19.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9526909Z < fake_async 1.3.1 (was 1.3.3) (1.3.3 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9527414Z < ffi 2.1.3 (was 2.1.5) (2.1.5 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9527779Z   fl_chart 0.70.2 (1.1.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9528086Z   flutter_launcher_icons 0.13.1 (0.14.4 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9528434Z < flutter_lints 4.0.0 (was 6.0.0) (6.0.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9528775Z < flutter_lucide 1.2.0 (was 1.8.2) (1.8.2 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9529231Z < flutter_native_splash 2.4.1 (was 2.4.7) (2.4.7 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9529601Z < flutter_svg 2.1.0 (was 2.2.3) (2.2.3 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9529915Z   go_router 14.8.1 (17.0.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9530210Z < google_fonts 6.3.0 (was 6.3.3) (7.0.2 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9530543Z < google_sign_in 6.2.2 (was 6.3.0) (7.2.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9530919Z < google_sign_in_android 6.1.31 (was 6.2.1) (7.2.7 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9531286Z   google_sign_in_ios 5.9.0 (6.2.4 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9531643Z   google_sign_in_platform_interface 2.5.0 (3.1.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9532227Z   google_sign_in_web 0.12.4+4 (1.1.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9532846Z < http_parser 4.0.2 (was 4.1.2) (4.1.2 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9533194Z < leak_tracker 10.0.4 (was 11.0.2) (11.0.2 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9533603Z < leak_tracker_flutter_testing 3.0.3 (was 3.0.10) (3.0.10 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9534007Z < leak_tracker_testing 3.0.1 (was 3.0.2) (3.0.2 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9534319Z < lints 4.0.0 (was 6.0.0) (6.0.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9534601Z < matcher 0.12.16+1 (was 0.12.17) (0.12.18 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9534963Z < material_color_utilities 0.8.0 (was 0.11.1) (0.13.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9535293Z < meta 1.12.0 (was 1.17.0) (1.17.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9535543Z < path 1.9.0 (was 1.9.1) (1.9.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9535852Z < path_provider_android 2.2.10 (was 2.2.22) (2.2.22 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9536207Z < path_provider_foundation 2.4.1 (was 2.5.1) (2.5.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9536546Z < petitparser 6.0.2 (was 7.0.1) (7.0.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9536921Z < shared_preferences 2.3.3 (was 2.5.4) (2.5.4 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9537299Z < shared_preferences_android 2.3.2 (was 2.4.18) (2.4.18 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9537703Z < shared_preferences_foundation 2.5.4 (was 2.5.6) (2.5.6 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9538397Z > sky_engine 0.0.99 from sdk flutter (was 0.0.0 from sdk flutter)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9538897Z < source_span 1.10.0 (was 1.10.1) (1.10.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9539183Z < stack_trace 1.11.1 (was 1.12.1) (1.12.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9539457Z < stream_channel 2.1.2 (was 2.1.4) (2.1.4 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9539733Z < string_scanner 1.2.0 (was 1.4.1) (1.4.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9540002Z < term_glyph 1.2.1 (was 1.2.2) (1.2.2 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9540275Z < test_api 0.7.0 (was 0.7.7) (0.7.9 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9540532Z < typed_data 1.3.2 (was 1.4.0) (1.4.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9540809Z < universal_io 2.2.2 (was 2.3.1) (2.3.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9541111Z < vector_graphics 1.1.18 (was 1.1.19) (1.1.19 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9541445Z < vector_graphics_compiler 1.1.16 (was 1.1.19) (1.1.19 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9541772Z < vector_math 2.1.4 (was 2.2.0) (2.2.0 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9542054Z < vm_service 14.2.1 (was 15.0.2) (15.0.2 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9542519Z < xml 6.5.0 (was 6.6.1) (6.6.1 available)
+Web PWA Build	Build Web	2026-01-14T14:17:44.9542766Z Changed 44 dependencies!
+Web PWA Build	Build Web	2026-01-14T14:17:44.9550208Z 49 packages have newer versions incompatible with dependency constraints.
+Web PWA Build	Build Web	2026-01-14T14:17:44.9550874Z Try `flutter pub outdated` for more information.
+Web PWA Build	Build Web	2026-01-14T14:17:45.9318160Z 
+Web PWA Build	Build Web	2026-01-14T14:18:00.3782858Z Compiling lib/main.dart for the Web...                          
+Web PWA Build	Build Web	2026-01-14T14:18:00.3795987Z Target dart2js failed: ProcessException: Process exited abnormally with exit code 1:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3796719Z lib/screens/main/main_layout.dart:73:38:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3797168Z Error: Member not found: 'house'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3797541Z               icon: Icon(LucideIcons.house),
+Web PWA Build	Build Web	2026-01-14T14:18:00.3797990Z                                      ^^^^^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3798791Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/base/axis_chart/axis_chart_data.dart:1470:43:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3799747Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3800297Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3800748Z     if (strokeWidth != 0.0 && strokeColor.a != 0.0) {
+Web PWA Build	Build Web	2026-01-14T14:18:00.3801234Z                                           ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3801893Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/base/axis_chart/axis_chart_data.dart:1567:43:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3802782Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3803140Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3803423Z     if (strokeWidth != 0.0 && strokeColor.a != 0.0) {
+Web PWA Build	Build Web	2026-01-14T14:18:00.3805548Z                                           ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3806229Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/line_chart/line_chart_data.dart:550:35:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3807127Z Error: The method 'withValues' isn't defined for the class 'MaterialColor'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3808341Z  - 'MaterialColor' is from 'package:flutter/src/material/colors.dart' ('/opt/hostedtoolcache/flutter/stable-3.22.0-x64/packages/flutter/lib/src/material/colors.dart').
+Web PWA Build	Build Web	2026-01-14T14:18:00.3809174Z                 ? Colors.blueGrey.withValues(alpha: 0.5)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3809476Z                                   ^^^^^^^^^^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3809955Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/line_chart/line_chart_data.dart:606:35:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3810579Z Error: The method 'withValues' isn't defined for the class 'MaterialColor'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3811463Z  - 'MaterialColor' is from 'package:flutter/src/material/colors.dart' ('/opt/hostedtoolcache/flutter/stable-3.22.0-x64/packages/flutter/lib/src/material/colors.dart').
+Web PWA Build	Build Web	2026-01-14T14:18:00.3812523Z                 ? Colors.blueGrey.withValues(alpha: 0.5)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3812834Z                                   ^^^^^^^^^^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3813269Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/radar_chart/radar_chart_data.dart:300:46:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3813811Z Error: The method 'withValues' isn't defined for the class 'MaterialColor'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3814583Z  - 'MaterialColor' is from 'package:flutter/src/material/colors.dart' ('/opt/hostedtoolcache/flutter/stable-3.22.0-x64/packages/flutter/lib/src/material/colors.dart').
+Web PWA Build	Build Web	2026-01-14T14:18:00.3815319Z         fillColor = fillColor ?? Colors.cyan.withValues(alpha: 0.2),
+Web PWA Build	Build Web	2026-01-14T14:18:00.3815640Z                                              ^^^^^^^^^^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3816063Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/color_extension.dart:9:20:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3816525Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3816824Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3817027Z       _floatToInt8(a),
+Web PWA Build	Build Web	2026-01-14T14:18:00.3817237Z                    ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3817584Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/color_extension.dart:10:21:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3818045Z Error: The getter 'r' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3818333Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3818543Z       (_floatToInt8(r) * value).round(),
+Web PWA Build	Build Web	2026-01-14T14:18:00.3818767Z                     ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3819112Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/color_extension.dart:11:21:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3819569Z Error: The getter 'g' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3820298Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3820518Z       (_floatToInt8(g) * value).round(),
+Web PWA Build	Build Web	2026-01-14T14:18:00.3820741Z                     ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3821105Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/color_extension.dart:12:21:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3821599Z Error: The getter 'b' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3821887Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3822102Z       (_floatToInt8(b) * value).round(),
+Web PWA Build	Build Web	2026-01-14T14:18:00.3822622Z                     ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3823058Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/base/axis_chart/axis_chart_painter.dart:159:30:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3823575Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3823857Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3824085Z     if (data.backgroundColor.a == 0.0) {
+Web PWA Build	Build Web	2026-01-14T14:18:00.3824313Z                              ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3824695Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/border_extension.dart:12:20:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3825158Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3825589Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3825802Z     if (left.color.a == 0.0 &&
+Web PWA Build	Build Web	2026-01-14T14:18:00.3825990Z                    ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3826335Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/border_extension.dart:13:19:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3826789Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3827070Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3827268Z         top.color.a == 0.0 &&
+Web PWA Build	Build Web	2026-01-14T14:18:00.3827472Z                   ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3827810Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/border_extension.dart:14:21:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3828260Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3828542Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3828749Z         right.color.a == 0.0 &&
+Web PWA Build	Build Web	2026-01-14T14:18:00.3828941Z                     ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3829284Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/border_extension.dart:15:22:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3829739Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3830020Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3830221Z         bottom.color.a == 0.0) {
+Web PWA Build	Build Web	2026-01-14T14:18:00.3830421Z                      ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3830784Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/bar_chart/bar_chart_painter.dart:339:56:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3831261Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3831540Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3831789Z           if (borderSide.width > 0 && borderSide.color.a > 0) {
+Web PWA Build	Build Web	2026-01-14T14:18:00.3832088Z                                                        ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3832745Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/bar_chart/bar_chart_painter.dart:637:71:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3833232Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3833511Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3833839Z     if (stackItem.borderSide.width == 0 || stackItem.borderSide.color.a == 0) {
+Web PWA Build	Build Web	2026-01-14T14:18:00.3834227Z                                                                       ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3834701Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/line_chart/line_chart_painter.dart:1001:47:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3835199Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3835479Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3835735Z     if (!barData.show || barData.shadow.color.a == 0.0) {
+Web PWA Build	Build Web	2026-01-14T14:18:00.3836015Z                                               ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3836439Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/paint_extension.dart:8:21:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3837096Z Error: The method 'withValues' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3837409Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3837634Z       color = color.withValues(alpha: 0);
+Web PWA Build	Build Web	2026-01-14T14:18:00.3837868Z                     ^^^^^^^^^^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3838267Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/pie_chart/pie_chart_painter.dart:146:38:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3838747Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3839032Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3839259Z             section.borderSide.color.a != 0.0) {
+Web PWA Build	Build Web	2026-01-14T14:18:00.3839511Z                                      ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3839922Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/pie_chart/pie_chart_painter.dart:332:69:
+Web PWA Build	Build Web	2026-01-14T14:18:00.3840397Z Error: The getter 'a' isn't defined for the class 'Color'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3840683Z  - 'Color' is from 'dart:ui'.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3841010Z     if (section.borderSide.width != 0.0 && section.borderSide.color.a != 0.0) {
+Web PWA Build	Build Web	2026-01-14T14:18:00.3841385Z                                                                     ^
+Web PWA Build	Build Web	2026-01-14T14:18:00.3841849Z Error: Compilation failed.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3845018Z   Command: /opt/hostedtoolcache/flutter/stable-3.22.0-x64/bin/cache/dart-sdk/bin/dart --disable-dart-dev /opt/hostedtoolcache/flutter/stable-3.22.0-x64/bin/cache/dart-sdk/bin/snapshots/dart2js.dart.snapshot --platform-binaries=/opt/hostedtoolcache/flutter/stable-3.22.0-x64/bin/cache/flutter_web_sdk/kernel --invoker=flutter_tool -Ddart.vm.product=true -DFLUTTER_WEB_CANVASKIT_URL=https://www.gstatic.com/flutter-canvaskit/f6344b75dcf861d8bf1f1322780b8811f982e31a/ -DFLUTTER_WEB_AUTO_DETECT=true --native-null-assertions --no-source-maps -o /home/runner/work/glowuphub/glowuphub/mobile/.dart_tool/flutter_build/65d63428430ab1715497145a748fbd6b/app.dill --packages=.dart_tool/package_config.json --cfe-only /home/runner/work/glowuphub/glowuphub/mobile/.dart_tool/flutter_build/65d63428430ab1715497145a748fbd6b/main.dart
+Web PWA Build	Build Web	2026-01-14T14:18:00.3848133Z #0      RunResult.throwException (package:flutter_tools/src/base/process.dart:125:5)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3848653Z #1      _DefaultProcessUtils.run (package:flutter_tools/src/base/process.dart:321:19)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3849041Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3849410Z #2      Dart2JSTarget.build (package:flutter_tools/src/build_system/targets/web.dart:193:5)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3849816Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3850209Z #3      _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:875:9)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3850645Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3850937Z #4      Future.wait.<anonymous closure> (dart:async/future.dart:524:21)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3851263Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3851668Z #5      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:813:32)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3852110Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3852592Z #6      Future.wait.<anonymous closure> (dart:async/future.dart:524:21)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3852923Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3853309Z #7      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:813:32)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3853745Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3854117Z #8      FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:642:16)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3854539Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3854848Z #9      WebBuilder.buildWeb (package:flutter_tools/src/web/compile.dart:92:34)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3855205Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3855568Z #10     BuildWebCommand.runCommand (package:flutter_tools/src/commands/build_web.dart:230:5)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3855971Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3856390Z #11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1394:27)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3856982Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3857342Z #12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3857753Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3858052Z #13     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3858397Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3858882Z #14     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:372:9)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3859418Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3859769Z #15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3860176Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3860589Z #16     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:308:5)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3861057Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3861400Z #17     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:130:9)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3861796Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3862157Z #18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3862941Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3863190Z #19     main (package:flutter_tools/executable.dart:93:3)
+Web PWA Build	Build Web	2026-01-14T14:18:00.3863468Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:18:00.3863614Z 
+Web PWA Build	Build Web	2026-01-14T14:18:00.3874741Z Compiling lib/main.dart for the Web...                             14.4s
+Web PWA Build	Build Web	2026-01-14T14:18:00.3907163Z Error: Failed to compile application for the Web.
+Web PWA Build	Build Web	2026-01-14T14:18:00.3983665Z ##[error]Process completed with exit code 1.
+iOS Build (IPA)	Build iOS (No-Sign Mode)	∩╗┐2026-01-14T14:18:05.7961430Z ##[group]Run flutter build ios --release --no-codesign
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:18:05.7962150Z [36;1mflutter build ios --release --no-codesign[0m
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:18:06.0005000Z shell: /bin/bash -e {0}
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:18:06.0005360Z env:
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:18:06.0005720Z   FLUTTER_ROOT: /Users/runner/hostedtoolcache/flutter/stable-3.22.0-arm64
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:18:06.0006080Z   PUB_CACHE: /Users/runner/.pub-cache
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:18:06.0006350Z ##[endgroup]
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:18:07.3639970Z Warning: Building for device with codesigning disabled. You will have to manually codesign before deploying to device.
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:18:10.8973470Z Building com.glowuphub.mobile for device (ios-release)...
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:18:30.7635240Z Running pod install...                                             14.4s
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:51.3864320Z Running Xcode build...                                          
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:51.3967760Z Xcode build done.                                           80.6s
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.4945810Z Failed to build iOS app
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.5132780Z ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.5218780Z Building a deployable iOS app requires a selected Development Team with a 
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.5321920Z Provisioning Profile. Please ensure that a Development Team is selected by:
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.5423730Z   1- Open the Flutter project's Xcode target with
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.5525150Z        open ios/Runner.xcworkspace
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.5626280Z   2- Select the 'Runner' project in the navigator then the 'Runner' target
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.5727810Z      in the project settings
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.5829120Z   3- Make sure a 'Development Team' is selected under Signing & Capabilities > Team. 
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.5930470Z      You may need to:
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6031590Z          - Log in with your Apple ID in Xcode first
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6135240Z          - Ensure you have a valid unique Bundle ID
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6237600Z          - Register your device with your Apple Developer Account
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6340440Z          - Let Xcode automatically provision a profile for your app
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6442940Z   4- Build or run your project again
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6544250Z 
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6637890Z For more information, please visit:
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6748250Z   https://flutter.dev/docs/get-started/install/macos#deploy-to-ios-devices
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6845350Z 
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.6948530Z Or run on an iOS simulator without code signing
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.7050170Z ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.7151770Z Encountered error while building for device.
+iOS Build (IPA)	Build iOS (No-Sign Mode)	2026-01-14T14:19:54.7230920Z ##[error]Process completed with exit code 1.
+Android Build (APK & AAB)	Build Android	∩╗┐2026-01-14T14:17:46.6104604Z ##[group]Run flutter build apk --release
+Android Build (APK & AAB)	Build Android	2026-01-14T14:17:46.6104938Z [36;1mflutter build apk --release[0m
+Android Build (APK & AAB)	Build Android	2026-01-14T14:17:46.6105214Z [36;1mflutter build appbundle --release[0m
+Android Build (APK & AAB)	Build Android	2026-01-14T14:17:46.6133283Z shell: /usr/bin/bash -e {0}
+Android Build (APK & AAB)	Build Android	2026-01-14T14:17:46.6133568Z env:
+Android Build (APK & AAB)	Build Android	2026-01-14T14:17:46.6133935Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.22.0-x64
+Android Build (APK & AAB)	Build Android	2026-01-14T14:17:46.6134294Z   PUB_CACHE: /home/runner/.pub-cache
+Android Build (APK & AAB)	Build Android	2026-01-14T14:17:46.6134548Z ##[endgroup]
+Android Build (APK & AAB)	Build Android	2026-01-14T14:17:47.1984087Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:04.1746088Z Running Gradle task 'assembleRelease'...                        
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:04.1753316Z Checking the license for package Android SDK Platform 31 in /usr/local/lib/android/sdk/licenses
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:04.2612189Z License for package Android SDK Platform 31 accepted.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:04.2615259Z Preparing "Install Android SDK Platform 31 (revision 1)".
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:07.2608500Z "Install Android SDK Platform 31 (revision 1)" ready.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:07.2610248Z Installing Android SDK Platform 31 in /usr/local/lib/android/sdk/platforms/android-31
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:07.2612107Z "Install Android SDK Platform 31 (revision 1)" complete.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:07.8633372Z "Install Android SDK Platform 31 (revision 1)" finished.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:07.9607970Z [=========                              ] 25%                                   
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:07.9630887Z [=========                              ] 25% Fetch remote repository...        
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:07.9631842Z [=======================================] 100% Fetch remote repository...       
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:11.9618784Z lib/screens/main/main_layout.dart:73:38: Error: Member not found: 'house'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:11.9627659Z               icon: Icon(LucideIcons.house),
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:11.9628134Z                                      ^^^^^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5638577Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/base/axis_chart/axis_chart_data.dart:1470:43: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5640422Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5641644Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5642723Z     if (strokeWidth != 0.0 && strokeColor.a != 0.0) {
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5643389Z                                           ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5644686Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/base/axis_chart/axis_chart_data.dart:1567:43: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5646018Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5647093Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5648120Z     if (strokeWidth != 0.0 && strokeColor.a != 0.0) {
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5648822Z                                           ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5650592Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/line_chart/line_chart_data.dart:550:35: Error: The method 'withValues' isn't defined for the class 'MaterialColor'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5652775Z  - 'MaterialColor' is from 'package:flutter/src/material/colors.dart' ('/opt/hostedtoolcache/flutter/stable-3.22.0-x64/packages/flutter/lib/src/material/colors.dart').
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5655498Z Try correcting the name to the name of an existing method, or defining a method named 'withValues'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5656325Z                 ? Colors.blueGrey.withValues(alpha: 0.5)
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5656979Z                                   ^^^^^^^^^^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5658219Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/line_chart/line_chart_data.dart:606:35: Error: The method 'withValues' isn't defined for the class 'MaterialColor'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5660246Z  - 'MaterialColor' is from 'package:flutter/src/material/colors.dart' ('/opt/hostedtoolcache/flutter/stable-3.22.0-x64/packages/flutter/lib/src/material/colors.dart').
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5661798Z Try correcting the name to the name of an existing method, or defining a method named 'withValues'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5662987Z                 ? Colors.blueGrey.withValues(alpha: 0.5)
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5663480Z                                   ^^^^^^^^^^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5664702Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/radar_chart/radar_chart_data.dart:300:46: Error: The method 'withValues' isn't defined for the class 'MaterialColor'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5666668Z  - 'MaterialColor' is from 'package:flutter/src/material/colors.dart' ('/opt/hostedtoolcache/flutter/stable-3.22.0-x64/packages/flutter/lib/src/material/colors.dart').
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5668309Z Try correcting the name to the name of an existing method, or defining a method named 'withValues'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5669202Z         fillColor = fillColor ?? Colors.cyan.withValues(alpha: 0.2),
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5669789Z                                              ^^^^^^^^^^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5670865Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/color_extension.dart:9:20: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5671977Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5672669Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5673600Z       _floatToInt8(a),
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5673962Z                    ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5675041Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/color_extension.dart:10:21: Error: The getter 'r' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5676225Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5677147Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'r'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5678044Z       (_floatToInt8(r) * value).round(),
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5678562Z                     ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5679619Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/color_extension.dart:11:21: Error: The getter 'g' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5691523Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5692273Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'g'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5693072Z       (_floatToInt8(g) * value).round(),
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5693476Z                     ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5694458Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/color_extension.dart:12:21: Error: The getter 'b' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5695549Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5696240Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'b'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5697188Z       (_floatToInt8(b) * value).round(),
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5697839Z                     ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5698911Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/base/axis_chart/axis_chart_painter.dart:159:30: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5700089Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5700795Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5701573Z     if (data.backgroundColor.a == 0.0) {
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5702006Z                              ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5703024Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/border_extension.dart:12:20: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5704115Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5704824Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5705590Z     if (left.color.a == 0.0 &&
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5708412Z                    ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5711157Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/border_extension.dart:13:19: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5712517Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5714384Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5718727Z         top.color.a == 0.0 &&
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5722431Z                   ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5727141Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/border_extension.dart:14:21: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5730669Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5733290Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5740828Z         right.color.a == 0.0 &&
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5741228Z                     ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5742371Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/border_extension.dart:15:22: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5743508Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5744208Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5744977Z         bottom.color.a == 0.0) {
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.5745353Z                      ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7608940Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/bar_chart/bar_chart_painter.dart:339:56: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7620430Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7621088Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7621831Z           if (borderSide.width > 0 && borderSide.color.a > 0) {
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7622296Z                                                        ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7623296Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/bar_chart/bar_chart_painter.dart:637:71: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7624277Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7624984Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7625800Z     if (stackItem.borderSide.width == 0 || stackItem.borderSide.color.a == 0) {
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7626394Z                                                                       ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7627624Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/line_chart/line_chart_painter.dart:1001:47: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7628611Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7629198Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7629924Z     if (!barData.show || barData.shadow.color.a == 0.0) {
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7630778Z                                               ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7631764Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/extensions/paint_extension.dart:8:21: Error: The method 'withValues' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7632752Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7633353Z Try correcting the name to the name of an existing method, or defining a method named 'withValues'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7634039Z       color = color.withValues(alpha: 0);
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7634410Z                     ^^^^^^^^^^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7635289Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/pie_chart/pie_chart_painter.dart:146:38: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7636604Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7637360Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7638079Z             section.borderSide.color.a != 0.0) {
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7638468Z                                      ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7639689Z ../../../../.pub-cache/hosted/pub.dev/fl_chart-0.70.2/lib/src/chart/pie_chart/pie_chart_painter.dart:332:69: Error: The getter 'a' isn't defined for the class 'Color'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7640736Z  - 'Color' is from 'dart:ui'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7641359Z Try correcting the name to the name of an existing getter, or defining a getter or field named 'a'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7642302Z     if (section.borderSide.width != 0.0 && section.borderSide.color.a != 0.0) {
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:14.7643004Z                                                                     ^
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9605962Z Target kernel_snapshot failed: Exception
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9609837Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9651746Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9662812Z FAILURE: Build failed with an exception.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9663201Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9663335Z * What went wrong:
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9663853Z Execution failed for task ':app:compileFlutterBuildRelease'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9664896Z > Process 'command '/opt/hostedtoolcache/flutter/stable-3.22.0-x64/bin/flutter'' finished with non-zero exit value 1
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9665680Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9665795Z * Try:
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9666183Z > Run with --stacktrace option to get the stack trace.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9667136Z > Run with --info or --debug option to get more log output.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9668908Z > Run with --scan to get full insights.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9675142Z > Get more help at https://help.gradle.org.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9679645Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:16.9681724Z BUILD FAILED in 4m 28s
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:17.4445831Z Running Gradle task 'assembleRelease'...                          270.2s
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:17.4488826Z Gradle task assembleRelease failed with exit code 1
+Android Build (APK & AAB)	Build Android	2026-01-14T14:22:17.4555980Z ##[error]Process completed with exit code 1.

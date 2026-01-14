@@ -38,7 +38,7 @@ dependencies:
   flutter_svg: ^2.0.17
   google_sign_in: ^6.2.2
   shared_preferences: ^2.2.3
-  fl_chart: ^0.70.2
+  fl_chart: ^0.68.0
   flutter_lucide: ^1.1.0
   google_fonts: ^6.2.1
   flutter_animate: ^4.5.2
