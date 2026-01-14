@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, X, Info } from "lucide-react";
+import { Check, X, Info, ArrowRight } from "lucide-react";
 
 const rows = [
     { label: "Scientific Approach", glowup: "Metabolic Hormonal Balance", other: "Calorie Deficit Only" },
@@ -25,28 +25,39 @@ export function ComparisonSection() {
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto overflow-hidden rounded-3xl border border-border bg-card/50 backdrop-blur-sm shadow-xl">
-                    <div className="grid grid-cols-3 border-b border-border bg-card/80">
-                        <div className="p-6 text-sm font-bold text-foreground-muted uppercase tracking-wider">Features</div>
-                        <div className="p-6 text-center text-primary font-bold bg-primary/5">GlowUp Hub</div>
-                        <div className="p-6 text-center text-foreground-muted font-bold">Generic Apps</div>
+                <div className="relative">
+                    {/* Mobile Scroll Hint */}
+                    <div className="md:hidden flex items-center justify-center gap-2 mb-4 text-[10px] font-black uppercase tracking-widest text-primary/40 animate-pulse">
+                        <ArrowRight size={12} />
+                        Swipe to compare
+                        <ArrowRight size={12} />
                     </div>
 
-                    {rows.map((row, i) => (
-                        <div key={row.label} className="grid grid-cols-3 border-b border-border last:border-0 hover:bg-white/5 transition-colors">
-                            <div className="p-6 text-sm font-semibold text-foreground flex items-center gap-2">
-                                {row.label}
+                    <div className="max-w-4xl mx-auto overflow-x-auto scrollbar-hide rounded-3xl border border-border bg-card/50 backdrop-blur-sm shadow-xl">
+                        <div className="min-w-[600px] md:min-w-0">
+                            <div className="grid grid-cols-3 border-b border-border bg-card/80">
+                                <div className="p-6 text-sm font-bold text-foreground-muted uppercase tracking-wider">Features</div>
+                                <div className="p-6 text-center text-primary font-bold bg-primary/5">GlowUp Hub</div>
+                                <div className="p-6 text-center text-foreground-muted font-bold">Generic Apps</div>
                             </div>
-                            <div className="p-6 text-center text-sm font-bold text-foreground bg-primary/5 flex items-center justify-center gap-2">
-                                <Check className="w-5 h-5 text-primary" />
-                                <span className="hidden sm:inline">{row.glowup}</span>
-                            </div>
-                            <div className="p-6 text-center text-sm font-medium text-foreground-muted flex items-center justify-center gap-2">
-                                <X className="w-4 h-4 text-foreground-muted/50" />
-                                <span className="hidden sm:inline">{row.other}</span>
-                            </div>
+
+                            {rows.map((row, i) => (
+                                <div key={row.label} className="grid grid-cols-3 border-b border-border last:border-0 hover:bg-white/5 transition-colors">
+                                    <div className="p-6 text-sm font-semibold text-foreground flex items-center gap-2">
+                                        {row.label}
+                                    </div>
+                                    <div className="p-6 text-center text-sm font-bold text-foreground bg-primary/5 flex items-center justify-center gap-2">
+                                        <Check className="w-5 h-5 text-primary" />
+                                        <span>{row.glowup}</span>
+                                    </div>
+                                    <div className="p-6 text-center text-sm font-medium text-foreground-muted flex items-center justify-center gap-2">
+                                        <X className="w-4 h-4 text-foreground-muted/50" />
+                                        <span>{row.other}</span>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
                 </div>
 
                 <div className="mt-12 text-center">

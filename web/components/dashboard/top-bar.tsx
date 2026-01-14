@@ -35,17 +35,17 @@ export function TopBar() {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-3 ml-auto">
-                    <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/5 border border-emerald-500/10">
+                <div className="flex items-center gap-2 lg:gap-3 ml-auto">
+                    <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/5 border border-emerald-500/10">
                         <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
                         <span className="text-[8px] font-black uppercase tracking-[0.2em] text-emerald-500/60">Node Sync</span>
                     </div>
                     <Button variant="ghost" size="icon" className="w-8 h-8 text-foreground-muted hover:text-primary transition-colors">
                         <Bell size={18} />
                     </Button>
-                    <div className="h-6 w-[1px] bg-white/10 mx-1.5" />
-                    <div className="flex items-center gap-2.5 pl-1 cursor-pointer group">
-                        <div className="text-right hidden sm:block">
+                    <div className="h-4 lg:h-6 w-[1px] bg-white/10 mx-1 lg:mx-1.5" />
+                    <div className="flex items-center gap-2 lg:gap-2.5 pl-1 cursor-pointer group">
+                        <div className="text-right hidden lg:block">
                             <p className="text-xs font-black group-hover:text-emerald-500 transition-colors tracking-tight">Active Practitioner</p>
                             <p className="text-[8px] text-foreground-muted font-black uppercase tracking-[0.2em] opacity-30">Biological ID: GP-882</p>
                         </div>

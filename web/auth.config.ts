@@ -1,4 +1,4 @@
-import type { NextAuthConfig } from "next-auth"
+import type { NextAuthConfig, User } from "next-auth"
 
 export const authConfig = {
     providers: [], // Providers are added in auth.ts to avoid edge runtime issues
@@ -44,7 +44,7 @@ export const authConfig = {
             console.log("Session Callback:", { sub: token?.sub, role: token?.role });
             if (session.user && token?.sub) {
                 session.user.id = token.sub;
-                session.user.role = token.role as string;
+                (session.user as User & { role?: string }).role = token.role as string;
             }
             return session;
         },

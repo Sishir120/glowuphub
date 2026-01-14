@@ -36,7 +36,7 @@ export function DownloadCTA() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                                <Link href="https://expo.dev/@kishorbh12/glowuphub" target="_blank" rel="noopener noreferrer">
+                                <Link href="/download">
                                     <Button size="lg" className="h-14 px-8 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-primary/20 w-full sm:w-auto">
                                         <Download className="w-5 h-5 mr-2" />
                                         Get the App

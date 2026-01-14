@@ -81,7 +81,7 @@ export default function DashboardPage() {
     const firstName = userData.name?.split(' ')[0] || "User";
 
     return (
-        <div className="space-y-16 pb-32">
+        <div className="space-y-12 lg:space-y-16 pb-32">
             <InteractiveLogModal
                 isOpen={isLogOpen}
                 onClose={() => setIsLogOpen(false)}
@@ -91,19 +91,27 @@ export default function DashboardPage() {
             />
 
             {/* Mobile-First Header */}
-            <header className="flex flex-col gap-8 px-4">
+            <header className="flex flex-col gap-6 lg:gap-8 px-0 lg:px-4">
                 <FadeIn direction="down">
                     <div className="space-y-4">
                         <div className="flex items-center gap-3">
                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500">Official Mobile Portal</span>
+                            <span className="text-[9px] lg:text-[10px] font-black uppercase tracking-[0.2em] lg:tracking-[0.3em] text-emerald-500">Official Mobile Portal</span>
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-bold tracking-tighter leading-none">
-                            Welcome, <span className="text-emerald-500">{firstName}</span>.
+                        <h1 className="text-3xl lg:text-5xl font-bold tracking-tighter leading-tight lg:leading-none">
+                            Welcome, <br className="lg:hidden" /> <span className="text-emerald-500">{firstName}</span>.
                         </h1>
-                        <p className="text-lg text-foreground-muted max-w-xl leading-relaxed font-medium">
+                        <p className="text-base lg:text-lg text-foreground-muted max-w-xl leading-relaxed font-medium">
                             The full <span className="text-foreground font-bold">GlowUp Experience</span> is exclusively on mobile. Sync your profile below to begin your metabolic reset.
                         </p>
+                        <div className="pt-2">
+                            <Link href="/download">
+                                <Button className="rounded-full bg-emerald-500 text-black hover:bg-emerald-400 font-bold gap-2">
+                                    <Smartphone className="w-4 h-4" />
+                                    Install Mobile App
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
                 </FadeIn>
             </header>

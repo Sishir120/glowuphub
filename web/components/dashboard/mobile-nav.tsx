@@ -28,13 +28,13 @@ export function MobileBottomNav() {
                         className="flex flex-col items-center gap-1.5 relative py-2"
                     >
                         <div className={cn(
-                            "w-10 h-10 rounded-2xl flex items-center justify-center transition-all duration-300",
+                            "w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-300",
                             isActive ? "bg-primary/10 text-primary" : "text-foreground-muted hover:text-foreground"
                         )}>
-                            <item.icon size={20} className={isActive ? "animate-pop" : ""} />
+                            <item.icon size={22} className={isActive ? "animate-pop" : ""} />
                         </div>
                         <span className={cn(
-                            "text-[8px] font-black uppercase tracking-widest",
+                            "text-[10px] font-black uppercase tracking-widest",
                             isActive ? "text-primary opacity-100" : "text-foreground-muted opacity-40"
                         )}>
                             {item.name}

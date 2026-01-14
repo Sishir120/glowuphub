@@ -23,7 +23,7 @@ export function GooglePlayBadge({ className }: { className?: string }) {
 export function StoreBadges({ className }: { className?: string }) {
     return (
         <div className={`flex items-center gap-4 ${className}`}>
-            <Link href="https://expo.dev/@kishorbh12/glowuphub" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+            <Link href="/download" className="transition-opacity hover:opacity-80">
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                     alt="Download on the App Store"
@@ -33,7 +33,7 @@ export function StoreBadges({ className }: { className?: string }) {
                     loading="lazy"
                 />
             </Link>
-            <Link href="https://expo.dev/@kishorbh12/glowuphub" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+            <Link href="/download" className="transition-opacity hover:opacity-80">
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                     alt="Get it on Google Play"

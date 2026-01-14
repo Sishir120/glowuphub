@@ -149,7 +149,7 @@ export function MeetTheExpert() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <Button
                                 size="lg"
-                                className="rounded-full h-14 px-8 font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 group"
+                                className="rounded-full h-14 px-8 font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 group w-full sm:w-auto"
                                 onClick={() => window.location.href = "/#pricing"}
                             >
                                 Unlock Expert Chat
@@ -158,7 +158,7 @@ export function MeetTheExpert() {
                             <Button
                                 size="lg"
                                 variant="outline"
-                                className="rounded-full h-14 px-8 gap-2 group"
+                                className="rounded-full h-14 px-8 gap-2 group w-full sm:w-auto"
                                 onClick={() => window.open('https://www.facebook.com/profile.php?id=61572327367366', '_blank')}
                             >
                                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
