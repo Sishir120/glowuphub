@@ -84,7 +84,7 @@ jobs:
         run: |
           cd mobile
           flutter pub get
-          flutter build web --release --base-href /mobile/
+          flutter build web --release --base-href /mobile/ --no-tree-shake-icons
       - name: Upload Web Artifact
         uses: actions/upload-artifact@v4
         with:
