@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
-  static const String baseUrl = 'https://glowuphub-six.vercel.app/api'; // Replace with actual API URL
+  static const String baseUrl = 'https://glowuphub.com/api'; // Production API URL
 
   Future<String?> _getToken() async {
     final prefs = await SharedPreferences.getInstance();
