@@ -24,7 +24,8 @@ import {
     Wind,
     Sun,
     Moon,
-    Loader2
+    Loader2,
+    Smartphone
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
