@@ -23,7 +23,7 @@ $b64 = [Convert]::ToBase64String($bytes)
 $len = $b64.Length
 Write-Host "Keystore loaded. Size: $len" -ForegroundColor Gray
 
-$props = "c3RvcmVQYXNzd29yZD1HbG93VXBIdWIyMDI2IQprZXlQYXNzd29yZD1HbG93VXBIdWIyMDI2IQprZXlBbGlhcz11cGxrYXQKc3RvcmVGaWxlPXVwbG9hZC1rZXlzdG9yZS5qa3M="
+$props = "c3RvcmVQYXNzd29yZD1HbG93VXBIdWIyMDI2IQprZXlQYXNzd29yZD1HbG93VXBIdWIyMDI2IQprZXlBbGlhcz11cGxvYWQKc3RvcmVGaWxlPXVwbG9hZC1rZXlzdG9yZS5qa3M="
 
 # 3. Set Secrets
 Write-Host "Setting Secrets..."

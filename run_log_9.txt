@@ -1,0 +1,190 @@
+﻿Android Build (APK & AAB)	Build Android	∩╗┐2026-01-14T14:25:28.5191016Z ##[group]Run flutter build apk --release
+Android Build (APK & AAB)	Build Android	2026-01-14T14:25:28.5191354Z [36;1mflutter build apk --release[0m
+Android Build (APK & AAB)	Build Android	2026-01-14T14:25:28.5191619Z [36;1mflutter build appbundle --release[0m
+Android Build (APK & AAB)	Build Android	2026-01-14T14:25:28.5221134Z shell: /usr/bin/bash -e {0}
+Android Build (APK & AAB)	Build Android	2026-01-14T14:25:28.5221363Z env:
+Android Build (APK & AAB)	Build Android	2026-01-14T14:25:28.5221619Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.22.0-x64
+Android Build (APK & AAB)	Build Android	2026-01-14T14:25:28.5221964Z   PUB_CACHE: /home/runner/.pub-cache
+Android Build (APK & AAB)	Build Android	2026-01-14T14:25:28.5222195Z ##[endgroup]
+Android Build (APK & AAB)	Build Android	2026-01-14T14:25:29.1063264Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:07.5236902Z Running Gradle task 'assembleRelease'...                        
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:07.5239594Z Checking the license for package Android SDK Platform 31 in /usr/local/lib/android/sdk/licenses
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:07.5240454Z License for package Android SDK Platform 31 accepted.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:07.5241068Z Preparing "Install Android SDK Platform 31 (revision 1)".
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:10.6104954Z "Install Android SDK Platform 31 (revision 1)" ready.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:10.6107493Z Installing Android SDK Platform 31 in /usr/local/lib/android/sdk/platforms/android-31
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:10.6109853Z "Install Android SDK Platform 31 (revision 1)" complete.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:11.1113289Z "Install Android SDK Platform 31 (revision 1)" finished.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:11.2176318Z [=========                              ] 25%                                   
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:11.2177553Z [=========                              ] 25% Fetch remote repository...        
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:11.2178439Z [=======================================] 100% Fetch remote repository...       
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:27.1116277Z Font asset "CupertinoIcons.ttf" was tree-shaken, reducing it from 257628 to 848 bytes (99.7% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:27.1119134Z Font asset "lucide.ttf" was tree-shaken, reducing it from 639988 to 11644 bytes (98.2% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:29:27.1121720Z Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 1536 bytes (99.9% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:30:27.3158829Z Caught exception: Already watching path: /home/runner/work/glowuphub/glowuphub/mobile/android
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5136881Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5170638Z FAILURE: Build failed with an exception.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5175323Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5178987Z * What went wrong:
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5180022Z Execution failed for task ':app:packageRelease'.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5183103Z > A failure occurred while executing com.android.build.gradle.tasks.PackageAndroidArtifact$IncrementalSplitterRunnable
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5190966Z    > com.android.ide.common.signing.KeytoolException: Failed to read key uplkat from store "/home/runner/work/glowuphub/glowuphub/mobile/android/app/upload-keystore.jks": No key with alias 'uplkat' found in keystore /home/runner/work/glowuphub/glowuphub/mobile/android/app/upload-keystore.jks
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5217641Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5218155Z * Try:
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5224000Z > Run with --stacktrace option to get the stack trace.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5225316Z > Run with --info or --debug option to get more log output.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5225903Z > Run with --scan to get full insights.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5226388Z > Get more help at https://help.gradle.org.
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5227361Z 
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.5227503Z BUILD FAILED in 5m 38s
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.9174774Z Running Gradle task 'assembleRelease'...                          338.8s
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.9235891Z Gradle task assembleRelease failed with exit code 1
+Android Build (APK & AAB)	Build Android	2026-01-14T14:31:07.9332740Z ##[error]Process completed with exit code 1.
+Web PWA Build	Build Web	∩╗┐2026-01-14T14:25:16.7250434Z ##[group]Run cd mobile
+Web PWA Build	Build Web	2026-01-14T14:25:16.7250728Z [36;1mcd mobile[0m
+Web PWA Build	Build Web	2026-01-14T14:25:16.7250936Z [36;1mflutter pub get[0m
+Web PWA Build	Build Web	2026-01-14T14:25:16.7251223Z [36;1mflutter build web --release --base-href /mobile/[0m
+Web PWA Build	Build Web	2026-01-14T14:25:16.7286445Z shell: /usr/bin/bash -e {0}
+Web PWA Build	Build Web	2026-01-14T14:25:16.7286699Z env:
+Web PWA Build	Build Web	2026-01-14T14:25:16.7286994Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.22.0-x64
+Web PWA Build	Build Web	2026-01-14T14:25:16.7287352Z   PUB_CACHE: /home/runner/.pub-cache
+Web PWA Build	Build Web	2026-01-14T14:25:16.7287612Z ##[endgroup]
+Web PWA Build	Build Web	2026-01-14T14:25:17.3033014Z 
+Web PWA Build	Build Web	2026-01-14T14:25:17.3044772Z   ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Web PWA Build	Build Web	2026-01-14T14:25:17.3045982Z   Γòæ                 Welcome to Flutter! - https://flutter.dev                  Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3046820Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3047739Z   Γòæ The Flutter tool uses Google Analytics to anonymously report feature usage Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3048741Z   Γòæ statistics and basic crash reports. This data is used to help improve      Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3049739Z   Γòæ Flutter tools over time.                                                   Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3050209Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3050701Z   Γòæ Flutter tool analytics are not sent on the very first run. To disable      Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3051483Z   Γòæ reporting, type 'flutter config --no-analytics'. To display the current    Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3052039Z   Γòæ setting, type 'flutter config'. If you opt out of analytics, an opt-out    Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3052571Z   Γòæ event will be sent, and then no further information will be sent by the    Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3053054Z   Γòæ Flutter tool.                                                              Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3053480Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3053951Z   Γòæ By downloading the Flutter SDK, you agree to the Google Terms of Service.  Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3054547Z   Γòæ The Google Privacy Policy describes how data is handled in this service.   Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3055021Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3055770Z   Γòæ Moreover, Flutter includes the Dart SDK, which may send usage metrics and  Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3056322Z   Γòæ crash reports to Google.                                                   Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3056744Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3057182Z   Γòæ Read about data we send with crash reports:                                Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3057721Z   Γòæ https://flutter.dev/docs/reference/crash-reporting                         Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3058216Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3058653Z   Γòæ See Google's privacy policy:                                               Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3059188Z   Γòæ https://policies.google.com/privacy                                        Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3059658Z   Γòæ                                                                            Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3060104Z   Γòæ To disable animations in this tool, use                                    Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3060632Z   Γòæ 'flutter config --no-cli-animations'.                                      Γòæ
+Web PWA Build	Build Web	2026-01-14T14:25:17.3061146Z   ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+Web PWA Build	Build Web	2026-01-14T14:25:17.3061389Z 
+Web PWA Build	Build Web	2026-01-14T14:25:23.2965706Z Resolving dependencies...
+Web PWA Build	Build Web	2026-01-14T14:25:24.4486835Z Downloading packages...
+Web PWA Build	Build Web	2026-01-14T14:25:28.6256057Z < async 2.11.0 (was 2.13.0) (2.13.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6256687Z < boolean_selector 2.1.1 (was 2.1.2) (2.1.2 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6257226Z < characters 1.3.0 (was 1.4.0) (1.4.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6257725Z < checked_yaml 2.0.3 (was 2.0.4) (2.0.4 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6258620Z < clock 1.1.1 (was 1.1.2) (1.1.2 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6259092Z < collection 1.18.0 (was 1.19.1) (1.19.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6259616Z < fake_async 1.3.1 (was 1.3.3) (1.3.3 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6260075Z < ffi 2.1.3 (was 2.1.5) (2.1.5 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6260580Z < fl_chart 0.68.0 (was 0.70.2) (1.1.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6261101Z   flutter_launcher_icons 0.13.1 (0.14.4 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6261605Z < flutter_lints 4.0.0 (was 6.0.0) (6.0.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6262118Z < flutter_lucide 1.2.0 (was 1.8.2) (1.8.2 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6262551Z < flutter_native_splash 2.4.1 (was 2.4.7) (2.4.7 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6262891Z < flutter_svg 2.1.0 (was 2.2.3) (2.2.3 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6263175Z   go_router 14.8.1 (17.0.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6263451Z < google_fonts 6.3.0 (was 6.3.3) (7.0.2 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6263765Z < google_sign_in 6.2.2 (was 6.3.0) (7.2.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6264111Z < google_sign_in_android 6.1.31 (was 6.2.1) (7.2.7 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6264448Z   google_sign_in_ios 5.9.0 (6.2.4 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6264767Z   google_sign_in_platform_interface 2.5.0 (3.1.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6265103Z   google_sign_in_web 0.12.4+4 (1.1.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6265836Z < http_parser 4.0.2 (was 4.1.2) (4.1.2 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6266159Z < leak_tracker 10.0.4 (was 11.0.2) (11.0.2 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6266529Z < leak_tracker_flutter_testing 3.0.3 (was 3.0.10) (3.0.10 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6266915Z < leak_tracker_testing 3.0.1 (was 3.0.2) (3.0.2 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6267227Z < lints 4.0.0 (was 6.0.0) (6.0.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6267510Z < matcher 0.12.16+1 (was 0.12.17) (0.12.18 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6267957Z < material_color_utilities 0.8.0 (was 0.11.1) (0.13.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6268293Z < meta 1.12.0 (was 1.17.0) (1.17.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6268567Z < path 1.9.0 (was 1.9.1) (1.9.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6268907Z < path_provider_android 2.2.10 (was 2.2.22) (2.2.22 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6269295Z < path_provider_foundation 2.4.1 (was 2.5.1) (2.5.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6269665Z < petitparser 6.0.2 (was 7.0.1) (7.0.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6270004Z < shared_preferences 2.3.3 (was 2.5.4) (2.5.4 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6270399Z < shared_preferences_android 2.3.2 (was 2.4.18) (2.4.18 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6270816Z < shared_preferences_foundation 2.5.4 (was 2.5.6) (2.5.6 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6271232Z > sky_engine 0.0.99 from sdk flutter (was 0.0.0 from sdk flutter)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6271582Z < source_span 1.10.0 (was 1.10.1) (1.10.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6271881Z < stack_trace 1.11.1 (was 1.12.1) (1.12.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6272172Z < stream_channel 2.1.2 (was 2.1.4) (2.1.4 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6272453Z < string_scanner 1.2.0 (was 1.4.1) (1.4.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6272738Z < term_glyph 1.2.1 (was 1.2.2) (1.2.2 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6273018Z < test_api 0.7.0 (was 0.7.7) (0.7.9 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6273295Z < typed_data 1.3.2 (was 1.4.0) (1.4.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6273574Z < universal_io 2.2.2 (was 2.3.1) (2.3.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6274062Z < vector_graphics 1.1.18 (was 1.1.19) (1.1.19 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6274692Z < vector_graphics_compiler 1.1.16 (was 1.1.19) (1.1.19 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6275279Z < vector_math 2.1.4 (was 2.2.0) (2.2.0 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6275912Z < vm_service 14.2.1 (was 15.0.2) (15.0.2 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6276376Z < xml 6.5.0 (was 6.6.1) (6.6.1 available)
+Web PWA Build	Build Web	2026-01-14T14:25:28.6276826Z Changed 45 dependencies!
+Web PWA Build	Build Web	2026-01-14T14:25:28.6291764Z 49 packages have newer versions incompatible with dependency constraints.
+Web PWA Build	Build Web	2026-01-14T14:25:28.6292515Z Try `flutter pub outdated` for more information.
+Web PWA Build	Build Web	2026-01-14T14:25:29.5654629Z 
+Web PWA Build	Build Web	2026-01-14T14:26:06.3465117Z Compiling lib/main.dart for the Web...                          
+Web PWA Build	Build Web	2026-01-14T14:26:06.3479565Z This application cannot tree shake icons fonts. It has non-constant instances of IconData at the following locations:
+Web PWA Build	Build Web	2026-01-14T14:26:06.3481348Z   - file:///home/runner/.pub-cache/hosted/pub.dev/flutter_lucide-1.2.0/lib/src/flutter_lucide.dart:28:14
+Web PWA Build	Build Web	2026-01-14T14:26:06.3677727Z Target web_release_bundle failed: Error: Avoid non-constant invocations of IconData or try to build again with --no-tree-shake-icons.
+Web PWA Build	Build Web	2026-01-14T14:26:06.3679186Z #0      throwToolExit (package:flutter_tools/src/base/common.dart:10:3)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3680298Z #1      IconTreeShaker._findConstants (package:flutter_tools/src/build_system/targets/icon_tree_shaker.dart:318:7)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3680845Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3681479Z #2      IconTreeShaker._getIconData (package:flutter_tools/src/build_system/targets/icon_tree_shaker.dart:109:45)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3682010Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3682467Z #3      IconTreeShaker.subsetFont (package:flutter_tools/src/build_system/targets/icon_tree_shaker.dart:178:5)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3683004Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3683715Z #4      copyAssets.<anonymous closure> (package:flutter_tools/src/build_system/targets/assets.dart:158:25)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3684532Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3685639Z #5      Future.wait.<anonymous closure> (dart:async/future.dart:524:21)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3686285Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3686917Z #6      copyAssets (package:flutter_tools/src/build_system/targets/assets.dart:126:3)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3687630Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3688341Z #7      WebReleaseBundle.build (package:flutter_tools/src/build_system/targets/web.dart:450:29)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3689127Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3689889Z #8      _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:875:9)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3690729Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3691312Z #9      Future.wait.<anonymous closure> (dart:async/future.dart:524:21)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3691944Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3692703Z #10     _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:813:32)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3693570Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3694242Z #11     FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:642:16)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3694700Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3695039Z #12     WebBuilder.buildWeb (package:flutter_tools/src/web/compile.dart:92:34)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3695653Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3696065Z #13     BuildWebCommand.runCommand (package:flutter_tools/src/commands/build_web.dart:230:5)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3696489Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3696917Z #14     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1394:27)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3697392Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3697762Z #15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3698182Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3698491Z #16     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3698847Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3699340Z #17     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:372:9)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3699886Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3700246Z #18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3700659Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3701082Z #19     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:308:5)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3701549Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3701906Z #20     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:130:9)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3702552Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3702921Z #21     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3703344Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3703603Z #22     main (package:flutter_tools/executable.dart:93:3)
+Web PWA Build	Build Web	2026-01-14T14:26:06.3703900Z <asynchronous suspension>
+Web PWA Build	Build Web	2026-01-14T14:26:06.3704034Z 
+Web PWA Build	Build Web	2026-01-14T14:26:06.3805639Z Compiling lib/main.dart for the Web...                             36.7s
+Web PWA Build	Build Web	2026-01-14T14:26:06.3837683Z Error: Failed to compile application for the Web.
+Web PWA Build	Build Web	2026-01-14T14:26:06.3916590Z ##[error]Process completed with exit code 1.
