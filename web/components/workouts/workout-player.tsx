@@ -48,6 +48,16 @@ export function WorkoutPlayer({ workoutName, exercises, onComplete, onClose }: W
         }
     }, [currentExerciseIndex, currentExercise]);
 
+    const handleNext = () => {
+        if (currentExerciseIndex < exercises.length - 1) {
+            setCurrentExerciseIndex(currentExerciseIndex + 1);
+            setIsActive(false);
+        } else {
+            setIsActive(false);
+            setIsFinished(true);
+        }
+    };
+
     useEffect(() => {
         let interval: any = null;
         if (isActive && timeLeft > 0) {
@@ -59,16 +69,6 @@ export function WorkoutPlayer({ workoutName, exercises, onComplete, onClose }: W
         }
         return () => clearInterval(interval);
     }, [isActive, timeLeft]);
-
-    const handleNext = () => {
-        if (currentExerciseIndex < exercises.length - 1) {
-            setCurrentExerciseIndex(currentExerciseIndex + 1);
-            setIsActive(false);
-        } else {
-            setIsActive(false);
-            setIsFinished(true);
-        }
-    };
 
     const formatTime = (seconds: number) => {
         const mins = Math.floor(seconds / 60);
