@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
+import '../screens/auth/splash_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/register_screen.dart';
 import '../screens/auth/onboarding_screen.dart';
@@ -11,9 +12,10 @@ class AppNavigation {
   static GoRouter createRouter(AuthProvider authProvider) {
     return GoRouter(
       refreshListenable: authProvider,
-      initialLocation: '/login',
+      initialLocation: '/',
       redirect: (context, state) {
-        final isPublic = state.matchedLocation == '/login' ||
+        final isPublic = state.matchedLocation == '/' ||
+            state.matchedLocation == '/login' ||
             state.matchedLocation == '/register' ||
             state.matchedLocation == '/onboarding';
 
@@ -23,13 +25,17 @@ class AppNavigation {
           return isPublic ? null : '/login';
         }
 
-        if (isPublic) {
+        if (state.matchedLocation == '/login' || state.matchedLocation == '/register') {
           return '/home';
         }
 
         return null;
       },
       routes: [
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const SplashScreen(),
+        ),
         GoRoute(
           path: '/onboarding',
           builder: (context, state) => const OnboardingScreen(),

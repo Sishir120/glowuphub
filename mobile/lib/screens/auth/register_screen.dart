@@ -1,3 +1,5 @@
+import 'package:provider/provider.dart';
+import '../../providers/auth_provider.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 
 
@@ -94,7 +96,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: double.infinity,
                     height: 64,
                     child: ElevatedButton(
-                      onPressed: () => context.go('/home'),
+                      onPressed: () async {
+                        // In a real app, you would call a register method
+                        // For this demo, we'll sign in as the demo user
+                        await context.read<AuthProvider>().demoSignIn();
+                        if (mounted) context.go('/home');
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF10B981),
                         foregroundColor: Colors.black,
