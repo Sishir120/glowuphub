@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class User {
   final String id;
@@ -25,6 +26,7 @@ class User {
 }
 
 class AuthProvider extends ChangeNotifier {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
   User? _user;
   bool _isLoading = true;
 
@@ -60,9 +62,41 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser != null) {
+        // Successful sign-in
+        final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+        final String? accessToken = googleAuth.accessToken;
+        final String? idToken = googleAuth.idToken;
+
+        // In a real app, you would verify these tokens with your backend
+        // For now, we'll just create a session locally
+        
+        final prefs = await SharedPreferences.getInstance();
+        if (accessToken != null) {
+          await prefs.setString('auth_token', accessToken);
+        }
+
+        _user = User(
+          id: googleUser.id,
+          name: googleUser.displayName ?? 'Unknown',
+          email: googleUser.email,
+          glowScore: 85,
+        );
+        notifyListeners();
+      }
+    } catch (error) {
+      print('Google Sign-In Error: $error');
+      rethrow;
+    }
+  }
+
   Future<void> logout() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('auth_token');
+    await _googleSignIn.signOut();
     _user = null;
     notifyListeners();
   }

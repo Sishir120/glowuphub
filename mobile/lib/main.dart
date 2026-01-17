@@ -17,11 +17,16 @@ class GlowUpApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
-      child: MaterialApp.router(
-        title: 'GlowUpHub',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.darkTheme,
-        routerConfig: AppNavigation.router,
+      child: Builder(
+        builder: (context) {
+          final authProvider = Provider.of<AuthProvider>(context);
+          return MaterialApp.router(
+            title: 'GlowUpHub',
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.darkTheme,
+            routerConfig: AppNavigation.createRouter(authProvider),
+          );
+        }
       ),
     );
   }

@@ -42,6 +42,22 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() => _isLoading = false);
     }
   }
+  
+  Future<void> _handleGoogleLogin() async {
+    setState(() {
+      _isLoading = true;
+      _error = null;
+    });
+
+    try {
+      await context.read<AuthProvider>().signInWithGoogle();
+      // Navigation is handled by router listening to auth state
+    } catch (e) {
+      if (mounted) setState(() => _error = 'Google Sign-In Failed: $e');
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -114,9 +130,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                   
                   const SizedBox(height: 48),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 64,
                     child: ElevatedButton(
                       onPressed: _isLoading ? null : _handleLogin,
                       style: ElevatedButton.styleFrom(
@@ -128,6 +141,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: _isLoading 
                         ? const SizedBox(height: 24, width: 24, child: CircularProgressIndicator(strokeWidth: 3, color: Colors.black))
                         : const Text('CONTINUE TO HUB', style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 1.5)),
+                    ),
+                  ),
+                  
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 64,
+                    child: OutlinedButton(
+                      onPressed: _isLoading ? null : _handleGoogleLogin,
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(color: Colors.white.withOpacity(0.2)),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      ),
+                      child: const Text('CONTINUE WITH GOOGLE', style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 1.5, color: Colors.white)),
                     ),
                   ),
                   
