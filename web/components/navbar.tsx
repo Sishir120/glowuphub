@@ -14,6 +14,7 @@ export function Navbar() {
         { name: "Features", href: "/#features" },
         { name: "Journeys", href: "/#testimonials" },
         { name: "Pricing", href: "/#pricing" },
+        { name: "Download", href: "/download" },
     ];
 
     return (
