@@ -69,7 +69,12 @@ class _SplashScreenState extends State<SplashScreen> {
             .fadeIn(duration: 600.ms)
             .shimmer(delay: 1000.ms, duration: 1500.ms, color: Colors.white24)
             .animate(onPlay: (controller) => controller.repeat(reverse: true))
-            .boxShadow(blurRadius: 20, color: const Color(0xFF10B981).withOpacity(0.2)),
+            .boxShadow(
+              end: BoxShadow(
+                blurRadius: 20, 
+                color: const Color(0xFF10B981).withOpacity(0.2)
+              )
+            ),
             
             const SizedBox(height: 32),
             
