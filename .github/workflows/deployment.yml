@@ -73,7 +73,7 @@ jobs:
           flutter pub get
 
       - name: Build iOS (Simulator, no codesign)
-        run: flutter build ios --release --simulator
+        run: flutter build ios --debug --simulator
         working-directory: mobile
 
       - name: Upload iOS Simulator Payload
