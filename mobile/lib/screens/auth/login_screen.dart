@@ -30,12 +30,9 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     try {
-      if (_emailController.text == 'demo@glowup.com') {
-        await Future.delayed(const Duration(seconds: 1));
-        await context.read<AuthProvider>().demoSignIn();
-      } else {
-        setState(() => _error = 'Only demo login is supported for now');
-      }
+      // For beta/demo phase, allow any email
+      await Future.delayed(const Duration(seconds: 1));
+      await context.read<AuthProvider>().demoSignIn();
     } catch (e) {
       setState(() => _error = e.toString());
     } finally {
