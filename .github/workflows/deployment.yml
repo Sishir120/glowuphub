@@ -38,7 +38,7 @@ jobs:
         run: |
           if [ -n "${{ secrets.KEY_PROPERTIES }}" ]; then
             echo "${{ secrets.KEY_PROPERTIES }}" | base64 --decode > android/key.properties
-            echo "${{ secrets.UPLOAD_KEYSTORE }}" | base64 --decode > android/app/upload-keystore.jks
+            echo "${{ secrets.UPLOAD_KEYSTORE }}" | base64 --decode > android/upload-keystore.jks
           fi
 
       - name: Build Android APK
