@@ -70,7 +70,7 @@ class _MainLayoutState extends State<MainLayout> {
           unselectedLabelStyle: const TextStyle(fontSize: 10),
           items: [
             BottomNavigationBarItem(
-              icon: Icon(LucideIcons.home),
+              icon: Icon(LucideIcons.house),
               label: 'HOME',
             ),
             BottomNavigationBarItem(

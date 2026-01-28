@@ -219,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> {
      return Center(
        child: Column(
          children: [
-           const Icon(LucideIcons.alert_triangle, color: Colors.red),
+           Icon(Icons.error_outline, color: Colors.red),
            const SizedBox(height: 8),
            const Text("Could not load daily briefing.", style: TextStyle(color: Colors.white)),
            TextButton(onPressed: _loadFeed, child: const Text("Retry"))
