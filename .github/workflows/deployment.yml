@@ -13,6 +13,13 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+          
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'
@@ -24,16 +31,25 @@ jobs:
           cd mobile
           flutter pub get
 
+      - name: Analyze
+        run: |
+          cd mobile
+          flutter analyze
+        
       - name: Setup Keystore
         run: |
-          echo "${{ secrets.KEY_PROPERTIES }}" | base64 --decode > android/key.properties
-          echo "${{ secrets.UPLOAD_KEYSTORE }}" | base64 --decode > android/app/upload-keystore.jks
+          # Only run if secrets are present to avoid failure on forks
+          if [ -n "${{ secrets.KEY_PROPERTIES }}" ]; then
+            echo "${{ secrets.KEY_PROPERTIES }}" | base64 --decode > android/key.properties
+            echo "${{ secrets.UPLOAD_KEYSTORE }}" | base64 --decode > android/app/upload-keystore.jks
+          fi
         working-directory: mobile
 
       - name: Build Android
         run: |
-          flutter build apk --release
-          flutter build appbundle --release
+          # Use --no-pub because we already ran it
+          flutter build apk --release --no-pub
+          flutter build appbundle --release --no-pub
         working-directory: mobile
 
       - name: Upload Android Artifacts
@@ -45,12 +61,12 @@ jobs:
             mobile/build/app/outputs/bundle/release/app-release.aab
 
       - name: Publish Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: github.ref == 'refs/heads/main'
         with:
           tag_name: latest
           name: "Latest Production Build"
-          body: "Automated build from main branch. Contains fixes for Google Sign-In and Navigation."
+          body: "Automated build from main branch. Contains Expert Dashboard & Psych-First Onboarding."
           files: |
             mobile/build/app/outputs/flutter-apk/app-release.apk
             mobile/build/app/outputs/bundle/release/app-release.aab
@@ -75,8 +91,9 @@ jobs:
           flutter pub get
 
       - name: Build iOS (Simulator, no codesign)
-        run: flutter build ios --debug --simulator
-        working-directory: mobile
+        run: |
+          cd mobile
+          flutter build ios --debug --simulator --no-pub
 
       - name: Upload iOS Simulator Payload
         uses: actions/upload-artifact@v4
@@ -85,7 +102,7 @@ jobs:
           path: mobile/build/ios/iphonesimulator/Runner.app
 
   build-web:
-    name: Web PWA Build
+    name: Mobile Web PWA Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -93,23 +110,24 @@ jobs:
         with:
           flutter-version: '3.22.0'
           channel: 'stable'
+          cache: true
       - name: Build Web
         run: |
           cd mobile
           flutter pub get
-          flutter build web --release --base-href /mobile/ --no-tree-shake-icons
+          flutter build web --release --base-href /mobile/ --no-tree-shake-icons --no-pub
       - name: Upload Web Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: web-build
+          name: mobile-web-build
           path: mobile/build/web
 
   build-nextjs-web:
     name: Next.js Admin/Web Build
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/postgres" # Mock for build
+      AUTH_SECRET: "placeholder-secret-for-build"
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -135,6 +153,7 @@ jobs:
       - name: Upload Next.js Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: nextjs-web-build
+          name: admin-web-build
           path: web/.next
+
 
