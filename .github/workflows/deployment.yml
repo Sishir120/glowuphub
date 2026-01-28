@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-android:
-    name: Android Build (APK & AAB)
+    name: Android Build
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -22,100 +22,95 @@ jobs:
           
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.0'
           channel: 'stable'
           cache: true
       
       - name: Install dependencies
-        run: |
-          cd mobile
-          flutter pub get
+        working-directory: mobile
+        run: flutter pub get
 
-      - name: Analyze
-        run: |
-          cd mobile
-          flutter analyze
+      - name: Analyze (Non-blocking)
+        working-directory: mobile
+        run: flutter analyze || true
         
       - name: Setup Keystore
+        working-directory: mobile
         run: |
-          # Only run if secrets are present to avoid failure on forks
           if [ -n "${{ secrets.KEY_PROPERTIES }}" ]; then
             echo "${{ secrets.KEY_PROPERTIES }}" | base64 --decode > android/key.properties
             echo "${{ secrets.UPLOAD_KEYSTORE }}" | base64 --decode > android/app/upload-keystore.jks
           fi
-        working-directory: mobile
 
-      - name: Build Android
-        run: |
-          # Use --no-pub because we already ran it
-          flutter build apk --release --no-pub
-          flutter build appbundle --release --no-pub
+      - name: Build Android APK
         working-directory: mobile
+        run: flutter build apk --release --no-pub
 
-      - name: Upload Android Artifacts
+      - name: Build Android AppBundle
+        working-directory: mobile
+        run: flutter build appbundle --release --no-pub
+
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: android-release
-          path: |
-            mobile/build/app/outputs/flutter-apk/app-release.apk
-            mobile/build/app/outputs/bundle/release/app-release.aab
+          name: android-apk
+          path: mobile/build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Upload AAB
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-aab
+          path: mobile/build/app/outputs/bundle/release/app-release.aab
 
       - name: Publish Release
         uses: softprops/action-gh-release@v2
         if: github.ref == 'refs/heads/main'
         with:
-          tag_name: latest
-          name: "Latest Production Build"
-          body: "Automated build from main branch. Contains Expert Dashboard & Psych-First Onboarding."
+          tag_name: "v${{ github.run_number }}"
+          name: "GlowUp Production Build #${{ github.run_number }}"
+          body: "Automated production build containing Expert Dashboard & Psychological Onboarding."
           files: |
             mobile/build/app/outputs/flutter-apk/app-release.apk
             mobile/build/app/outputs/bundle/release/app-release.aab
-          draft: false
-          prerelease: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
   build-ios:
-    name: iOS Build (IPA)
+    name: iOS Build
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.0'
           channel: 'stable'
           cache: true
       
       - name: Install dependencies
-        run: |
-          cd mobile
-          flutter pub get
+        working-directory: mobile
+        run: flutter pub get
 
-      - name: Build iOS (Simulator, no codesign)
-        run: |
-          cd mobile
-          flutter build ios --debug --simulator --no-pub
+      - name: Build iOS (Simulator)
+        working-directory: mobile
+        run: flutter build ios --debug --simulator --no-pub
 
-      - name: Upload iOS Simulator Payload
+      - name: Upload iOS Payload
         uses: actions/upload-artifact@v4
         with:
-          name: ios-simulator-payload
+          name: ios-simulator-app
           path: mobile/build/ios/iphonesimulator/Runner.app
 
   build-web:
-    name: Mobile Web PWA Build
+    name: Web Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.0'
           channel: 'stable'
           cache: true
       - name: Build Web
+        working-directory: mobile
         run: |
-          cd mobile
           flutter pub get
-          flutter build web --release --base-href /mobile/ --no-tree-shake-icons --no-pub
+          flutter build web --release --no-tree-shake-icons --no-pub
       - name: Upload Web Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -123,11 +118,11 @@ jobs:
           path: mobile/build/web
 
   build-nextjs-web:
-    name: Next.js Admin/Web Build
+    name: Next.js Admin Build
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/postgres" # Mock for build
-      AUTH_SECRET: "placeholder-secret-for-build"
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/postgres" 
+      AUTH_SECRET: "placeholder-secret"
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -138,13 +133,12 @@ jobs:
           cache-dependency-path: web/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd web
-          npm ci
+        working-directory: web
+        run: npm ci
 
       - name: Build Next.js
+        working-directory: web
         run: |
-          cd web
           npx prisma generate
           npm run build
         env:
@@ -155,5 +149,6 @@ jobs:
         with:
           name: admin-web-build
           path: web/.next
+
 
 

@@ -75,6 +75,7 @@ class AuthProvider extends ChangeNotifier {
         notifyListeners();
       }
     } catch (error) {
+      // ignore: avoid_print
       print('Google Sign-In Error: $error');
       rethrow;
     }

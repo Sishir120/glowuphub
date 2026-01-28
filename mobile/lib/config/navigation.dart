@@ -39,6 +39,7 @@ class AppNavigation {
           builder: (context, state) => const SplashScreen(),
         ),
         GoRoute(
+          path: '/onboarding',
           builder: (context, state) => const OnboardingScreen(),
         ),
         GoRoute(
