@@ -11,8 +11,6 @@ class AuthProvider extends ChangeNotifier {
   bool _isLoading = true;
   
   // Provisional Onboarding Data
-  String? _tempIdentity;
-  Map<String, bool>? _tempBarriers;
   String? _token;
 
   User? get user => _user;
@@ -56,7 +54,7 @@ class AuthProvider extends ChangeNotifier {
         // Successful sign-in
         final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
         final String? accessToken = googleAuth.accessToken;
-        final String? idToken = googleAuth.idToken;
+        // final String? idToken = googleAuth.idToken;
 
         // In a real app, you would verify these tokens with your backend
         // For now, we'll just create a session locally
@@ -88,6 +86,11 @@ class AuthProvider extends ChangeNotifier {
     _user = null;
     notifyListeners();
   }
+
+  // ignore: unused_field
+  String? _tempIdentity;
+  // ignore: unused_field
+  Map<String, bool>? _tempBarriers;
 
   void setProvisionalIdentity(String identity) {
     _tempIdentity = identity;

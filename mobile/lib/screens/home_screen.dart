@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
-import '../widgets/bio_digital_twin.dart';
 import '../widgets/activity_rings.dart';
 import '../widgets/streak_tracker.dart';
 import '../widgets/daily_briefing_card.dart';
