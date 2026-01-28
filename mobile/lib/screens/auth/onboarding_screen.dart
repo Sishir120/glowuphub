@@ -103,7 +103,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     if (_currentPage < _pages.length - 1) {
                       _pageController.nextPage(duration: 400.ms, curve: Curves.easeInOut);
                     } else {
-                      context.go('/login');
+                      context.go('/identity-selection');
                     }
                   },
                   child: Container(

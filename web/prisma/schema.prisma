@@ -56,6 +56,14 @@ model User {
   receivedMessages Message[] @relation("ReceivedMessages")
   assignedPlanId String?
   assignedPlan  NutritionPlan? @relation(fields: [assignedPlanId], references: [id])
+
+  // Psychology & Identity
+  psychProfile     String?   // JSON string: { "drive": "high", "barriers": ["time"] }
+  onboardingStage  String    @default("NEW") // "NEW", "COMPLETED", "SUBSCRIBED"
+  currentPhase     String    @default("ADAPTING") // "ADAPTING", "STABILIZING", "TRANSFORMING"
+  
+  identityStatements IdentityStatement[]
+  habits             Habit[]
 }
 
 model NutritionPlan {
@@ -224,4 +232,53 @@ model Message {
   receiver    User     @relation("ReceivedMessages", fields: [receiverId], references: [id])
   
   isRead      Boolean  @default(false)
+}
+
+model IdentityStatement {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  statement String   // "I am a disciplined athlete"
+  category  String   // "Health", "Confidence", "Discipline"
+  strength  Int      @default(0) // 0-100, reinforced by habits
+  createdAt DateTime @default(now())
+}
+
+model Habit {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  trigger     String   // "After I brush my teeth"
+  action      String   // "I will drink a glass of water"
+  reward      String?  // "I will feel hydrated"
+  category    String   // "Nutrition", "Movement", "Mindset"
+  frequency   String   // "Daily", "Weekly"
+  isActive    Boolean  @default(true)
+  logs        HabitLog[]
+  createdAt   DateTime @default(now())
+}
+
+model HabitLog {
+  id        String   @id @default(cuid())
+  habitId   String
+  habit     Habit    @relation(fields: [habitId], references: [id])
+  date      DateTime @default(now())
+  completed Boolean
+  mood      Int?     // 1-5 how it felt
+  notes     String?
+}
+
+model DailyRitual {
+  id          String   @id @default(cuid())
+  type        String   // "Morning", "Evening"
+  content     String   // "Today is about consistency..."
+  requiredMood String? // Optional: "Low Energy" (to target)
+  requiredPhase String? // "Adapting"
+}
+
+model Testimonial {
+  id          String   @id @default(cuid())
+  content     String
+  author      String   // "Sarah, lost 10kg"
+  tags        String   // "Weight Loss", "Confidence"
 }

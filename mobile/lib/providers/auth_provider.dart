@@ -2,35 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-class User {
-  final String id;
-  final String name;
-  final String email;
-  final int glowScore;
+import '../models/user_model.dart';
 
-  User({
-    required this.id,
-    required this.name,
-    required this.email,
-    this.glowScore = 85,
-  });
-
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
-      id: json['id'] ?? '',
-      name: json['name'] ?? '',
-      email: json['email'] ?? '',
-      glowScore: json['glowScore'] ?? 85,
-    );
-  }
-}
 
 class AuthProvider extends ChangeNotifier {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   User? _user;
   bool _isLoading = true;
+  
+  // Provisional Onboarding Data
+  String? _tempIdentity;
+  Map<String, bool>? _tempBarriers;
+  String? _token;
 
   User? get user => _user;
+  String? get token => _token;
   bool get isLoading => _isLoading;
   bool get isAuthenticated => _user != null;
 
@@ -40,9 +26,9 @@ class AuthProvider extends ChangeNotifier {
 
   Future<void> _loadUser() async {
     final prefs = await SharedPreferences.getInstance();
-    final token = prefs.getString('auth_token');
+    _token = prefs.getString('auth_token');
     // In a real app, we would verify the token here
-    if (token != null) {
+    if (_token != null) {
       // For now, let's pretend we have a user
       _user = User(id: '1', name: 'Demo User', email: 'demo@glowup.com');
     }
@@ -53,6 +39,7 @@ class AuthProvider extends ChangeNotifier {
   Future<void> login(String token, Map<String, dynamic> userData) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('auth_token', token);
+    _token = token;
     _user = User.fromJson(userData);
     notifyListeners();
   }
@@ -98,6 +85,16 @@ class AuthProvider extends ChangeNotifier {
     await prefs.remove('auth_token');
     await _googleSignIn.signOut();
     _user = null;
+    notifyListeners();
+  }
+
+  void setProvisionalIdentity(String identity) {
+    _tempIdentity = identity;
+    notifyListeners();
+  }
+
+  void setProvisionalBarriers(Map<String, bool> barriers) {
+    _tempBarriers = barriers;
     notifyListeners();
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
+import '../widgets/identity_timeline.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -77,6 +78,13 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
+              const SizedBox(height: 32),
+
+              const SizedBox(height: 32),
+
+              // Identity Timeline
+              IdentityTimeline(currentPhase: user?.currentPhase ?? "ADAPTING"),
 
               const SizedBox(height: 32),
 

@@ -6,6 +6,8 @@ import '../screens/auth/splash_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/register_screen.dart';
 import '../screens/auth/onboarding_screen.dart';
+import '../screens/onboarding/identity_selection_screen.dart';
+import '../screens/onboarding/psych_profile_screen.dart';
 import '../screens/main/main_layout.dart';
 
 class AppNavigation {
@@ -37,8 +39,15 @@ class AppNavigation {
           builder: (context, state) => const SplashScreen(),
         ),
         GoRoute(
-          path: '/onboarding',
           builder: (context, state) => const OnboardingScreen(),
+        ),
+        GoRoute(
+          path: '/identity-selection',
+          builder: (context, state) => const IdentitySelectionScreen(),
+        ),
+        GoRoute(
+          path: '/psych-profile',
+          builder: (context, state) => const PsychProfileScreen(),
         ),
         GoRoute(
           path: '/login',
