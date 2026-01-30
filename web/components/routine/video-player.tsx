@@ -72,60 +72,58 @@ export function VideoPlayer({ onClose }: VideoPlayerProps) {
                 )}
 
                 {/* Bottom Bar */}
-                <div className="flex flex-col gap-6">
-
+                <div className="flex flex-col gap-8">
                     {/* Metrics Row */}
                     <div className="flex items-end justify-between">
-                        <div className="flex gap-6">
+                        <div className="flex gap-10">
                             {/* Heart Rate Mock */}
-                            <div className="flex flex-col">
-                                <div className="flex items-center gap-1 text-rose-500 mb-1">
-                                    <Heart className="w-4 h-4 fill-current animate-pulse" />
-                                    <span className="text-xs font-bold uppercase">Heart Rate</span>
+                            <div className="flex flex-col gap-2">
+                                <div className="flex items-center gap-2 text-rose-500">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+                                    <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Heart Rate</span>
                                 </div>
-                                <span className="text-3xl font-mono font-bold text-white">108 <span className="text-sm text-white/50 text-sans">BPM</span></span>
+                                <span className="text-4xl font-black text-white tabular-nums tracking-tighter">108 <span className="text-xs font-bold text-white/40 tracking-normal">BPM</span></span>
                             </div>
 
                             {/* Calories Mock - The "Burn Bar" */}
-                            <div className="flex flex-col">
-                                <div className="flex items-center gap-1 text-[#DFFF00] mb-1">
-                                    <Flame className="w-4 h-4 fill-current" />
-                                    <span className="text-xs font-bold uppercase">Active Burn</span>
+                            <div className="flex flex-col gap-2">
+                                <div className="flex items-center gap-2 text-emerald-500">
+                                    <Flame className="w-3 h-3 fill-current" />
+                                    <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Metabolic Burn</span>
                                 </div>
-                                <span className="text-3xl font-mono font-bold text-white">142 <span className="text-sm text-white/50 text-sans">KCAL</span></span>
+                                <span className="text-4xl font-black text-white tabular-nums tracking-tighter">142 <span className="text-xs font-bold text-white/40 tracking-normal">KCAL</span></span>
                             </div>
                         </div>
 
                         {/* Timer */}
-                        <div className="text-5xl font-mono font-bold text-white tracking-tighter">
+                        <div className="text-6xl font-black text-white tracking-tighter tabular-nums text-right">
                             {formatTime(timeLeft)}
                         </div>
                     </div>
 
                     {/* Progress Bar */}
-                    <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
                         <motion.div
-                            className="h-full bg-primary"
+                            className="h-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.5)]"
                             animate={{ width: `${progress}%` }}
                         />
                     </div>
 
                     {/* Controls */}
-                    <div className="flex items-center justify-center gap-8 pt-4">
-                        <button className="text-white/50 hover:text-white transition-colors">
-                            <span className="text-xs font-bold">RESTART</span>
+                    <div className="flex items-center justify-center gap-12 pt-6">
+                        <button className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors">
+                            RESTART
                         </button>
                         <button
                             onClick={() => setIsPlaying(!isPlaying)}
-                            className="w-16 h-16 rounded-full bg-[#DFFF00] text-black flex items-center justify-center hover:scale-105 transition-transform"
+                            className="w-20 h-20 rounded-[2rem] bg-white text-black flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-2xl"
                         >
                             {isPlaying ? <Pause className="w-8 h-8 fill-current" /> : <Play className="w-8 h-8 fill-current ml-1" />}
                         </button>
-                        <button className="text-white/50 hover:text-white transition-colors">
-                            <SkipForward className="w-6 h-6" />
+                        <button className="text-white/40 hover:text-white transition-colors">
+                            <SkipForward className="w-8 h-8" />
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>

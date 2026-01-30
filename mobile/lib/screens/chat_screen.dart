@@ -18,9 +18,9 @@ class ChatScreen extends StatelessWidget {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: const Color(0xFF10B981).withOpacity(0.1),
+                color: const Color(0xFF10B981).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: const Color(0xFF10B981).withOpacity(0.2)),
+                border: Border.all(color: const Color(0xFF10B981).withValues(alpha: 0.2)),
               ),
               child: const Center(
                 child: Text(
@@ -60,9 +60,9 @@ class ChatScreen extends StatelessWidget {
             margin: const EdgeInsets.only(right: 16, top: 12, bottom: 12),
             padding: const EdgeInsets.symmetric(horizontal: 12),
             decoration: BoxDecoration(
-              color: const Color(0xFF10B981).withOpacity(0.1),
+              color: const Color(0xFF10B981).withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: const Color(0xFF10B981).withOpacity(0.2)),
+              border: Border.all(color: const Color(0xFF10B981).withValues(alpha: 0.2)),
             ),
             child: const Center(
               child: Text(
@@ -108,7 +108,7 @@ class ChatScreen extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(24, 8, 24, 32),
       decoration: BoxDecoration(
         color: const Color(0xFF09090B),
-        border: Border(top: BorderSide(color: Colors.white.withOpacity(0.05))),
+        border: Border(top: BorderSide(color: Colors.white.withValues(alpha: 0.05))),
       ),
       child: Column(
         children: [
@@ -117,7 +117,7 @@ class ChatScreen extends StatelessWidget {
             decoration: BoxDecoration(
               color: const Color(0xFF18181B),
               borderRadius: BorderRadius.circular(32),
-              border: Border.all(color: Colors.white.withOpacity(0.05)),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
             ),
             child: Row(
               children: [
@@ -201,12 +201,12 @@ class ChatMessage extends StatelessWidget {
                       bottomLeft: Radius.circular(isExpert ? 0 : 20),
                       bottomRight: Radius.circular(isExpert ? 20 : 0),
                     ),
-                    border: isExpert ? Border.all(color: Colors.white.withOpacity(0.05)) : null,
+                    border: isExpert ? Border.all(color: Colors.white.withValues(alpha: 0.05)) : null,
                   ),
                   child: Text(
                     content,
                     style: TextStyle(
-                      color: isExpert ? Colors.white.withOpacity(0.8) : Colors.black,
+                      color: isExpert ? Colors.white.withValues(alpha: 0.8) : Colors.black,
                       fontSize: 14,
                       height: 1.5,
                       fontWeight: isExpert ? FontWeight.normal : FontWeight.bold,
@@ -233,9 +233,9 @@ class ChatMessage extends StatelessWidget {
       width: 32,
       height: 32,
       decoration: BoxDecoration(
-        color: const Color(0xFF10B981).withOpacity(0.1),
+        color: const Color(0xFF10B981).withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: const Color(0xFF10B981).withOpacity(0.2)),
+        border: Border.all(color: const Color(0xFF10B981).withValues(alpha: 0.2)),
       ),
       child: const Center(
         child: Icon(LucideIcons.sparkles, size: 14, color: Color(0xFF10B981)),
@@ -248,9 +248,9 @@ class ChatMessage extends StatelessWidget {
       width: 32,
       height: 32,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: const Center(
         child: Icon(LucideIcons.user, size: 14, color: Colors.white),

@@ -82,7 +82,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
                   Text(
                     'STEP ${_currentStep + 1} OF $_totalSteps',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.3),
+                      color: Colors.white.withValues(alpha: 0.3),
                       fontSize: 10,
                       fontWeight: FontWeight.w900,
                       letterSpacing: 1.5,
@@ -112,7 +112,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
                     backgroundColor: const Color(0xFF10B981),
                     foregroundColor: Colors.black,
                     disabledBackgroundColor: const Color(0xFF18181B),
-                    disabledForegroundColor: Colors.white.withOpacity(0.2),
+                    disabledForegroundColor: Colors.white.withValues(alpha: 0.2),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     elevation: 0,
                   ),
@@ -160,7 +160,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
         const SizedBox(height: 48),
         _buildSelectableCard('Male', LucideIcons.user, _gender == 'M', () => setState(() => _gender = 'M')),
         const SizedBox(height: 16),
-        _buildSelectableCard('Female', LucideIcons.user_2, _gender == 'F', () => setState(() => _gender = 'F')),
+        _buildSelectableCard('Female', LucideIcons.user, _gender == 'F', () => setState(() => _gender = 'F')),
       ],
     );
   }
@@ -177,7 +177,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
           decoration: BoxDecoration(
              color: const Color(0xFF18181B),
              borderRadius: BorderRadius.circular(30),
-             border: Border.all(color: Colors.white.withOpacity(0.05)),
+             border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
           ),
           child: ListWheelScrollView.useDelegate(
             itemExtent: 60,
@@ -196,7 +196,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
                     style: TextStyle(
                       fontSize: isSelected ? 48 : 24,
                       fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                      color: isSelected ? const Color(0xFF10B981) : Colors.white.withOpacity(0.2),
+                      color: isSelected ? const Color(0xFF10B981) : Colors.white.withValues(alpha: 0.2),
                     ),
                   ),
                 );
@@ -228,7 +228,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
          const SizedBox(height: 48),
 
          // Height
-         Text('HEIGHT', style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.5)),
+         Text('HEIGHT', style: TextStyle(color: Colors.white.withValues(alpha: 0.4), fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.5)),
          const SizedBox(height: 16),
          Row(
            mainAxisAlignment: MainAxisAlignment.center,
@@ -258,7 +258,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
          const SizedBox(height: 48),
 
          // Weight
-         Text('WEIGHT', style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.5)),
+         Text('WEIGHT', style: TextStyle(color: Colors.white.withValues(alpha: 0.4), fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 1.5)),
          const SizedBox(height: 16),
           Row(
            mainAxisAlignment: MainAxisAlignment.center,
@@ -329,7 +329,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
       children: [
         Text(title, textAlign: TextAlign.center, style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: -0.5)),
         const SizedBox(height: 12),
-        Text(subtitle, textAlign: TextAlign.center, style: TextStyle(fontSize: 16, color: Colors.white.withOpacity(0.5), height: 1.4)),
+        Text(subtitle, textAlign: TextAlign.center, style: TextStyle(fontSize: 16, color: Colors.white.withValues(alpha: 0.5), height: 1.4)),
       ],
     );
   }
@@ -344,7 +344,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
           color: isSelected ? const Color(0xFF10B981) : const Color(0xFF18181B),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: isSelected ? const Color(0xFF10B981) : Colors.white.withOpacity(0.05),
+            color: isSelected ? const Color(0xFF10B981) : Colors.white.withValues(alpha: 0.05),
             width: 2,
           ),
         ),
@@ -362,7 +362,7 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
             ),
             const Spacer(),
             if (isSelected)
-              const Icon(LucideIcons.check_circle_2, color: Colors.black, size: 20),
+              const Icon(LucideIcons.check, color: Colors.black, size: 20),
           ],
         ),
       ),
@@ -377,12 +377,12 @@ class _UserSetupScreenState extends State<UserSetupScreen> {
         decoration: BoxDecoration(
           color: isActive ? Colors.white : const Color(0xFF18181B),
           borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: isActive ? Colors.white : Colors.white.withOpacity(0.1)),
+          border: Border.all(color: isActive ? Colors.white : Colors.white.withValues(alpha: 0.1)),
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: isActive ? Colors.black : Colors.white.withOpacity(0.5),
+            color: isActive ? Colors.black : Colors.white.withValues(alpha: 0.5),
             fontWeight: FontWeight.bold,
             fontSize: 12,
           ),

@@ -109,36 +109,36 @@ export default function RegisterPage() {
                             {error}
                         </motion.div>
                     )}
-                    <Button className="h-12 rounded-full font-bold shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-[0.98] bg-primary text-primary-foreground hover:bg-primary/90" disabled={isLoading}>
+                    <Button className="h-14 rounded-2xl font-black uppercase tracking-widest text-[10px] shadow-[0_0_30px_rgba(16,185,129,0.2)] bg-emerald-500 text-white hover:bg-emerald-400" disabled={isLoading}>
                         {isLoading ? (
                             <div className="flex items-center gap-2">
                                 <Loader2 className="w-4 h-4 animate-spin" />
-                                <span>Creating Account...</span>
+                                <span>Calibrating...</span>
                             </div>
-                        ) : "Create Account"}
+                        ) : "Initiate Metabolic Reset"}
                     </Button>
                 </form>
 
-                <div className="relative py-2">
+                <div className="relative py-4">
                     <div className="absolute inset-0 flex items-center">
                         <span className="w-full border-t border-white/5" />
                     </div>
-                    <div className="relative flex justify-center text-xs uppercase">
-                        <span className="bg-[#050505] px-2 text-muted-foreground/60 font-bold tracking-widest">
-                            Or continue with
+                    <div className="relative flex justify-center text-[10px] font-black uppercase tracking-widest">
+                        <span className="bg-[#050505] px-4 text-foreground-muted/40 font-black">
+                            Protocol Auth
                         </span>
                     </div>
                 </div>
 
                 <SocialAuth />
 
-                <p className="text-center text-sm text-muted-foreground">
-                    Already have an account?{" "}
+                <p className="text-center text-[10px] font-black uppercase tracking-widest text-foreground-muted">
+                    Member Already?{" "}
                     <Link
                         href="/login"
-                        className="text-primary font-bold hover:underline underline-offset-4"
+                        className="text-emerald-500 hover:text-emerald-400 transition-colors"
                     >
-                        Sign In
+                        Establish Session
                     </Link>
                 </p>
             </div>

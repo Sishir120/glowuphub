@@ -85,7 +85,7 @@ class _RoutineCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF18181B),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Row(
         children: [
@@ -97,7 +97,7 @@ class _RoutineCard extends StatelessWidget {
               children: [
                 Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                 const SizedBox(height: 4),
-                Text('$duration • $level', style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 13)),
+                Text('$duration • $level', style: TextStyle(color: Colors.white.withValues(alpha: 0.4), fontSize: 13)),
               ],
             ),
           ),

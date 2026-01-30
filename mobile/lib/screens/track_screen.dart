@@ -40,7 +40,7 @@ class TrackScreen extends StatelessWidget {
                     'Log your biometrics and monitor changes.',
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.white.withOpacity(0.5),
+                      color: Colors.white.withValues(alpha: 0.5),
                     ),
                   ),
                 ],
@@ -54,7 +54,7 @@ class TrackScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: const Color(0xFF18181B),
                   borderRadius: BorderRadius.circular(24),
-                  border: Border.all(color: Colors.white.withOpacity(0.05)),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
                 ),
                 child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -153,7 +153,7 @@ class _ProtocolItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-                Text(status, style: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 12)),
+                Text(status, style: TextStyle(color: Colors.white.withValues(alpha: 0.4), fontSize: 12)),
               ],
             ),
           ),

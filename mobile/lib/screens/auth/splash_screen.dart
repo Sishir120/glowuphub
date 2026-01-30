@@ -1,110 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
-import '../../providers/auth_provider.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    _navigateToNext();
-  }
-
-  Future<void> _navigateToNext() async {
-    // Wait for animation and auth check
-    await Future.delayed(const Duration(milliseconds: 3000));
-    
-    if (!mounted) return;
-    
-    final authProvider = context.read<AuthProvider>();
-    
-    if (authProvider.isAuthenticated) {
-      context.go('/home');
-    } else {
-      context.go('/login');
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF09090B),
+      backgroundColor: Colors.black,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Logo Animation
             Container(
-              width: 100,
-              height: 100,
+              width: 80,
+              height: 80,
               decoration: BoxDecoration(
-                color: const Color(0xFF10B981).withOpacity(0.1),
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: const Color(0xFF10B981).withOpacity(0.2)),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF10B981).withOpacity(0.1),
-                    blurRadius: 40,
-                    spreadRadius: 10,
-                  ),
-                ],
+                shape: BoxShape.circle,
+                color: Colors.white.withValues(alpha: 0.05),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
               ),
-              child: const Icon(
-                LucideIcons.sparkles,
-                color: Color(0xFF10B981),
-                size: 48,
-              ),
-            )
-            .animate()
-            .scale(duration: 800.ms, curve: Curves.easeOutBack)
-            .fadeIn(duration: 600.ms)
-            .shimmer(delay: 1000.ms, duration: 1500.ms, color: Colors.white24)
-            .animate(onPlay: (controller) => controller.repeat(reverse: true))
-            .boxShadow(
-              end: BoxShadow(
-                blurRadius: 20, 
-                color: const Color(0xFF10B981).withOpacity(0.2)
-              )
-            ),
+              child: const Icon(LucideIcons.sparkles, color: Colors.white, size: 32),
+            ).animate(onPlay: (c) => c.repeat(reverse: true))
+             .scale(begin: const Offset(1,1), end: const Offset(1.1, 1.1), duration: 2.seconds, curve: Curves.easeInOut)
+             .shimmer(delay: 1.seconds, duration: 2.seconds),
             
             const SizedBox(height: 32),
             
-            // Text Animation
             const Text(
-              'GlowUpHub',
+              "GLOWUPHUB",
               style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
                 color: Colors.white,
-                letterSpacing: -1,
+                fontSize: 18,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 8,
               ),
-            )
-            .animate()
-            .fadeIn(delay: 400.ms, duration: 800.ms)
-            .slideY(begin: 0.3, end: 0, curve: Curves.easeOutCubic),
+            ).animate().fadeIn(duration: 2.seconds).slideY(begin: 0.2),
             
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             
-            Text(
-              'Your Biological Sanctuary',
+            const Text(
+              "BIOLOGICAL MASTERY",
               style: TextStyle(
-                fontSize: 14,
-                color: Colors.white.withOpacity(0.4),
-                fontWeight: FontWeight.w500,
-                letterSpacing: 2,
+                color: Colors.grey,
+                fontSize: 9,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 3,
               ),
-            )
-            .animate()
-            .fadeIn(delay: 800.ms, duration: 800.ms),
+            ).animate().fadeIn(delay: 800.ms),
           ],
         ),
       ),

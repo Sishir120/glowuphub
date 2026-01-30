@@ -1,17 +1,13 @@
-import 'package:flutter_lucide/flutter_lucide.dart';
-
-
-
-
-
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../home_screen.dart';
-import '../track_screen.dart';
-import '../routines_screen.dart';
-import '../chat_screen.dart';
+import '../workout_screen.dart';
+import '../food_screen.dart';
+import '../body_screen.dart';
 import '../profile_screen.dart';
-import '../../widgets/quick_actions_fab.dart';
 
 class MainLayout extends StatefulWidget {
   final int initialIndex;
@@ -26,9 +22,9 @@ class _MainLayoutState extends State<MainLayout> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const TrackScreen(),
-    const RoutinesScreen(),
-    const ChatScreen(),
+    const WorkoutScreen(),
+    const FoodScreen(),
+    const BodyScreen(),
     const ProfileScreen(),
   ];
 
@@ -47,47 +43,90 @@ class _MainLayoutState extends State<MainLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_selectedIndex],
-      floatingActionButton: const QuickActionsFAB(),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.black,
-          border: Border(
-            top: BorderSide(color: Colors.white.withOpacity(0.05), width: 1),
+      backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          // Screen Content
+          Positioned.fill(
+            child: IndexedStack(
+              index: _selectedIndex,
+              children: _screens,
+            ),
+          ),
+          
+          // Floating Dock
+          Positioned(
+            left: 20,
+            right: 20,
+            bottom: 30,
+            child: _buildFloatingDock(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFloatingDock() {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(32),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+          decoration: BoxDecoration(
+            color: const Color(0xFF111111).withValues(alpha: 0.8),
+            borderRadius: BorderRadius.circular(32),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.5),
+                blurRadius: 30,
+                offset: const Offset(0, 10),
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildNavItem(0, LucideIcons.house, 'Home'),
+              _buildNavItem(1, LucideIcons.dumbbell, 'Train'),
+              _buildNavItem(2, LucideIcons.utensils, 'Fuel'),
+              _buildNavItem(3, LucideIcons.activity, 'Bio'),
+              _buildNavItem(4, LucideIcons.user, 'Self'),
+            ],
           ),
         ),
-        child: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.black,
-          selectedItemColor: const Color(0xFF10B981),
-          unselectedItemColor: const Color(0xFF71717A),
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
-          selectedLabelStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-          unselectedLabelStyle: const TextStyle(fontSize: 10),
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(LucideIcons.house),
-              label: 'HOME',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(LucideIcons.activity),
-              label: 'TRACK',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(LucideIcons.play),
-              label: 'TRAINING',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(LucideIcons.message_circle),
-              label: 'CARE',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(LucideIcons.user),
-              label: 'PROFILE',
-            ),
+      ),
+    ).animate().fadeIn(delay: 1.seconds).slideY(begin: 0.5);
+  }
+
+  Widget _buildNavItem(int index, IconData icon, String label) {
+    final isSelected = _selectedIndex == index;
+    return GestureDetector(
+      onTap: () => _onItemTapped(index),
+      behavior: HitTestBehavior.opaque,
+      child: AnimatedContainer(
+        duration: 300.ms,
+        curve: Curves.easeOutBack,
+        width: isSelected ? 80 : 50,
+        height: 50,
+        decoration: BoxDecoration(
+          color: isSelected ? Colors.white : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              size: 20,
+              color: isSelected ? Colors.black : Colors.grey.shade600,
+            ).animate(target: isSelected ? 1 : 0).scale(begin: const Offset(1,1), end: const Offset(1.1, 1.1)),
+            if (isSelected)
+               Text(
+                 label.toUpperCase(),
+                 style: const TextStyle(fontSize: 8, fontWeight: FontWeight.w900, color: Colors.black, letterSpacing: 0.5),
+               ).animate().fadeIn().scale(),
           ],
         ),
       ),

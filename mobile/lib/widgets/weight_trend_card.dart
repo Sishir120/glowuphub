@@ -23,7 +23,7 @@ class WeightTrendCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF18181B),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,8 +72,8 @@ class WeightTrendCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
                   color: isImprovement 
-                      ? const Color(0xFF10B981).withOpacity(0.1) 
-                      : const Color(0xFFEF4444).withOpacity(0.1),
+                      ? const Color(0xFF10B981).withValues(alpha: 0.1) 
+                      : const Color(0xFFEF4444).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
@@ -119,7 +119,7 @@ class WeightTrendCard extends StatelessWidget {
                 ? "Small wins compound. You're down ${change.abs().toStringAsFixed(1)}kg this week."
                 : "Fluctuations are normal. Focus on your habits today.",
             style: TextStyle(
-              color: Colors.white.withOpacity(0.5),
+              color: Colors.white.withValues(alpha: 0.5),
               fontSize: 13,
               height: 1.5,
             ),
@@ -188,7 +188,7 @@ class _TrendPainter extends CustomPainter {
       ..shader = LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [color.withOpacity(0.2), color.withOpacity(0.0)],
+        colors: [color.withValues(alpha: 0.2), color.withValues(alpha: 0.0)],
       ).createShader(Rect.fromLTWH(0, 0, size.width, size.height))
       ..style = PaintingStyle.fill;
       

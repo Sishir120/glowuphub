@@ -49,7 +49,7 @@ class _QuickActionsFABState extends State<QuickActionsFAB> {
               border: _isOpen ? Border.all(color: Colors.white10) : null,
               boxShadow: _isOpen ? null : [
                 BoxShadow(
-                  color: const Color(0xFF10B981).withOpacity(0.3),
+                  color: const Color(0xFF10B981).withValues(alpha: 0.3),
                   blurRadius: 20,
                   spreadRadius: 2,
                 ),

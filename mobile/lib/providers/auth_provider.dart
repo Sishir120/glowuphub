@@ -1,22 +1,21 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
 import '../models/user_model.dart';
-
+import '../models/identity_model.dart';
 
 class AuthProvider extends ChangeNotifier {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   User? _user;
   bool _isLoading = true;
   
-  // Provisional Onboarding Data
-  String? _token;
-
   User? get user => _user;
-  String? get token => _token;
   bool get isLoading => _isLoading;
   bool get isAuthenticated => _user != null;
+
+  // Temporary storage for Onboarding Flow
+  final Map<String, dynamic> _onboardingData = {};
 
   AuthProvider() {
     _loadUser();
@@ -24,96 +23,62 @@ class AuthProvider extends ChangeNotifier {
 
   Future<void> _loadUser() async {
     final prefs = await SharedPreferences.getInstance();
-    _token = prefs.getString('auth_token');
-    // In a real app, we would verify the token here
-    if (_token != null) {
-      // For now, let's pretend we have a user
-      _user = User(id: '1', name: 'Demo User', email: 'demo@glowup.com');
+    final userJson = prefs.getString('user_profile');
+    
+    if (userJson != null) {
+      try {
+        _user = User.fromJson(jsonDecode(userJson));
+      } catch (e) {
+        print("Error loading user profile: $e");
+      }
     }
     _isLoading = false;
     notifyListeners();
   }
 
-  Future<void> login(String token, Map<String, dynamic> userData) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('auth_token', token);
-    _token = token;
-    _user = User.fromJson(userData);
+  // Called step-by-step during onboarding
+  void updateOnboardingData(Map<String, dynamic> data) {
+    _onboardingData.addAll(data);
     notifyListeners();
   }
 
-  Future<void> demoSignIn() async {
-    _user = User(
-      id: 'guest', 
-      name: 'Guest', 
-      email: 'guest@glowup.com', 
-      glowScore: 85,
-      gender: _tempProfileData['gender'],
-      age: _tempProfileData['age'],
-      height: _tempProfileData['height'],
-      currentWeight: _tempProfileData['currentWeight'],
-      goal: _tempProfileData['goal'],
-      activityLevel: _tempProfileData['activityLevel'],
+  // Finalize onboarding and create user
+  Future<void> completeOnboarding() async {
+    final prefs = await SharedPreferences.getInstance();
+    
+    // Create a new Mock User with the collected data
+    final newUser = User(
+      id: 'mock_user_${DateTime.now().millisecondsSinceEpoch}',
+      name: 'New Member', // Would come from Google Auth in real flow
+      email: 'member@example.com',
+      glowScore: 0,
+      onboardingStage: 'COMPLETED',
+      height: _onboardingData['height'],
+      currentWeight: _onboardingData['weight'],
+      age: _onboardingData['age'],
+      gender: _onboardingData['gender'],
+      goal: _onboardingData['goal'],
+      activityLevel: _onboardingData['activityLevel'],
     );
+
+    _user = newUser;
+    await prefs.setString('user_profile', jsonEncode(newUser.toJson()));
     notifyListeners();
   }
 
   Future<void> signInWithGoogle() async {
-    try {
-      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-      if (googleUser != null) {
-        // Successful sign-in
-        final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-        final String? accessToken = googleAuth.accessToken;
-        // final String? idToken = googleAuth.idToken;
-
-        // In a real app, you would verify these tokens with your backend
-        // For now, we'll just create a session locally
-        
-        final prefs = await SharedPreferences.getInstance();
-        if (accessToken != null) {
-          await prefs.setString('auth_token', accessToken);
-        }
-
-        _user = User(
-          id: googleUser.id,
-          name: googleUser.displayName ?? 'Unknown',
-          email: googleUser.email,
-          glowScore: 85,
-        );
-        notifyListeners();
-      }
-    } catch (error) {
-      // ignore: avoid_print
-      print('Google Sign-In Error: $error');
-      rethrow;
-    }
+    // In this Mock version, we just bypass Google Auth for now 
+    // or simulate it to get a name/email, then start onboarding.
+    // For V1 "Mock Mode", we assume user clicks "Start" and goes to Onboarding.
+    notifyListeners();
   }
 
   Future<void> logout() async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.remove('auth_token');
+    await prefs.remove('user_profile');
     await _googleSignIn.signOut();
     _user = null;
-    notifyListeners();
-  }
-
-  // ignore: unused_field
-  Map<String, bool>? _tempBarriers;
-  Map<String, dynamic> _tempProfileData = {};
-
-  void setProvisionalIdentity(String identity) {
-    _tempIdentity = identity;
-    notifyListeners();
-  }
-
-  void setProvisionalBarriers(Map<String, bool> barriers) {
-    _tempBarriers = barriers;
-    notifyListeners();
-  }
-
-  void setProvisionalProfile(Map<String, dynamic> data) {
-    _tempProfileData = data;
+    _onboardingData.clear();
     notifyListeners();
   }
 }

@@ -1,14 +1,10 @@
-import 'package:provider/provider.dart';
-import '../../providers/auth_provider.dart';
-import 'package:flutter_lucide/flutter_lucide.dart';
-
-
-
-
-
+import 'dart:ui';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import '../../providers/auth_provider.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -21,114 +17,131 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  bool _isLoading = false;
+
+  Future<void> _handleRegister() async {
+    setState(() => _isLoading = true);
+    try {
+      await Future.delayed(const Duration(seconds: 1));
+      await context.read<AuthProvider>().demoSignIn();
+    } catch (e) {
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
+    } finally {
+      setState(() => _isLoading = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF09090B),
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
-          // Background Glows
           Positioned(
-            top: -100,
-            right: -100,
+            bottom: -50,
+            left: -50,
             child: Container(
               width: 300,
               height: 300,
               decoration: BoxDecoration(
-                color: const Color(0xFF10B981).withOpacity(0.05),
                 shape: BoxShape.circle,
+                color: const Color(0xFF6366F1).withValues(alpha: 0.05),
               ),
-            ),
+            ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1,1), end: const Offset(1.5, 1.5), duration: 6.seconds),
           ),
+
           SafeArea(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 32),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const SizedBox(height: 80),
-                  // Logo Placeholder
-                  Container(
-                    width: 56,
-                    height: 56,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF10B981).withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: const Color(0xFF10B981).withOpacity(0.2)),
-                    ),
-                    child: const Icon(LucideIcons.sparkles, color: Color(0xFF10B981), size: 28),
-                  ),
-                  const SizedBox(height: 32),
+                  
                   const Text(
-                    'Join the Hub.',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      letterSpacing: -1,
-                    ),
+                    "START JOURNEY",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey, letterSpacing: 5, fontSize: 10, fontWeight: FontWeight.w900),
                   ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Start your transformation journey today.',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white.withOpacity(0.4),
-                      fontWeight: FontWeight.w500,
-                    ),
+                  const SizedBox(height: 12),
+                  const Text(
+                    "JOIN THE HUB",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: -1),
                   ),
-                  const SizedBox(height: 48),
-                  
-                  _buildLabel('FULL NAME'),
-                  _buildTextField(_nameController, 'Your Name', LucideIcons.user, false),
-                  
-                  const SizedBox(height: 24),
-                  _buildLabel('EMAIL ADDRESS'),
-                  _buildTextField(_emailController, 'name@example.com', LucideIcons.mail, false),
-                  
-                  const SizedBox(height: 24),
-                  _buildLabel('PASSWORD'),
-                  _buildTextField(_passwordController, '••••••••', LucideIcons.lock, true),
-                  
-                  const SizedBox(height: 48),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 64,
-                    child: ElevatedButton(
-                      onPressed: () async {
-                        // In a real app, you would call a register method
-                        // For this demo, we'll sign in as the demo user
-                        await context.read<AuthProvider>().demoSignIn();
-                        if (mounted) context.go('/home');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF10B981),
-                        foregroundColor: Colors.black,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                        elevation: 0,
+
+                  const SizedBox(height: 64),
+
+                  _buildInputWrapper(
+                    LucideIcons.user,
+                    TextField(
+                      controller: _nameController,
+                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                      decoration: const InputDecoration(
+                        hintText: "FULL NAME",
+                        hintStyle: TextStyle(color: Colors.grey, fontSize: 12, fontWeight: FontWeight.w900, letterSpacing: 1),
+                        border: InputBorder.none,
                       ),
-                      child: const Text('CREATE ACCOUNT', style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 1.5)),
                     ),
                   ),
                   
-                  const SizedBox(height: 32),
-                  Center(
-                    child: TextButton(
-                      onPressed: () => context.go('/login'),
-                      child: Text.rich(
-                        TextSpan(
-                          text: "ALREADY HAVE AN ACCOUNT? ",
-                          style: TextStyle(color: Colors.white.withOpacity(0.3), fontSize: 10, fontWeight: FontWeight.w900, letterSpacing: 1.0),
-                          children: const [
-                            TextSpan(text: 'SIGN IN', style: TextStyle(color: Color(0xFF10B981))),
-                          ],
-                        ),
+                  const SizedBox(height: 16),
+
+                  _buildInputWrapper(
+                    LucideIcons.mail,
+                    TextField(
+                      controller: _emailController,
+                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                      decoration: const InputDecoration(
+                        hintText: "EMAIL ADDRESS",
+                        hintStyle: TextStyle(color: Colors.grey, fontSize: 12, fontWeight: FontWeight.w900, letterSpacing: 1),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  
+                  const SizedBox(height: 16),
+
+                  _buildInputWrapper(
+                    LucideIcons.lock,
+                    TextField(
+                      controller: _passwordController,
+                      obscureText: true,
+                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                      decoration: const InputDecoration(
+                        hintText: "PRIVATE ACCESS KEY",
+                        hintStyle: TextStyle(color: Colors.grey, fontSize: 12, fontWeight: FontWeight.w900, letterSpacing: 1),
+                        border: InputBorder.none,
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 64),
+                  const SizedBox(height: 48),
+
+                  ElevatedButton(
+                    onPressed: _isLoading ? null : _handleRegister,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      minimumSize: const Size.fromHeight(64),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                    ),
+                    child: _isLoading 
+                       ? const CircularProgressIndicator(color: Colors.black)
+                       : const Text("CREATE PRIVATE ACCOUNT", style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 1)),
+                  ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.1),
+
+                  const SizedBox(height: 32),
+                  
+                  Center(
+                    child: TextButton(
+                      onPressed: () => context.go('/login'),
+                      child: const Text(
+                        "ALREADY A MEMBER? SIGN IN",
+                        style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w900, fontSize: 10, letterSpacing: 2),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -138,34 +151,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-  Widget _buildLabel(String text) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12, left: 4),
-      child: Text(
-        text,
-        style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w900, letterSpacing: 1.5, color: Colors.white24),
-      ),
-    );
-  }
-
-  Widget _buildTextField(TextEditingController controller, String hint, IconData icon, bool obscure) {
+  Widget _buildInputWrapper(IconData icon, Widget child) {
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
       decoration: BoxDecoration(
-        color: const Color(0xFF18181B),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        color: const Color(0xFF0A0A0A),
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: Colors.grey.shade900),
       ),
-      child: TextField(
-        controller: controller,
-        obscureText: obscure,
-        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        decoration: InputDecoration(
-          hintText: hint,
-          hintStyle: TextStyle(color: Colors.white.withOpacity(0.1)),
-          prefixIcon: Icon(icon, color: Colors.white24, size: 20),
-          border: InputBorder.none,
-          contentPadding: const EdgeInsets.all(20),
-        ),
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.grey, size: 18),
+          const SizedBox(width: 16),
+          Expanded(child: child),
+        ],
       ),
     );
   }

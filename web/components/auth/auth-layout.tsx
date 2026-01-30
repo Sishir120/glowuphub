@@ -13,25 +13,18 @@ interface AuthLayoutProps {
 
 const testimonials = [
     {
-        quote: "I lost 12kg in 3 months with GlowUp Hub. The tracking makes it effortless.",
+        quote: "I optimized my metabolic flow in weeks. The precision is unmatched.",
         author: "Sarah J.",
-        role: "Busy Mom",
+        role: "Bio-Member",
         icon: TrendingUp,
-        color: "text-emerald-400"
+        color: "text-emerald-500"
     },
     {
-        quote: "The personalized nutrition plan actually fits my lifestyle. No more guessing.",
+        quote: "A clinical-grade experience in my pocket. The digital twin change everything.",
         author: "Michael R.",
-        role: "Software Engineer",
-        icon: CheckCircle2,
-        color: "text-blue-400"
-    },
-    {
-        quote: "The community support and expert-led routines changed my relationship with food.",
-        author: "Priya S.",
-        role: "College Student",
-        icon: Users,
-        color: "text-purple-400"
+        role: "Systems Engineer",
+        icon: ShieldCheck,
+        color: "text-emerald-500"
     }
 ];
 
@@ -54,8 +47,8 @@ export function AuthLayout({ children, heading, subheading }: AuthLayoutProps) {
             {/* Left: Content */}
             <div className="flex w-full flex-col justify-center px-6 lg:w-[45%] lg:px-12 xl:px-24 z-10 bg-background/50 backdrop-blur-sm lg:bg-transparent">
                 <Link href="/" className="absolute top-8 left-8 flex items-center gap-2 group transition-transform active:scale-95">
-                    <span className="text-xl font-bold tracking-tighter text-foreground group-hover:text-primary transition-colors">
-                        GlowUp<span className="text-primary">Hub</span>
+                    <span className="text-xl font-black uppercase tracking-tighter text-white">
+                        GLOWUP<span className="text-emerald-500">HUB</span>
                     </span>
                 </Link>
 

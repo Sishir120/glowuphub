@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'config/theme.dart';
 import 'config/navigation.dart';
 import 'providers/auth_provider.dart';
+import 'providers/data_provider.dart';
 
 void main() {
   runApp(const GlowUpApp());
@@ -16,6 +17,7 @@ class GlowUpApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => DataProvider()),
       ],
       child: Builder(
         builder: (context) {

@@ -20,7 +20,7 @@ class StreakTracker extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF18181B),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Row(
         children: [
@@ -32,9 +32,9 @@ class StreakTracker extends StatelessWidget {
                 width: 64,
                 height: 64,
                 decoration: BoxDecoration(
-                  color: Colors.orange.withOpacity(0.1),
+                  color: Colors.orange.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: Colors.orange.withOpacity(0.2)),
+                  border: Border.all(color: Colors.orange.withValues(alpha: 0.2)),
                 ),
                 child: const Icon(LucideIcons.flame, color: Colors.orange, size: 32),
               ),
@@ -47,7 +47,7 @@ class StreakTracker extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
-                    border: Border.all(color: Colors.orange.withOpacity(0.2), width: 2),
+                    border: Border.all(color: Colors.orange.withValues(alpha: 0.2), width: 2),
                   ),
                   child: Center(
                     child: Text(
@@ -82,7 +82,7 @@ class StreakTracker extends StatelessWidget {
                   'You\'ve hit your goals for $count days in a row.',
                   style: TextStyle(
                     fontSize: 11,
-                    color: Colors.white.withOpacity(0.4),
+                    color: Colors.white.withValues(alpha: 0.4),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -102,8 +102,8 @@ class StreakTracker extends StatelessWidget {
                             color: isPast 
                                 ? Colors.orange 
                                 : isToday 
-                                    ? Colors.white.withOpacity(0.1)
-                                    : Colors.white.withOpacity(0.05),
+                                    ? Colors.white.withValues(alpha: 0.1)
+                                    : Colors.white.withValues(alpha: 0.05),
                             borderRadius: BorderRadius.circular(8),
                             border: isToday ? Border.all(color: Colors.orange) : null,
                           ),

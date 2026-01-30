@@ -22,7 +22,7 @@ class BioDigitalTwin extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF18181B),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       padding: const EdgeInsets.all(24),
       child: Column(
@@ -43,7 +43,7 @@ class BioDigitalTwin extends StatelessWidget {
               fontSize: 9,
               fontWeight: FontWeight.w900,
               letterSpacing: 1.5,
-              color: const Color(0xFF10B981).withOpacity(0.7),
+              color: const Color(0xFF10B981).withValues(alpha: 0.7),
             ),
           ),
           const SizedBox(height: 24),
@@ -55,7 +55,7 @@ class BioDigitalTwin extends StatelessWidget {
                 Icon(
                   LucideIcons.user,
                   size: 180,
-                  color: Colors.white.withOpacity(0.03),
+                  color: Colors.white.withValues(alpha: 0.03),
                 ),
                 Container(
                   width: 140,
@@ -64,7 +64,7 @@ class BioDigitalTwin extends StatelessWidget {
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        const Color(0xFF10B981).withOpacity(0.1),
+                        const Color(0xFF10B981).withValues(alpha: 0.1),
                         Colors.transparent,
                       ],
                     ),
@@ -98,9 +98,9 @@ class BioDigitalTwin extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.03),
+        color: Colors.white.withValues(alpha: 0.03),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Row(
         children: [
@@ -108,7 +108,7 @@ class BioDigitalTwin extends StatelessWidget {
             width: 30,
             height: 30,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.05),
+              color: Colors.white.withValues(alpha: 0.05),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(icon, color: color, size: 16),
@@ -124,7 +124,7 @@ class BioDigitalTwin extends StatelessWidget {
                   fontSize: 8,
                   fontWeight: FontWeight.w900,
                   letterSpacing: 1.0,
-                  color: Colors.white.withOpacity(0.4),
+                  color: Colors.white.withValues(alpha: 0.4),
                 ),
               ),
               Text(

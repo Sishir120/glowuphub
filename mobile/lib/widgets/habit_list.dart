@@ -55,13 +55,13 @@ class HabitList extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         decoration: BoxDecoration(
           color: habit.isCompletedToday
-              ? const Color(0xFF10B981).withOpacity(0.08)
+              ? const Color(0xFF10B981).withValues(alpha: 0.08)
               : const Color(0xFF18181B),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
              color: habit.isCompletedToday
-                ? const Color(0xFF10B981).withOpacity(0.3)
-                : Colors.white.withOpacity(0.03),
+                ? const Color(0xFF10B981).withValues(alpha: 0.3)
+                : Colors.white.withValues(alpha: 0.03),
           ),
         ),
         child: Row(

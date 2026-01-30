@@ -3,9 +3,7 @@ import '../providers/auth_provider.dart';
 import '../screens/auth/splash_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/register_screen.dart';
-import '../screens/auth/onboarding_screen.dart';
-import '../screens/onboarding/identity_selection_screen.dart';
-import '../screens/onboarding/psych_profile_screen.dart';
+import '../screens/onboarding/onboarding_screen.dart';
 import '../screens/auth/user_setup_screen.dart';
 import '../screens/main/main_layout.dart';
 
@@ -15,10 +13,10 @@ class AppNavigation {
       refreshListenable: authProvider,
       initialLocation: '/',
       redirect: (context, state) {
-        final isPublic = state.matchedLocation == '/' ||
-            state.matchedLocation == '/login' ||
-            state.matchedLocation == '/register' ||
-            state.matchedLocation == '/onboarding';
+        final isLogin = state.matchedLocation == '/login';
+        final isRegister = state.matchedLocation == '/register';
+        final isOnboarding = state.matchedLocation == '/onboarding';
+        final isPublic = state.matchedLocation == '/' || isLogin || isRegister;
 
         if (authProvider.isLoading) return null;
 
@@ -26,7 +24,15 @@ class AppNavigation {
           return isPublic ? null : '/login';
         }
 
-        if (state.matchedLocation == '/login' || state.matchedLocation == '/register') {
+        // Authenticated but onboarding not complete
+        if (authProvider.isAuthenticated && 
+            authProvider.user?.onboardingStage != 'COMPLETED') {
+           if (!isOnboarding) return '/onboarding';
+           return null;
+        }
+
+        // Authenticated and Completed
+        if (isLogin || isRegister || isOnboarding) {
           return '/home';
         }
 
@@ -42,18 +48,6 @@ class AppNavigation {
           builder: (context, state) => const OnboardingScreen(),
         ),
         GoRoute(
-          path: '/identity-selection',
-          builder: (context, state) => const IdentitySelectionScreen(),
-        ),
-        GoRoute(
-          path: '/psych-profile',
-          builder: (context, state) => const PsychProfileScreen(),
-        ),
-        GoRoute(
-          path: '/user-setup',
-          builder: (context, state) => const UserSetupScreen(),
-        ),
-        GoRoute(
           path: '/login',
           builder: (context, state) => const LoginScreen(),
         ),
@@ -66,15 +60,15 @@ class AppNavigation {
           builder: (context, state) => const MainLayout(initialIndex: 0),
         ),
         GoRoute(
-          path: '/track',
+          path: '/workout',
           builder: (context, state) => const MainLayout(initialIndex: 1),
         ),
         GoRoute(
-          path: '/routines',
+          path: '/food',
           builder: (context, state) => const MainLayout(initialIndex: 2),
         ),
         GoRoute(
-          path: '/chat',
+          path: '/body',
           builder: (context, state) => const MainLayout(initialIndex: 3),
         ),
         GoRoute(

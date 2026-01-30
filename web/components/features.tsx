@@ -1,95 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Circle, Activity, Heart, Sparkles, ShieldCheck, Leaf, Utensils, BrainCircuit } from "lucide-react";
+import { Circle, Activity, Heart, Sparkles, ShieldCheck, Leaf, Utensils, BrainCircuit, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const features = [
     {
-        title: "Step 1: Eat More, Weigh Less",
-        description: "Your metabolism isn't broken, it's confusing. We design 1,800+ calorie plans that trigger metabolic burn without cutting the foods you love.",
-        icon: <Utensils className="w-6 h-6 text-primary" />,
+        title: "Phase 01: Biological Reset",
+        description: "Your system isn't dysfunctional; it's de-calibrated. We engineer nutrient-dense protocols that stimulate metabolic flexibility without deprivation.",
+        icon: <ShieldCheck className="w-5 h-5 text-emerald-500" />,
         className: "md:col-span-1",
     },
     {
-        title: "Step 2: Movement That Heals",
-        description: "Forget punishment cardio. 15-minute hormonal-balancing routines designed to lower cortisol, not just burn calories.",
-        icon: <Activity className="w-6 h-6 text-sage" />,
+        title: "Phase 02: Performance Priming",
+        description: "Punishment is not progress. Implement 15-minute bio-rhythm sequences designed to down-regulate cortisol while optimizing hormonal output.",
+        icon: <Zap className="w-5 h-5 text-amber-500" />,
         className: "md:col-span-1",
     },
     {
-        title: "Step 3: Rewire Your Habits",
-        description: "End the 3 PM sugar crash and late-night binge cycle. We help you build unshakeable self-trust through science-backed daily practices.",
-        icon: <BrainCircuit className="w-6 h-6 text-lavender" />,
+        title: "Phase 03: Homeostatic Mastery",
+        description: "Break the cycle of internal friction. Establish unshakeable biological self-trust through neurologically-informed daily rituals.",
+        icon: <BrainCircuit className="w-5 h-5 text-lavender" />,
         className: "md:col-span-1",
     },
 ];
 
 export function Features() {
     return (
-        <section id="features" className="py-24 md:py-32 bg-background relative overflow-hidden">
-
-            {/* Warm ambient background */}
-            <div className="absolute top-1/4 left-0 w-[40%] h-[40%] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
-            <div className="absolute bottom-1/4 right-0 w-[40%] h-[40%] bg-sage/5 rounded-full blur-[150px] pointer-events-none" />
+        <section id="features" className="py-32 bg-background relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
 
             <div className="container mx-auto px-6 relative z-10">
-
-                {/* Section Header */}
-                <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-24">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        className="max-w-2xl space-y-6"
                     >
-                        <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-tight leading-tight">
-                            The <span className="text-primary italic">3-Step Metabolic Reset</span>
+                        <div className="flex items-center gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-500">Methodology</span>
+                        </div>
+                        <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-[0.9]">
+                            The <span className="text-emerald-500">Metabolic <br />Protocol</span>.
                         </h2>
-                        <p className="text-lg md:text-xl text-foreground-muted max-w-2xl mx-auto">
-                            A science-backed system for lasting results. Most diets fail because they fight your biology. We work with it.
-                        </p>
                     </motion.div>
+
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-lg text-foreground-muted max-w-sm leading-relaxed font-medium pb-2"
+                    >
+                        A clinical-grade framework for the human machine. Most systems fight your biology; we synchronize it.
+                    </motion.p>
                 </div>
 
-                {/* Simple 3-Column Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-[2.5rem] overflow-hidden">
                     {features.map((feature, i) => (
                         <motion.div
                             key={feature.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.1, duration: 0.5 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className={cn(
-                                "group relative overflow-hidden rounded-3xl p-8 flex flex-col justify-between",
-                                "bg-card/80 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300",
-                                feature.className
-                            )}
+                            className="group relative bg-background p-12 flex flex-col justify-between min-h-[400px] hover:bg-zinc-900/50 transition-colors duration-500"
                         >
-                            {/* Subtle hover gradient */}
-                            <div
-                                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                                style={{
-                                    background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(232, 180, 184, 0.08), transparent 40%)`
-                                }}
-                            />
-
-                            <div className="relative z-10 w-12 h-12 rounded-2xl bg-primary-soft border border-primary/10 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-                                {feature.icon}
+                            <div className="space-y-8">
+                                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-emerald-500/30 transition-colors">
+                                    {feature.icon}
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="text-2xl font-bold text-white tracking-tight">{feature.title}</h3>
+                                    <p className="text-sm text-foreground-muted leading-relaxed font-medium">
+                                        {feature.description}
+                                    </p>
+                                </div>
                             </div>
 
-                            <div className="relative z-10">
-                                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
-                                <p className="text-base md:text-lg text-foreground-muted leading-relaxed">
-                                    {feature.description}
-                                </p>
+                            <div className="pt-8 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                                <span className="text-[9px] font-black uppercase tracking-widest text-emerald-500">Explore Phase</span>
+                                <div className="h-px w-8 bg-emerald-500" />
                             </div>
-
                         </motion.div>
                     ))}
                 </div>
             </div>
+
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
         </section>
     );
 }

@@ -20,8 +20,8 @@ export function Logo({ className, size = 40 }: LogoProps) {
             >
                 <defs>
                     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#DFFF00" />
-                        <stop offset="100%" stopColor="#00FF94" />
+                        <stop offset="0%" stopColor="#10B981" />
+                        <stop offset="100%" stopColor="#FFFFFF" />
                     </linearGradient>
 
                     <linearGradient id="shimmerGradient" x1="0%" y1="0%" x2="100%" y2="0%">

@@ -5,9 +5,9 @@ import { Flame, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface StreakTrackerProps {
-    count: number;
-    days: string[];
-    activeDayIndex: number;
+    count?: number;
+    days?: string[];
+    activeDayIndex?: number;
 }
 
 export function StreakTracker({ count = 5, days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'], activeDayIndex = 4 }: StreakTrackerProps) {

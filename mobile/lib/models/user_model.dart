@@ -7,8 +7,6 @@ class User {
   final int glowScore;
   final String onboardingStage; // "NEW", "COMPLETED"
   final String currentPhase; // "ADAPTING"
-  final String onboardingStage; // "NEW", "COMPLETED"
-  final String currentPhase; // "ADAPTING"
   final List<IdentityStatement> identityStatements;
   
   // New Profile Fields
@@ -22,8 +20,6 @@ class User {
   // Phase 3: Subscription
   final String subscription; // "FREE", "PREMIUM"
   final String? coachName;
-
-  User({
 
   User({
     required this.id,

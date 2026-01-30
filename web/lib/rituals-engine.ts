@@ -56,32 +56,32 @@ export function generatePersonalizedRoutines(user: any): Routine[] {
             title: 'High-Protein Breakfast',
             duration: '15 min',
             category: 'morning',
-            videoColor: 'bg-primary/20',
-            description: `A breakfast tailored to your needs to kickstart your metabolism and keep your muscles strong.`,
+            videoColor: 'bg-emerald-500/10',
+            description: `A precision-engineered protocol designed to synchronize your metabolism and provide a neuro-protein anchor for the day.`,
             steps: [
-                { title: 'Hydrate First', image: '/exercises/sit-tall.png', description: `Drink 500ml of water to wake up your body's systems.` },
-                { title: 'Protein Power', image: '/exercises/sit-tall.png', description: `Eat a meal with ${morningProteinTarget}g of high-quality protein.` },
-                { title: 'Add Some Fiber', image: '/exercises/sit-tall.png', description: `Include 5-8g of fiber from fruits or veggies for steady energy.` }
+                { title: 'Neural Hydration', image: '/exercises/sit-tall.png', description: `Consume 500ml of mineralized water to activate cellular pathways.` },
+                { title: 'Protein Signal', image: '/exercises/sit-tall.png', description: `Administer a meal with ${morningProteinTarget}g of high-bioavailability protein.` },
+                { title: 'Fibrous Substrate', image: '/exercises/sit-tall.png', description: `Integrate 5-8g of slow-fermenting fiber for sustained glycemic stability.` }
             ],
             type: 'check',
             nutrition: { cals: morningCalorieTarget, protein: morningProteinTarget },
-            personalizationNote: `Tailored for your weight and your goal to stay healthy.`
+            personalizationNote: `Calibrated specifically for your ${weight}kg mass and metabolic objectives.`
         },
         {
             id: 'metabolic-priming-mobility',
-            title: 'Morning Wake-Up Stretch',
+            title: 'Bio-Mechanical Priming',
             duration: `${Math.round(5 * progressionFactor)} min`,
             category: 'warmup',
-            videoColor: 'bg-orange-300/20',
-            description: `Simple movements to get your joints moving and your body ready for the day.`,
+            videoColor: 'bg-amber-500/10',
+            description: `Sequenced mobility to optimize joint lubrication and neural recruitment for the diurnal cycle.`,
             steps: [
-                { title: 'Spine Stretch', image: '/exercises/sit-tall.png', description: `Gently move your back up and down to release morning stiffness.` },
-                { title: 'Hip Openers', image: '/exercises/sit-tall.png', description: `Loosen up your hips for easier movement throughout the day.` },
-                { title: 'Shoulder Rolls', image: '/exercises/sit-tall.png', description: `Simple shoulder movements to improve your posture.` }
+                { title: 'Axial Decompression', image: '/exercises/sit-tall.png', description: `Release spinal tension through controlled multi-planar movement.` },
+                { title: 'Pelvic Calibration', image: '/exercises/sit-tall.png', description: `Optimize hip articulation for efficient kinetic chain function.` },
+                { title: 'Humeral Rotation', image: '/exercises/sit-tall.png', description: `Standardize shoulder-girdle mobility for postural integrity.` }
             ],
             type: 'timer',
             timerDuration: Math.round(300 * progressionFactor),
-            personalizationNote: `Difficulty slightly adjusted for your ${streak}-day progress.`
+            personalizationNote: `Intensity escalated by ${Math.round((progressionFactor - 1) * 100)}% based on your ${streak}-day consistency.`
         }
     ];
 

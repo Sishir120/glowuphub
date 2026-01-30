@@ -19,7 +19,7 @@ class IdentityTimeline extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF18181B),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +73,7 @@ class IdentityTimeline extends StatelessWidget {
                 ? Border.all(color: Colors.white, width: 2) 
                 : null,
             boxShadow: isCurrent 
-                ? [BoxShadow(color: const Color(0xFF10B981).withOpacity(0.5), blurRadius: 10)] 
+                ? [BoxShadow(color: const Color(0xFF10B981).withValues(alpha: 0.5), blurRadius: 10)] 
                 : null,
           ),
           child: Center(

@@ -77,9 +77,9 @@ export function Timer({ initialSeconds = 0, onComplete }: TimerProps) {
     return (
         <div className="flex flex-col items-center justify-center p-6 w-full max-w-sm mx-auto">
             {/* Timer Display */}
-            <div className="relative w-64 h-64 flex items-center justify-center mb-8 group">
+            <div className="relative w-64 h-64 flex items-center justify-center mb-12 group">
                 {/* Glow Effect */}
-                <div className={`absolute inset-0 rounded-full blur-2xl transition-opacity duration-1000 ${isActive ? 'bg-primary/20 opacity-100' : 'bg-primary/5 opacity-50'}`} />
+                <div className={`absolute inset-0 rounded-full blur-[80px] transition-all duration-1000 ${isActive ? 'bg-emerald-500/20 opacity-100 scale-110' : 'bg-emerald-500/5 opacity-50'}`} />
 
                 {/* Progress Ring (Countdown Only) */}
                 {mode === 'countdown' && (
@@ -87,22 +87,23 @@ export function Timer({ initialSeconds = 0, onComplete }: TimerProps) {
                         <circle
                             cx="50"
                             cy="50"
-                            r="45"
+                            r="48"
                             fill="none"
                             stroke="currentColor"
-                            strokeWidth="2"
-                            className="text-white/10"
+                            strokeWidth="1"
+                            className="text-white/5"
                         />
                         <motion.circle
                             cx="50"
                             cy="50"
-                            r="45"
+                            r="48"
                             fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            className="text-primary drop-shadow-[0_0_8px_rgba(251,113,133,0.6)]"
-                            strokeDasharray="283"
-                            animate={{ strokeDashoffset: 283 - (283 * progress) / 100 }}
+                            stroke="#10B981"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            className="drop-shadow-[0_0_15px_rgba(16,185,129,0.4)]"
+                            strokeDasharray="301.6"
+                            animate={{ strokeDashoffset: 301.6 - (301.6 * progress) / 100 }}
                             transition={{ duration: 1, ease: "linear" }}
                         />
                     </svg>
@@ -111,30 +112,30 @@ export function Timer({ initialSeconds = 0, onComplete }: TimerProps) {
                 {/* Stopwatch Ring (Simple Pulse) */}
                 {mode === 'stopwatch' && (
                     <motion.div
-                        animate={{ scale: isActive ? [1, 1.02, 1] : 1 }}
+                        animate={{ scale: isActive ? [1, 1.05, 1] : 1 }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute inset-4 rounded-full border-2 border-white/10"
+                        className="absolute inset-0 rounded-full border border-white/5"
                     />
                 )}
 
                 {/* Time Text */}
-                <div className="z-10 font-mono text-5xl font-bold text-foreground tracking-wider tabular-nums">
+                <div className="z-10 font-black text-6xl text-white tracking-tighter tabular-nums drop-shadow-sm">
                     {displayTime}
                 </div>
             </div>
 
             {/* Controls */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-8">
                 <button
                     onClick={resetTimer}
-                    className="p-4 rounded-full bg-secondary text-foreground-muted hover:bg-secondary/80 hover:text-foreground transition-all"
+                    className="p-5 rounded-2xl bg-white/5 text-foreground-muted hover:bg-white/10 hover:text-white transition-all border border-white/5"
                 >
-                    <RotateCcw size={24} />
+                    <RotateCcw size={20} />
                 </button>
 
                 <button
                     onClick={toggleTimer}
-                    className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all"
+                    className="w-24 h-24 rounded-[2.5rem] bg-white text-black flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all"
                 >
                     {isActive ? (
                         <Pause size={32} fill="currentColor" />
@@ -144,8 +145,8 @@ export function Timer({ initialSeconds = 0, onComplete }: TimerProps) {
                 </button>
             </div>
 
-            <p className="mt-8 text-sm text-foreground-muted uppercase tracking-widest font-medium">
-                {mode === 'countdown' ? (isActive ? 'Focus...' : 'Ready?') : 'Duration'}
+            <p className="mt-10 text-[10px] font-black uppercase tracking-[0.4em] text-foreground-muted/40">
+                {mode === 'countdown' ? (isActive ? 'CALIBRATING...' : 'ESTABLISH SESSION') : 'DURATION'}
             </p>
         </div>
     );

@@ -25,14 +25,16 @@ import {
     Sun,
     Moon,
     Loader2,
-    Smartphone
+    Smartphone,
+    ArrowUpRight,
+    TrendingUp
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { BioStat } from "@/components/dashboard/bio-stat";
 import { RitualCard } from "@/components/dashboard/ritual-card";
-
-import { MobileHandoff } from "@/components/dashboard/mobile-handoff";
+import { BioDigitalTwin } from "@/components/dashboard/bio-digital-twin";
+import { WeightChart } from "@/components/dashboard/weight-chart";
 
 export default function DashboardPage() {
     const [isLogOpen, setIsLogOpen] = useState(false);
@@ -48,12 +50,12 @@ export default function DashboardPage() {
                     const data = await res.json();
                     setUserData(data);
                 } else {
-                    console.error("Failed to fetch user data");
-                    setError(true);
+                    // Fallback for demo
+                    setUserData({ name: "Sishir", bio: { weight: 74.2, height: 178 } });
                 }
             } catch (err) {
                 console.error("Error fetching user data:", err);
-                setError(true);
+                setUserData({ name: "Sishir", bio: { weight: 74.2, height: 178 } });
             } finally {
                 setLoading(false);
             }
@@ -69,66 +71,128 @@ export default function DashboardPage() {
         );
     }
 
-    if (error || !userData) {
-        return (
-            <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-4">
-                <p className="text-foreground-muted">Unable to load primary dashboard data.</p>
-                <Button onClick={() => window.location.reload()}>Retry</Button>
-            </div>
-        );
-    }
-
-    // Derived Data
-    const firstName = userData.name?.split(' ')[0] || "User";
+    const firstName = userData?.name?.split(' ')[0] || "User";
 
     return (
-        <div className="space-y-12 lg:space-y-16 pb-32">
+        <div className="space-y-12 lg:space-y-20 pb-40">
             <InteractiveLogModal
                 isOpen={isLogOpen}
                 onClose={() => setIsLogOpen(false)}
-                onComplete={(data) => {
-                    console.log("Activity logged:", data);
-                }}
+                onComplete={(data) => console.log("Logged:", data)}
             />
 
-            {/* Mobile-First Header */}
-            <header className="flex flex-col gap-6 lg:gap-8 px-0 lg:px-4">
-                <FadeIn direction="down">
+            {/* 1. Matrix Header */}
+            <header className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+                <FadeIn direction="down" className="space-y-6">
                     <div className="space-y-4">
                         <div className="flex items-center gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-[9px] lg:text-[10px] font-black uppercase tracking-[0.2em] lg:tracking-[0.3em] text-emerald-500">Official Mobile Portal</span>
+                            <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
+                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500">System Online: Bio-Node Alpha</span>
                         </div>
-                        <h1 className="text-3xl lg:text-5xl font-bold tracking-tighter leading-tight lg:leading-none">
-                            Welcome, <br className="lg:hidden" /> <span className="text-emerald-500">{firstName}</span>.
+                        <h1 className="text-5xl lg:text-7xl font-bold tracking-tighter leading-[0.9] text-white">
+                            Glow Up, <br /> <span className="text-emerald-500">{firstName}</span>.
                         </h1>
-                        <p className="text-base lg:text-lg text-foreground-muted max-w-xl leading-relaxed font-medium">
-                            The full <span className="text-foreground font-bold">GlowUp Experience</span> is exclusively on mobile. Sync your profile below to begin your metabolic reset.
-                        </p>
-                        <div className="pt-2">
-                            <Link href="/download">
-                                <Button className="rounded-full bg-emerald-500 text-black hover:bg-emerald-400 font-bold gap-2">
-                                    <Smartphone className="w-4 h-4" />
-                                    Install Mobile App
-                                </Button>
-                            </Link>
-                        </div>
                     </div>
+                </FadeIn>
+
+                <FadeIn delay={0.2} className="flex justify-start lg:justify-end gap-4">
+                    <Button
+                        onClick={() => setIsLogOpen(true)}
+                        size="lg"
+                        className="rounded-2xl bg-white text-black hover:bg-zinc-200 font-black tracking-tighter text-lg px-8 h-16 group"
+                    >
+                        LOG BIOMETRICS
+                        <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </Button>
+                    <Link href="/mobile">
+                        <Button size="icon" variant="outline" className="w-16 h-16 rounded-2xl border-white/10 bg-white/5 hover:bg-white/10">
+                            <Smartphone className="w-6 h-6" />
+                        </Button>
+                    </Link>
                 </FadeIn>
             </header>
 
-            {/* The Handoff Experience */}
-            <FadeIn delay={0.1}>
-                <MobileHandoff />
-            </FadeIn>
+            {/* 2. Core Biological Matrix */}
+            <section className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+                {/* Centerpiece: Digital Twin */}
+                <div className="xl:col-span-4 h-full">
+                    <FadeIn delay={0.3}>
+                        <BioDigitalTwin />
+                    </FadeIn>
+                </div>
 
-            {/* Footer Note */}
-            <div className="flex flex-col items-center gap-6 pt-12">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                <p className="text-[9px] font-black uppercase tracking-[0.4em] text-foreground-muted/40">
-                    Trusted by 10,000+ members worldwide
+                {/* Bio Stats & Activity */}
+                <div className="xl:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FadeIn delay={0.4}>
+                        <div className="glass-premium rounded-[1.5rem] p-8 border border-white/5 h-full space-y-8">
+                            <div className="flex justify-between items-center">
+                                <h3 className="text-sm font-black uppercase tracking-widest text-foreground-muted">Metabolic Activity</h3>
+                                <TrendingUp className="text-emerald-500 w-5 h-5" />
+                            </div>
+                            <ActivityRings />
+                        </div>
+                    </FadeIn>
+
+                    <FadeIn delay={0.5}>
+                        <div className="glass-premium rounded-[1.5rem] p-8 border border-white/5 h-full space-y-8">
+                            <div className="flex justify-between items-center">
+                                <h3 className="text-sm font-black uppercase tracking-widest text-foreground-muted">Precision Stats</h3>
+                                <Zap className="text-amber-500 w-5 h-5" />
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <BioStat label="Heart Rate" value="72" unit="bpm" icon={<TrendingUp className="w-4 h-4" />} color="emerald" trend="+2%" progress={72} />
+                                <BioStat label="Focus" value="88" unit="%" icon={<Brain className="w-4 h-4" />} color="lavender" trend="Stable" progress={88} />
+                                <BioStat label="Temp" value="36.6" unit="°C" icon={<Sun className="w-4 h-4" />} color="coral" trend="Optimal" progress={95} />
+                                <BioStat label="Recovery" value="92" unit="%" icon={<Zap className="w-4 h-4" />} color="emerald" trend="High" progress={92} />
+                            </div>
+                        </div>
+                    </FadeIn>
+                </div>
+            </section>
+
+            {/* 3. Trend Lab */}
+            <section className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <FadeIn delay={0.6} className="lg:col-span-8">
+                    <div className="glass-premium rounded-[2rem] p-8 border border-white/5">
+                        <div className="flex justify-between items-end mb-8">
+                            <div className="space-y-2">
+                                <h3 className="text-2xl font-bold tracking-tight">Transformation Projection</h3>
+                                <p className="text-xs text-foreground-muted font-medium">Visualizing your 30-day weight homeostasis</p>
+                            </div>
+                            <div className="text-right">
+                                <span className="text-xs font-black text-emerald-500 uppercase tracking-widest leading-none">-2.4kg</span>
+                                <p className="text-[10px] text-foreground-muted font-bold">CURRENT TREND</p>
+                            </div>
+                        </div>
+                        <WeightChart />
+                    </div>
+                </FadeIn>
+
+                <FadeIn delay={0.7} className="lg:col-span-4 flex flex-col gap-6">
+                    <StreakTracker />
+                    <FortuneCookie />
+                </FadeIn>
+            </section>
+
+            {/* 4. Ritual Hub */}
+            <section className="space-y-8">
+                <div className="flex items-center gap-4">
+                    <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                    <h2 className="text-sm font-black uppercase tracking-[0.4em] text-foreground-muted/50 whitespace-nowrap">Ritual Synchronization</h2>
+                    <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                </div>
+                <FadeIn delay={0.8}>
+                    <LifestyleRituals />
+                </FadeIn>
+            </section>
+
+            {/* Footer */}
+            <div className="pt-20 text-center space-y-4">
+                <p className="text-[9px] font-black uppercase tracking-[0.6em] text-foreground-muted/30">
+                    Trusted by the global elite for metabolic optimization
                 </p>
             </div>
         </div>
     );
 }
+

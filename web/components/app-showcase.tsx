@@ -22,18 +22,18 @@ export function AppShowcase() {
                         transition={{ duration: 0.6 }}
                         className="flex flex-col gap-8 relative z-10"
                     >
-                        <div className="inline-flex items-center gap-2 text-primary text-sm font-medium">
-                            <Sparkles className="w-4 h-4" />
-                            Available on iOS & Android
+                        <div className="inline-flex items-center gap-2 text-emerald-500 text-[10px] font-black uppercase tracking-[0.3em]">
+                            <Sparkles className="w-3 h-3" />
+                            Professional Bio-Link Sync
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                        <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-[0.9]">
                             Your Daily <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-sage">
-                                Practice Companion
+                            <span className="text-emerald-500">
+                                Bio-Companion
                             </span>
                         </h2>
-                        <p className="text-xl text-foreground-muted max-w-lg">
-                            Gentle reminders, guided practices, and your Glow Rings — all in your pocket. Take your practice with you, anywhere. <span className="block mt-2 text-sm italic">Syncs perfectly.</span>
+                        <p className="text-lg text-foreground-muted max-w-lg leading-relaxed font-medium">
+                            Protocols, bio-metrics, and metabolic status — all in your pocket. Take your biological sanctuary with you, anywhere. <span className="text-white font-bold">Syncs with the Digital Twin.</span>
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">

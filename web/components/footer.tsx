@@ -17,19 +17,16 @@ export function Footer() {
                     <div className="lg:col-span-1 space-y-6">
                         <Link href="/" className="flex items-center gap-3 group">
                             <Logo size={40} className="group-hover:scale-105 transition-transform" />
-                            <span className="text-xl font-bold tracking-tight text-foreground">
-                                GlowUp<span className="text-primary">Hub</span>
+                            <span className="text-xl font-black uppercase tracking-tighter text-white">
+                                GLOWUP<span className="text-emerald-500">HUB</span>
                             </span>
                         </Link>
-                        <p className="text-foreground-muted text-sm leading-relaxed">
-                            Gentle daily practices that build lasting confidence. Your journey to self-trust and natural radiance starts here.
+                        <p className="text-foreground-muted text-sm leading-relaxed font-medium">
+                            Clinical-grade biological frameworks designed for homeostatic mastery. Your path to metabolic flexibility and self-trust.
                         </p>
-                        <div className="flex gap-3">
-                            <a href="https://instagram.com/glowuphub" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                        <div className="flex gap-4">
+                            <a href="https://instagram.com/glowuphub" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40 hover:text-emerald-500 hover:bg-emerald-500/10 transition-all border border-white/5">
                                 <Instagram className="w-4 h-4" />
-                            </a>
-                            <a href="https://tiktok.com/@sabu7916" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
-                                <Heart className="w-4 h-4" />
                             </a>
                         </div>
                     </div>
@@ -57,15 +54,15 @@ export function Footer() {
 
                     {/* Newsletter */}
                     <div>
-                        <h4 className="text-foreground font-semibold mb-6">Stay Inspired</h4>
-                        <p className="text-foreground-muted text-sm mb-4">1 science-backed weight loss tip, once a week. No spam, ever.</p>
-                        <div className="flex gap-2">
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white mb-8 opacity-40">Protocol Journal</h4>
+                        <p className="text-foreground-muted text-sm mb-6 leading-relaxed font-medium">One clinical-grade metabolic insight, weekly. No noise.</p>
+                        <div className="flex flex-col gap-3">
                             <Input
-                                placeholder="Your email"
-                                className="bg-card border-border text-foreground rounded-full focus-visible:ring-primary"
+                                placeholder="Enter system email"
+                                className="bg-white/5 border-white/10 text-white rounded-xl focus-visible:ring-emerald-500 h-12"
                             />
-                            <Button className="rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90">
-                                Join
+                            <Button className="rounded-xl bg-emerald-500 text-white font-black uppercase tracking-widest text-[10px] h-12 hover:bg-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.1)]">
+                                Subscribe
                             </Button>
                         </div>
                     </div>
