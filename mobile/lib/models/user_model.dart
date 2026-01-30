@@ -7,7 +7,23 @@ class User {
   final int glowScore;
   final String onboardingStage; // "NEW", "COMPLETED"
   final String currentPhase; // "ADAPTING"
+  final String onboardingStage; // "NEW", "COMPLETED"
+  final String currentPhase; // "ADAPTING"
   final List<IdentityStatement> identityStatements;
+  
+  // New Profile Fields
+  final String? gender;
+  final int? age;
+  final double? height;
+  final double? currentWeight;
+  final String? goal;
+  final String? activityLevel;
+  
+  // Phase 3: Subscription
+  final String subscription; // "FREE", "PREMIUM"
+  final String? coachName;
+
+  User({
 
   User({
     required this.id,
@@ -17,6 +33,14 @@ class User {
     this.onboardingStage = 'NEW',
     this.currentPhase = 'ADAPTING',
     this.identityStatements = const [],
+    this.gender,
+    this.age,
+    this.height,
+    this.currentWeight,
+    this.goal,
+    this.activityLevel,
+    this.subscription = 'FREE',
+    this.coachName,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
@@ -31,6 +55,14 @@ class User {
               ?.map((e) => IdentityStatement.fromJson(e))
               .toList() ??
           [],
+      gender: json['gender'],
+      age: json['age'],
+      height: (json['height'] as num?)?.toDouble(),
+      currentWeight: (json['currentWeight'] as num?)?.toDouble(),
+      goal: json['goal'],
+      activityLevel: json['activityLevel'],
+      subscription: json['subscription'] ?? 'FREE',
+      coachName: json['coachName'],
     );
   }
 
@@ -43,6 +75,14 @@ class User {
       'onboardingStage': onboardingStage,
       'currentPhase': currentPhase,
       'identityStatements': identityStatements.map((e) => e.toJson()).toList(),
+      'gender': gender,
+      'age': age,
+      'height': height,
+      'currentWeight': currentWeight,
+      'goal': goal,
+      'activityLevel': activityLevel,
+      'subscription': subscription,
+      'coachName': coachName,
     };
   }
 }

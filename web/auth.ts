@@ -53,9 +53,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         }),
     ],
     events: {
-        async signIn(message) { console.log("Event: signIn", message) },
-        async createUser(message) { console.log("Event: createUser", message) },
-        async linkAccount(message) { console.log("Event: linkAccount", message) },
-        async session(message) { console.log("Event: session", message) },
+        async signIn(message) { /* console.log("Event: signIn", message) */ },
+        async createUser(message) { /* console.log("Event: createUser", message) */ },
+        async linkAccount(message) { /* console.log("Event: linkAccount", message) */ },
+        async session(message) { /* console.log("Event: session", message) */ },
     },
 })

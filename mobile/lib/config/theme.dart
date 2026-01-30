@@ -20,7 +20,7 @@ class AppTheme {
         primary: primary,
         secondary: secondary,
         surface: secondary,
-        error: const Color(0xFFCF6679),
+        error: Color(0xFFCF6679),
         onError: Colors.black,
         onPrimary: Colors.black,
         onSecondary: foreground,

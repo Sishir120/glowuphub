@@ -99,7 +99,7 @@ class _PsychProfileScreenState extends State<PsychProfileScreen> {
                       ? null
                       : () {
                           context.read<AuthProvider>().setProvisionalBarriers(_barriers);
-                          context.go('/register'); 
+                          context.push('/user-setup'); 
                         },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF10B981),

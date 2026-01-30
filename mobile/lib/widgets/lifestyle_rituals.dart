@@ -194,12 +194,12 @@ class _LifestyleRitualsState extends State<LifestyleRituals> {
               ),
             ],
           ),
-          Positioned(
+          const Positioned(
             right: 0,
             top: 0,
             child: Opacity(
               opacity: 0.05,
-              child: Icon(LucideIcons.moon, size: 48, color: const Color(0xFF818CF8)),
+              child: Icon(LucideIcons.moon, size: 48, color: Color(0xFF818CF8)),
             ),
           ),
         ],

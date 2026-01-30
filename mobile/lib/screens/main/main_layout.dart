@@ -67,7 +67,7 @@ class _MainLayoutState extends State<MainLayout> {
           showUnselectedLabels: true,
           selectedLabelStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           unselectedLabelStyle: const TextStyle(fontSize: 10),
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(LucideIcons.house),
               label: 'HOME',

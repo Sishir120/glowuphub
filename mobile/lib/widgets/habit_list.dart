@@ -50,80 +50,65 @@ class HabitList extends StatelessWidget {
   Widget _buildHabitCard(Habit habit) {
     return GestureDetector(
       onTap: () => onToggle(habit.id),
-      child: Container(
-        padding: const EdgeInsets.all(12),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         decoration: BoxDecoration(
           color: habit.isCompletedToday
-              ? const Color(0xFF10B981).withOpacity(0.05)
+              ? const Color(0xFF10B981).withOpacity(0.08)
               : const Color(0xFF18181B),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: habit.isCompletedToday
-                ? const Color(0xFF10B981).withOpacity(0.2)
-                : Colors.white.withOpacity(0.05),
+             color: habit.isCompletedToday
+                ? const Color(0xFF10B981).withOpacity(0.3)
+                : Colors.white.withOpacity(0.03),
           ),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                Container(
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    color: habit.isCompletedToday
-                        ? const Color(0xFF10B981)
-                        : Colors.white.withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Icon(
-                    habit.isCompletedToday ? LucideIcons.check : LucideIcons.circle,
-                    size: 14,
-                    color: habit.isCompletedToday ? Colors.black : Colors.white60,
-                  ),
+            // Custom Checkbox
+            Container(
+              width: 28,
+              height: 28,
+              decoration: BoxDecoration(
+                color: habit.isCompletedToday ? const Color(0xFF10B981) : Colors.transparent,
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: habit.isCompletedToday ? const Color(0xFF10B981) : Colors.white24,
+                  width: 2,
                 ),
-                const SizedBox(width: 12),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      habit.action,
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
-                        color: habit.isCompletedToday ? const Color(0xFF10B981).withOpacity(0.7) : Colors.white,
-                        decoration: habit.isCompletedToday ? TextDecoration.lineThrough : null,
-                      ),
-                    ),
-                    Text(
-                      habit.trigger.toUpperCase(),
-                      style: const TextStyle(
-                        fontSize: 9,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 1.0,
-                        color: Colors.white12,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+              ),
+              child: habit.isCompletedToday
+                  ? const Icon(LucideIcons.check, size: 16, color: Colors.black)
+                  : null,
             ),
-            if (habit.streak > 0)
-              Row(
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Icon(LucideIcons.flame, size: 12, color: Colors.orange),
-                  const SizedBox(width: 4),
                   Text(
-                    '${habit.streak}',
+                    habit.action,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: habit.isCompletedToday ? Colors.white54 : Colors.white,
+                      decoration: habit.isCompletedToday ? TextDecoration.lineThrough : null,
+                      decorationColor: Colors.white24,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    habit.trigger,
                     style: const TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orange,
+                      fontSize: 11,
+                      color: Colors.white24,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],
               ),
+            ),
           ],
         ),
       ),

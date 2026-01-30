@@ -34,14 +34,14 @@ export const authConfig = {
             return true;
         },
         async signIn({ user, account, profile }) {
-            console.log("SignIn Callback:", { provider: account?.provider, email: user?.email });
+            // console.log("SignIn Callback:", { provider: account?.provider, email: user?.email });
             if (account?.provider === "google") {
                 return true;
             }
             return true;
         },
         async session({ session, token }) {
-            console.log("Session Callback:", { sub: token?.sub, role: token?.role });
+            // console.log("Session Callback:", { sub: token?.sub, role: token?.role });
             if (session.user && token?.sub) {
                 session.user.id = token.sub;
                 (session.user as User & { role?: string }).role = token.role as string;
@@ -50,7 +50,7 @@ export const authConfig = {
         },
         async jwt({ token, user, account }) {
             if (user) {
-                console.log("JWT Callback (Initial):", { id: user.id, role: user.role });
+                // console.log("JWT Callback (Initial):", { id: user.id, role: user.role });
                 token.sub = user.id;
                 token.role = user.role;
             }

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
-import '../widgets/activity_rings.dart';
 import '../widgets/streak_tracker.dart';
 import '../widgets/daily_briefing_card.dart';
 import '../widgets/habit_list.dart';
 import '../services/feed_service.dart';
 import '../models/feed_model.dart';
+import '../widgets/premium_card.dart';
+import '../widgets/weight_trend_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -35,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final user = context.watch<AuthProvider>().user;
     final firstName = user?.name.split(' ').first ?? 'Member';
+    final isPremium = user?.subscription == 'PREMIUM';
 
     return Scaffold(
       backgroundColor: const Color(0xFF09090B),
@@ -45,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Mobile-First Header
-              _buildHeader(firstName),
+              _buildHeader(firstName, isPremium, user?.coachName),
 
               const SizedBox(height: 32),
 
@@ -74,6 +76,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         ritual: feed.ritual,
                         phase: feed.phase,
                       ),
+
+                      if (!isPremium) ...[
+                        const SizedBox(height: 32),
+                        const PremiumCard(),
+                      ],
 
                       const SizedBox(height: 32),
 
@@ -105,13 +112,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       const SizedBox(height: 48),
 
-                      // 4. Activity Rings (Visual Summary)
-                      const Center(
-                        child: ActivityRings(
-                          move: 0.7, // Should come from API
-                          glow: 0.8,
-                          mind: 0.6,
-                          size: 200,
+                      // 4. Weight Trend (Visual Summary)
+                      Center(
+                        child: WeightTrendCard(
+                          currentWeight: user?.currentWeight ?? 74.2,
+                          startWeight: 75.5,
                         ),
                       ),
                       
@@ -165,30 +170,51 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildHeader(String firstName) {
+  Widget _buildHeader(String firstName, bool isPremium, String? coachName) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              width: 6,
-              height: 6,
-              decoration: const BoxDecoration(
-                color: Color(0xFF10B981),
-                shape: BoxShape.circle,
-              ),
+            Row(
+              children: [
+                Container(
+                  width: 6,
+                  height: 6,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF10B981),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  isPremium ? 'PREMIUM MEMBER' : 'FREE ACCOUNT',
+                  style: TextStyle(
+                    fontSize: 9,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 2.0,
+                    color: isPremium ? const Color(0xFF10B981) : Colors.white24,
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(width: 8),
-            const Text(
-              'OFFICIAL MOBILE PORTAL',
-              style: TextStyle(
-                fontSize: 9,
-                fontWeight: FontWeight.w900,
-                letterSpacing: 2.0,
-                color: Color(0xFF10B981),
+            if (isPremium && coachName != null)
+              Container(
+                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                 decoration: BoxDecoration(
+                   color: const Color(0xFF18181B),
+                   borderRadius: BorderRadius.circular(12),
+                   border: Border.all(color: Colors.white10),
+                 ),
+                 child: Row(
+                   children: [
+                     const Icon(LucideIcons.user_check_2, size: 12, color: Colors.white54),
+                     const SizedBox(width: 6),
+                     Text('Coach $coachName', style: const TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+                   ],
+                 ),
               ),
-            ),
           ],
         ),
         const SizedBox(height: 12),
@@ -218,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
      return Center(
        child: Column(
          children: [
-           Icon(Icons.error_outline, color: Colors.red),
+           const Icon(Icons.error_outline, color: Colors.red),
            const SizedBox(height: 8),
            const Text("Could not load daily briefing.", style: TextStyle(color: Colors.white)),
            TextButton(onPressed: _loadFeed, child: const Text("Retry"))

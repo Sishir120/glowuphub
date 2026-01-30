@@ -166,7 +166,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextSpan(
                           text: "DON'T HAVE AN ACCOUNT? ",
                           style: TextStyle(color: Colors.white.withOpacity(0.3), fontSize: 10, fontWeight: FontWeight.w900, letterSpacing: 1.0),
-                          children: [
+                          children: const [
                             TextSpan(text: 'JOIN NOW', style: TextStyle(color: Color(0xFF10B981))),
                           ],
                         ),

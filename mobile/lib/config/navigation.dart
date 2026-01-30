@@ -6,6 +6,7 @@ import '../screens/auth/register_screen.dart';
 import '../screens/auth/onboarding_screen.dart';
 import '../screens/onboarding/identity_selection_screen.dart';
 import '../screens/onboarding/psych_profile_screen.dart';
+import '../screens/auth/user_setup_screen.dart';
 import '../screens/main/main_layout.dart';
 
 class AppNavigation {
@@ -47,6 +48,10 @@ class AppNavigation {
         GoRoute(
           path: '/psych-profile',
           builder: (context, state) => const PsychProfileScreen(),
+        ),
+        GoRoute(
+          path: '/user-setup',
+          builder: (context, state) => const UserSetupScreen(),
         ),
         GoRoute(
           path: '/login',

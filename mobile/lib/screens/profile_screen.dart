@@ -171,7 +171,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           Text(
             label,
-            style: TextStyle(fontSize: 9, fontWeight: FontWeight.w900, color: Colors.white24, letterSpacing: 1.0),
+            style: const TextStyle(fontSize: 9, fontWeight: FontWeight.w900, color: Colors.white24, letterSpacing: 1.0),
           ),
         ],
       ),

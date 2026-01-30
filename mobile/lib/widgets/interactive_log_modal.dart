@@ -119,7 +119,7 @@ class _InteractiveLogModalState extends State<InteractiveLogModal> {
               contentPadding: EdgeInsets.zero,
               value: _trainingComplete,
               onChanged: (val) => setState(() => _trainingComplete = val),
-              activeColor: const Color(0xFF10B981),
+              activeThumbColor: const Color(0xFF10B981),
               title: const Text('Protocol Finished', style: TextStyle(color: Colors.white, fontSize: 14)),
             ),
           ),

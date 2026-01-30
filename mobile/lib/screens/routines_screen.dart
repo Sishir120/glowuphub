@@ -30,21 +30,21 @@ class RoutinesScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               
-              _RoutineCard(
+              const _RoutineCard(
                 title: 'Neon Strength',
                 duration: '45 mins',
                 level: 'Intermediate',
                 icon: LucideIcons.dumbbell,
-                color: const Color(0xFF10B981),
+                color: Color(0xFF10B981),
               ),
-              _RoutineCard(
+              const _RoutineCard(
                 title: 'Zen Recovery',
                 duration: '20 mins',
                 level: 'All Levels',
                 icon: LucideIcons.wind,
                 color: Colors.blue,
               ),
-              _RoutineCard(
+              const _RoutineCard(
                 title: 'HiiT Burn',
                 duration: '30 mins',
                 level: 'Advanced',
@@ -69,7 +69,7 @@ class _RoutineCard extends StatelessWidget {
   final Color color;
 
   // REMOVED CONST from constructor because IconData from flutter_lucide is not const
-  _RoutineCard({
+  const _RoutineCard({
     required this.title,
     required this.duration,
     required this.level,

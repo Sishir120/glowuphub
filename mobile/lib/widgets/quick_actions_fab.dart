@@ -33,7 +33,7 @@ class _QuickActionsFABState extends State<QuickActionsFAB> {
               padding: const EdgeInsets.only(bottom: 12),
               child: _buildActionItem(action, index),
             );
-          }).reversed.toList(),
+          }).reversed,
         
         const SizedBox(height: 8),
         

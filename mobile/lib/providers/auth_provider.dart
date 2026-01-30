@@ -43,7 +43,18 @@ class AuthProvider extends ChangeNotifier {
   }
 
   Future<void> demoSignIn() async {
-    _user = User(id: 'guest', name: 'Guest', email: 'guest@glowup.com', glowScore: 85);
+    _user = User(
+      id: 'guest', 
+      name: 'Guest', 
+      email: 'guest@glowup.com', 
+      glowScore: 85,
+      gender: _tempProfileData['gender'],
+      age: _tempProfileData['age'],
+      height: _tempProfileData['height'],
+      currentWeight: _tempProfileData['currentWeight'],
+      goal: _tempProfileData['goal'],
+      activityLevel: _tempProfileData['activityLevel'],
+    );
     notifyListeners();
   }
 
@@ -88,9 +99,8 @@ class AuthProvider extends ChangeNotifier {
   }
 
   // ignore: unused_field
-  String? _tempIdentity;
-  // ignore: unused_field
   Map<String, bool>? _tempBarriers;
+  Map<String, dynamic> _tempProfileData = {};
 
   void setProvisionalIdentity(String identity) {
     _tempIdentity = identity;
@@ -99,6 +109,11 @@ class AuthProvider extends ChangeNotifier {
 
   void setProvisionalBarriers(Map<String, bool> barriers) {
     _tempBarriers = barriers;
+    notifyListeners();
+  }
+
+  void setProvisionalProfile(Map<String, dynamic> data) {
+    _tempProfileData = data;
     notifyListeners();
   }
 }
