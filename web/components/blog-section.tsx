@@ -12,17 +12,17 @@ function Card({ children, className }: { children: React.ReactNode; className?: 
 const posts = [
     {
         slug: "nervous-system-calm",
-        category: "Wellness",
-        title: "The Science of Nervous System Calm",
-        excerpt: "Why breath regulation before your metabolic rituals makes everything more effective.",
+        category: "Systems",
+        title: "The Science of Neural Calibration",
+        excerpt: "Why breath synchronization before your biological protocols makes everything more effective.",
         readTime: "5 min read",
         image: "/assets/blog/cortisol.png",
     },
     {
         slug: "building-consistency",
-        category: "Practices",
-        title: "Building Consistency with Compassion",
-        excerpt: "How small daily practices compound into lasting confidence — without obsession.",
+        category: "Protocols",
+        title: "Architecting Protocol Continuity",
+        excerpt: "How precise daily protocols compound into structural biological transformation.",
         readTime: "3 min read",
         image: "/assets/blog/habits.png",
     },
@@ -53,11 +53,11 @@ export function BlogSection() {
                         transition={{ duration: 0.6 }}
                         className="max-w-xl"
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-sage">Journal</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter">
+                            The <span className="text-emerald-500 italic">Journal</span>
                         </h2>
-                        <p className="text-foreground-muted text-lg">
-                            The same science we use inside the app. Gentle wisdom and science-backed insights for your glow journey.
+                        <p className="text-white/40 text-lg font-medium">
+                            The same high-fidelity science we use inside the app. Clinical insights for your metabolic evolution.
                         </p>
                     </motion.div>
                     <Link href="/blog" className="text-foreground hover:text-primary transition-colors flex items-center gap-2 font-medium">

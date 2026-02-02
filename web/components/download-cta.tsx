@@ -32,19 +32,19 @@ export function DownloadCTA() {
                             </h2>
 
                             <p className="text-lg text-foreground-muted leading-relaxed max-w-md mx-auto lg:mx-0">
-                                Get the full GlowUp experience with our native mobile app. Precision tracking, instant reminders, and offline access to your routines.
+                                Get the full high-fidelity experience with our native mobile node. Precision bio-tracking, instant protocol synchronization, and offline access to your biological architecture.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                                <Link href="/download">
-                                    <Button size="lg" className="h-14 px-8 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-primary/20 w-full sm:w-auto">
+                                <Link href="/access">
+                                    <Button size="lg" className="h-14 px-8 rounded-full bg-emerald-500 text-black font-black text-lg hover:scale-105 transition-transform shadow-xl shadow-emerald-500/20 w-full sm:w-auto uppercase tracking-tight">
                                         <Download className="w-5 h-5 mr-2" />
-                                        Get the App
+                                        Access Mobile Node
                                     </Button>
                                 </Link>
                                 <Link href="/register">
-                                    <Button size="lg" variant="ghost" className="h-14 px-8 rounded-full group font-semibold w-full sm:w-auto">
-                                        Create Free Account
+                                    <Button size="lg" variant="ghost" className="h-14 px-8 rounded-full group font-black uppercase tracking-widest text-[10px] w-full sm:w-auto">
+                                        Establish Baseline Sync
                                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                                     </Button>
                                 </Link>
@@ -102,8 +102,8 @@ export function DownloadCTA() {
                                                     />
                                                 </svg>
                                                 <div className="text-center">
-                                                    <Sparkles className="text-primary w-10 h-10 mx-auto animate-bounce mb-2" />
-                                                    <div className="text-[10px] font-bold text-primary tracking-widest uppercase">Glow Mode</div>
+                                                    <Sparkles className="text-emerald-500 w-10 h-10 mx-auto animate-bounce mb-2" />
+                                                    <div className="text-[10px] font-black text-emerald-500 tracking-[0.3em] uppercase">Sync Active</div>
                                                 </div>
                                             </div>
                                         </div>

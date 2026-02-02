@@ -11,10 +11,10 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { name: "METRICS", href: "/dashboard" },
+        { name: "PROTOCOL", href: "/access" },
         { name: "RESOURCES", href: "/#blog" },
         { name: "PRICING", href: "/#pricing" },
-        { name: "MOBILE", href: "/download" },
+        { name: "METRICS", href: "/access" },
     ];
 
     return (

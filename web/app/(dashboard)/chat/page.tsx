@@ -46,9 +46,9 @@ interface UserStats {
 const NUTRITIONIST = {
     id: "nutritionist_sabita",
     name: "Sabita Subedi",
-    role: "Clinical Nutritionist",
+    role: "Lead Protocol Engineer",
     avatar: "SS",
-    specialty: "Hormonal Health & Metabolic Healing",
+    specialty: "Metabolic Architecture & Bio-Optimization",
     responseTime: "24-48h",
     rating: 4.9,
     status: "online"
@@ -274,9 +274,9 @@ export default function ChatPage() {
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
-                        <div className="px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-                            <span className="text-xs font-bold text-primary uppercase tracking-wider">
-                                {userTier === "coach" ? "Coach Tier" : "Premium"}
+                        <div className="px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                            <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest">
+                                {userTier === "coach" ? "ENGINEER TIER" : "ELITE PROTOCOL"}
                             </span>
                         </div>
                     </div>
@@ -425,11 +425,11 @@ function PaywallScreen() {
                     </div>
 
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Expert Chat is <span className="text-primary">Premium Only</span>
+                        <h2 className="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-tighter">
+                            Technical Chat is <span className="text-emerald-500">Elite Only</span>
                         </h2>
-                        <p className="text-lg text-foreground-muted">
-                            Get personalized guidance from Sabita Subedi, clinical nutritionist with  4+ years helping women achieve sustainable results.
+                        <p className="text-lg text-white/40 font-medium">
+                            Get direct architectural oversight from Sabita Subedi, Lead Protocol Engineer with 4+ years in metabolic optimization.
                         </p>
                     </div>
 
@@ -465,8 +465,8 @@ function PaywallScreen() {
                         </Link>
                     </div>
 
-                    <p className="text-sm text-foreground-muted">
-                        💬 Available with <span className="text-primary font-semibold">Coach Tier</span> ($49/month)
+                    <p className="text-[10px] font-black text-white/20 uppercase tracking-widest">
+                        💬 Available for <span className="text-emerald-500">Lead Engineer Tier</span> ($49/month)
                     </p>
                 </div>
             </div>

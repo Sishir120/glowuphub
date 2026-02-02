@@ -1,14 +1,15 @@
 import { NextResponse } from 'next/server';
 import { auth } from "@/auth";
 import prisma from "@/lib/prisma";
+import { getMobileSession } from '@/lib/mobile-auth';
 
 export async function POST(req: Request) {
-    const session = await auth();
+    const session = await auth() || await getMobileSession(req);
     if (!session?.user?.id) return new NextResponse("Unauthorized", { status: 401 });
 
     try {
         const data = await req.json();
-        const { weight, water, sleep, steps } = data;
+        const { weight, water, sleep, steps, completedHabits } = data;
 
         const startOfDay = new Date();
         startOfDay.setHours(0, 0, 0, 0);
@@ -29,6 +30,7 @@ export async function POST(req: Request) {
                 water: water !== undefined ? { increment: water } : undefined,
                 sleep: sleep !== undefined ? sleep : undefined,
                 steps: steps !== undefined ? steps : undefined,
+                completedHabits: completedHabits !== undefined ? JSON.stringify(completedHabits) : undefined,
             },
             create: {
                 userId: session.user.id,
@@ -36,6 +38,7 @@ export async function POST(req: Request) {
                 water,
                 sleep,
                 steps,
+                completedHabits: completedHabits ? JSON.stringify(completedHabits) : "[]",
                 date: new Date(),
             }
         });
@@ -48,7 +51,7 @@ export async function POST(req: Request) {
 }
 
 export async function GET(req: Request) {
-    const session = await auth();
+    const session = await auth() || await getMobileSession(req);
     if (!session?.user?.id) return new NextResponse("Unauthorized", { status: 401 });
 
     try {

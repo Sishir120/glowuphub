@@ -15,6 +15,16 @@ export default auth((req) => {
         return NextResponse.redirect(newUrl, 301);
     }
 
+    // Redirect web dashboard and internal routes to mobile access node
+    const internalRoutes = [
+        "/dashboard", "/chat", "/profile", "/settings", "/routines",
+        "/calendar", "/movement", "/plan", "/track", "/expert"
+    ];
+
+    if (internalRoutes.some(route => url.pathname.startsWith(route))) {
+        return NextResponse.redirect(new URL("/access", url));
+    }
+
     return NextResponse.next();
 });
 

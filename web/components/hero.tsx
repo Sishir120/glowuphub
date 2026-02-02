@@ -106,7 +106,7 @@ export function Hero() {
                                 <Heart className="w-4 h-4" />
                             </div>
                             <div>
-                                <p className="text-[10px] text-zinc-500 leading-none mb-1">Daily Practice</p>
+                                <p className="text-[10px] text-zinc-500 leading-none mb-1 uppercase tracking-widest font-black">CORE PROTOCOL</p>
                                 <p className="text-sm font-bold text-white leading-none">15 min</p>
                             </div>
                         </motion.div>
@@ -119,8 +119,8 @@ export function Hero() {
                                 <Sparkles className="w-4 h-4" />
                             </div>
                             <div>
-                                <p className="text-[10px] text-zinc-500 leading-none mb-1">Glow Score</p>
-                                <p className="text-sm font-bold text-white leading-none">Building ✨</p>
+                                <p className="text-[10px] text-zinc-500 leading-none mb-1 uppercase tracking-widest font-black">METABOLIC FLOW</p>
+                                <p className="text-sm font-bold text-white leading-none">Establishing ✨</p>
                             </div>
                         </motion.div>
                     </div>
@@ -152,7 +152,7 @@ export function Hero() {
                             className="absolute bottom-10 left-0 z-30 p-3 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl flex items-center gap-3 shadow-2xl min-w-[160px]"
                         >
                             <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center"><Sparkles className="w-5 h-5 text-emerald-400" /></div>
-                            <div className="text-left"><p className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider mb-0.5">Glow Score</p><p className="text-sm font-bold text-white tracking-tight">Building ✨</p></div>
+                            <div className="text-left"><p className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider mb-0.5">Metabolic Flow</p><p className="text-sm font-bold text-white tracking-tight">Establishing ✨</p></div>
                         </motion.div>
                     </div>
 

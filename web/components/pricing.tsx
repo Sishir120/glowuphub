@@ -8,74 +8,74 @@ import { cn } from "@/lib/utils";
 
 const plans = [
     {
-        name: "Starter",
+        name: "Baseline Synchronization",
         tier: "FREE",
         price: "0",
-        description: "Your daily safe space. No credit card required.",
+        description: "Your foundational biological sanctuary. Initiated in seconds.",
         features: [
-            "3 guided rituals per day",
-            "Basic Glow Rings (7-day view)",
-            "Community access (read-only)",
-            "1 Mastery Pack preview",
+            "3 guided protocols per day",
+            "Metabolic Flow Rings (7-day view)",
+            "Global Hub Access (Read-only)",
+            "1 Synchronization Module preview",
         ],
         limits: [
-            "Limited to 7-day history",
-            "No macro tracking",
-            "No progress photos",
+            "Baseline history only",
+            "No metabolic tracking",
+            "No identity transformation logs",
         ],
         popular: false,
-        icon: <Leaf className="w-5 h-5 text-sage" />,
-        cta: "Start Free",
-        highlight: "For curious beginners testing the waters",
+        icon: <Leaf className="w-5 h-5 text-emerald-500" />,
+        cta: "Establish Baseline",
+        highlight: "For practitioners establishing initial system stability",
     },
     {
-        name: "Premium",
+        name: "Elite Protocol Integration",
         tier: "PREMIUM",
         price: "14.99",
-        description: "Complete transformation toolkit for self-directed achievers.",
+        description: "Full architectural access for high-performance practitioners.",
         features: [
-            "Unlimited meal & snack tracking",
-            "Personalized macro targets",
-            "All 4 Mastery Packs unlocked",
-            "Progress photos & weight tracking",
-            "Full analytics & insights",
-            "Activity protocols & workouts",
-            "100+ healthy recipes",
-            "Rewards Treasury & badges",
-            "Private reflection journal",
-            "Full community participation",
+            "Unlimited protocol & metabolic tracking",
+            "Dynamic bio-metric targets",
+            "All Synchronization Modules unlocked",
+            "Identity transformation & weight logging",
+            "Deep-level bio-analytics suite",
+            "Advanced Mastery Modules",
+            "100+ Nutrient-Dense Protocols",
+            "Rewards Vault & Elite Badges",
+            "Secure reflection vault",
+            "Full Hub Transmission access",
         ],
         extras: [],
         popular: true,
-        icon: <Sparkles className="w-5 h-5 text-primary" />,
-        cta: "Start 14-Day Trial",
-        highlight: "For self-directed achievers ready for full tracking",
+        icon: <Sparkles className="w-5 h-5 text-emerald-500" />,
+        cta: "Initialize Elite Access",
+        highlight: "For practitioners ready for total systems optimization",
         savingsAnnual: "Save $30/year",
     },
     {
-        name: "Coach",
+        name: "Lead Protocol Engineer",
         tier: "COACH",
         price: "49",
-        description: "Premium + expert guidance. A nutritionist in your pocket.",
+        description: "Everything in Elite + direct technical oversight.",
         features: [
-            "Everything in Premium",
-            "24-48h expert chat access",
-            "Ask about meals, hormones, labs",
-            "Share photos for feedback",
-            "Monthly live group Q&A",
-            "Priority support",
-            "Custom meal plan adjustments",
-            "Bi-weekly expert check-ins",
+            "Complete Elite access suite",
+            "24-48h Engineer encryption access",
+            "Analyze bio-markers, hormones, labs",
+            "Visual identity feedback loops",
+            "Monthly Real-Time Protocol Labs",
+            "Priority synchronization support",
+            "Custom-engineered protocol shifts",
+            "Bi-weekly structural check-ins",
         ],
         extras: [
-            "20% off 12-Week Reset Program",
-            "VIP community badge",
-            "Early access to new features",
+            "20% off 12-Week Reset Architecture",
+            "VIP Hub Badge",
+            "Beta-phase feature access",
         ],
         popular: false,
-        icon: <MessageCircle className="w-5 h-5 text-primary" />,
-        cta: "Get Expert Support",
-        highlight: "Direct expert access (73% less than private coaching)",
+        icon: <MessageCircle className="w-5 h-5 text-emerald-500" />,
+        cta: "Command Expert Oversight",
+        highlight: "Direct technical guidance (Elite optimization)",
     },
 ];
 
@@ -104,11 +104,11 @@ export function Pricing() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                            Start Your <span className="text-primary italic">Practice Today</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter">
+                            Initialize Your <span className="text-emerald-500 italic">Protocol Today</span>
                         </h2>
-                        <p className="text-foreground-muted text-lg mb-8">
-                            Less than the price of a weekly self-care treat. Daily practices that compound into lasting confidence.
+                        <p className="text-white/40 text-lg mb-8 font-medium">
+                            Invest in your biological architecture. Consistent synchronization that protocols into lasting metabolic power.
                         </p>
 
                         {/* Toggle */}
@@ -197,7 +197,7 @@ export function Pricing() {
                                         : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                                 )}
                             >
-                                <a href="/chat">
+                                <a href="/register">
                                     {plan.cta}
                                 </a>
                             </Button>

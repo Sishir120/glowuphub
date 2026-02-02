@@ -35,11 +35,14 @@ interface TooltipProps {
 const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
     if (active && payload && payload.length && label) {
         return (
-            <div className="glass-premium p-3 rounded-xl border border-white/10 shadow-xl" role="tooltip">
-                <p className="text-xs text-foreground-muted mb-1">{format(new Date(label), "MMM d, yyyy")}</p>
-                <p className="text-lg font-bold text-primary">
-                    {typeof payload[0].value === 'number' ? payload[0].value.toFixed(1) : '0.0'} <span className="text-xs font-normal text-foreground-muted">kg</span>
-                </p>
+            <div className="bg-[#09090B]/90 backdrop-blur-xl p-4 rounded-2xl border border-white/5 shadow-2xl" role="tooltip">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-2">{format(new Date(label), "MMM d")}</p>
+                <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-black text-emerald-500 tabular-nums tracking-tighter">
+                        {typeof payload[0].value === 'number' ? payload[0].value.toFixed(1) : '0.0'}
+                    </span>
+                    <span className="text-[10px] font-black text-white/20 uppercase tracking-widest">KG</span>
+                </div>
             </div>
         );
     }
@@ -56,50 +59,54 @@ export function WeightChart({ currentWeight = 60 }: WeightChartProps) {
     return (
         <div className="w-full h-[350px] relative group">
             <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                <AreaChart data={data} margin={{ top: 20, right: 10, left: -20, bottom: 0 }}>
                     <defs>
                         <linearGradient id="colorWeight" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.3} />
-                            <stop offset="95%" stopColor="var(--primary)" stopOpacity={0} />
+                            <stop offset="5%" stopColor="#10B981" stopOpacity={0.2} />
+                            <stop offset="95%" stopColor="#10B981" stopOpacity={0} />
                         </linearGradient>
                     </defs>
                     <XAxis
                         dataKey="date"
                         tickFormatter={(str) => format(new Date(str), "d")}
-                        stroke="var(--foreground-muted)"
-                        fontSize={12}
+                        stroke="rgba(255,255,255,0.1)"
+                        fontSize={10}
+                        fontWeight={900}
                         tickLine={false}
                         axisLine={false}
-                        opacity={0.5}
-                        dy={10}
+                        dy={15}
                         interval={6}
                     />
                     <YAxis
-                        stroke="var(--foreground-muted)"
-                        fontSize={12}
+                        stroke="rgba(255,255,255,0.1)"
+                        fontSize={10}
+                        fontWeight={900}
                         tickLine={false}
                         axisLine={false}
-                        opacity={0.5}
                         domain={['dataMin - 1', 'dataMax + 1']}
-                        dx={-5}
+                        dx={-10}
                     />
-                    <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'var(--primary)', strokeWidth: 1, strokeDasharray: '4 4', opacity: 0.5 }} />
+                    <Tooltip
+                        content={<CustomTooltip />}
+                        cursor={{ stroke: '#10B981', strokeWidth: 1.5, strokeDasharray: '4 4', opacity: 0.3 }}
+                    />
                     <Area
                         type="monotone"
                         dataKey="value"
-                        stroke="var(--primary)"
-                        strokeWidth={3}
+                        stroke="#10B981"
+                        strokeWidth={4}
                         fill="url(#colorWeight)"
-                        animationDuration={1500}
+                        animationDuration={2000}
+                        animationEasing="ease-in-out"
                     />
                 </AreaChart>
             </ResponsiveContainer>
 
-            {/* Overlay for added premium feel if data is empty or generic */}
-            <div className="absolute top-4 right-4 flex items-center gap-2">
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                    <span className="text-xs font-medium text-primary">Live Trend</span>
+            {/* Matrix Status Indicator */}
+            <div className="absolute top-0 right-0 flex items-center gap-3">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5 backdrop-blur-sm">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_#10B981]" />
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">System Synced</span>
                 </div>
             </div>
         </div>

@@ -5,10 +5,10 @@ import { Check, X, Info, ArrowRight } from "lucide-react";
 
 const rows = [
     { label: "Scientific Approach", glowup: "Metabolic Hormonal Balance", other: "Calorie Deficit Only" },
-    { label: "Food Relationship", glowup: "Food Freedom & Rituals", other: "Restriction & Deprivation" },
-    { label: "Daily Effort", glowup: "15-Min Practices", other: "1-Hour Exhausting Workouts" },
-    { label: "Expert Support", glowup: "Direct Lab-Qualified Advice", other: "Generic AI Bots" },
-    { label: "Long-term Results", glowup: "Biological Reset (Lasting)", other: "Yo-Yo Weight Cycles" },
+    { label: "Metabolic Integrity", glowup: "Nutrient Freedom & Protocols", other: "Restriction & Deprivation" },
+    { label: "Protocol Commitment", glowup: "15-Min Protocols", other: "1-Hour Exhausting Workouts" },
+    { label: "Expert Oversight", glowup: "Lead Protocol Engineers", other: "Generic AI Bots" },
+    { label: "Structural Results", glowup: "Biological Reset (Lasting)", other: "Yo-Yo Weight Cycles" },
 ];
 
 export function ComparisonSection() {
@@ -16,12 +16,12 @@ export function ComparisonSection() {
         <section className="py-24 bg-background relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-                        Why GlowUp Hub is <span className="text-primary italic">Different</span>
+                    <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter">
+                        Why GlowUpHub is <span className="text-emerald-500 italic">Superior</span>
                     </h2>
-                    <p className="text-lg text-foreground-muted">
-                        Most apps count your calories. We count your hormones.
-                        Stop fighting your and start working with it.
+                    <p className="text-lg text-white/40 font-medium">
+                        Most systems count your calories. We calibrate your hormones.
+                        Stop fighting your biology and start architecting it.
                     </p>
                 </div>
 
@@ -36,9 +36,9 @@ export function ComparisonSection() {
                     <div className="max-w-4xl mx-auto overflow-x-auto scrollbar-hide rounded-3xl border border-border bg-card/50 backdrop-blur-sm shadow-xl">
                         <div className="min-w-[600px] md:min-w-0">
                             <div className="grid grid-cols-3 border-b border-border bg-card/80">
-                                <div className="p-6 text-sm font-bold text-foreground-muted uppercase tracking-wider">Features</div>
-                                <div className="p-6 text-center text-primary font-bold bg-primary/5">GlowUp Hub</div>
-                                <div className="p-6 text-center text-foreground-muted font-bold">Generic Apps</div>
+                                <div className="p-6 text-sm font-black text-white/20 uppercase tracking-[0.2em]">Architecture</div>
+                                <div className="p-6 text-center text-emerald-500 font-black uppercase tracking-widest bg-emerald-500/5">GlowUpHub</div>
+                                <div className="p-6 text-center text-white/20 font-bold uppercase tracking-widest">Legacy Apps</div>
                             </div>
 
                             {rows.map((row, i) => (

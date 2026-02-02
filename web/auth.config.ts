@@ -28,7 +28,7 @@ export const authConfig = {
                 if (isLoggedIn) return true;
                 return false; // Redirect to login
             } else if (isOnAuth) {
-                if (isLoggedIn) return Response.redirect(new URL('/dashboard', nextUrl));
+                if (isLoggedIn) return Response.redirect(new URL('/access', nextUrl));
                 return true;
             }
             return true;

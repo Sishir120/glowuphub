@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/ui/fade-in";
+import { useRouter } from "next/navigation";
 
 type Step =
     | 'WELCOME'
@@ -48,6 +49,7 @@ const STEPS: Step[] = [
 ];
 
 export default function OnboardingPage() {
+    const router = useRouter();
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
     const [formData, setFormData] = useState({
         name: '',
@@ -149,17 +151,18 @@ export default function OnboardingPage() {
                     {currentStep === 'WELCOME' && (
                         <Button
                             onClick={next}
-                            className="h-16 px-12 rounded-[2rem] bg-primary text-primary-foreground font-black text-lg shadow-[0_20px_40px_rgba(45,212,191,0.3)] hover:scale-105 active:scale-95 transition-all"
+                            className="h-16 px-12 rounded-[2rem] bg-emerald-500 text-black font-black text-lg shadow-[0_20px_40px_rgba(16,185,129,0.3)] hover:scale-105 active:scale-95 transition-all uppercase tracking-tight"
                         >
-                            Start Consultation <ArrowRight className="ml-3" size={24} />
+                            Initiate Baseline Sync <ArrowRight className="ml-3" size={24} />
                         </Button>
                     )}
 
                     {currentStep === 'SUMMARY' && (
                         <Button
-                            className="h-16 px-12 rounded-[2rem] bg-primary text-primary-foreground font-black text-lg shadow-[0_20px_40px_rgba(45,212,191,0.3)] hover:scale-105 active:scale-95 transition-all"
+                            onClick={() => router.push('/access')}
+                            className="h-16 px-12 rounded-[2rem] bg-emerald-500 text-black font-black text-lg shadow-[0_20px_40px_rgba(16,185,129,0.3)] hover:scale-105 active:scale-95 transition-all uppercase tracking-tight"
                         >
-                            Finalize & Access <CheckCircle2 className="ml-3" size={24} />
+                            Architect Identity <CheckCircle2 className="ml-3" size={24} />
                         </Button>
                     )}
                 </div>
@@ -177,8 +180,8 @@ function renderStep(step: Step, data: any, update: (k: string, v: any) => void, 
                         <User size={48} />
                     </div>
                     <div>
-                        <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-4 leading-tight">Welcome to <br /><span className="text-primary italic">Expert Guidance.</span></h1>
-                        <p className="text-xl text-foreground-muted max-w-md mx-auto">This isn't a prototype. This is a scientific engine to help an expert understand you deeply.</p>
+                        <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-4 leading-tight uppercase">Welcome to <br /><span className="text-emerald-400 italic">Symmetry.</span></h1>
+                        <p className="text-xl text-white/40 font-medium max-w-md mx-auto">This is your clinical biological intake. A precise architectural engine to establish your metabolic baseline.</p>
                     </div>
                 </div>
             );
@@ -379,8 +382,8 @@ function renderStep(step: Step, data: any, update: (k: string, v: any) => void, 
                         <CheckCircle2 size={48} />
                     </div>
                     <div>
-                        <h2 className="text-4xl font-bold tracking-tight mb-4">You're all set, {data.name.split(' ')[0]}.</h2>
-                        <p className="text-xl text-foreground-muted max-w-md mx-auto">Your expert is ready to review your data and begin the first consultation.</p>
+                        <h2 className="text-4xl font-black tracking-tighter mb-4 uppercase">Protocol Initialized, {data.name.split(' ')[0]}.</h2>
+                        <p className="text-xl text-white/40 font-medium max-w-md mx-auto">Your metadata is synced. Your Lead Engineer is ready to architect your protocol continuity.</p>
                     </div>
                     <div className="p-6 bg-white/5 border border-white/5 rounded-3xl inline-block max-w-sm mx-auto text-left space-y-2">
                         <p className="text-xs font-bold text-foreground-muted uppercase tracking-widest">Calculated Metrics</p>

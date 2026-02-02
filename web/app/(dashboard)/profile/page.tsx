@@ -25,9 +25,9 @@ import { useRouter } from "next/navigation";
 import { Toast, ToastType } from "@/components/ui/toast";
 
 const ACHIEVEMENTS = [
-    { id: 1, name: "Early Bird", description: "Completed 5 morning flows.", icon: <Zap size={20} className="text-orange-400" />, color: "bg-orange-500/10 border-orange-500/20" },
-    { id: 2, name: "Deep Glow", description: "Maintained an 85+ score for a week.", icon: <Sparkles size={20} className="text-primary" />, color: "bg-primary/10 border-primary/20" },
-    { id: 3, name: "Hydra Master", description: "Logged 3L of water for 3 days.", icon: <Award size={20} className="text-sage" />, color: "bg-sage/10 border-sage/20" },
+    { id: 1, name: "Circadian Precision", description: "Phase 01 synchronization locked.", icon: <Zap size={20} className="text-emerald-400" />, color: "bg-emerald-500/10 border-emerald-500/20" },
+    { id: 2, name: "Optimal Flow State", description: "85+ Metabolic Flow for 7 days.", icon: <Sparkles size={20} className="text-emerald-400" />, color: "bg-emerald-500/10 border-emerald-500/20" },
+    { id: 3, name: "Hyper-Hydration", description: "System volume optimized for 72hr.", icon: <Award size={20} className="text-emerald-400" />, color: "bg-emerald-500/10 border-emerald-500/20" },
 ];
 
 interface UserData {
@@ -111,7 +111,9 @@ export default function ProfilePage() {
     return (
         <div className="space-y-12 pb-20">
             <FadeIn direction="down">
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Profile & Preferences</h1>
+                <FadeIn direction="down">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight">System Synchronization</h1>
+                </FadeIn>
             </FadeIn>
 
             <div className="grid lg:grid-cols-3 gap-10">
@@ -147,13 +149,13 @@ export default function ProfilePage() {
                                     {getTierLabel() === "Free" ? (
                                         <Button
                                             onClick={() => router.push("/#pricing")}
-                                            className="w-full h-14 rounded-2xl bg-primary text-primary-foreground font-bold shadow-lg shadow-primary/10"
+                                            className="w-full h-14 rounded-2xl bg-emerald-500 text-black font-black uppercase tracking-widest text-[10px] shadow-lg shadow-emerald-500/10"
                                         >
-                                            Upgrade to Premium
+                                            Initiate Elite Protocol
                                         </Button>
                                     ) : (
-                                        <div className="w-full h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-                                            <span className="font-bold text-primary">{getTierLabel()} Member</span>
+                                        <div className="w-full h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+                                            <span className="font-black text-[10px] uppercase tracking-widest text-emerald-500">{getTierLabel()} MEMBER</span>
                                         </div>
                                     )}
                                     <Button
@@ -202,16 +204,16 @@ export default function ProfilePage() {
                                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                                         <TrendingUp size={20} />
                                     </div>
-                                    <h3 className="font-bold text-lg uppercase tracking-tight">Activity Streak</h3>
+                                    <h3 className="font-black text-[10px] uppercase tracking-[0.2em] text-white/40">Protocol Continuity</h3>
                                 </div>
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-6xl font-black tracking-tighter text-primary">{userData?.streak || 0}</span>
-                                    <span className="text-lg font-bold text-foreground-muted">DAYS</span>
+                                    <span className="text-6xl font-black tracking-tighter text-emerald-500 tabular-nums">{userData?.streak || 0}</span>
+                                    <span className="text-xs font-black text-white/20 uppercase tracking-widest">PHASES</span>
                                 </div>
-                                <p className="text-sm text-foreground-muted mt-4 italic">
+                                <p className="text-[10px] font-bold text-white/30 mt-4 uppercase tracking-wider">
                                     {(userData?.streak || 0) < 15
-                                        ? "Next badge unlocked at day 15!"
-                                        : "Amazing consistency! Keep it up!"}
+                                        ? "Calibration threshold at Phase 15"
+                                        : "Protocol stability achieved."}
                                 </p>
                             </div>
                         </FadeIn>
@@ -222,15 +224,15 @@ export default function ProfilePage() {
                                     <div className="w-10 h-10 rounded-xl bg-sage/10 flex items-center justify-center text-sage">
                                         <Award size={20} />
                                     </div>
-                                    <h3 className="font-bold text-lg uppercase tracking-tight">Glow Score</h3>
+                                    <h3 className="font-black text-[10px] uppercase tracking-[0.2em] text-white/40">Metabolic Flow</h3>
                                 </div>
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-6xl font-black tracking-tighter text-sage">{userData?.glowScore || 0}</span>
+                                    <span className="text-6xl font-black tracking-tighter text-emerald-500 tabular-nums">{userData?.glowScore || 0}</span>
                                 </div>
-                                <p className="text-sm text-foreground-muted mt-4 italic">
+                                <p className="text-[10px] font-bold text-white/30 mt-4 uppercase tracking-wider">
                                     {(userData?.glowScore || 0) >= 85
-                                        ? "Top 5% of all members this month!"
-                                        : "Keep going to reach the top tier!"}
+                                        ? "Top 5% Biological Synchronization"
+                                        : "Awaiting Next Flow-State Baseline"}
                                 </p>
                             </div>
                         </FadeIn>

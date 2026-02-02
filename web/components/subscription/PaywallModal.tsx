@@ -91,24 +91,24 @@ export function PaywallModal({
                                     <Crown className="w-8 h-8 text-primary" />
                                 </div>
 
-                                <h2 className="text-2xl font-bold text-foreground mb-2">
-                                    Unlock Your Full Potential
+                                <h2 className="text-2xl font-black text-white mb-2 uppercase tracking-tighter">
+                                    Synchronize Elite Architecture
                                 </h2>
 
                                 {triggerFeature && (
-                                    <p className="text-foreground-muted">
-                                        <span className="text-primary font-medium">
+                                    <p className="text-white/40 font-medium">
+                                        <span className="text-emerald-500 font-bold">
                                             {FEATURE_DISPLAY_NAMES[triggerFeature]}
                                         </span>{' '}
-                                        is a Premium feature
+                                        is an Elite Protocol module
                                     </p>
                                 )}
                             </div>
 
                             {/* Features List */}
                             <div className="px-8 py-6 border-t border-border">
-                                <p className="text-sm text-foreground-muted mb-4 uppercase tracking-wider">
-                                    Everything in Premium
+                                <p className="text-[10px] text-white/20 mb-4 uppercase tracking-[0.2em] font-black">
+                                    Elite Protocol Suite
                                 </p>
                                 <div className="grid grid-cols-2 gap-3">
                                     {HIGHLIGHTED_FEATURES.map((feature) => (
@@ -130,8 +130,8 @@ export function PaywallModal({
                                     <button
                                         onClick={() => setSelectedPlan('monthly')}
                                         className={`flex-1 p-4 rounded-2xl border transition-all ${selectedPlan === 'monthly'
-                                                ? 'border-primary bg-primary/10'
-                                                : 'border-border hover:border-primary/30'
+                                            ? 'border-primary bg-primary/10'
+                                            : 'border-border hover:border-primary/30'
                                             }`}
                                     >
                                         <p className="text-sm text-foreground-muted mb-1">Monthly</p>
@@ -144,8 +144,8 @@ export function PaywallModal({
                                     <button
                                         onClick={() => setSelectedPlan('yearly')}
                                         className={`flex-1 p-4 rounded-2xl border transition-all relative ${selectedPlan === 'yearly'
-                                                ? 'border-primary bg-primary/10'
-                                                : 'border-border hover:border-primary/30'
+                                            ? 'border-primary bg-primary/10'
+                                            : 'border-border hover:border-primary/30'
                                             }`}
                                     >
                                         <span className="absolute -top-2 right-3 text-[10px] font-bold bg-primary text-primary-foreground px-2 py-0.5 rounded-full">
@@ -248,9 +248,9 @@ export function LockedOverlay({ feature, onUpgrade }: LockedOverlayProps) {
             <div className="p-4 rounded-2xl bg-primary/20 mb-3 group-hover:bg-primary/30 transition">
                 <Crown className="w-8 h-8 text-primary" />
             </div>
-            <p className="font-semibold text-foreground">Premium Feature</p>
-            <p className="text-sm text-foreground-muted">
-                Tap to unlock {FEATURE_DISPLAY_NAMES[feature]}
+            <p className="font-black text-white uppercase tracking-widest text-[10px]">Elite Protocol Module</p>
+            <p className="text-xs text-white/40 font-medium mt-1">
+                Initiate synchronization to access {FEATURE_DISPLAY_NAMES[feature]}
             </p>
         </div>
     );

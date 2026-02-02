@@ -19,10 +19,10 @@ import { useSound } from "@/hooks/use-sound";
 import { cn } from "@/lib/utils";
 
 const ACTIVITY_TYPES = [
-    { id: 'walking', name: 'Walking', icon: Footprints, caloriesPerMin: 4 },
-    { id: 'yoga', name: 'Yoga', icon: Activity, caloriesPerMin: 3 },
-    { id: 'home-workout', name: 'Home Workout', icon: Zap, caloriesPerMin: 6 },
-    { id: 'cycling', name: 'Cycling', icon: Activity, caloriesPerMin: 8 },
+    { id: 'walking', name: 'Zone 2 Pacing', icon: Footprints, caloriesPerMin: 4 },
+    { id: 'yoga', name: 'Bio-Flow State', icon: Activity, caloriesPerMin: 3 },
+    { id: 'home-workout', name: 'Core Re-Calibration', icon: Zap, caloriesPerMin: 6 },
+    { id: 'cycling', name: 'Kinetic Endurance', icon: Activity, caloriesPerMin: 8 },
 ];
 
 const PROTOCOLS: Record<string, ProtocolStep[]> = {
@@ -49,48 +49,48 @@ const PROTOCOLS: Record<string, ProtocolStep[]> = {
     ],
     'yoga': [
         {
-            title: "Centering",
+            title: "Breath Synchronization",
             description: "Find a quiet space and roll out your mat. Sit comfortably and focus on your breath.",
             image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/yoga_protocol_main_1766485293224.png",
             duration: 180,
             tip: "Inhale deeply through your nose, exhale slowly through your mouth."
         },
         {
-            title: "Sun Salutations",
+            title: "Cellular Activation",
             description: "Begin a gentle flow to warm up the body. Focus on matching movement to breath.",
             image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/yoga_protocol_main_1766485293224.png",
             duration: 600
         },
         {
-            title: "Main Practice",
+            title: "Biological Alignment",
             description: "Move into the Tree pose and Warrior series. Hold each pose for 5 deep breaths.",
             image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/yoga_protocol_main_1766485293224.png",
             duration: 900
         },
         {
-            title: "Savasana",
-            description: "Lie flat on your back, eyes closed. Let your body absorb the practice.",
+            title: "Savasana: Zero State",
+            description: "Lie flat on your back, eyes closed. Let your body absorb the protocol.",
             image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/cooldown_protocol_common_1766485407095.png",
             duration: 300
         }
     ],
     'home-workout': [
         {
-            title: "Warmup",
+            title: "Kinetic Primer",
             description: "Get the blood flowing with jumping jacks, arm circles, and high knees.",
             image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/home_workout_main_1766485319868.png",
             duration: 300
         },
         {
-            title: "Power Circuit",
-            description: "3 Rounds: 15 Squats, 10 Pushups, 20 Lunges. Minimize rest between exercises.",
+            title: "Power Circuit Module",
+            description: "3 Rounds: 15 Squats, 10 Pushups, 20 Lunges. Minimize rest between modules.",
             image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/home_workout_main_1766485319868.png",
             duration: 1200,
             tip: "Keep your core tight and maintain a flat back."
         },
         {
-            title: "Cool Down",
-            description: "Finish with a full body stretch, focusing on the muscles you worked most.",
+            title: "Metabolic Stabilization",
+            description: "Finish with a full body stretch, focusing on the muscles you activated.",
             image: "file:///C:/Users/sishi/.gemini/antigravity/brain/b4b67391-cbf1-42bb-8f79-da59d966d677/cooldown_protocol_common_1766485407095.png",
             duration: 300
         }
@@ -191,12 +191,12 @@ export function LifestyleTracker() {
                     onClick={() => setIsProtocolOpen(true)}
                     className="glass-premium rounded-3xl p-8 border border-white/5 flex flex-col items-center justify-center gap-4 group hover:bg-white/5 transition-all text-center min-h-[240px]"
                 >
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+                    <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(16,185,129,0.1)]">
                         <Play size={32} fill="currentColor" />
                     </div>
                     <div className="space-y-1">
-                        <h3 className="text-xl font-bold tracking-tight">Start Live Session</h3>
-                        <p className="text-[10px] text-foreground-muted uppercase tracking-widest font-black opacity-40">Immersive Step-by-Step Guide</p>
+                        <h3 className="text-xl font-bold tracking-tight">Initiate Real-Time Lab</h3>
+                        <p className="text-[10px] text-foreground-muted uppercase tracking-widest font-black opacity-40">Immersive Bio-Step Guidance</p>
                     </div>
                 </button>
 
